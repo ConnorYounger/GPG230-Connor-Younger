@@ -11,6 +11,9 @@ public class W2Player : MonoBehaviour
     public W2Inventory inventory;
 
     public W2Item currentItem;
+    public W2Door currentDoor;
+
+    public float interractDistance = 0.8f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,7 @@ public class W2Player : MonoBehaviour
     {
         MovePlayer();
         ItemDistanceCheck();
+        DoorDistanceCheck();
     }
 
     public void SetNewDestination(Vector3 position)
@@ -39,12 +43,31 @@ public class W2Player : MonoBehaviour
     {
         if(currentItem != null)
         {
-            Debug.Log(Vector3.Distance(transform.position, currentItem.transform.position));
-
-            if(Vector3.Distance(transform.position, currentItem.transform.position) < 0.8f)
+            if(Vector3.Distance(transform.position, currentItem.transform.position) < interractDistance)
             {
                 CollectItem();
             }
+        }
+    }
+
+    void DoorDistanceCheck()
+    {
+        if (currentDoor != null)
+        {
+            if (Vector3.Distance(transform.position, currentDoor.transform.position) < 0.8f)
+            {
+                UseDoor();
+            }
+        }
+    }
+
+    void UseDoor()
+    {
+        if(currentDoor != null)
+        {
+            currentDoor.UseDoor();
+
+            currentDoor = null;
         }
     }
 

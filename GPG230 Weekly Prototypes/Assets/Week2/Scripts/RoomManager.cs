@@ -28,6 +28,6 @@ public class RoomManager : MonoBehaviour
 
     public void TravelToNewRoom(int roomIndex, int roomEntranceIndex)
     {
-
+        Debug.Log("Travel to: " + roomIndex + ", room entrance: " + roomEntranceIndex);
     }
 }

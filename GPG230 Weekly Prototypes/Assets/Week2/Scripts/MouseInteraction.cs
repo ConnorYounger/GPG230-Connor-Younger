@@ -33,20 +33,47 @@ public class MouseInteraction : MonoBehaviour
                 hit.collider.GetComponent<W2Item>().MouseOver(mouseOverColor);
             }
 
+            if (hit.collider != null && hit.collider.GetComponent<W2Door>())
+            {
+                hit.collider.GetComponent<W2Door>().MouseOver(mouseOverColor);
+            }
+
             if (Input.GetButtonDown("Fire1"))
             {
-                if (hit.collider != null && hit.collider.GetComponent<W2Item>())
+                if (hit.collider != null)
                 {
-                    player.currentItem = hit.collider.GetComponent<W2Item>();
-                    player.SetNewDestination(hit.point);
-                    Debug.Log("Hit: " + hit.collider.name);
+                    if (hit.collider.GetComponent<W2Item>())
+                    {
+                        player.currentItem = hit.collider.GetComponent<W2Item>();
+                        player.SetNewDestination(hit.point);
+                        Debug.Log("Hit: " + hit.collider.name);
+
+                        player.currentDoor = null;
+                    }
+                    else if (hit.collider.GetComponent<W2Door>())
+                    {
+                        player.currentDoor = hit.collider.GetComponent<W2Door>();
+                        player.SetNewDestination(hit.point);
+
+                        player.currentItem = null;
+                    }
+                    else
+                    {
+                        OffClick();
+                    }
                 }
                 else
                 {
-                    player.currentItem = null;
+                    OffClick();
                 }
             }
         }
+    }
+
+    void OffClick()
+    {
+        player.currentDoor = null;
+        player.currentItem = null;
     }
 
     void PlayerMovement()
@@ -64,7 +91,7 @@ public class MouseInteraction : MonoBehaviour
 
                     player.SetNewDestination(hit.point);
 
-                    player.currentItem = null;
+                    OffClick();
                 }
             }
         }
