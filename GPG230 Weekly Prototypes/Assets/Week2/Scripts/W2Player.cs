@@ -8,6 +8,10 @@ public class W2Player : MonoBehaviour
     private NavMeshAgent navAgent;
     private Vector3 destinationPoint;
 
+    public W2Inventory inventory;
+
+    public W2Item currentItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,7 @@ public class W2Player : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        ItemDistanceCheck();
     }
 
     public void SetNewDestination(Vector3 position)
@@ -28,5 +33,26 @@ public class W2Player : MonoBehaviour
     void MovePlayer()
     {
         navAgent.SetDestination(destinationPoint);
+    }
+
+    void ItemDistanceCheck()
+    {
+        if(currentItem != null)
+        {
+            if(Vector3.Distance(transform.position, currentItem.transform.position) < 0.05f)
+            {
+                CollectItem();
+            }
+        }
+    }
+
+    void CollectItem()
+    {
+        if (currentItem != null)
+        {
+            inventory.AddItem(currentItem);
+
+            currentItem = null;
+        }
     }
 }

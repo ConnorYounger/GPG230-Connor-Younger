@@ -28,9 +28,15 @@ public class MouseInteraction : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit, 100))
             {
-                if (hit.collider != null)
+                if (hit.collider != null && hit.collider.GetComponent<W2Item>())
                 {
+                    player.currentItem = hit.collider.GetComponent<W2Item>();
+                    player.SetNewDestination(hit.point);
                     Debug.Log("Hit: " + hit.collider.name);
+                }
+                else
+                {
+                    player.currentItem = null;
                 }
             }
         }
@@ -50,6 +56,8 @@ public class MouseInteraction : MonoBehaviour
                     Debug.Log("Player Move to: " + hit.point);
 
                     player.SetNewDestination(hit.point);
+
+                    player.currentItem = null;
                 }
             }
         }
