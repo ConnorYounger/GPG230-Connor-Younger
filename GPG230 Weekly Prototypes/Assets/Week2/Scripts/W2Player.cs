@@ -52,7 +52,7 @@ public class W2Player : MonoBehaviour
     {
         if (currentItem != null)
         {
-            inventory.AddItem(currentItem);
+            inventory.PickUpItem(currentItem);
 
             currentItem = null;
         }
