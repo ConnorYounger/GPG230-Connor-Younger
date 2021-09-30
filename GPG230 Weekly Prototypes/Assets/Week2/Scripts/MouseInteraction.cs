@@ -7,9 +7,18 @@ public class MouseInteraction : MonoBehaviour
     public W2Player player;
 
     public Color mouseOverColor = Color.blue;
+    public Color searchColor = Color.yellow;
 
-    // Start is called before the first frame update
-    void Start()
+    private List<W2Item> items;
+    private List<W2Door> doors;
+
+    void Awake()
+    {
+        items = new List<W2Item>();
+        doors = new List<W2Door>();
+    }
+
+    private void Start()
     {
         
     }
@@ -68,6 +77,29 @@ public class MouseInteraction : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Search()
+    {
+        foreach(W2Item item in items)
+        {
+            item.ShowOutline(searchColor);
+        }
+
+        foreach(W2Door door in doors)
+        {
+            door.ShowOutline(searchColor);
+        }
+    }
+
+    public void AddItem(W2Item item)
+    {
+        items.Add(item);
+    }
+
+    public void AddDoor(W2Door door)
+    {
+        doors.Add(door);
     }
 
     void OffClick()

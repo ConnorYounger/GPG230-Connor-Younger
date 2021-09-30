@@ -15,6 +15,7 @@ public class W2Door : MonoBehaviour
     {
         roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
         outline = gameObject.GetComponent<Outline>();
+        GameObject.Find("MainCamera").GetComponent<MouseInteraction>().AddDoor(this);
     }
 
     // Update is called once per frame
@@ -41,6 +42,9 @@ public class W2Door : MonoBehaviour
     {
         outline.OutlineColor = color;
         outline.enabled = true;
+
+        StopCoroutine("DelayedHideOutline2");
+        StartCoroutine("DelayedHideOutline2");
     }
 
     public void HideOutline()
@@ -51,6 +55,13 @@ public class W2Door : MonoBehaviour
     IEnumerator DelayedHideOutline()
     {
         yield return new WaitForSeconds(0.1f);
+
+        outline.enabled = false;
+    }
+
+    IEnumerator DelayedHideOutline2()
+    {
+        yield return new WaitForSeconds(1.5f);
 
         outline.enabled = false;
     }
