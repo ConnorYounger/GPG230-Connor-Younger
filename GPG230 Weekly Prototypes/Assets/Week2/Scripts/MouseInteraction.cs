@@ -6,6 +6,8 @@ public class MouseInteraction : MonoBehaviour
 {
     public W2Player player;
 
+    public Color mouseOverColor = Color.blue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,17 @@ public class MouseInteraction : MonoBehaviour
 
     void MouseClick()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            if (hit.collider != null && hit.collider.GetComponent<W2Item>())
+            {
+                hit.collider.GetComponent<W2Item>().MouseOver(mouseOverColor);
+            }
+
+            if (Input.GetButtonDown("Fire1"))
             {
                 if (hit.collider != null && hit.collider.GetComponent<W2Item>())
                 {
