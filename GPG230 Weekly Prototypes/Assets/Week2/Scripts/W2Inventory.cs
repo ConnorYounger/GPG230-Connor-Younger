@@ -28,29 +28,31 @@ public class W2Inventory : MonoBehaviour
         switch (item.itemType.ToString())
         {
             case "key":
-                if(key != null)
+                if(key == null)
                     key = item;
                 break;
             case "axe":
-                if (axe != null)
+                if (axe == null)
                     axe = item;
                 break;
             case "ladder":
-                if (ladder != null)
+                if (ladder == null)
                     ladder = item;
                 break;
             case "map":
-                if (map != null)
+                if (map == null)
                     map = item;
                 break;
             case "motionSensor":
-                if (motionSensor != null)
+                if (motionSensor == null)
                     motionSensor = item;
                 break;
             case "sanityPills":
-                if (sanityPills != null)
+                if (sanityPills == null)
                     sanityPills = item;
                 break;
         }
+
+        Debug.Log("Added: " + item);
     }
 }

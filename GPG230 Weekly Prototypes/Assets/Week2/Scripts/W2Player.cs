@@ -39,7 +39,9 @@ public class W2Player : MonoBehaviour
     {
         if(currentItem != null)
         {
-            if(Vector3.Distance(transform.position, currentItem.transform.position) < 0.05f)
+            Debug.Log(Vector3.Distance(transform.position, currentItem.transform.position));
+
+            if(Vector3.Distance(transform.position, currentItem.transform.position) < 0.8f)
             {
                 CollectItem();
             }
