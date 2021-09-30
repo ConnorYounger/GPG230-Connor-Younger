@@ -27,14 +27,6 @@ public class W2Player : MonoBehaviour
 
     void MovePlayer()
     {
-        if(Vector3.Distance(transform.position, destinationPoint) < 0.1f)
-        {
-            navAgent.enabled = true;
-            navAgent.SetDestination(destinationPoint);
-        }
-        else
-        {
-            navAgent.enabled = false;
-        }
+        navAgent.SetDestination(destinationPoint);
     }
 }
