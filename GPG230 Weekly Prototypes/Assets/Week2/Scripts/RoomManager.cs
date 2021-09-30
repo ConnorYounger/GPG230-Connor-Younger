@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class RoomManager : MonoBehaviour
 {
+    [System.Serializable]
     public struct room
     {
-        
+        [SerializeField] public CinemachineVirtualCamera roomCam;
+        [SerializeField] public Transform[] roomEntrances;
     }
+
+    [SerializeField] public room[] rooms;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +26,7 @@ public class RoomManager : MonoBehaviour
         
     }
 
-    public void TravelToNewRoom(int roomIndex)
+    public void TravelToNewRoom(int roomIndex, int roomEntranceIndex)
     {
 
     }
