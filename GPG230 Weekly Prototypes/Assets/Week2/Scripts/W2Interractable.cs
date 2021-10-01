@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class W2Interractable : MonoBehaviour
 {
-    [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench };
+    [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench, duckTape, axeBody, axeHead, ladderBottom, ladderTop };
     public itemEnum interractableType;
 
     public bool isItem = true;
@@ -14,7 +14,8 @@ public class W2Interractable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        outline = gameObject.GetComponent<Outline>();
+        if(gameObject.GetComponent<Outline>())
+            outline = gameObject.GetComponent<Outline>();
         GameObject.Find("MainCamera").GetComponent<MouseInteraction>().AddItem(this);
     }
 
@@ -26,16 +27,19 @@ public class W2Interractable : MonoBehaviour
 
     public void MouseOver(Color color)
     {
-        outline.OutlineColor = color;
-        outline.enabled = true;
+        if (outline)
+        {
+            outline.OutlineColor = color;
+            outline.enabled = true;
 
-        StopCoroutine("DelayedHideOutline");
-        StartCoroutine("DelayedHideOutline");
+            StopCoroutine("DelayedHideOutline");
+            StartCoroutine("DelayedHideOutline");
+        }
     }
 
     public void ShowOutline(Color color)
     {
-        if (gameObject.active)
+        if (gameObject.active && outline)
         {
             outline.OutlineColor = color;
             outline.enabled = true;
@@ -60,25 +64,29 @@ public class W2Interractable : MonoBehaviour
 
     public void HideOutline()
     {
-        outline.enabled = false;
+        if (outline)
+            outline.enabled = false;
     }
 
     IEnumerator DelayedHideOutline()
     {
         yield return new WaitForSeconds(0.1f);
 
-        outline.enabled = false;
+        if (outline)
+            outline.enabled = false;
     }
 
     IEnumerator DelayedHideOutline2()
     {
         yield return new WaitForSeconds(1.5f);
 
-        outline.enabled = false;
+        if (outline)
+            outline.enabled = false;
     }
 
     private void OnDisable()
     {
-        outline.enabled = false;
+        if(outline)
+            outline.enabled = false;
     }
 }

@@ -21,8 +21,8 @@ public class W2Inventory : MonoBehaviour
     public Image ladderHalf1;
     public Image ladderHalf2;
 
-    public Image craftableAxe;
-    public Image craftableLadder;
+    public Button craftableAxe;
+    public Button craftableLadder;
 
     public Color showColour;
     public Color hideColour;
@@ -75,6 +75,8 @@ public class W2Inventory : MonoBehaviour
                 case "duckTape":
                     duckTapeCount++;
                     UpdateDuckTapeUI();
+                    CheckAxeCraftable();
+                    CheckLadderCraftable();
                     break;
                 case "axeBody":
                     if (!axeCrafted)
@@ -92,6 +94,22 @@ public class W2Inventory : MonoBehaviour
                         CheckAxeCraftable();
                     }
                     break;
+                case "ladderBottom":
+                    if (!ladderCrafted)
+                    {
+                        ladderHalf1.color = showColour;
+                        ladder1Collected = true;
+                        CheckLadderCraftable();
+                    }
+                    break;
+                case "ladderTop":
+                    if (!ladderCrafted)
+                    {
+                        ladderHalf2.color = showColour;
+                        ladder2Collected = true;
+                        CheckLadderCraftable();
+                    }
+                    break;
             }
 
             AddItem(item);
@@ -102,21 +120,45 @@ public class W2Inventory : MonoBehaviour
 
     public void CraftAxe()
     {
-        W2Interractable axe = new W2Interractable();
+        // Item creation
+        GameObject newItem = Instantiate(new GameObject(), transform.position, transform.rotation);
+        newItem.AddComponent<Outline>();
+        newItem.name = "AxeItem";
+        W2Interractable axe = newItem.AddComponent<W2Interractable>();
         axe.isItem = true;
         axe.CreateItem("axe");
-        AddItem(axe);
+        PickUpItem(axe);
         axeCrafted = true;
+        craftableAxe.interactable = false;
+
+        // Material costs
+        axeBodyCollected = false;
+        axeHeadCollected = false;
+        axeHeadImage.color = hideColour;
+        axeBodyImage.color = hideColour;
+        duckTapeCount--;
         UpdateDuckTapeUI();
     }
 
     public void CraftLadder()
     {
-        W2Interractable ladder = new W2Interractable();
+        // Item creation
+        GameObject newItem = Instantiate(new GameObject(), transform.position, transform.rotation);
+        newItem.AddComponent<Outline>();
+        newItem.name = "LadderItem";
+        W2Interractable ladder = newItem.AddComponent<W2Interractable>();
         ladder.isItem = true;
         ladder.CreateItem("ladder");
-        AddItem(ladder);
+        PickUpItem(ladder);
         ladderCrafted = true;
+        craftableLadder.interactable = false;
+
+        // Material costs
+        ladder1Collected = false;
+        ladder2Collected = false;
+        ladderHalf1.color = hideColour;
+        ladderHalf2.color = hideColour;
+        duckTapeCount--;
         UpdateDuckTapeUI();
     }
 
@@ -124,13 +166,13 @@ public class W2Inventory : MonoBehaviour
     {
         if(duckTapeCount > 0 && axeBodyCollected && axeHeadCollected)
         {
-            craftableAxe.color = showColour;
-            // button interractable
+            //craftableAxe.color = showColour;
+            craftableAxe.interactable = true;
         }
         else
         {
-            craftableAxe.color = hideColour;
-            // button un-interractable
+            //craftableAxe.color = hideColour;
+            craftableAxe.interactable = false;
         }
     }
 
@@ -138,13 +180,14 @@ public class W2Inventory : MonoBehaviour
     {
         if (duckTapeCount > 0 && ladder1Collected && ladder2Collected)
         {
-            craftableLadder.color = showColour;
-            // button interractable
+            //craftableLadder.color = showColour;
+            craftableLadder.interactable = true;
+            Debug.Log("Can craft ladder");
         }
         else
         {
-            craftableLadder.color = hideColour;
-            // button un-interractable
+            //craftableLadder.color = hideColour;
+            craftableLadder.interactable = false;
         }
     }
 
@@ -162,9 +205,10 @@ public class W2Inventory : MonoBehaviour
         {
             axeDuckTape.color = hideColour;
             ladderDuckTape.color = hideColour;
-            CheckAxeCraftable();
-            CheckLadderCraftable();
         }
+
+        CheckAxeCraftable();
+        CheckLadderCraftable();
     }
 
     void AddItem(W2Interractable item)
