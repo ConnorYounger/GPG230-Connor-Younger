@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class W2Item : MonoBehaviour
+public class W2Interractable : MonoBehaviour
 {
-    [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills };
-    public itemEnum itemType;
+    [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench };
+    public itemEnum interractableType;
+
+    public bool isItem = true;
 
     private Outline outline;
 

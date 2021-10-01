@@ -9,12 +9,12 @@ public class MouseInteraction : MonoBehaviour
     public Color mouseOverColor = Color.blue;
     public Color searchColor = Color.yellow;
 
-    private List<W2Item> items;
+    private List<W2Interractable> items;
     private List<W2Door> doors;
 
     void Awake()
     {
-        items = new List<W2Item>();
+        items = new List<W2Interractable>();
         doors = new List<W2Door>();
     }
 
@@ -37,9 +37,9 @@ public class MouseInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100))
         {
-            if (hit.collider != null && hit.collider.GetComponent<W2Item>())
+            if (hit.collider != null && hit.collider.GetComponent<W2Interractable>())
             {
-                hit.collider.GetComponent<W2Item>().MouseOver(mouseOverColor);
+                hit.collider.GetComponent<W2Interractable>().MouseOver(mouseOverColor);
             }
 
             if (hit.collider != null && hit.collider.GetComponent<W2Door>())
@@ -51,9 +51,9 @@ public class MouseInteraction : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.GetComponent<W2Item>())
+                    if (hit.collider.GetComponent<W2Interractable>())
                     {
-                        player.currentItem = hit.collider.GetComponent<W2Item>();
+                        player.currentInterractable = hit.collider.GetComponent<W2Interractable>();
                         player.SetNewDestination(hit.collider.transform.position);
                         Debug.Log("Hit: " + hit.collider.name);
 
@@ -64,7 +64,7 @@ public class MouseInteraction : MonoBehaviour
                         player.currentDoor = hit.collider.GetComponent<W2Door>();
                         player.SetNewDestination(hit.collider.transform.position);
 
-                        player.currentItem = null;
+                        player.currentInterractable = null;
                     }
                     else
                     {
@@ -81,7 +81,7 @@ public class MouseInteraction : MonoBehaviour
 
     public void Search()
     {
-        foreach(W2Item item in items)
+        foreach(W2Interractable item in items)
         {
             if (item.gameObject.active)
                 item.ShowOutline(searchColor);
@@ -94,7 +94,7 @@ public class MouseInteraction : MonoBehaviour
         }
     }
 
-    public void AddItem(W2Item item)
+    public void AddItem(W2Interractable item)
     {
         items.Add(item);
     }
@@ -107,7 +107,7 @@ public class MouseInteraction : MonoBehaviour
     void OffClick()
     {
         player.currentDoor = null;
-        player.currentItem = null;
+        player.currentInterractable = null;
     }
 
     void PlayerMovement()

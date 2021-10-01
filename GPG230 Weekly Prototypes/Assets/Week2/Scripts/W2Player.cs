@@ -10,7 +10,7 @@ public class W2Player : MonoBehaviour
 
     public W2Inventory inventory;
 
-    public W2Item currentItem;
+    public W2Interractable currentInterractable;
     public W2Door currentDoor;
 
     public float interractDistance = 0.8f;
@@ -43,11 +43,14 @@ public class W2Player : MonoBehaviour
 
     void ItemDistanceCheck()
     {
-        if(currentItem != null)
+        if(currentInterractable != null)
         {
-            if(Vector3.Distance(transform.position, currentItem.transform.position) < interractDistance)
+            if(Vector3.Distance(transform.position, currentInterractable.transform.position) < interractDistance)
             {
-                CollectItem();
+                if (currentInterractable.isItem)
+                    CollectItem();
+                else
+                    Interraction();
             }
         }
     }
@@ -75,11 +78,53 @@ public class W2Player : MonoBehaviour
 
     void CollectItem()
     {
-        if (currentItem != null)
+        if (currentInterractable != null)
         {
-            inventory.PickUpItem(currentItem);
+            inventory.PickUpItem(currentInterractable);
 
-            currentItem = null;
+            currentInterractable = null;
+        }
+    }
+
+    void Interraction()
+    {
+        if(currentInterractable != null)
+        {
+            switch (currentInterractable.interractableType.ToString())
+            {
+                case "frontDoor":
+                    if(inventory.key != null)
+                    {
+                        Debug.Log("Front door win");
+                    }
+                    else
+                    {
+                        Debug.Log("The door is locked, maybe there's a key around here somewhere");
+                    }
+                    break;
+                case "window":
+                    if (inventory.axe != null)
+                    {
+                        Debug.Log("Window win");
+                    }
+                    else
+                    {
+                        Debug.Log("Maybe I can break through this window with a weapon");
+                    }
+                    break;
+                case "highWindow":
+                    if (inventory.ladder != null)
+                    {
+                        Debug.Log("High window win");
+                    }
+                    else
+                    {
+                        Debug.Log("If only I can find something to reach that window");
+                    }
+                    break;
+                case "workBench":
+                    break;
+            }
         }
     }
 }

@@ -836,7 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navAgent: {fileID: 0}
   inventory: {fileID: 96704612}
-  currentItem: {fileID: 0}
+  currentInterractable: {fileID: 0}
   currentDoor: {fileID: 0}
   interractDistance: 1
 --- !u!136 &96704608
@@ -3924,7 +3924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 5
+  interractableType: 5
+  isItem: 1
 --- !u!65 &326389680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4214,6 +4215,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
   m_PrefabInstance: {fileID: 336147619}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &339431501
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 828459924}
+    m_Modifications:
+    - target: {fileID: 6781583631637072009, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: entranceIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072009, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: attachedRoomIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072012, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_Name
+      value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1174
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781583631637072015, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a2c0c63420584a7c99a4f89a19e51dd, type: 2}
+    m_RemovedComponents:
+    - {fileID: 6781583631637072009, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+--- !u!4 &339431502 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6781583631637072013, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+  m_PrefabInstance: {fileID: 339431501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &339431503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781583631637072012, guid: 156c2a5b492199c41a5929b7e5ccdca5, type: 3}
+  m_PrefabInstance: {fileID: 339431501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &339431504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339431503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractableType: 6
+  isItem: 0
 --- !u!1 &344610698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,7 +5759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 3
+  interractableType: 3
+  isItem: 1
 --- !u!65 &450546386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6499,7 +6595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 2
+  interractableType: 2
+  isItem: 1
 --- !u!65 &568558632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8474,6 +8571,7 @@ Transform:
   m_Children:
   - {fileID: 2000211171}
   - {fileID: 101846138}
+  - {fileID: 339431502}
   m_Father: {fileID: 451680543}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13449,7 +13547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
+  interractableType: 1
+  isItem: 1
 --- !u!65 &1375010757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17445,7 +17544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  interractableType: 0
+  isItem: 1
 --- !u!1001 &1769185783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20612,7 +20712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 4
+  interractableType: 5
+  isItem: 1
 --- !u!65 &2010415257
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class W2Inventory : MonoBehaviour
 {
-    public W2Item key;
-    public W2Item axe;
-    public W2Item ladder;
-    public W2Item map;
-    public W2Item motionSensor;
-    public W2Item sanityPills;
+    public W2Interractable key;
+    public W2Interractable axe;
+    public W2Interractable ladder;
+    public W2Interractable map;
+    public W2Interractable motionSensor;
+    public W2Interractable sanityPills;
 
     public Image keyImg;
     public Image axeImg;
@@ -33,9 +33,9 @@ public class W2Inventory : MonoBehaviour
         
     }
 
-    public void PickUpItem(W2Item item)
+    public void PickUpItem(W2Interractable item)
     {
-        switch (item.itemType.ToString())
+        switch (item.interractableType.ToString())
         {
             case "key":
                 if(key == null)
@@ -78,7 +78,7 @@ public class W2Inventory : MonoBehaviour
         Debug.Log("Added: " + item);
     }
 
-    void AddItem(W2Item item)
+    void AddItem(W2Interractable item)
     {
         item.gameObject.SetActive(false);
     }
