@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class W2Player : MonoBehaviour
 {
-    private NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
     private Vector3 destinationPoint;
 
     public W2Inventory inventory;
@@ -31,12 +31,14 @@ public class W2Player : MonoBehaviour
 
     public void SetNewDestination(Vector3 position)
     {
+        navAgent.enabled = true;
         destinationPoint = position;
     }
 
     void MovePlayer()
     {
-        navAgent.SetDestination(destinationPoint);
+        if(navAgent.enabled)
+            navAgent.SetDestination(destinationPoint);
     }
 
     void ItemDistanceCheck()

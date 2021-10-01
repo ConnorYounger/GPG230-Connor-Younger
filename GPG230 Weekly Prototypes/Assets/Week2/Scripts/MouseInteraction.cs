@@ -54,7 +54,7 @@ public class MouseInteraction : MonoBehaviour
                     if (hit.collider.GetComponent<W2Item>())
                     {
                         player.currentItem = hit.collider.GetComponent<W2Item>();
-                        player.SetNewDestination(hit.point);
+                        player.SetNewDestination(hit.collider.transform.position);
                         Debug.Log("Hit: " + hit.collider.name);
 
                         player.currentDoor = null;
@@ -62,7 +62,7 @@ public class MouseInteraction : MonoBehaviour
                     else if (hit.collider.GetComponent<W2Door>())
                     {
                         player.currentDoor = hit.collider.GetComponent<W2Door>();
-                        player.SetNewDestination(hit.point);
+                        player.SetNewDestination(hit.collider.transform.position);
 
                         player.currentItem = null;
                     }
