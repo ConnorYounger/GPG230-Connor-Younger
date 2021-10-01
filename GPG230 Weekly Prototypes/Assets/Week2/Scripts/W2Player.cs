@@ -93,7 +93,7 @@ public class W2Player : MonoBehaviour
             switch (currentInterractable.interractableType.ToString())
             {
                 case "frontDoor":
-                    if(inventory.key != null)
+                    if(inventory.SearchForItem("key") != null)
                     {
                         Debug.Log("Front door win");
                     }
@@ -103,7 +103,7 @@ public class W2Player : MonoBehaviour
                     }
                     break;
                 case "window":
-                    if (inventory.axe != null)
+                    if (inventory.SearchForItem("axe") != null)
                     {
                         Debug.Log("Window win");
                     }
@@ -113,7 +113,7 @@ public class W2Player : MonoBehaviour
                     }
                     break;
                 case "highWindow":
-                    if (inventory.ladder != null)
+                    if (inventory.SearchForItem("ladder") != null)
                     {
                         Debug.Log("High window win");
                     }

@@ -5,12 +5,7 @@ using UnityEngine.UI;
 
 public class W2Inventory : MonoBehaviour
 {
-    public W2Interractable key;
-    public W2Interractable axe;
-    public W2Interractable ladder;
-    public W2Interractable map;
-    public W2Interractable motionSensor;
-    public W2Interractable sanityPills;
+    public List<W2Interractable> items;
 
     public Image keyImg;
     public Image axeImg;
@@ -24,7 +19,7 @@ public class W2Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        items = new List<W2Interractable>();
     }
 
     // Update is called once per frame
@@ -35,44 +30,31 @@ public class W2Inventory : MonoBehaviour
 
     public void PickUpItem(W2Interractable item)
     {
-        switch (item.interractableType.ToString())
+        if (item.isItem)
         {
-            case "key":
-                if(key == null)
-                    key = item;
+            switch (item.interractableType.ToString())
+            {
+                case "key":
                     keyImg.color = showColour;
-                    AddItem(item);
-                break;
-            case "axe":
-                if (axe == null)
-                    axe = item;
+                    break;
+                case "axe":
                     axeImg.color = showColour;
-                    AddItem(item);
-                break;
-            case "ladder":
-                if (ladder == null)
-                    ladder = item;
+                    break;
+                case "ladder":
                     ladderImg.color = showColour;
-                    AddItem(item);
-                break;
-            case "map":
-                if (map == null)
-                    map = item;
+                    break;
+                case "map":
                     mapImg.color = showColour;
-                    AddItem(item);
-                break;
-            case "motionSensor":
-                if (motionSensor == null)
-                    motionSensor = item;
+                    break;
+                case "motionSensor":
                     motionSensorImg.color = showColour;
-                    AddItem(item);
-                break;
-            case "santiyPills":
-                if (sanityPills == null)
-                    sanityPills = item;
+                    break;
+                case "santiyPills":
                     sanityPillsImg.color = showColour;
-                    AddItem(item);
-                break;
+                    break;
+            }
+
+            AddItem(item);
         }
 
         Debug.Log("Added: " + item);
@@ -81,5 +63,19 @@ public class W2Inventory : MonoBehaviour
     void AddItem(W2Interractable item)
     {
         item.gameObject.SetActive(false);
+        items.Add(item);
+    }
+
+    public W2Interractable SearchForItem(string itemName)
+    {
+        W2Interractable foundItem = null;
+
+        foreach (W2Interractable item in items)
+        {
+            if (item.interractableType.ToString() == itemName)
+                foundItem = item;
+        }
+
+        return foundItem;
     }
 }

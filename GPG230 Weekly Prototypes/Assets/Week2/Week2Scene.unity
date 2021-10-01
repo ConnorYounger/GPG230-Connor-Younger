@@ -928,12 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b789af977a824641a2acd551021f856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 0}
-  axe: {fileID: 0}
-  ladder: {fileID: 0}
-  map: {fileID: 0}
-  motionSensor: {fileID: 0}
-  sanityPills: {fileID: 0}
+  items: []
   keyImg: {fileID: 1598554584}
   axeImg: {fileID: 1670959051}
   ladderImg: {fileID: 277890462}
@@ -20712,7 +20707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interractableType: 5
+  interractableType: 4
   isItem: 1
 --- !u!65 &2010415257
 BoxCollider:
