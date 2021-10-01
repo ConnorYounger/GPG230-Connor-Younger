@@ -45,6 +45,19 @@ public class W2Interractable : MonoBehaviour
         }
     }
 
+    public void CreateItem(string type)
+    {
+        switch (type)
+        {
+            case "axe":
+                interractableType = itemEnum.axe;
+                break;
+            case "ladder":
+                interractableType = itemEnum.ladder;
+                break;
+        }
+    }
+
     public void HideOutline()
     {
         outline.enabled = false;
