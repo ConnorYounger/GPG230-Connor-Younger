@@ -40,11 +40,14 @@ public class W2Door : MonoBehaviour
 
     public void ShowOutline(Color color)
     {
-        outline.OutlineColor = color;
-        outline.enabled = true;
+        if (gameObject.active)
+        {
+            outline.OutlineColor = color;
+            outline.enabled = true;
 
-        StopCoroutine("DelayedHideOutline2");
-        StartCoroutine("DelayedHideOutline2");
+            StopCoroutine("DelayedHideOutline2");
+            StartCoroutine("DelayedHideOutline2");
+        }
     }
 
     public void HideOutline()
@@ -63,6 +66,11 @@ public class W2Door : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
+        outline.enabled = false;
+    }
+
+    private void OnDisable()
+    {
         outline.enabled = false;
     }
 }

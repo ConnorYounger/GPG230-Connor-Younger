@@ -83,12 +83,14 @@ public class MouseInteraction : MonoBehaviour
     {
         foreach(W2Item item in items)
         {
-            item.ShowOutline(searchColor);
+            if (item.gameObject.active)
+                item.ShowOutline(searchColor);
         }
 
         foreach(W2Door door in doors)
         {
-            door.ShowOutline(searchColor);
+            if(door.gameObject.active)
+                door.ShowOutline(searchColor);
         }
     }
 
