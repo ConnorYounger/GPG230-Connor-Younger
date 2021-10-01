@@ -8,6 +8,7 @@ public class RoomManager : MonoBehaviour
     [System.Serializable]
     public struct room
     {
+        [SerializeField] public GameObject roomEGO;
         [SerializeField] public CinemachineVirtualCamera roomCam;
         [SerializeField] public Transform[] roomEntrances;
     }
@@ -19,7 +20,18 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Hide rooms at the start
+        for (int i = 0; i < rooms.Length; i++)
+        {
+            if (i == 0)
+            {
+                ShowRooms(0, true);
+            }
+            else
+            {
+                ShowRooms(i, false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -36,7 +48,7 @@ public class RoomManager : MonoBehaviour
         {
             if(i == roomIndex)
             {
-                rooms[i].roomCam.gameObject.SetActive(true);
+                ShowRooms(i, true);
 
                 // Teleport player
                 player.GetComponent<W2Player>().navAgent.enabled = false;
@@ -48,9 +60,15 @@ public class RoomManager : MonoBehaviour
             }
             else
             {
-                rooms[i].roomCam.gameObject.SetActive(false);
+                ShowRooms(i, false);
             }
         }
+    }
+
+    void ShowRooms(int index, bool value)
+    {
+        rooms[index].roomEGO.SetActive(value);
+        rooms[index].roomCam.gameObject.SetActive(value);
     }
 
     IEnumerator StopPlayerMovement()
