@@ -11,9 +11,15 @@ public class W2Player : MonoBehaviour
     public W2Inventory inventory;
 
     public W2Interractable currentInterractable;
+    public MouseInteraction mouseInteraction;
     public W2Door currentDoor;
 
     public float interractDistance = 0.8f;
+
+    private bool canInput = true;
+
+    [Header("UI Refrences")]
+    public GameObject workBenchUI;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +30,12 @@ public class W2Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-        ItemDistanceCheck();
-        DoorDistanceCheck();
+        if (canInput)
+        {
+            MovePlayer();
+            ItemDistanceCheck();
+            DoorDistanceCheck();
+        }
     }
 
     public void SetNewDestination(Vector3 position)
@@ -123,8 +132,19 @@ public class W2Player : MonoBehaviour
                     }
                     break;
                 case "workBench":
+                    currentInterractable = null;
+                    workBenchUI.SetActive(true);
+                    canInput = false;
+                    mouseInteraction.caninterract = false;
                     break;
             }
         }
+    }
+
+    public void HideWorkBenchUI()
+    {
+        workBenchUI.SetActive(false);
+        canInput = true;
+        mouseInteraction.caninterract = true;
     }
 }

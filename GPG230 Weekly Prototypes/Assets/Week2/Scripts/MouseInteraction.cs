@@ -12,6 +12,8 @@ public class MouseInteraction : MonoBehaviour
     private List<W2Interractable> items;
     private List<W2Door> doors;
 
+    public bool caninterract = true;
+
     void Awake()
     {
         items = new List<W2Interractable>();
@@ -26,8 +28,11 @@ public class MouseInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MouseClick();
-        PlayerMovement();
+        if (caninterract)
+        {
+            MouseClick();
+            PlayerMovement();
+        }
     }
 
     void MouseClick()
