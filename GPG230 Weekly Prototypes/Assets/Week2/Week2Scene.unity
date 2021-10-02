@@ -41330,7 +41330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 9
   isItem: 0
-  interactDistance: 0.8
+  interactDistance: 1.5
   itemName: 
   dialogueTexts: []
   itemSprite: {fileID: 0}

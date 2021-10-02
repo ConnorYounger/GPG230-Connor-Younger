@@ -42,9 +42,10 @@ public class W2ItemSpawning2 : MonoBehaviour
             RaycastHit hit;
             Physics.Raycast(spawnPoint.position, Vector3.down, out hit);
 
-            Quaternion randRotation = new Quaternion(0, Random.Range(0, 360), 0, 1);
+            Quaternion randRotation = new Quaternion(0, Random.Range(0f, 1f), 0, 1);
 
             GameObject spawnedItem = Instantiate(sp.itemPrefab, hit.point, randRotation);
+            spawnedItem.transform.parent = spawnPoint.transform;
 
             if (sp.smallItem)
             {
