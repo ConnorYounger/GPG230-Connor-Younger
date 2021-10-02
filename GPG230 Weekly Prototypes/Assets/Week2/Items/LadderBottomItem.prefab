@@ -96,7 +96,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 2.2, z: 0.2}
+  m_Size: {x: 0.8, y: 0.2, z: 2.2}
   m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &5383901319001086817
 MonoBehaviour:
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 13
   isItem: 1
-  interactDistance: 0.8
+  interactDistance: 1.2
   itemName: Broken Ladder Base
   dialogueTexts:
   - Pretty useless on it's own, but iof I can find the top half and something to
@@ -165,27 +165,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.995
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.082
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2520a55b085dd8a4ca4463bf2a4cdee3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

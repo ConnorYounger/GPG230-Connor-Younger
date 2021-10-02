@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 10
   isItem: 1
-  interactDistance: 0.8
+  interactDistance: 1.2
   itemName: Duck Tape
   dialogueTexts:
   - Maybe I could use this to craft something that will help me escape. I should
