@@ -24,6 +24,8 @@ public class W2Player : MonoBehaviour
     public GameObject inventoryUI;
     public GameObject dialogueUI;
     public TMP_Text dialogueText;
+    public GameObject winUI;
+    public TMP_Text winFlavorText;
 
     // Start is called before the first frame update
     void Start()
@@ -108,7 +110,7 @@ public class W2Player : MonoBehaviour
                 case "frontDoor":
                     if(inventory.SearchForItem("key") != null)
                     {
-                        Debug.Log("Front door win");
+                        Win();
                     }
                     else
                     {
@@ -118,7 +120,7 @@ public class W2Player : MonoBehaviour
                 case "window":
                     if (inventory.SearchForItem("axe") != null)
                     {
-                        Debug.Log("Window win");
+                        Win();
                     }
                     else
                     {
@@ -128,7 +130,7 @@ public class W2Player : MonoBehaviour
                 case "highWindow":
                     if (inventory.SearchForItem("ladder") != null)
                     {
-                        Debug.Log("High window win");
+                        Win();
                     }
                     else
                     {
@@ -164,12 +166,17 @@ public class W2Player : MonoBehaviour
 
     IEnumerator HideDialogueUI()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(7);
+
+        CloseDilogueUI();
+    }
+
+    public void CloseDilogueUI()
+    {
+        dialogueUI.SetActive(false);
 
         dialogueText.text = "";
         dialogueText.enabled = false;
-
-        dialogueUI.SetActive(false);
     }
 
     public void ShowInventoryUI()
@@ -195,5 +202,12 @@ public class W2Player : MonoBehaviour
     {
         canInput = value;
         mouseInteraction.caninterract = value;
+    }
+
+    void Win()
+    {
+        winFlavorText.text = currentInterractable.dialogueTexts[1];
+        winUI.SetActive(true);
+        PlayerInterractable(false);
     }
 }
