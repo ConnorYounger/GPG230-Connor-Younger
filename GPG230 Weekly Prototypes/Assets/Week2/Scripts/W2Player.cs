@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class W2Player : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class W2Player : MonoBehaviour
     [Header("UI Refrences")]
     public GameObject workBenchUI;
     public GameObject inventoryUI;
+    public GameObject dialogueUI;
+    public TMP_Text dialogueText;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +58,7 @@ public class W2Player : MonoBehaviour
     {
         if(currentInterractable != null)
         {
-            if(Vector3.Distance(transform.position, currentInterractable.transform.position) < interractDistance)
+            if(Vector3.Distance(transform.position, currentInterractable.transform.position) < currentInterractable.interactDistance)
             {
                 if (currentInterractable.isItem)
                     CollectItem();
@@ -69,7 +72,7 @@ public class W2Player : MonoBehaviour
     {
         if (currentDoor != null)
         {
-            if (Vector3.Distance(transform.position, currentDoor.transform.position) < 0.8f)
+            if (Vector3.Distance(transform.position, currentDoor.transform.position) < interractDistance)
             {
                 UseDoor();
             }
@@ -109,7 +112,7 @@ public class W2Player : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("The door is locked, maybe there's a key around here somewhere");
+                        DisplayDialogueUI(0);
                     }
                     break;
                 case "window":
@@ -119,7 +122,7 @@ public class W2Player : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Maybe I can break through this window with a weapon");
+                        DisplayDialogueUI(0);
                     }
                     break;
                 case "highWindow":
@@ -129,7 +132,7 @@ public class W2Player : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("If only I can find something to reach that window");
+                        DisplayDialogueUI(0);
                     }
                     break;
                 case "workBench":
@@ -138,18 +141,49 @@ public class W2Player : MonoBehaviour
                     canInput = false;
                     mouseInteraction.caninterract = false;
                     break;
+                case "barricadedWindow":
+                    DisplayDialogueUI(0);
+                    break;
             }
         }
+    }
+
+    public void DisplayDialogueUI(int text)
+    {
+        if(currentInterractable != null)
+        {
+            dialogueText.text = currentInterractable.dialogueTexts[text];
+            dialogueText.enabled = true;
+
+            dialogueUI.SetActive(true);
+
+            StopCoroutine("HideDialogueUI");
+            StartCoroutine("HideDialogueUI");
+        }
+    }
+
+    IEnumerator HideDialogueUI()
+    {
+        yield return new WaitForSeconds(10);
+
+        dialogueText.text = "";
+        dialogueText.enabled = false;
+
+        dialogueUI.SetActive(false);
     }
 
     public void ShowInventoryUI()
     {
         inventoryUI.SetActive(true);
+        canInput = false;
+        mouseInteraction.caninterract = false;
     }
 
     public void HideInventoryUI()
     {
         inventoryUI.SetActive(false);
+        canInput = true;
+        mouseInteraction.caninterract = true;
     }
 
     public void HideWorkBenchUI()

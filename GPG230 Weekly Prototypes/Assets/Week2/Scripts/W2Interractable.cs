@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class W2Interractable : MonoBehaviour
 {
-    [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench, duckTape, axeBody, axeHead, ladderBottom, ladderTop };
+    [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench, duckTape, axeBody, axeHead, ladderBottom, ladderTop, barricadedWindow };
     public itemEnum interractableType;
 
     public bool isItem = true;
+    public float interactDistance = 0.8f;
+
+    [TextArea] public string[] dialogueTexts;
 
     public Sprite itemSprite;
     private Outline outline;

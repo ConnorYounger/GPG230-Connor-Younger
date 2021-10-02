@@ -12,19 +12,11 @@ public class W2ItemSpawning : MonoBehaviour
         public List<Transform> itemSpawnPoints;
     }
 
-    [SerializeField]
     public spawnPoints[] itemSpawnPoints;
 
-    // Start is called before the first frame update
     void Start()
     {
         SpawnItems();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SpawnItems()
@@ -36,7 +28,7 @@ public class W2ItemSpawning : MonoBehaviour
 
             GameObject spawnedItem = Instantiate(sp.itemPrefab, spawnPoint.position, spawnPoint.rotation);
 
-            // Remove spawn point for other spawn points
+            // Remove the spawn point for other item spawns
             foreach (spawnPoints s in itemSpawnPoints)
             {
                 if (sp.itemPrefab != s.itemPrefab)
@@ -46,15 +38,11 @@ public class W2ItemSpawning : MonoBehaviour
                     foreach (Transform point in s.itemSpawnPoints)
                     {
                         if(point == spawnPoint)
-                        {
                             pointToRemove = point;
-                        }
                     }
 
                     if (pointToRemove != null)
-                    {
                         s.itemSpawnPoints.Remove(pointToRemove);
-                    }
                 }
             }
         }
