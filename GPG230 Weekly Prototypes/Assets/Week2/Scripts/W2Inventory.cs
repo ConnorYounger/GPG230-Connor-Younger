@@ -14,15 +14,22 @@ public class W2Inventory : MonoBehaviour
     public Image motionSensorImg;
     public Image sanityPillsImg;
 
+    [Header("Workbench UI")]
     public Image axeBodyImage;
     public Image axeHeadImage;
     public Image axeDuckTape;
     public Image ladderDuckTape;
     public Image ladderHalf1;
     public Image ladderHalf2;
-
     public Button craftableAxe;
     public Button craftableLadder;
+
+    [Header("Inventory UI")]
+    public GameObject baseInventorySlot;
+    public Transform inventoryGroup;
+
+    public GameObject axeItem;
+    public GameObject ladderItem;
 
     public Color showColour;
     public Color hideColour;
@@ -121,13 +128,8 @@ public class W2Inventory : MonoBehaviour
     public void CraftAxe()
     {
         // Item creation
-        GameObject newItem = Instantiate(new GameObject(), transform.position, transform.rotation);
-        newItem.AddComponent<Outline>();
-        newItem.name = "AxeItem";
-        W2Interractable axe = newItem.AddComponent<W2Interractable>();
-        axe.isItem = true;
-        axe.CreateItem("axe");
-        PickUpItem(axe);
+        GameObject axe = Instantiate(axeItem, transform.position, transform.rotation);
+        PickUpItem(axe.GetComponent<W2Interractable>());
         axeCrafted = true;
         craftableAxe.interactable = false;
 
@@ -137,19 +139,17 @@ public class W2Inventory : MonoBehaviour
         axeHeadImage.color = hideColour;
         axeBodyImage.color = hideColour;
         duckTapeCount--;
+        RemoveItem(SearchForItem("axeBody"));
+        RemoveItem(SearchForItem("axeHead"));
+        RemoveItem(SearchForItem("duckTape"));
         UpdateDuckTapeUI();
     }
 
     public void CraftLadder()
     {
         // Item creation
-        GameObject newItem = Instantiate(new GameObject(), transform.position, transform.rotation);
-        newItem.AddComponent<Outline>();
-        newItem.name = "LadderItem";
-        W2Interractable ladder = newItem.AddComponent<W2Interractable>();
-        ladder.isItem = true;
-        ladder.CreateItem("ladder");
-        PickUpItem(ladder);
+        GameObject newItem = Instantiate(ladderItem, transform.position, transform.rotation);
+        PickUpItem(newItem.GetComponent<W2Interractable>());
         ladderCrafted = true;
         craftableLadder.interactable = false;
 
@@ -159,6 +159,9 @@ public class W2Inventory : MonoBehaviour
         ladderHalf1.color = hideColour;
         ladderHalf2.color = hideColour;
         duckTapeCount--;
+        RemoveItem(SearchForItem("ladderBottom"));
+        RemoveItem(SearchForItem("ladderTop"));
+        RemoveItem(SearchForItem("duckTape"));
         UpdateDuckTapeUI();
     }
 
@@ -215,6 +218,32 @@ public class W2Inventory : MonoBehaviour
     {
         item.gameObject.SetActive(false);
         items.Add(item);
+
+        // Inventory UI
+        GameObject newSlot = Instantiate(baseInventorySlot, inventoryGroup.position, inventoryGroup.rotation);
+        newSlot.transform.parent = inventoryGroup.transform;
+        newSlot.GetComponent<W2ItemSlot>().itemType = item.interractableType.ToString();
+
+        if(item.itemSprite)
+            newSlot.transform.GetChild(0).GetComponent<Image>().sprite = item.itemSprite;
+    }
+
+    void RemoveItem(W2Interractable item)
+    {
+        GameObject itemToRemove = null;
+
+        foreach(Transform child in inventoryGroup.transform)
+        {
+            if(child.GetComponent<W2ItemSlot>().itemType == item.interractableType.ToString())
+            {
+                itemToRemove = child.gameObject;
+            }
+        }
+
+        items.Remove(item);
+
+        if (itemToRemove != null)
+            Destroy(itemToRemove);
     }
 
     public W2Interractable SearchForItem(string itemName)

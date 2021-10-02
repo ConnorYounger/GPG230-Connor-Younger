@@ -9,6 +9,7 @@ public class W2Interractable : MonoBehaviour
 
     public bool isItem = true;
 
+    public Sprite itemSprite;
     private Outline outline;
 
     // Start is called before the first frame update

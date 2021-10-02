@@ -20,6 +20,7 @@ public class W2Player : MonoBehaviour
 
     [Header("UI Refrences")]
     public GameObject workBenchUI;
+    public GameObject inventoryUI;
 
     // Start is called before the first frame update
     void Start()
@@ -139,6 +140,16 @@ public class W2Player : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void ShowInventoryUI()
+    {
+        inventoryUI.SetActive(true);
+    }
+
+    public void HideInventoryUI()
+    {
+        inventoryUI.SetActive(false);
     }
 
     public void HideWorkBenchUI()
