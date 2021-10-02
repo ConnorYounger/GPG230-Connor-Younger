@@ -111,6 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 1
   isItem: 1
+  interactDistance: 0.8
+  itemName: Axe
+  dialogueTexts:
+  - I could use this to break through an insecure window and escape!
   itemSprite: {fileID: 21300000, guid: 437d5ac11c6c34c1ca3efef2000e7f12, type: 3}
 --- !u!114 &284603326451526046
 MonoBehaviour:

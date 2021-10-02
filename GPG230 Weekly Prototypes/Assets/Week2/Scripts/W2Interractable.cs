@@ -10,6 +10,7 @@ public class W2Interractable : MonoBehaviour
     public bool isItem = true;
     public float interactDistance = 0.8f;
 
+    public string itemName;
     [TextArea] public string[] dialogueTexts;
 
     public Sprite itemSprite;

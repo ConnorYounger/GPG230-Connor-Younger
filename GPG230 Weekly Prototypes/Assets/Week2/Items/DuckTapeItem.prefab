@@ -111,6 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 10
   isItem: 1
+  interactDistance: 0.8
+  itemName: Duck Tape
+  dialogueTexts:
+  - Maybe I could use this to craft something that will help me escape. I should
+    look for more pieces...
   itemSprite: {fileID: 21300000, guid: 58818255ffb204f62875c8fca7ffabc0, type: 3}
 --- !u!114 &4193089196319789897
 MonoBehaviour:

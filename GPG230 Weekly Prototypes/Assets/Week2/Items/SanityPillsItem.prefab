@@ -111,6 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 5
   isItem: 1
+  interactDistance: 0.8
+  itemName: Sanity Pills
+  dialogueTexts:
+  - Could keep me sane for a little while longer, although I'm not sure if I'd trust
+    these...
   itemSprite: {fileID: 21300000, guid: ae958025593b34aa39002fab69df1156, type: 3}
 --- !u!114 &8863945959346119532
 MonoBehaviour:

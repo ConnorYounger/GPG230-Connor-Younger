@@ -111,6 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 14
   isItem: 1
+  interactDistance: 0.8
+  itemName: Broken Ladder Top
+  dialogueTexts:
+  - Pretty useless on it's own, but iof I can find the bottom half and something
+    to fix it with, I might be able to escape through the celing or a high window...
   itemSprite: {fileID: 21300000, guid: 61049f96ef8f745a1b9b93386a83f97d, type: 3}
 --- !u!114 &2312105951449088676
 MonoBehaviour:

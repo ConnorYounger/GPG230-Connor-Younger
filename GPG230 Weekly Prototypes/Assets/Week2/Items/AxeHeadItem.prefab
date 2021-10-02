@@ -111,6 +111,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 12
   isItem: 1
+  interactDistance: 0.8
+  itemName: Axe Head
+  dialogueTexts:
+  - The top half of an axe. If I could find the bottom half and something to hold
+    it together, I might be able to craft an axe...
   itemSprite: {fileID: 21300000, guid: 8cce3e31efb4846b9984c5212b942885, type: 3}
 --- !u!114 &7261372316973659855
 MonoBehaviour:

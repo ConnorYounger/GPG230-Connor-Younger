@@ -136,10 +136,10 @@ public class W2Player : MonoBehaviour
                     }
                     break;
                 case "workBench":
+                    inventory.CloseItemPickUpDisplay();
                     currentInterractable = null;
                     workBenchUI.SetActive(true);
-                    canInput = false;
-                    mouseInteraction.caninterract = false;
+                    PlayerInterractable(false);
                     break;
                 case "barricadedWindow":
                     DisplayDialogueUI(0);
@@ -174,22 +174,26 @@ public class W2Player : MonoBehaviour
 
     public void ShowInventoryUI()
     {
+        inventory.CloseItemPickUpDisplay();
         inventoryUI.SetActive(true);
-        canInput = false;
-        mouseInteraction.caninterract = false;
+        PlayerInterractable(false);
     }
 
     public void HideInventoryUI()
     {
         inventoryUI.SetActive(false);
-        canInput = true;
-        mouseInteraction.caninterract = true;
+        PlayerInterractable(true);
     }
 
     public void HideWorkBenchUI()
     {
         workBenchUI.SetActive(false);
-        canInput = true;
-        mouseInteraction.caninterract = true;
+        PlayerInterractable(true);
+    }
+
+    public void PlayerInterractable(bool value)
+    {
+        canInput = value;
+        mouseInteraction.caninterract = value;
     }
 }

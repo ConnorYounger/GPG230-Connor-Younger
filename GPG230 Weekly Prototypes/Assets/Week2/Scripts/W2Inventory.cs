@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class W2Inventory : MonoBehaviour
 {
+    public W2Player player;
+
     public List<W2Interractable> items;
 
     public Image keyImg;
@@ -27,6 +30,11 @@ public class W2Inventory : MonoBehaviour
     [Header("Inventory UI")]
     public GameObject baseInventorySlot;
     public Transform inventoryGroup;
+
+    public GameObject pickUpItemUI;
+    public Image itemDisplaySlot;
+    public TMP_Text itemNameField;
+    public TMP_Text itemTextField;
 
     public GameObject axeItem;
     public GameObject ladderItem;
@@ -143,6 +151,8 @@ public class W2Inventory : MonoBehaviour
         RemoveItem(SearchForItem("axeHead"));
         RemoveItem(SearchForItem("duckTape"));
         UpdateDuckTapeUI();
+
+        player.HideWorkBenchUI();
     }
 
     public void CraftLadder()
@@ -163,6 +173,8 @@ public class W2Inventory : MonoBehaviour
         RemoveItem(SearchForItem("ladderTop"));
         RemoveItem(SearchForItem("duckTape"));
         UpdateDuckTapeUI();
+
+        player.HideWorkBenchUI();
     }
 
     void CheckAxeCraftable()
@@ -226,6 +238,9 @@ public class W2Inventory : MonoBehaviour
 
         if(item.itemSprite)
             newSlot.transform.GetChild(0).GetComponent<Image>().sprite = item.itemSprite;
+
+        StopCoroutine("DisplayPickUpItemUI");
+        StartCoroutine("DisplayPickUpItemUI", item);
     }
 
     void RemoveItem(W2Interractable item)
@@ -257,5 +272,27 @@ public class W2Inventory : MonoBehaviour
         }
 
         return foundItem;
+    }
+
+    public IEnumerator DisplayPickUpItemUI(W2Interractable item)
+    {
+        itemNameField.text = "Picked up " + item.itemName + "!";
+
+        if(item.itemSprite != null)
+            itemDisplaySlot.sprite = item.itemSprite;
+
+        if (item.dialogueTexts.Length > 0)
+            itemTextField.text = item.dialogueTexts[0];
+
+        pickUpItemUI.SetActive(true);
+
+        yield return new WaitForSeconds(7);
+
+        CloseItemPickUpDisplay();
+    }
+
+    public void CloseItemPickUpDisplay()
+    {
+        pickUpItemUI.SetActive(false);
     }
 }
