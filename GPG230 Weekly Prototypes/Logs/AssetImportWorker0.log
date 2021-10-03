@@ -15,11 +15,11 @@ F:/Connor Stuff/SAE/Game Design/GPG230/WeeklyPrototypes/GPG230-Connor-Younger/GP
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54191
+56144
 Successfully changed project path to: F:/Connor Stuff/SAE/Game Design/GPG230/WeeklyPrototypes/GPG230-Connor-Younger/GPG230 Weekly Prototypes
 F:/Connor Stuff/SAE/Game Design/GPG230/WeeklyPrototypes/GPG230-Connor-Younger/GPG230 Weekly Prototypes
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 44.93 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 117.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -35,5 +35,1341 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56948
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56344
 Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.019258 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 107.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.410 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001379 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.905 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.53 seconds
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1410 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.0 MB.
+System memory in use after: 91.0 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1869.
+Total: 1.863400 ms (FindLiveObjects: 0.158700 ms CreateObjectMapping: 0.049800 ms MarkObjects: 1.551400 ms  DeleteObjects: 0.101900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/DownloadedModels/wood-plank/source/model/WoodenPlank.fbx
+  artifactKey: Guid(c44e2cd96e6437c4ea42cc3a069ae5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/WoodenPlank.fbx using Guid(c44e2cd96e6437c4ea42cc3a069ae5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c50a4b6998d1514d8a2e02441e18e4dc') in 0.519630 seconds
+  Import took 0.558871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_AO.jpg
+  artifactKey: Guid(572680a8f53b2f2469443456e2424020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_AO.jpg using Guid(572680a8f53b2f2469443456e2424020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '684cd2eed2fe8b599dd46016c9a86efe') in 0.249139 seconds
+  Import took 0.301443 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000687 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/model.dae
+  artifactKey: Guid(f8f09ff29422df54b96d98fffc62ea83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/model.dae using Guid(f8f09ff29422df54b96d98fffc62ea83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e72dd1f2ff7284358848abd13e36de2') in 0.097257 seconds
+  Import took 0.101031 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_normal.jpg
+  artifactKey: Guid(ef09591f3eea9904fafd50be2595fd1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_normal.jpg using Guid(ef09591f3eea9904fafd50be2595fd1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19bb6f1bcca07b401c72b341a1b16450') in 0.079102 seconds
+  Import took 0.102410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_metallic.jpg
+  artifactKey: Guid(bf048144692573a4bbac00752d7801e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_metallic.jpg using Guid(bf048144692573a4bbac00752d7801e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ec29bb208d6dddb2e376d4af151415a') in 0.107943 seconds
+  Import took 0.143047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_albedo.jpg
+  artifactKey: Guid(2da263ba264db3f4ca39388760e84a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_albedo.jpg using Guid(2da263ba264db3f4ca39388760e84a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d713145346f88f1310ad67c3d0be628') in 0.113613 seconds
+  Import took 0.133748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures
+  artifactKey: Guid(dc58d00b703b115439fb40ffedb3f438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures using Guid(dc58d00b703b115439fb40ffedb3f438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd80fdd1c4d880fe03dd2f413b2456048') in 0.066058 seconds
+  Import took 0.104320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_roughness.jpg
+  artifactKey: Guid(e06215e9fc1da27448ad475d2518d6a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_roughness.jpg using Guid(e06215e9fc1da27448ad475d2518d6a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09a31a2f08d21c447eb9448b9ad1a5b1') in 0.050312 seconds
+  Import took 0.080963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.719869 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/WoodenPlankMaterial.mat
+  artifactKey: Guid(feb8461e19e78e24ab0dd115916f7bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/WoodenPlankMaterial.mat using Guid(feb8461e19e78e24ab0dd115916f7bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5118dc76a13388fe2c22bb30d2341b6d') in 0.079709 seconds
+  Import took 0.098686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.381972 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_normal.jpg
+  artifactKey: Guid(ef09591f3eea9904fafd50be2595fd1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/lambert1_normal.jpg using Guid(ef09591f3eea9904fafd50be2595fd1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c65f6a1b2f3f3f50a64538ebf272a29f') in 0.667650 seconds
+  Import took 0.673957 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.449634 seconds.
+  path: Assets/DownloadedModels/ladder/textures/ladder_albedo.png
+  artifactKey: Guid(61d251fd376a5c24991274839984e4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/ladder/textures/ladder_albedo.png using Guid(61d251fd376a5c24991274839984e4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7761c233318c98cc56937c016723f448') in 0.291424 seconds
+  Import took 0.317571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/DownloadedModels/ladder/textures/ladder_metalness.png
+  artifactKey: Guid(da12a651e1acfb04f9061127c41501b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/ladder/textures/ladder_metalness.png using Guid(da12a651e1acfb04f9061127c41501b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f469943cc53bf77865daaf99e993a5c9') in 0.107646 seconds
+  Import took 0.142704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/DownloadedModels/wood-plank/textures/lambert1_AO.jpeg
+  artifactKey: Guid(b754669bd56c5a74a81dce214aa38b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/textures/lambert1_AO.jpeg using Guid(b754669bd56c5a74a81dce214aa38b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91122aa73416c06b9f8991d3a7a80b1c') in 0.244504 seconds
+  Import took 0.267946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/DownloadedModels/wood-plank/textures/lambert1_roughness.jpeg
+  artifactKey: Guid(73287d8d2e8b69440b38757f40f13b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/textures/lambert1_roughness.jpeg using Guid(73287d8d2e8b69440b38757f40f13b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33fbc429407c37abf6d43fe771639a5') in 0.111656 seconds
+  Import took 0.167045 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000424 seconds.
+  path: Assets/DownloadedModels/ladder/textures/ladder_roughness.png
+  artifactKey: Guid(9cc29a4f3052f0b4c81d753713ab4d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/ladder/textures/ladder_roughness.png using Guid(9cc29a4f3052f0b4c81d753713ab4d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f1694c596c666ff71b6f36a15de8004') in 0.184705 seconds
+  Import took 0.200561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/DownloadedModels/wood-plank/textures/lambert1_albedo.jpeg
+  artifactKey: Guid(80d31a7745d845145bf5bd31e953e815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/textures/lambert1_albedo.jpeg using Guid(80d31a7745d845145bf5bd31e953e815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cf2fa7e5bf200fec8938bec0148a734') in 0.067025 seconds
+  Import took 0.115347 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/DownloadedModels/wood-plank/textures/lambert1_metallic.jpeg
+  artifactKey: Guid(c197d61e6811aea4c8f0b1a62d8fe411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/textures/lambert1_metallic.jpeg using Guid(c197d61e6811aea4c8f0b1a62d8fe411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb21b54ff8eeb89f3d6e2186d45d6a21') in 0.030300 seconds
+  Import took 0.035627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000447 seconds.
+  path: Assets/DownloadedModels/wood-plank/textures/lambert1_normal.jpeg
+  artifactKey: Guid(fd137c4748af06347b1c20f911d2ae3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/textures/lambert1_normal.jpeg using Guid(fd137c4748af06347b1c20f911d2ae3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b77d62a58c18b213b7c0331a8cc30e64') in 0.077324 seconds
+  Import took 0.114477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/DownloadedModels/ladder/textures/ladder_ao.png
+  artifactKey: Guid(5886725964ceda74aace8f6d4568a8b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/ladder/textures/ladder_ao.png using Guid(5886725964ceda74aace8f6d4568a8b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8f3c44478bbfe3769b27cdc27a791f2') in 0.147873 seconds
+  Import took 0.200892 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000325 seconds.
+  path: Assets/DownloadedModels/ladder/textures/ladder_normals.png
+  artifactKey: Guid(309d56be23fef804d8f25778b67843ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/ladder/textures/ladder_normals.png using Guid(309d56be23fef804d8f25778b67843ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '089277bcc4fcb7c5c564e77e92d0586b') in 0.109350 seconds
+  Import took 0.126769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.671940 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet Equirect.png
+  artifactKey: Guid(393dd4c82e2a04ec08ef9f57528230c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet Equirect.png using Guid(393dd4c82e2a04ec08ef9f57528230c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2e4006a795b4119c78eed659bf8d4b1') in 1.345730 seconds
+  Import took 1.380547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000558 seconds.
+  path: Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_1_Back-Z.png
+  artifactKey: Guid(33cbefefe2c7f4e77ac959c74eef5d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_1_Back-Z.png using Guid(33cbefefe2c7f4e77ac959c74eef5d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '987979176620a896db4164e3a5b06a13') in 0.143939 seconds
+  Import took 0.148812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_5_Down-Y.png
+  artifactKey: Guid(3a639720a92414f45b72b16d6db788ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_5_Down-Y.png using Guid(3a639720a92414f45b72b16d6db788ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afa1542d80a38bd83d2a91978dc1d307') in 0.194367 seconds
+  Import took 0.216037 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000347 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_1_Back-Z.png
+  artifactKey: Guid(0264465325ebb45239163258479c2a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_1_Back-Z.png using Guid(0264465325ebb45239163258479c2a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7112b42cd1635923b94ba4466be1e3e') in 0.166667 seconds
+  Import took 0.170479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_5_Down-Y.png
+  artifactKey: Guid(4c119b81b42684c39873d7738564bcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_5_Down-Y.png using Guid(4c119b81b42684c39873d7738564bcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '419f492d764066c387ad79a57f1bbe3b') in 0.119252 seconds
+  Import took 0.140540 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/DownloadedModels/bench/textures/Bench_Norm.jpeg
+  artifactKey: Guid(c39f1607c1d23ca418d21e6da26fd479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/bench/textures/Bench_Norm.jpeg using Guid(c39f1607c1d23ca418d21e6da26fd479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bc9de4a2f62c4a24d4b14119309f8c2') in 0.069620 seconds
+  Import took 0.084616 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_0_Front+Z.png
+  artifactKey: Guid(d731d71c2b8e94c18b5ef8be277e6773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_0_Front+Z.png using Guid(d731d71c2b8e94c18b5ef8be277e6773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f4f909a9c0a88c0ba1051c0124fbdee') in 0.132988 seconds
+  Import took 0.136398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_4_Up+Y.png
+  artifactKey: Guid(a6e9f4ff100a94264a812ad74e17416c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_4_Up+Y.png using Guid(a6e9f4ff100a94264a812ad74e17416c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a22a180f34d5a03aa54594b9f26b17') in 0.145495 seconds
+  Import took 0.148672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_4_Up+Y.png
+  artifactKey: Guid(5cf2d5ca2357a4d4fb98ebc5b6034e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_4_Up+Y.png using Guid(5cf2d5ca2357a4d4fb98ebc5b6034e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd47638cb864dc6a0c0349497389dd455') in 0.201960 seconds
+  Import took 0.206090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021367 seconds.
+  path: Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_3_Right-X.png
+  artifactKey: Guid(d3b809c8b33ff46faa4245f0bca7e6fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_3_Right-X.png using Guid(d3b809c8b33ff46faa4245f0bca7e6fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '379d696d64cb7f4f95d397531c2dd217') in 0.154257 seconds
+  Import took 0.159666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001665 seconds.
+  path: Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_2_Left+X.png
+  artifactKey: Guid(6b8f010ba933d4f01bdedec2c1a8a025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_2_Left+X.png using Guid(6b8f010ba933d4f01bdedec2c1a8a025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '783ff356b07fa4b8b4c9e1c26f450023') in 0.103005 seconds
+  Import took 0.124797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_0_Front+Z.png
+  artifactKey: Guid(0b5345cf23ab840779a8cbf1b89f355a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_0_Front+Z.png using Guid(0b5345cf23ab840779a8cbf1b89f355a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55ac272d8de6a1da25a719615d080201') in 0.304426 seconds
+  Import took 0.308337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_3_Right-X.png
+  artifactKey: Guid(ca9af6b5ce9284592aabb781392ff61e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_3_Right-X.png using Guid(ca9af6b5ce9284592aabb781392ff61e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f0052c7390575b4c640c0c8cfc79c0d') in 0.197785 seconds
+  Import took 0.229849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_2_Left+X.png
+  artifactKey: Guid(40cd83628508d406497f3b21ff220644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetStore/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet_Cam_2_Left+X.png using Guid(40cd83628508d406497f3b21ff220644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0c0bcedc26471ce7c03dbf1d051b818') in 0.159181 seconds
+  Import took 0.163605 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.702422 seconds.
+  path: Assets/DownloadedModels/wood-plank/source/model/textures/WoodenPlankMaterial.mat
+  artifactKey: Guid(feb8461e19e78e24ab0dd115916f7bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wood-plank/source/model/textures/WoodenPlankMaterial.mat using Guid(feb8461e19e78e24ab0dd115916f7bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd08e837a142a2027f95c171cdd85f15d') in 0.107333 seconds
+  Import took 0.165750 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001226 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.446 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.2 MB.
+System memory in use after: 90.3 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1921.
+Total: 1.780900 ms (FindLiveObjects: 0.165500 ms CreateObjectMapping: 0.052300 ms MarkObjects: 1.466300 ms  DeleteObjects: 0.095700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001094 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.652 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.2 MB.
+System memory in use after: 90.3 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1924.
+Total: 30.484400 ms (FindLiveObjects: 16.878600 ms CreateObjectMapping: 0.224300 ms MarkObjects: 12.775600 ms  DeleteObjects: 0.604300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1556.340682 seconds.
+  path: Assets/DownloadedModels/wooden-window
+  artifactKey: Guid(4de2079fd8e101a4ba12aa574ce603d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window using Guid(4de2079fd8e101a4ba12aa574ce603d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b5de65e5b65180ef7e5f4f64d25120') in 0.023834 seconds
+  Import took 0.032048 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.877434 seconds.
+  path: Assets/DownloadedModels/wooden-window/source
+  artifactKey: Guid(3c808777ea2ee994bbb009a90c151e15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/source using Guid(3c808777ea2ee994bbb009a90c151e15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e069af6ebad376b095be19af18e0d201') in 0.029690 seconds
+  Import took 0.054806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.048922 seconds.
+  path: Assets/DownloadedModels/wooden-window/source/Window.obj
+  artifactKey: Guid(5acd67e6a68bdd049a93ece2f4c29010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/source/Window.obj using Guid(5acd67e6a68bdd049a93ece2f4c29010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58f39a2fbec2be1d2fe03445a8dcdfe0') in 0.442179 seconds
+  Import took 0.469866 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.276811 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures
+  artifactKey: Guid(2972002ed845a9b4f972d40df8d25571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures using Guid(2972002ed845a9b4f972d40df8d25571) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a9f64385a808038404b69476ccf2ed1') in 0.032973 seconds
+  Import took 0.153321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/internal_ground_ao_texture.jpeg
+  artifactKey: Guid(d355535325f57e641bcb07cd50ee4b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/internal_ground_ao_texture.jpeg using Guid(d355535325f57e641bcb07cd50ee4b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26e8143d0de5ac81f1622763a54dd295') in 0.079672 seconds
+  Import took 0.136560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/albedo.png
+  artifactKey: Guid(107bca0b008fa9e479d8735f70cc92a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/albedo.png using Guid(107bca0b008fa9e479d8735f70cc92a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3788d55614e27596247b53f36bba2267') in 0.144108 seconds
+  Import took 0.147575 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/Normal.png
+  artifactKey: Guid(a4e9762232e10634189bfb57eaaa55f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/Normal.png using Guid(a4e9762232e10634189bfb57eaaa55f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fb19bd05a1313fa4fbba40ed6bbeb17') in 0.081886 seconds
+  Import took 0.144250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/Window_Roughness.png
+  artifactKey: Guid(a158c9adca9b55748a8df73a58c7aea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/Window_Roughness.png using Guid(a158c9adca9b55748a8df73a58c7aea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80d9f8fedec938350e29080eb8ca7ee6') in 0.050825 seconds
+  Import took 0.074710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/Window_Metallic.png
+  artifactKey: Guid(67dc9e219a4591a41bbd6625c5df9de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/Window_Metallic.png using Guid(67dc9e219a4591a41bbd6625c5df9de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '425ed8a0831d603adb9940b6915bdaec') in 0.064778 seconds
+  Import took 0.075216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/Window_Mixed_AO.png
+  artifactKey: Guid(77a17857e5bd3124d9ace3c58ce78090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/Window_Mixed_AO.png using Guid(77a17857e5bd3124d9ace3c58ce78090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd2ffdbc7db6b5216295b83d39bda530') in 0.029397 seconds
+  Import took 0.053210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.533916 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/WoodenWindowMaterial.mat
+  artifactKey: Guid(2e2296884b8a5ab4399488925c032179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/WoodenWindowMaterial.mat using Guid(2e2296884b8a5ab4399488925c032179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f1d0ceef9adc5f3067ff67e121eec48') in 0.046760 seconds
+  Import took 0.050736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 71.366573 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/Normal.png
+  artifactKey: Guid(a4e9762232e10634189bfb57eaaa55f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/Normal.png using Guid(a4e9762232e10634189bfb57eaaa55f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4cc516d7109a973ecfc558fcc12302b') in 0.033914 seconds
+  Import took 0.041148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.310902 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/WoodenWindowGlassMaterial.mat
+  artifactKey: Guid(36f4b378bdcf9a547883f4bded40e675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/WoodenWindowGlassMaterial.mat using Guid(36f4b378bdcf9a547883f4bded40e675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fe013b1c11f759a3b1ac151e96b16fc') in 0.036483 seconds
+  Import took 0.054780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 362.709515 seconds.
+  path: Assets/Week2/Window.prefab
+  artifactKey: Guid(8940b62e10095244abf64ea39f953298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week2/Window.prefab using Guid(8940b62e10095244abf64ea39f953298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcfc51367798d42d6a31e423a99a9125') in 0.037915 seconds
+  Import took 0.066831 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.466171 seconds.
+  path: Assets/Week2/WindowBarracaded.prefab
+  artifactKey: Guid(377b7ce9caa583d44ac291dddb255fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week2/WindowBarracaded.prefab using Guid(377b7ce9caa583d44ac291dddb255fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '674554fa92aaed04f1279d6714bc6413') in 0.035352 seconds
+  Import took 0.051252 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001489 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.992 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.3 MB.
+System memory in use after: 90.4 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1929.
+Total: 2.628700 ms (FindLiveObjects: 0.435300 ms CreateObjectMapping: 0.107900 ms MarkObjects: 1.997500 ms  DeleteObjects: 0.085500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 67.369167 seconds.
+  path: Assets/Week2/WindowBarracaded.prefab
+  artifactKey: Guid(377b7ce9caa583d44ac291dddb255fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week2/WindowBarracaded.prefab using Guid(377b7ce9caa583d44ac291dddb255fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8199c99c74ae7fd59d09e28e727e318') in 1.731571 seconds
+  Import took 1.764128 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002926 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 2.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.379 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.4 MB.
+System memory in use after: 90.4 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1933.
+Total: 2.084200 ms (FindLiveObjects: 0.173000 ms CreateObjectMapping: 0.048100 ms MarkObjects: 1.788000 ms  DeleteObjects: 0.073700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 164.278973 seconds.
+  path: Assets/Week2/Window.prefab
+  artifactKey: Guid(8940b62e10095244abf64ea39f953298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week2/Window.prefab using Guid(8940b62e10095244abf64ea39f953298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b0dd2b33318972abafdb9c889051fc3') in 0.171025 seconds
+  Import took 0.180328 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 117.646267 seconds.
+  path: Assets/DownloadedModels/forge-random-props
+  artifactKey: Guid(69da9aae6c82f7d42b547c82bc3069e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props using Guid(69da9aae6c82f7d42b547c82bc3069e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8557f3d98acc00075ee009349c4f11b0') in 0.016039 seconds
+  Import took 0.039695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.941050 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source
+  artifactKey: Guid(63aa84c6468a7994785c4ec9274df318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source using Guid(63aa84c6468a7994785c4ec9274df318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c4ba0e16b371389993198a5bdc1c0e6') in 0.033472 seconds
+  Import took 0.052112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.797860 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model
+  artifactKey: Guid(27b9f18a442ff4b46abbc9c72e755b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model using Guid(27b9f18a442ff4b46abbc9c72e755b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87b21e31a86ff376e93a2d3ff3fdedeb') in 0.005727 seconds
+  Import took 0.022757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.062706 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/model.dae
+  artifactKey: Guid(35e07743647c3374fbd5faedf0e73732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/model.dae using Guid(35e07743647c3374fbd5faedf0e73732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89aa8e3d5c4fe03b7ad2c00309559d06') in 0.335915 seconds
+  Import took 0.361047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.803071 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures
+  artifactKey: Guid(9a1bc51f26622ea4bb0ee1b831197d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures using Guid(9a1bc51f26622ea4bb0ee1b831197d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aef8ccab8108289a9eccc1832738c73') in 0.007837 seconds
+  Import took 0.011898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.099370 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Books_albedo.jpg
+  artifactKey: Guid(b49647d87d6db7443a5ff8f17d3fb092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Books_albedo.jpg using Guid(b49647d87d6db7443a5ff8f17d3fb092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb581be57eefc7f9b8d8977909e8d72e') in 0.031698 seconds
+  Import took 0.037822 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_AO_0.jpg
+  artifactKey: Guid(352e1a58c0006c14dbd75a469adc07cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_AO_0.jpg using Guid(352e1a58c0006c14dbd75a469adc07cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd06e340747e27ad8396dd49a89daf3be') in 0.027758 seconds
+  Import took 0.034389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_metallic.jpg
+  artifactKey: Guid(ce2aa60bed242c449b22e1ff7e5bca55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_metallic.jpg using Guid(ce2aa60bed242c449b22e1ff7e5bca55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0108fcb436cc86b28a4ba75ab18a9e81') in 0.061968 seconds
+  Import took 0.087232 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_metallic.jpg
+  artifactKey: Guid(90cd5f5c5fa225d4e86923a471f634c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_metallic.jpg using Guid(90cd5f5c5fa225d4e86923a471f634c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba00da2539baf0996b843ca27c58bb86') in 0.030334 seconds
+  Import took 0.043272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_AO_0.jpg
+  artifactKey: Guid(1c91b9c0271f7764597e6778b51bcf92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_AO_0.jpg using Guid(1c91b9c0271f7764597e6778b51bcf92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187f84bd9494216e5646fdd6e8b02c26') in 0.026245 seconds
+  Import took 0.029415 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Books_roughness.jpg
+  artifactKey: Guid(b7e0078848654ae43bbc5b864f63928f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Books_roughness.jpg using Guid(b7e0078848654ae43bbc5b864f63928f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c52c2cb6f54d7be46000f40bfb1e558') in 0.029436 seconds
+  Import took 0.036092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000690 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Books_metallic.jpg
+  artifactKey: Guid(f1a1dc23a4673c94bbd19be29fd80c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Books_metallic.jpg using Guid(f1a1dc23a4673c94bbd19be29fd80c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d15626164572a736c17c6302ab5bb2c') in 0.027539 seconds
+  Import took 0.046242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Books_AO.jpg
+  artifactKey: Guid(92a0e9e5271b8e84ea8c4a672f828646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Books_AO.jpg using Guid(92a0e9e5271b8e84ea8c4a672f828646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d7906af29f9b65ea77f02276a18b393') in 0.045405 seconds
+  Import took 0.057794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_AO_0.jpg
+  artifactKey: Guid(8ce420134345a164689ccc61d3de9dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_AO_0.jpg using Guid(8ce420134345a164689ccc61d3de9dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '624849f7ebb807bb47b9d2aaaa5ed884') in 0.035493 seconds
+  Import took 0.046154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_AO.jpg
+  artifactKey: Guid(a8af0ae898ecb73438c4a8b4553b52b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_AO.jpg using Guid(a8af0ae898ecb73438c4a8b4553b52b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8985f2da9146a35d8104ce9ff56f2ac') in 0.032762 seconds
+  Import took 0.044458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_roughness.jpg
+  artifactKey: Guid(cedaec01692bf4c47aaaf57819980ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_roughness.jpg using Guid(cedaec01692bf4c47aaaf57819980ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5fbac16fd6138b26479af16ae94d1a1') in 0.052519 seconds
+  Import took 0.059699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Books_normal.jpg
+  artifactKey: Guid(710e084879ed91c45899f101ae8fbe89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Books_normal.jpg using Guid(710e084879ed91c45899f101ae8fbe89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '237c28f438285fd72fbc2b705fce6c84') in 0.053817 seconds
+  Import took 0.072751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_AO.jpg
+  artifactKey: Guid(d9833dfb8db8532479cbfb348606bc91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_AO.jpg using Guid(d9833dfb8db8532479cbfb348606bc91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce3457d609978ab0c3ee636b1fc0cb3c') in 0.043340 seconds
+  Import took 0.061803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_roughness.jpg
+  artifactKey: Guid(063576ca179ea5c4887b837a3daf304b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_roughness.jpg using Guid(063576ca179ea5c4887b837a3daf304b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea6776982599103ca3f81c85199e741c') in 0.032700 seconds
+  Import took 0.043242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_normal.jpg
+  artifactKey: Guid(578e79b7c671b27448fdac68704c6b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_normal.jpg using Guid(578e79b7c671b27448fdac68704c6b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d5d817f267f20341712f2f038cc7aa0') in 0.035361 seconds
+  Import took 0.041971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Books_AO_0.jpg
+  artifactKey: Guid(2368566ababe86c4a8f054ca9ba03568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Books_AO_0.jpg using Guid(2368566ababe86c4a8f054ca9ba03568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deeac7f9a2a2271b4178a1615139213a') in 0.031029 seconds
+  Import took 0.044563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_metallic.jpg
+  artifactKey: Guid(91092fc8e71a91d45aac109543474fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_metallic.jpg using Guid(91092fc8e71a91d45aac109543474fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c668bfd21cd1262ff0500da16a956fc6') in 0.070437 seconds
+  Import took 0.074538 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_albedo.jpg
+  artifactKey: Guid(6a11957c9e6f45649a443a4ae1a3d1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_albedo.jpg using Guid(6a11957c9e6f45649a443a4ae1a3d1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5539642e661aeba21f521d5c537db8e7') in 0.038226 seconds
+  Import took 0.056736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_albedo.jpg
+  artifactKey: Guid(3de62bc85125d804085255fdca622056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_albedo.jpg using Guid(3de62bc85125d804085255fdca622056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea36b4aa58e43b7384b2ff7f00af0de9') in 0.041699 seconds
+  Import took 0.054697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_albedo.jpg
+  artifactKey: Guid(0c058243eaa54744996452e7b8d35000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_albedo.jpg using Guid(0c058243eaa54744996452e7b8d35000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '702193de53afc330cc911dd0b293b274') in 0.026937 seconds
+  Import took 0.031179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_roughness.jpg
+  artifactKey: Guid(c19de87426173e242817b8ba39ec6d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_roughness.jpg using Guid(c19de87426173e242817b8ba39ec6d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44f07a27a73a8eae2b9b00cd774672ad') in 0.029482 seconds
+  Import took 0.049536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002151 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_metallic.jpg
+  artifactKey: Guid(80e5d86222d91d6438c44d1defd929b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_metallic.jpg using Guid(80e5d86222d91d6438c44d1defd929b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be2ab3dc2cb0b1dcee9c1424a189397') in 0.058675 seconds
+  Import took 0.063988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_normal.jpg
+  artifactKey: Guid(2ca9fd87450b74f47835633abf501b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_normal.jpg using Guid(2ca9fd87450b74f47835633abf501b96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab0bfad8798a8697dd9fbaeddb3f3173') in 0.032227 seconds
+  Import took 0.046866 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_albedo.jpg
+  artifactKey: Guid(0779f04e58e79884d9b5eb3104c2bd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_albedo.jpg using Guid(0779f04e58e79884d9b5eb3104c2bd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7158aa1640cbf6aec6e23f3d50bf4178') in 0.050738 seconds
+  Import took 0.060176 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_metallic.jpg
+  artifactKey: Guid(2893f86eb7cd648419637617f9c0fe98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_metallic.jpg using Guid(2893f86eb7cd648419637617f9c0fe98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '490fd72bab2eb8a6e10eeb442a8981bf') in 0.027349 seconds
+  Import took 0.041627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000368 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_AO.jpg
+  artifactKey: Guid(667eec9f9b93c154d86f97105435ea24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_AO.jpg using Guid(667eec9f9b93c154d86f97105435ea24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35604b8fd1b230c11b3628057f449930') in 0.027043 seconds
+  Import took 0.036907 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_AO.jpg
+  artifactKey: Guid(f09f7111d99ec9941a764b7ca2c93739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_AO.jpg using Guid(f09f7111d99ec9941a764b7ca2c93739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a2887f74298c7cd8a954fc5e73493cb') in 0.025406 seconds
+  Import took 0.035145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_normal.jpg
+  artifactKey: Guid(5316bbd66841653459560d26088be173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_normal.jpg using Guid(5316bbd66841653459560d26088be173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39d131fec02af4c44f6a417d7715f838') in 0.018847 seconds
+  Import took 0.025374 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_AO.jpg
+  artifactKey: Guid(3bdefc1bf35cb0b41baff01bde86c986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Stone_Sticks_AO.jpg using Guid(3bdefc1bf35cb0b41baff01bde86c986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8950d8a68b659da28a2cbcc58b0e3f1') in 0.018420 seconds
+  Import took 0.021789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_AO_0.jpg
+  artifactKey: Guid(fd149f830700f3946b8c8f17935c74d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_AO_0.jpg using Guid(fd149f830700f3946b8c8f17935c74d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b65886769799d71fa694ada0253f85b6') in 0.036486 seconds
+  Import took 0.040503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_AO_0.jpg
+  artifactKey: Guid(56974e206cfc1a745a41ce961b08c903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Rebar_AO_0.jpg using Guid(56974e206cfc1a745a41ce961b08c903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5e4b55f26b1a29d09d0444181f9cb11') in 0.018621 seconds
+  Import took 0.021920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_albedo.jpg
+  artifactKey: Guid(23a36179e2c259d4f8d3f146be07f5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_albedo.jpg using Guid(23a36179e2c259d4f8d3f146be07f5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '491062e8b36a86202c302f4fa30a452b') in 0.018782 seconds
+  Import took 0.022149 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_normal.jpg
+  artifactKey: Guid(4b1ca1295bdcd834ab9379b86897de10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_normal.jpg using Guid(4b1ca1295bdcd834ab9379b86897de10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '680b23400c0180d31af4c720778514d9') in 0.028590 seconds
+  Import took 0.036404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_roughness.jpg
+  artifactKey: Guid(61aeea888eb2b9c42872da42ecbc6f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Casting_Table_roughness.jpg using Guid(61aeea888eb2b9c42872da42ecbc6f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c95a3e0412d59a0aa14d37c226cdcc4') in 0.018353 seconds
+  Import took 0.021707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_roughness.jpg
+  artifactKey: Guid(60a6f4e6bf25cc6488a3851af7a40cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/WoodenPlanks_roughness.jpg using Guid(60a6f4e6bf25cc6488a3851af7a40cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10f7dcc5c149f74076a0704aed7b7569') in 0.016135 seconds
+  Import took 0.018973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_normal.jpg
+  artifactKey: Guid(2fdc9e6ee5b13424b89e41282f81ec0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_normal.jpg using Guid(2fdc9e6ee5b13424b89e41282f81ec0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd6e6677101d8437c2238422d3c3ea12') in 0.016026 seconds
+  Import took 0.018993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.914407 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterial.mat
+  artifactKey: Guid(efced8af1ae9afd4fbe1b281e567c7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterial.mat using Guid(efced8af1ae9afd4fbe1b281e567c7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7da32a2841e0f6548c51bae4d0e45d5') in 0.025396 seconds
+  Import took 0.045330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.562634 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_normal.jpg
+  artifactKey: Guid(2fdc9e6ee5b13424b89e41282f81ec0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_normal.jpg using Guid(2fdc9e6ee5b13424b89e41282f81ec0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca161ca6360f5a20b926fb546b4894b7') in 0.033267 seconds
+  Import took 0.038230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_normal.jpg
+  artifactKey: Guid(2fdc9e6ee5b13424b89e41282f81ec0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/Metal_Plates_normal.jpg using Guid(2fdc9e6ee5b13424b89e41282f81ec0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca161ca6360f5a20b926fb546b4894b7') in 0.030247 seconds
+  Import took 0.033267 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 255.435725 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterial.mat
+  artifactKey: Guid(efced8af1ae9afd4fbe1b281e567c7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterial.mat using Guid(efced8af1ae9afd4fbe1b281e567c7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '358a899b80aa73d364d4654641c750ae') in 0.051695 seconds
+  Import took 0.059107 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001085 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.042 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.5 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1938.
+Total: 2.473400 ms (FindLiveObjects: 0.183900 ms CreateObjectMapping: 0.053500 ms MarkObjects: 2.168400 ms  DeleteObjects: 0.066500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 264.526499 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/WoodenWindowGlassMaterial.mat
+  artifactKey: Guid(36f4b378bdcf9a547883f4bded40e675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/WoodenWindowGlassMaterial.mat using Guid(36f4b378bdcf9a547883f4bded40e675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1c6b2bbe67166147a7b0bf246d98e5a') in 0.177394 seconds
+  Import took 0.211243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/WoodenWindowMaterial.mat
+  artifactKey: Guid(2e2296884b8a5ab4399488925c032179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/WoodenWindowMaterial.mat using Guid(2e2296884b8a5ab4399488925c032179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e53656be9e3434713f90835d2c475fa') in 0.061735 seconds
+  Import took 0.066794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/WoodenWindowGlassMaterial.mat
+  artifactKey: Guid(36f4b378bdcf9a547883f4bded40e675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/WoodenWindowGlassMaterial.mat using Guid(36f4b378bdcf9a547883f4bded40e675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1c6b2bbe67166147a7b0bf246d98e5a') in 0.045879 seconds
+  Import took 0.051557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/DownloadedModels/wooden-window/textures/WoodenWindowMaterial.mat
+  artifactKey: Guid(2e2296884b8a5ab4399488925c032179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/wooden-window/textures/WoodenWindowMaterial.mat using Guid(2e2296884b8a5ab4399488925c032179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e53656be9e3434713f90835d2c475fa') in 0.059218 seconds
+  Import took 0.076473 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.877080 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures
+  artifactKey: Guid(056c94fd28f6d654e8f847606156e26f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures using Guid(056c94fd28f6d654e8f847606156e26f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d7e347ea54bf834c7757e3184e7d8fa') in 0.010021 seconds
+  Import took 0.015140 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.070813 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Books_albedo.jpeg
+  artifactKey: Guid(413c28c1ee8c092468a2000d911ca76d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Books_albedo.jpeg using Guid(413c28c1ee8c092468a2000d911ca76d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d63e8f2316b407ab9d757f84398b765') in 0.027577 seconds
+  Import took 0.031579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Rebar_AO.jpeg
+  artifactKey: Guid(1f8e47f69a2fe0b42ba975840db0ee41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Rebar_AO.jpeg using Guid(1f8e47f69a2fe0b42ba975840db0ee41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc37fc5a4c23ff0642792990fb23791a') in 0.035817 seconds
+  Import took 0.051622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Casting_Table_normal.jpeg
+  artifactKey: Guid(093881ec9ae4aee418bd9be424d824c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Casting_Table_normal.jpeg using Guid(093881ec9ae4aee418bd9be424d824c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73b963e53f77367d99772596b7106734') in 0.033848 seconds
+  Import took 0.051125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Casting_Table_roughness.jpeg
+  artifactKey: Guid(98472c1274d1ebe488b6badb81ed4471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Casting_Table_roughness.jpeg using Guid(98472c1274d1ebe488b6badb81ed4471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3699357840200cf6e6cbc549d847030') in 0.037497 seconds
+  Import took 0.040815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_albedo.jpeg
+  artifactKey: Guid(2c4331bc2a7b2164e8b0ae646aeece62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_albedo.jpeg using Guid(2c4331bc2a7b2164e8b0ae646aeece62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4282673958dd9c05a1b9594935efac70') in 0.036093 seconds
+  Import took 0.040578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Books_normal.jpeg
+  artifactKey: Guid(d877b2735f977a0459b864d8b29b2464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Books_normal.jpeg using Guid(d877b2735f977a0459b864d8b29b2464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4de7dd91e71024e3e3bb799290c812') in 0.031104 seconds
+  Import took 0.035505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Rebar_albedo.jpeg
+  artifactKey: Guid(21c550c668de78e49ba8cb7bec11e4ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Rebar_albedo.jpeg using Guid(21c550c668de78e49ba8cb7bec11e4ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98e10a0607f3236f3e5c725f7a8c7c33') in 0.024009 seconds
+  Import took 0.030768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Rebar_metallic.jpeg
+  artifactKey: Guid(d65e5a4c5c090f54a81f7171859b82db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Rebar_metallic.jpeg using Guid(d65e5a4c5c090f54a81f7171859b82db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd37041a38e15247a5f3d26f15eab5192') in 0.042821 seconds
+  Import took 0.059830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004795 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_normal.jpeg
+  artifactKey: Guid(2ca1bfbe4a3036c4b8f247b98b3431d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_normal.jpeg using Guid(2ca1bfbe4a3036c4b8f247b98b3431d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c0a31b00c62ba1f1f0ed2a68c98c127') in 0.022824 seconds
+  Import took 0.036017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Books_AO.jpeg
+  artifactKey: Guid(75949ee64c937e7469ee2678b133963a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Books_AO.jpeg using Guid(75949ee64c937e7469ee2678b133963a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27db68ab05443b928fdc55da060175b7') in 0.030307 seconds
+  Import took 0.040578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000618 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_roughness.jpeg
+  artifactKey: Guid(7e7af360ecc46574d934705dba26ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_roughness.jpeg using Guid(7e7af360ecc46574d934705dba26ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a915af0e670e8715f090a39a9891681a') in 0.018293 seconds
+  Import took 0.023551 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Rebar_AO_0.jpeg
+  artifactKey: Guid(a7d807f78eb07b646941c57b25a800a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Rebar_AO_0.jpeg using Guid(a7d807f78eb07b646941c57b25a800a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e7554ff7fd4cdccb717adf1c46df389') in 0.026285 seconds
+  Import took 0.031686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Casting_Table_metallic.jpeg
+  artifactKey: Guid(1aeae17aa21f8b94cb0b5cae66a38b57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Casting_Table_metallic.jpeg using Guid(1aeae17aa21f8b94cb0b5cae66a38b57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd26a178b10e18dad5803bb9180d6215f') in 0.023477 seconds
+  Import took 0.029279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Casting_Table_albedo.jpeg
+  artifactKey: Guid(f2cc3058d959f854185e22e7fe6fedac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Casting_Table_albedo.jpeg using Guid(f2cc3058d959f854185e22e7fe6fedac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296c241f484a2cebeb66a662ddffa8b1') in 0.023808 seconds
+  Import took 0.028448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_AO.jpeg
+  artifactKey: Guid(8957372619e054d46aa049e269047455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_AO.jpeg using Guid(8957372619e054d46aa049e269047455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93b3ce431609e706dab239aa1573bfef') in 0.028831 seconds
+  Import took 0.040279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000417 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_AO_0.jpeg
+  artifactKey: Guid(08a09a1305fc1ed4099f9839e4225e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_AO_0.jpeg using Guid(08a09a1305fc1ed4099f9839e4225e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c43e1205ffc0a79ff4668d7f1abe834e') in 0.027407 seconds
+  Import took 0.043640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_roughness.jpeg
+  artifactKey: Guid(1e50e2b28ae3afd42b26d680f1ef5a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_roughness.jpeg using Guid(1e50e2b28ae3afd42b26d680f1ef5a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb657b883c6c827939b68c6b98c0cc5c') in 0.022057 seconds
+  Import took 0.027441 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002638 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_metallic.jpeg
+  artifactKey: Guid(8839ca782adf27e4daed20054f10c07b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_metallic.jpeg using Guid(8839ca782adf27e4daed20054f10c07b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10604a1ec79266b87b7dc4f846142177') in 0.067630 seconds
+  Import took 0.100547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_normal.jpeg
+  artifactKey: Guid(87703940282e4cb4e9ca8ea55aef2e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_normal.jpeg using Guid(87703940282e4cb4e9ca8ea55aef2e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1af3b65770c3a7fd6b235b788447c2b') in 0.048841 seconds
+  Import took 0.075627 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Casting_Table_AO.jpeg
+  artifactKey: Guid(0ff235539fda9ad488f83fc7453df2a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Casting_Table_AO.jpeg using Guid(0ff235539fda9ad488f83fc7453df2a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0861afe8159391821478f0bf3fb16ce2') in 0.037930 seconds
+  Import took 0.041651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Books_roughness.jpeg
+  artifactKey: Guid(0c7f754e697650f46a9841f782562386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Books_roughness.jpeg using Guid(0c7f754e697650f46a9841f782562386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9c3ae665026f8ac1c3881d225e9275') in 0.034327 seconds
+  Import took 0.039702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_albedo.jpeg
+  artifactKey: Guid(d4fbf3f9a8b57b64b9ab9196aa95c60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_albedo.jpeg using Guid(d4fbf3f9a8b57b64b9ab9196aa95c60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65980d24ab5bf61212b822b81a9f50b2') in 0.023240 seconds
+  Import took 0.032997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000788 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_AO_0.jpeg
+  artifactKey: Guid(75d461ab63a0b264baf082886bb3ef3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_AO_0.jpeg using Guid(75d461ab63a0b264baf082886bb3ef3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f99e2469e30098b451d0db70217acd26') in 0.018590 seconds
+  Import took 0.032028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_metallic.jpeg
+  artifactKey: Guid(1af01c4b88153e647ae2d290cef042b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_metallic.jpeg using Guid(1af01c4b88153e647ae2d290cef042b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf21afc8f9152833c54a74b640f77859') in 0.034028 seconds
+  Import took 0.039988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_normal.jpeg
+  artifactKey: Guid(910cfc429de79e346a425892e8dd585a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_normal.jpeg using Guid(910cfc429de79e346a425892e8dd585a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4faf56339d65d9427d43e76fa23c8802') in 0.036706 seconds
+  Import took 0.041951 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_AO_0.jpeg
+  artifactKey: Guid(5bb06806e1d15d248a8bdd32b46eeb74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_AO_0.jpeg using Guid(5bb06806e1d15d248a8bdd32b46eeb74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '052e93ab9527c59461ba922e81966bb2') in 0.018534 seconds
+  Import took 0.042997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000372 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Rebar_normal.jpeg
+  artifactKey: Guid(2c0fb922bc03d0b4685d8b4d288857e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Rebar_normal.jpeg using Guid(2c0fb922bc03d0b4685d8b4d288857e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1fa5c706db25185e7c5af6c1bc77757') in 0.019420 seconds
+  Import took 0.023604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000538 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_albedo.jpeg
+  artifactKey: Guid(f2317d34388fd954fb6467dffd53c6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_albedo.jpeg using Guid(f2317d34388fd954fb6467dffd53c6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '880c8ce04a8c376ba39dc135ad491178') in 0.031981 seconds
+  Import took 0.062958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000976 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_AO.jpeg
+  artifactKey: Guid(2d1db7a0e3a5b7744ba4de80e2c2d579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_AO.jpeg using Guid(2d1db7a0e3a5b7744ba4de80e2c2d579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5278e37358201f6558d7688e9f0aadfb') in 0.017596 seconds
+  Import took 0.034646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_roughness.jpeg
+  artifactKey: Guid(6498dfccd2c594e4cb4eed426a55709b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Metal_Plates_roughness.jpeg using Guid(6498dfccd2c594e4cb4eed426a55709b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd29c458509dab705e9774d7202d4048') in 0.028836 seconds
+  Import took 0.034072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_metallic.jpeg
+  artifactKey: Guid(28c43f48d3efde84495867fd733c91a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/WoodenPlanks_metallic.jpeg using Guid(28c43f48d3efde84495867fd733c91a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cac2eb463399bb943d339950e6c4cd3c') in 0.074508 seconds
+  Import took 0.091756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Casting_Table_AO_0.jpeg
+  artifactKey: Guid(389b7e22c1c3e2145943adfb6854634d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Casting_Table_AO_0.jpeg using Guid(389b7e22c1c3e2145943adfb6854634d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '161897d8f6fb1aeaae352dbee8e2e509') in 0.046851 seconds
+  Import took 0.072059 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Books_metallic.jpeg
+  artifactKey: Guid(f4188671e558d9b4b9f34ca5eaa0b060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Books_metallic.jpeg using Guid(f4188671e558d9b4b9f34ca5eaa0b060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60c62112221efe65a1e0b63577bbb73e') in 0.039490 seconds
+  Import took 0.057115 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Rebar_roughness.jpeg
+  artifactKey: Guid(4fbc1afb71e08124591245bb01278038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Rebar_roughness.jpeg using Guid(4fbc1afb71e08124591245bb01278038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5373069c50d5010914e14fddd1ef7e8f') in 0.028295 seconds
+  Import took 0.033433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_AO.jpeg
+  artifactKey: Guid(a506564e73f837d4fa957aac2603e377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/textures/Stone_Sticks_AO.jpeg using Guid(a506564e73f837d4fa957aac2603e377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72620d1d3b2d78e0c364526d5792439e') in 0.019253 seconds
+  Import took 0.022691 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001119 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.486 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.5 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1942.
+Total: 2.919400 ms (FindLiveObjects: 0.207500 ms CreateObjectMapping: 0.045500 ms MarkObjects: 2.493100 ms  DeleteObjects: 0.171600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.660164 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterial.mat
+  artifactKey: Guid(efced8af1ae9afd4fbe1b281e567c7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterial.mat using Guid(efced8af1ae9afd4fbe1b281e567c7ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b8eeec17b427cb78ee202d28fca6a75') in 0.188600 seconds
+  Import took 0.192733 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 86.456189 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialBloom.mat
+  artifactKey: Guid(9e57ef91aed2c094aaabced927bad2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialBloom.mat using Guid(9e57ef91aed2c094aaabced927bad2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7630a93f01ba8527c57f39dab06fbeb9') in 0.240177 seconds
+  Import took 0.252187 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.857504 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialBloom.mat
+  artifactKey: Guid(9e57ef91aed2c094aaabced927bad2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialBloom.mat using Guid(9e57ef91aed2c094aaabced927bad2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e43f18502872df7ab516559a66611810') in 0.040852 seconds
+  Import took 0.056547 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001114 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.293 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.6 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1946.
+Total: 1.883800 ms (FindLiveObjects: 0.164200 ms CreateObjectMapping: 0.050200 ms MarkObjects: 1.613100 ms  DeleteObjects: 0.055100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.767254 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialLessBloom.mat
+  artifactKey: Guid(cbd35a5d246e8d64080665052d20557e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialLessBloom.mat using Guid(cbd35a5d246e8d64080665052d20557e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a20b50b1e35c6f3d5465db2977d1eef') in 0.095137 seconds
+  Import took 0.121495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 110.981623 seconds.
+  path: Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialLessBloom.mat
+  artifactKey: Guid(cbd35a5d246e8d64080665052d20557e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/DownloadedModels/forge-random-props/source/model/textures/MetalPlankMaterialLessBloom.mat using Guid(cbd35a5d246e8d64080665052d20557e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc2854352e05cb48adfb4cc94cf50cdf') in 0.048655 seconds
+  Import took 0.061908 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005496 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.554 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.12 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1361 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 90.6 MB.
+System memory in use after: 90.7 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1950.
+Total: 3.372000 ms (FindLiveObjects: 0.261300 ms CreateObjectMapping: 0.064200 ms MarkObjects: 2.966100 ms  DeleteObjects: 0.078300 ms)
+
