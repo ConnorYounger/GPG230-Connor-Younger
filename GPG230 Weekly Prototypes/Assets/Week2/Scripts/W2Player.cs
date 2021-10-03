@@ -7,7 +7,7 @@ using TMPro;
 public class W2Player : MonoBehaviour
 {
     public NavMeshAgent navAgent;
-    private Vector3 destinationPoint;
+    public Vector3 destinationPoint;
 
     public W2Inventory inventory;
 
@@ -18,6 +18,8 @@ public class W2Player : MonoBehaviour
     public float interractDistance = 0.8f;
 
     private bool canInput = true;
+
+    public Animator playerAnimator;
 
     [Header("UI Refrences")]
     public GameObject workBenchUI;
@@ -31,6 +33,7 @@ public class W2Player : MonoBehaviour
     void Start()
     {
         navAgent = gameObject.GetComponent<NavMeshAgent>();
+        destinationPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -47,13 +50,32 @@ public class W2Player : MonoBehaviour
     public void SetNewDestination(Vector3 position)
     {
         navAgent.enabled = true;
+
+        NavMeshHit myNavHit;
+        if (NavMesh.SamplePosition(position, out myNavHit, 100, -1))
+        {
+            position = myNavHit.position;
+        }
+
         destinationPoint = position;
     }
 
     void MovePlayer()
     {
-        if(navAgent.enabled)
+        if (navAgent.enabled && destinationPoint != null)
+        {
             navAgent.SetDestination(destinationPoint);
+
+            if (Vector3.Distance(transform.position, destinationPoint) > interractDistance + 0.1f)
+            {
+                playerAnimator.SetBool("isWalking", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("isWalking", false);
+                destinationPoint = transform.position;
+            }
+        }
     }
 
     void ItemDistanceCheck()
@@ -66,6 +88,12 @@ public class W2Player : MonoBehaviour
                     CollectItem();
                 else
                     Interraction();
+
+                playerAnimator.SetBool("isWalking", false);
+            }
+            else
+            {
+                playerAnimator.SetBool("isWalking", true);
             }
         }
     }
@@ -77,6 +105,12 @@ public class W2Player : MonoBehaviour
             if (Vector3.Distance(transform.position, currentDoor.transform.position) < interractDistance)
             {
                 UseDoor();
+
+                playerAnimator.SetBool("isWalking", false);
+            }
+            else
+            {
+                playerAnimator.SetBool("isWalking", true);
             }
         }
     }

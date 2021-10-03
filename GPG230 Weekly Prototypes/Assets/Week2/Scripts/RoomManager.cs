@@ -54,6 +54,7 @@ public class RoomManager : MonoBehaviour
                 player.GetComponent<W2Player>().navAgent.enabled = false;
                 player.transform.position = rooms[i].roomEntrances[roomEntranceIndex].position;
                 player.transform.rotation = rooms[i].roomEntrances[roomEntranceIndex].rotation;
+                player.GetComponent<W2Player>().destinationPoint = player.transform.position;
                 player.GetComponent<W2Player>().navAgent.enabled = true;
 
                 StartCoroutine("StopPlayerMovement");
