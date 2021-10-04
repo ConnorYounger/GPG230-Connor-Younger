@@ -7,7 +7,8 @@ public class MouseInteraction : MonoBehaviour
     public W2Player player;
 
     public Color mouseOverColor = Color.blue;
-    public Color searchColor = Color.yellow;
+    public Color searchDoorColor = Color.yellow;
+    public Color searchItemColor = Color.green;
 
     private List<W2Interractable> items;
     private List<W2Door> doors;
@@ -88,14 +89,16 @@ public class MouseInteraction : MonoBehaviour
     {
         foreach(W2Interractable item in items)
         {
-            if (item.gameObject.active)
-                item.ShowOutline(searchColor);
+            if (item.gameObject.active && item.isItem)
+                item.ShowOutline(searchItemColor);
+            else
+                item.ShowOutline(searchDoorColor);
         }
 
-        foreach(W2Door door in doors)
+        foreach (W2Door door in doors)
         {
             if(door.gameObject.active)
-                door.ShowOutline(searchColor);
+                door.ShowOutline(searchDoorColor);
         }
     }
 

@@ -15,6 +15,7 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] public room[] rooms;
 
+    public int startingRoom;
     public GameObject player;
 
     // Start is called before the first frame update
@@ -23,9 +24,9 @@ public class RoomManager : MonoBehaviour
         // Hide rooms at the start
         for (int i = 0; i < rooms.Length; i++)
         {
-            if (i == 0)
+            if (i == startingRoom)
             {
-                ShowRooms(0, true);
+                ShowRooms(startingRoom, true);
             }
             else
             {

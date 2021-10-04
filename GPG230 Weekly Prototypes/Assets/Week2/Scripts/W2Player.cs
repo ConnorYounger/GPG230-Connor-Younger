@@ -28,6 +28,7 @@ public class W2Player : MonoBehaviour
     public TMP_Text dialogueText;
     public GameObject winUI;
     public TMP_Text winFlavorText;
+    public GameObject safeUI;
 
     // Start is called before the first frame update
     void Start()
@@ -180,6 +181,12 @@ public class W2Player : MonoBehaviour
                 case "barricadedWindow":
                     DisplayDialogueUI(0);
                     break;
+                case "safe":
+                    inventory.CloseItemPickUpDisplay();
+                    currentInterractable = null;
+                    safeUI.SetActive(true);
+                    PlayerInterractable(false);
+                    break;
             }
         }
     }
@@ -229,6 +236,11 @@ public class W2Player : MonoBehaviour
     public void HideWorkBenchUI()
     {
         workBenchUI.SetActive(false);
+        PlayerInterractable(true);
+    }
+    public void HideSafeUI()
+    {
+        safeUI.SetActive(false);
         PlayerInterractable(true);
     }
 
