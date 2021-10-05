@@ -96,6 +96,20 @@ public class W2Safe : MonoBehaviour
         else
         {
             Debug.Log("Incorrect code");
+            StartCoroutine("IncorrectCode");
         }
+    }
+
+    IEnumerator IncorrectCode()
+    {
+        foreach (TMP_Text text in codeTexts)
+            text.color = Color.red;
+
+        // Play incorrect input sound
+
+        yield return new WaitForSeconds(0.7f);
+
+        foreach (TMP_Text text in codeTexts)
+            text.color = Color.white;
     }
 }
