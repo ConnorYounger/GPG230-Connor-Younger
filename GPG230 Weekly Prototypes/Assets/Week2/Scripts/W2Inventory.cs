@@ -10,6 +10,8 @@ public class W2Inventory : MonoBehaviour
 
     public List<W2Interractable> items;
 
+    public W2Safe safeManager;
+
     public Image keyImg;
     public Image axeImg;
     public Image ladderImg;
@@ -35,6 +37,8 @@ public class W2Inventory : MonoBehaviour
     public Image itemDisplaySlot;
     public TMP_Text itemNameField;
     public TMP_Text itemTextField;
+    public TMP_Text itemSafeCodeField;
+    public TMP_Text itemSafeCode2Field;
 
     public GameObject axeItem;
     public GameObject ladderItem;
@@ -236,7 +240,16 @@ public class W2Inventory : MonoBehaviour
         newSlot.transform.parent = inventoryGroup.transform;
         newSlot.GetComponent<W2ItemSlot>().itemType = item.interractableType.ToString();
 
-        if(item.itemSprite)
+        if (item.interractableType.ToString() == "safeCode1")
+        {
+            newSlot.transform.GetChild(1).GetComponent<TMP_Text>().text = safeManager.safeCodeFirstHalf;
+        }
+        else if (item.interractableType.ToString() == "safeCode2")
+        {
+            newSlot.transform.GetChild(2).GetComponent<TMP_Text>().text = safeManager.safeCodeSecondHalf;
+        }
+
+        if (item.itemSprite)
             newSlot.transform.GetChild(0).GetComponent<Image>().sprite = item.itemSprite;
 
         StopCoroutine("DisplayPickUpItemUI");
@@ -283,6 +296,22 @@ public class W2Inventory : MonoBehaviour
 
         if (item.dialogueTexts.Length > 0)
             itemTextField.text = item.dialogueTexts[0];
+
+        if(item.interractableType.ToString() == "safeCode1")
+        {
+            itemSafeCodeField.text = safeManager.safeCodeFirstHalf;
+            itemSafeCode2Field.text = "";
+        }
+        else if (item.interractableType.ToString() == "safeCode2")
+        {
+            itemSafeCode2Field.text = safeManager.safeCodeSecondHalf;
+            itemSafeCodeField.text = "";
+        }
+        else
+        {
+            itemSafeCodeField.text = "";
+            itemSafeCode2Field.text = "";
+        }
 
         pickUpItemUI.SetActive(true);
 

@@ -14,7 +14,10 @@ public class W2Door : MonoBehaviour
     void Start()
     {
         roomManager = GameObject.Find("RoomManager").GetComponent<RoomManager>();
-        outline = gameObject.GetComponent<Outline>();
+
+        if(gameObject.GetComponent<Outline>())
+            outline = gameObject.GetComponent<Outline>();
+
         GameObject.Find("MainCamera").GetComponent<MouseInteraction>().AddDoor(this);
     }
 
@@ -31,8 +34,11 @@ public class W2Door : MonoBehaviour
 
     public void MouseOver(Color color)
     {
-        outline.OutlineColor = color;
-        outline.enabled = true;
+        if (outline)
+        {
+            outline.OutlineColor = color;
+            outline.enabled = true;
+        }
 
         StopCoroutine("DelayedHideOutline");
         StartCoroutine("DelayedHideOutline");
@@ -40,7 +46,7 @@ public class W2Door : MonoBehaviour
 
     public void ShowOutline(Color color)
     {
-        if (gameObject.active)
+        if (gameObject.active && outline)
         {
             outline.OutlineColor = color;
             outline.enabled = true;
@@ -52,25 +58,29 @@ public class W2Door : MonoBehaviour
 
     public void HideOutline()
     {
-        outline.enabled = false;
+        if(outline)
+            outline.enabled = false;
     }
 
     IEnumerator DelayedHideOutline()
     {
         yield return new WaitForSeconds(0.1f);
 
-        outline.enabled = false;
+        if(outline)
+            outline.enabled = false;
     }
 
     IEnumerator DelayedHideOutline2()
     {
         yield return new WaitForSeconds(1.5f);
 
-        outline.enabled = false;
+        if (outline)
+            outline.enabled = false;
     }
 
     private void OnDisable()
     {
-        outline.enabled = false;
+        if(outline)
+            outline.enabled = false;
     }
 }
