@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 3
   isItem: 1
-  interactDistance: 0.8
+  interactDistance: 1.3
   itemName: Map
   dialogueTexts:
   - This map seems to show me where I am in the house, I wonder how it works...

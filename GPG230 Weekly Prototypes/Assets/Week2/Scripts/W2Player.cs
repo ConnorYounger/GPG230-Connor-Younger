@@ -29,6 +29,7 @@ public class W2Player : MonoBehaviour
     public GameObject winUI;
     public TMP_Text winFlavorText;
     public GameObject safeUI;
+    public GameObject mapUI;
 
     // Start is called before the first frame update
     void Start()
@@ -198,6 +199,11 @@ public class W2Player : MonoBehaviour
             dialogueText.text = currentInterractable.dialogueTexts[text];
             dialogueText.enabled = true;
 
+            HideSafeUI();
+            HideWorkBenchUI();
+            HideMapUI();
+            HideInventoryUI();
+
             dialogueUI.SetActive(true);
 
             StopCoroutine("HideDialogueUI");
@@ -223,6 +229,12 @@ public class W2Player : MonoBehaviour
     public void ShowInventoryUI()
     {
         inventory.CloseItemPickUpDisplay();
+        HideSafeUI();
+        HideWorkBenchUI();
+        HideDialogueUI();
+        HideMapUI();
+
+        mapUI.SetActive(false);
         inventoryUI.SetActive(true);
         PlayerInterractable(false);
     }
@@ -242,6 +254,26 @@ public class W2Player : MonoBehaviour
     {
         safeUI.SetActive(false);
         PlayerInterractable(true);
+    }
+
+    public void ShowMapUI()
+    {
+        if (!mapUI.active)
+        {
+            inventory.CloseItemPickUpDisplay();
+            HideSafeUI();
+            HideWorkBenchUI();
+            HideDialogueUI();
+            HideInventoryUI();
+            mapUI.SetActive(true);
+        }
+        else
+            HideMapUI();
+    }
+
+    public void HideMapUI()
+    {
+        mapUI.SetActive(false);
     }
 
     public void PlayerInterractable(bool value)

@@ -39,6 +39,7 @@ public class W2Inventory : MonoBehaviour
     public TMP_Text itemTextField;
     public TMP_Text itemSafeCodeField;
     public TMP_Text itemSafeCode2Field;
+    public GameObject mapButton;
 
     public GameObject axeItem;
     public GameObject ladderItem;
@@ -84,6 +85,7 @@ public class W2Inventory : MonoBehaviour
                     break;
                 case "map":
                     mapImg.color = showColour;
+                    mapButton.SetActive(true);
                     break;
                 case "motionSensor":
                     motionSensorImg.color = showColour;

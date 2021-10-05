@@ -18,6 +18,8 @@ public class RoomManager : MonoBehaviour
     public int startingRoom;
     public GameObject player;
 
+    public W2Map mapManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +66,11 @@ public class RoomManager : MonoBehaviour
             {
                 ShowRooms(i, false);
             }
+        }
+
+        if (mapManager)
+        {
+            mapManager.SetRoom(roomIndex);
         }
     }
 
