@@ -12,6 +12,13 @@ public class W2Safe : MonoBehaviour
     public int[] codeGeneratedNumbers;
     public TMP_Text[] codeTexts;
 
+    public W2Player player;
+
+    public Animator safeAnimator;
+
+    public GameObject keyItem;
+    public Transform keySpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +86,12 @@ public class W2Safe : MonoBehaviour
         if (EnterCorrectCode())
         {
             Debug.Log("Correct code!");
+            safeAnimator.SetBool("open", true);
+            safeAnimator.gameObject.GetComponent<BoxCollider>().enabled = false;
+            player.HideSafeUI();
+
+            GameObject key = Instantiate(keyItem, keySpawnPoint.position, keySpawnPoint.rotation);
+            key.transform.parent = transform;
         }
         else
         {
