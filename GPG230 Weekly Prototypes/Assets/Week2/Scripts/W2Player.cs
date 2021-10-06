@@ -31,6 +31,14 @@ public class W2Player : MonoBehaviour
     public GameObject safeUI;
     public GameObject mapUI;
 
+    [Header("Footstep Sounds")]
+    public RoomManager roomManager;
+    public AudioClip[] woodSteps;
+    public AudioClip[] stoneSteps;
+    public AudioSource audioSource;
+    public float stepTime = 0.5f;
+    private bool isPlayingSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,10 +79,12 @@ public class W2Player : MonoBehaviour
             if (Vector3.Distance(transform.position, destinationPoint) > interractDistance + 0.1f)
             {
                 playerAnimator.SetBool("isWalking", true);
+                PlayStepSound(true);
             }
             else
             {
                 playerAnimator.SetBool("isWalking", false);
+                PlayStepSound(false);
                 destinationPoint = transform.position;
             }
         }
@@ -92,10 +102,13 @@ public class W2Player : MonoBehaviour
                     Interraction();
 
                 playerAnimator.SetBool("isWalking", false);
+                PlayStepSound(false);
             }
             else
             {
                 playerAnimator.SetBool("isWalking", true);
+
+                PlayStepSound(true);
             }
         }
     }
@@ -109,10 +122,12 @@ public class W2Player : MonoBehaviour
                 UseDoor();
 
                 playerAnimator.SetBool("isWalking", false);
+                PlayStepSound(false);
             }
             else
             {
                 playerAnimator.SetBool("isWalking", true);
+                PlayStepSound(true);
             }
         }
     }
@@ -287,5 +302,46 @@ public class W2Player : MonoBehaviour
         winFlavorText.text = currentInterractable.dialogueTexts[1];
         winUI.SetActive(true);
         PlayerInterractable(false);
+    }
+
+    void PlayStepSound(bool value)
+    {
+        if(value && !isPlayingSound)
+        {
+            isPlayingSound = true;
+
+            StartCoroutine("PlayFootStepSound");
+        }
+
+        if (!value)
+        {
+            StopCoroutine("PlayFootStepSound");
+
+            isPlayingSound = false;
+        }
+    }
+
+    IEnumerator PlayFootStepSound()
+    {
+        yield return new WaitForSeconds(stepTime / 2);
+
+        if (roomManager.currentRoomIndex == 12)
+        {
+            int rand = Random.Range(0, stoneSteps.Length);
+
+            audioSource.clip = stoneSteps[rand];
+        }
+        else
+        {
+            int rand = Random.Range(0, woodSteps.Length);
+
+            audioSource.clip = woodSteps[rand];
+        }
+
+        audioSource.Play();
+
+        yield return new WaitForSeconds(stepTime / 2);
+
+        StartCoroutine("PlayFootStepSound");
     }
 }

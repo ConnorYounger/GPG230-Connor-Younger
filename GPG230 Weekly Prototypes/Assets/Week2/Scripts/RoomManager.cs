@@ -16,6 +16,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] public room[] rooms;
 
     public int startingRoom;
+    public int currentRoomIndex;
     public GameObject player;
 
     public W2Map mapManager;
@@ -35,6 +36,8 @@ public class RoomManager : MonoBehaviour
                 ShowRooms(i, false);
             }
         }
+
+        currentRoomIndex = startingRoom;
     }
 
     // Update is called once per frame
@@ -46,6 +49,8 @@ public class RoomManager : MonoBehaviour
     public void TravelToNewRoom(int roomIndex, int roomEntranceIndex)
     {
         Debug.Log("Travel to: " + roomIndex + ", room entrance: " + roomEntranceIndex);
+
+        currentRoomIndex = roomIndex;
 
         for(int i = 0; i < rooms.Length; i++)
         {
