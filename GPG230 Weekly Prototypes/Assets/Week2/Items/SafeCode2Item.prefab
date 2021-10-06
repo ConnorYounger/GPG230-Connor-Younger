@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 18
   isItem: 1
-  interactDistance: 1.3
+  interactDistance: 1.5
   itemName: Code 2nd Half
   dialogueTexts:
   - This looks like the second half of a code for something... Maybe I should find
@@ -166,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fef9791eda944b94eb555bda5a62f299, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fef9791eda944b94eb555bda5a62f299, type: 3}
       propertyPath: m_LocalPosition.z

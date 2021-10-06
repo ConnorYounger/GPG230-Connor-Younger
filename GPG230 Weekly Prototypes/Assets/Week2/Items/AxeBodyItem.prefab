@@ -112,12 +112,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 11
   isItem: 1
-  interactDistance: 1.2
+  interactDistance: 1.5
   itemName: Axe Body
   dialogueTexts:
   - This could be useful for crafting an axe. If I can find more pieces, I might
     be able to break through a window with this...
-  itemSprite: {fileID: 21300000, guid: d46d4455b5ee5432289c97eb8eb1690a, type: 3}
+  itemSprite: {fileID: 21300000, guid: cfa156e5a28e52344b31a72c19cda74b, type: 3}
   puckUpSound: {fileID: 8300000, guid: 3c2e6ca365c775140a4a8d40b4ba53be, type: 3}
 --- !u!114 &321658494881971690
 MonoBehaviour:

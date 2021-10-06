@@ -300,7 +300,7 @@ public class W2Inventory : MonoBehaviour
 
     public IEnumerator DisplayPickUpItemUI(W2Interractable item)
     {
-        itemNameField.text = "Picked up " + item.itemName + "!";
+        itemNameField.text = "Collected " + item.itemName + "!";
 
         if(item.itemSprite != null)
             itemDisplaySlot.sprite = item.itemSprite;

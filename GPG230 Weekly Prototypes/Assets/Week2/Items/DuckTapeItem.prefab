@@ -112,12 +112,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interractableType: 10
   isItem: 1
-  interactDistance: 1.2
+  interactDistance: 1.5
   itemName: Duck Tape
   dialogueTexts:
   - Maybe I could use this to craft something that will help me escape. I should
     look for more pieces...
-  itemSprite: {fileID: 21300000, guid: 58818255ffb204f62875c8fca7ffabc0, type: 3}
+  itemSprite: {fileID: 21300000, guid: f664e9edb1743e04f880b2a89d5db156, type: 3}
   puckUpSound: {fileID: 8300000, guid: bce36958d3c6865428ea86ad968b4f11, type: 3}
 --- !u!114 &4193089196319789897
 MonoBehaviour:
