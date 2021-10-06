@@ -7,11 +7,13 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void SwitchScene(string scene)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
 
     public void RestartCurrentScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
     public void QuitGame()
