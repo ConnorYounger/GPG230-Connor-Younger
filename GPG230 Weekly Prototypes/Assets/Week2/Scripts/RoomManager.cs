@@ -21,6 +21,8 @@ public class RoomManager : MonoBehaviour
 
     public W2Map mapManager;
 
+    public W2AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +78,11 @@ public class RoomManager : MonoBehaviour
         if (mapManager)
         {
             mapManager.SetRoom(roomIndex);
+        }
+
+        if (audioManager)
+        {
+            audioManager.PlayOpenDoorSound();
         }
     }
 

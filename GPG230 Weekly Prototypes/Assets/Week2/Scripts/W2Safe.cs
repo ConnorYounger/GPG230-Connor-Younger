@@ -19,6 +19,12 @@ public class W2Safe : MonoBehaviour
     public GameObject keyItem;
     public Transform keySpawnPoint;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip editCodeSound;
+    public AudioClip correctCodeSound;
+    public AudioClip incorrectCodeSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +60,8 @@ public class W2Safe : MonoBehaviour
         }
 
         codeTexts[i].text = codeNumbers[i].ToString();
+
+        PlaySound(editCodeSound);
     }
 
     public void DecreaseValue(int i)
@@ -66,6 +74,14 @@ public class W2Safe : MonoBehaviour
         }
 
         codeTexts[i].text = codeNumbers[i].ToString();
+
+        PlaySound(editCodeSound);
+    }
+
+    void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     bool EnterCorrectCode()
@@ -92,6 +108,8 @@ public class W2Safe : MonoBehaviour
 
             GameObject key = Instantiate(keyItem, keySpawnPoint.position, keySpawnPoint.rotation);
             key.transform.parent = transform;
+
+            PlaySound(correctCodeSound);
         }
         else
         {
@@ -105,7 +123,7 @@ public class W2Safe : MonoBehaviour
         foreach (TMP_Text text in codeTexts)
             text.color = Color.red;
 
-        // Play incorrect input sound
+        PlaySound(incorrectCodeSound);
 
         yield return new WaitForSeconds(0.7f);
 
