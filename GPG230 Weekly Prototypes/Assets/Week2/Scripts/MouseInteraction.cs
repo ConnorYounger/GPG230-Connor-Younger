@@ -15,6 +15,8 @@ public class MouseInteraction : MonoBehaviour
 
     public bool caninterract = true;
 
+    public AudioSource searchSound;
+
     void Awake()
     {
         items = new List<W2Interractable>();
@@ -100,6 +102,9 @@ public class MouseInteraction : MonoBehaviour
             if(door.gameObject.active)
                 door.ShowOutline(searchDoorColor);
         }
+
+        if (searchSound)
+            searchSound.Play();
     }
 
     public void AddItem(W2Interractable item)

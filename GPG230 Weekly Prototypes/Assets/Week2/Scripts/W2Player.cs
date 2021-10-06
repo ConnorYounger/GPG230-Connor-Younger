@@ -45,6 +45,8 @@ public class W2Player : MonoBehaviour
     [Header("Inventory Audio")]
     public AudioSource bagOpenAudioSource;
 
+    public AudioSource winAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -334,6 +336,8 @@ public class W2Player : MonoBehaviour
                 PlayerPrefs.SetInt("ladderWin", 1);
                 break;
         }
+
+        winAudioSource.Play();
 
         StartCoroutine("WinningAnimation");
     }
