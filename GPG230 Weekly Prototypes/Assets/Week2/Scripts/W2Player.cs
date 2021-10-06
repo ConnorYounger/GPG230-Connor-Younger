@@ -22,6 +22,7 @@ public class W2Player : MonoBehaviour
     public Animator playerAnimator;
 
     [Header("UI Refrences")]
+    public GameObject toolHud;
     public GameObject workBenchUI;
     public GameObject inventoryUI;
     public GameObject dialogueUI;
@@ -31,6 +32,7 @@ public class W2Player : MonoBehaviour
     public GameObject safeUI;
     public GameObject mapUI;
     public W2Map mapManager;
+    public Animator darknessFade;
 
     [Header("Footstep Sounds")]
     public RoomManager roomManager;
@@ -317,6 +319,15 @@ public class W2Player : MonoBehaviour
         winFlavorText.text = currentInterractable.dialogueTexts[1];
         winUI.SetActive(true);
         PlayerInterractable(false);
+        toolHud.SetActive(false);
+        darknessFade.SetBool("fadeOut", true);
+
+        StartCoroutine("WinningAnimation");
+    }
+
+    IEnumerator WinningAnimation()
+    {
+        yield return new WaitForSeconds(3);
 
         Time.timeScale = 0;
     }

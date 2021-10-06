@@ -5,7 +5,7 @@ using UnityEngine;
 public class W2Interractable : MonoBehaviour
 {
     [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench, 
-                                                duckTape, axeBody, axeHead, ladderBottom, ladderTop, barricadedWindow, safe, safeCode1, safeCode2 };
+                                                duckTape, axeBody, axeHead, ladderBottom, ladderTop, barricadedWindow, safe, safeCode1, safeCode2, excalibur };
     public itemEnum interractableType;
 
     public bool isItem = true;

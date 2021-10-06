@@ -86,6 +86,8 @@ public class RoomManager : MonoBehaviour
             audioManager.PlayOpenDoorSound();
             audioManager.AdjustRainAudio(currentRoomIndex);
         }
+
+        player.GetComponent<W2Inventory>().CloseItemPickUpDisplay();
     }
 
     void ShowRooms(int index, bool value)

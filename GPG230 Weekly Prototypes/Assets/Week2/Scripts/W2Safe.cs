@@ -19,6 +19,8 @@ public class W2Safe : MonoBehaviour
     public GameObject keyItem;
     public Transform keySpawnPoint;
 
+    public GameObject excalibur;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip editCodeSound;
@@ -110,6 +112,8 @@ public class W2Safe : MonoBehaviour
             key.transform.parent = transform;
 
             PlaySound(correctCodeSound);
+
+            excalibur.SetActive(true);
         }
         else
         {
