@@ -71,7 +71,15 @@ public class W2Player : MonoBehaviour
             position = myNavHit.position;
         }
 
-        destinationPoint = position;
+        NavMeshPath navMeshPath = new NavMeshPath();
+        if (navAgent.CalculatePath(position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+        {
+            destinationPoint = position;
+        }
+        else
+        {
+            navAgent.enabled = false;
+        }
     }
 
     void MovePlayer()
@@ -220,7 +228,7 @@ public class W2Player : MonoBehaviour
 
             HideSafeUI();
             HideWorkBenchUI();
-            HideMapUI();
+            mapUI.SetActive(false);
             HideInventoryUI();
 
             dialogueUI.SetActive(true);

@@ -74,12 +74,12 @@ public class MouseInteraction : MonoBehaviour
                     }
                     else
                     {
-                        OffClick();
+                        OffClick(true);
                     }
                 }
                 else
                 {
-                    OffClick();
+                    OffClick(true);
                 }
             }
         }
@@ -112,10 +112,13 @@ public class MouseInteraction : MonoBehaviour
         doors.Add(door);
     }
 
-    void OffClick()
+    void OffClick(bool resetDest)
     {
         player.currentDoor = null;
         player.currentInterractable = null;
+
+        if(resetDest)
+            player.SetNewDestination(player.transform.position);
     }
 
     void PlayerMovement()
@@ -133,7 +136,7 @@ public class MouseInteraction : MonoBehaviour
 
                     player.SetNewDestination(hit.point);
 
-                    OffClick();
+                    OffClick(false);
                 }
             }
         }
