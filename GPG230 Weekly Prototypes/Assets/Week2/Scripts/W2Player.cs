@@ -175,7 +175,7 @@ public class W2Player : MonoBehaviour
                 case "frontDoor":
                     if(inventory.SearchForItem("key") != null)
                     {
-                        Win();
+                        Win("key");
                     }
                     else
                     {
@@ -185,7 +185,7 @@ public class W2Player : MonoBehaviour
                 case "window":
                     if (inventory.SearchForItem("axe") != null)
                     {
-                        Win();
+                        Win("axe");
                     }
                     else
                     {
@@ -195,7 +195,7 @@ public class W2Player : MonoBehaviour
                 case "highWindow":
                     if (inventory.SearchForItem("ladder") != null)
                     {
-                        Win();
+                        Win("ladder");
                     }
                     else
                     {
@@ -314,13 +314,26 @@ public class W2Player : MonoBehaviour
         mouseInteraction.caninterract = value;
     }
 
-    void Win()
+    void Win(string type)
     {
         winFlavorText.text = currentInterractable.dialogueTexts[1];
         winUI.SetActive(true);
         PlayerInterractable(false);
         toolHud.SetActive(false);
         darknessFade.SetBool("fadeOut", true);
+
+        switch (type)
+        {
+            case "key":
+                PlayerPrefs.SetInt("keyWin", 1);
+                break;
+            case "axe":
+                PlayerPrefs.SetInt("axeWin", 1);
+                break;
+            case "ladder":
+                PlayerPrefs.SetInt("ladderWin", 1);
+                break;
+        }
 
         StartCoroutine("WinningAnimation");
     }

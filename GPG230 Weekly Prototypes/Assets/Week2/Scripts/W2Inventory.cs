@@ -134,6 +134,9 @@ public class W2Inventory : MonoBehaviour
                         CheckLadderCraftable();
                     }
                     break;
+                case "excalibur":
+                    PlayerPrefs.SetInt("secret1", 1);
+                    break;
             }
 
             AddItem(item);
@@ -263,6 +266,8 @@ public class W2Inventory : MonoBehaviour
             audioSource.Play();
         }
 
+        CheckForAchieve();
+
         StopCoroutine("DisplayPickUpItemUI");
         StartCoroutine("DisplayPickUpItemUI", item);
     }
@@ -334,5 +339,31 @@ public class W2Inventory : MonoBehaviour
     public void CloseItemPickUpDisplay()
     {
         pickUpItemUI.SetActive(false);
+    }
+
+    void CheckForAchieve()
+    {
+        bool key = false;
+        bool axe = false;
+        bool ladder = false;
+
+        foreach(W2Interractable item in items)
+        {
+            if (item.interractableType.ToString() == "key" && !key)
+                key = true;
+            else if (item.interractableType.ToString() == "axe" && !axe)
+            {
+                axe = true;
+            }
+            else if (item.interractableType.ToString() == "ladder" && !ladder)
+            {
+                ladder = true;
+            }
+        }
+
+        if(key && axe && ladder)
+        {
+            PlayerPrefs.SetInt("allWin", 1);
+        }
     }
 }
