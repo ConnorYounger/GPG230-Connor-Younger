@@ -17,6 +17,8 @@ public class W2Interractable : MonoBehaviour
     public Sprite itemSprite;
     private Outline outline;
 
+    public AudioClip puckUpSound;
+
     // Start is called before the first frame update
     void Start()
     {

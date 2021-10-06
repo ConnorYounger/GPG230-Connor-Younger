@@ -118,6 +118,7 @@ MonoBehaviour:
   - The top half of an axe. If I could find the bottom half and something to hold
     it together, I might be able to craft an axe...
   itemSprite: {fileID: 21300000, guid: 8cce3e31efb4846b9984c5212b942885, type: 3}
+  puckUpSound: {fileID: 8300000, guid: 8ed6060fb0bf49d489367dca3698eb9b, type: 3}
 --- !u!114 &7261372316973659855
 MonoBehaviour:
   m_ObjectHideFlags: 0

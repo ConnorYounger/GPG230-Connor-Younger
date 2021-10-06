@@ -118,6 +118,7 @@ MonoBehaviour:
   - This looks like the second half of a code for something... Maybe I should find
     the other half.
   itemSprite: {fileID: 21300000, guid: a0d933d71dba75949b401d758dc891a9, type: 3}
+  puckUpSound: {fileID: 8300000, guid: 6dbf7cc0fcbb7ee47b743a234edd7c90, type: 3}
 --- !u!114 &9199765498123033558
 MonoBehaviour:
   m_ObjectHideFlags: 0

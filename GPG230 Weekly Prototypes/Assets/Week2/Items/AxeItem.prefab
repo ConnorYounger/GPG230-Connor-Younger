@@ -117,6 +117,7 @@ MonoBehaviour:
   dialogueTexts:
   - I could use this to break through an insecure window and escape!
   itemSprite: {fileID: 21300000, guid: 437d5ac11c6c34c1ca3efef2000e7f12, type: 3}
+  puckUpSound: {fileID: 8300000, guid: 8ed6060fb0bf49d489367dca3698eb9b, type: 3}
 --- !u!114 &284603326451526046
 MonoBehaviour:
   m_ObjectHideFlags: 0

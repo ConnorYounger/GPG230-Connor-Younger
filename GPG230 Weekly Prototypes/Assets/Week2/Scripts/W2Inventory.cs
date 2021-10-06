@@ -56,6 +56,9 @@ public class W2Inventory : MonoBehaviour
     private bool axeCrafted;
     private bool ladderCrafted;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -253,6 +256,12 @@ public class W2Inventory : MonoBehaviour
 
         if (item.itemSprite)
             newSlot.transform.GetChild(0).GetComponent<Image>().sprite = item.itemSprite;
+
+        if (item.puckUpSound)
+        {
+            audioSource.clip = item.puckUpSound;
+            audioSource.Play();
+        }
 
         StopCoroutine("DisplayPickUpItemUI");
         StartCoroutine("DisplayPickUpItemUI", item);

@@ -117,6 +117,7 @@ MonoBehaviour:
   dialogueTexts:
   - This map seems to show me where I am in the house, I wonder how it works...
   itemSprite: {fileID: 21300000, guid: d688db4ec6b884c1491f0f5150408201, type: 3}
+  puckUpSound: {fileID: 8300000, guid: 6dbf7cc0fcbb7ee47b743a234edd7c90, type: 3}
 --- !u!114 &5160864139772304426
 MonoBehaviour:
   m_ObjectHideFlags: 0
