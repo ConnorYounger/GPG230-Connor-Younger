@@ -317,6 +317,8 @@ public class W2Player : MonoBehaviour
         winFlavorText.text = currentInterractable.dialogueTexts[1];
         winUI.SetActive(true);
         PlayerInterractable(false);
+
+        Time.timeScale = 0;
     }
 
     void PlayStepSound(bool value)
