@@ -9,6 +9,10 @@ public class W2Map : MonoBehaviour
 
     public int roomIndex;
 
+    public AudioSource audioSource;
+    public AudioClip openMapSound;
+    public AudioClip closeMapSound;
+
     private void Start()
     {
         SetRoom(12);
@@ -34,5 +38,17 @@ public class W2Map : MonoBehaviour
                 playerLocations[i].enabled = false;
             }
         }
+    }
+
+    public void OpenMap()
+    {
+        audioSource.clip = openMapSound;
+        audioSource.Play();
+    }
+
+    public void CloseMap()
+    {
+        audioSource.clip = closeMapSound;
+        audioSource.Play();
     }
 }

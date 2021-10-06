@@ -30,6 +30,7 @@ public class W2Player : MonoBehaviour
     public TMP_Text winFlavorText;
     public GameObject safeUI;
     public GameObject mapUI;
+    public W2Map mapManager;
 
     [Header("Footstep Sounds")]
     public RoomManager roomManager;
@@ -38,6 +39,9 @@ public class W2Player : MonoBehaviour
     public AudioSource audioSource;
     public float stepTime = 0.5f;
     private bool isPlayingSound;
+
+    [Header("Inventory Audio")]
+    public AudioSource bagOpenAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -247,10 +251,11 @@ public class W2Player : MonoBehaviour
         HideSafeUI();
         HideWorkBenchUI();
         HideDialogueUI();
-        HideMapUI();
+        mapUI.SetActive(false);
 
         mapUI.SetActive(false);
         inventoryUI.SetActive(true);
+        bagOpenAudioSource.Play();
         PlayerInterractable(false);
     }
 
@@ -281,6 +286,7 @@ public class W2Player : MonoBehaviour
             HideDialogueUI();
             HideInventoryUI();
             mapUI.SetActive(true);
+            mapManager.OpenMap();
         }
         else
             HideMapUI();
@@ -289,6 +295,7 @@ public class W2Player : MonoBehaviour
     public void HideMapUI()
     {
         mapUI.SetActive(false);
+        mapManager.CloseMap();
     }
 
     public void PlayerInterractable(bool value)

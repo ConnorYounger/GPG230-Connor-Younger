@@ -40,6 +40,7 @@ public class RoomManager : MonoBehaviour
         }
 
         currentRoomIndex = startingRoom;
+        audioManager.AdjustRainAudio(currentRoomIndex);
     }
 
     // Update is called once per frame
@@ -83,6 +84,7 @@ public class RoomManager : MonoBehaviour
         if (audioManager)
         {
             audioManager.PlayOpenDoorSound();
+            audioManager.AdjustRainAudio(currentRoomIndex);
         }
     }
 

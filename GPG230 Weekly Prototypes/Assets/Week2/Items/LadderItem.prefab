@@ -117,7 +117,7 @@ MonoBehaviour:
   dialogueTexts:
   - I could use this to escape through a high window...
   itemSprite: {fileID: 21300000, guid: 79549c66556ad48bbbd9a4f8f20d8c3a, type: 3}
-  puckUpSound: {fileID: 8300000, guid: 8ed6060fb0bf49d489367dca3698eb9b, type: 3}
+  puckUpSound: {fileID: 8300000, guid: bce36958d3c6865428ea86ad968b4f11, type: 3}
 --- !u!114 &7455268677958433632
 MonoBehaviour:
   m_ObjectHideFlags: 0
