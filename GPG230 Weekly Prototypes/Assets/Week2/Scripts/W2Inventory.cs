@@ -40,6 +40,7 @@ public class W2Inventory : MonoBehaviour
     public TMP_Text itemSafeCodeField;
     public TMP_Text itemSafeCode2Field;
     public GameObject mapButton;
+    public W2AchievementsManager achivementManager;
 
     public GameObject axeItem;
     public GameObject ladderItem;
@@ -136,6 +137,7 @@ public class W2Inventory : MonoBehaviour
                     break;
                 case "excalibur":
                     PlayerPrefs.SetInt("secret1", 1);
+                    achivementManager.UnlockAchievement("excalibur");
                     break;
             }
 
@@ -364,6 +366,7 @@ public class W2Inventory : MonoBehaviour
         if(key && axe && ladder)
         {
             PlayerPrefs.SetInt("allWin", 1);
+            achivementManager.UnlockAchievement("allWin");
         }
     }
 }

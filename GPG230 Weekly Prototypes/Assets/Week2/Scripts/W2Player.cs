@@ -33,6 +33,7 @@ public class W2Player : MonoBehaviour
     public GameObject mapUI;
     public W2Map mapManager;
     public Animator darknessFade;
+    public W2AchievementsManager achievementManager;
 
     [Header("Footstep Sounds")]
     public RoomManager roomManager;
@@ -328,12 +329,15 @@ public class W2Player : MonoBehaviour
         {
             case "key":
                 PlayerPrefs.SetInt("keyWin", 1);
+                achievementManager.UnlockAchievement("keyWn");
                 break;
             case "axe":
                 PlayerPrefs.SetInt("axeWin", 1);
+                achievementManager.UnlockAchievement("axeWin");
                 break;
             case "ladder":
                 PlayerPrefs.SetInt("ladderWin", 1);
+                achievementManager.UnlockAchievement("ladderWIn");
                 break;
         }
 
