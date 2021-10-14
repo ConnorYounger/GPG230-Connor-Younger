@@ -136,8 +136,10 @@ public class W2Inventory : MonoBehaviour
                     }
                     break;
                 case "excalibur":
-                    PlayerPrefs.SetInt("secret1", 1);
                     achivementManager.UnlockAchievement("excalibur");
+                    break;
+                case "imSoCool":
+                    achivementManager.UnlockAchievement("I'm So Cool");
                     break;
             }
 
@@ -365,7 +367,6 @@ public class W2Inventory : MonoBehaviour
 
         if(key && axe && ladder)
         {
-            PlayerPrefs.SetInt("allWin", 1);
             achivementManager.UnlockAchievement("allWin");
         }
     }

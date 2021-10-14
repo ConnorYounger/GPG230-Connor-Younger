@@ -5,9 +5,10 @@ using UnityEngine;
 public class W2Interractable : MonoBehaviour
 {
     [System.Serializable] public enum itemEnum { key, axe, ladder, map, motionSensor, santiyPills, frontDoor, window, highWindow, workBench, 
-                                                duckTape, axeBody, axeHead, ladderBottom, ladderTop, barricadedWindow, safe, safeCode1, safeCode2, excalibur };
+                                                duckTape, axeBody, axeHead, ladderBottom, ladderTop, barricadedWindow, safe, safeCode1, safeCode2, excalibur, imSoCool };
     public itemEnum interractableType;
 
+    public bool outlineDisplay = true;
     public bool isItem = true;
     public float interactDistance = 0.8f;
 
@@ -24,7 +25,9 @@ public class W2Interractable : MonoBehaviour
     {
         if(gameObject.GetComponent<Outline>())
             outline = gameObject.GetComponent<Outline>();
-        GameObject.Find("MainCamera").GetComponent<MouseInteraction>().AddItem(this);
+
+        if(outlineDisplay)
+            GameObject.Find("MainCamera").GetComponent<MouseInteraction>().AddItem(this);
     }
 
     // Update is called once per frame

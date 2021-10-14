@@ -114,6 +114,7 @@ public class W2MenuMouseInteraction : MonoBehaviour
         PlayerPrefs.SetInt("ladderWin", 0);
         PlayerPrefs.SetInt("allWin", 0);
         PlayerPrefs.SetInt("secret1", 0);
+        PlayerPrefs.SetInt("secret2", 0);
     }
 
     void OpenHelpMenu()

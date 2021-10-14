@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4193089196319789896
+--- !u!1 &4235993321996723324
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4193089196319789874}
-  - component: {fileID: 4193089196319789877}
-  - component: {fileID: 4193089196319789876}
-  - component: {fileID: 4193089196319789879}
-  - component: {fileID: 4193089196319789878}
-  - component: {fileID: 4193089196319789897}
+  - component: {fileID: 4235993321996723298}
+  - component: {fileID: 4235993321996723299}
+  - component: {fileID: 4235993321996723296}
+  - component: {fileID: 4235993321996723297}
+  - component: {fileID: 4235993321996723326}
+  - component: {fileID: 4235993321996723327}
   m_Layer: 0
-  m_Name: DuckTapeItem
+  m_Name: ImSoCoolItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4193089196319789874
+--- !u!4 &4235993321996723298
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193089196319789896}
+  m_GameObject: {fileID: 4235993321996723324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.13, y: 0.93, z: 3.81}
+  m_LocalPosition: {x: 4.717581, y: -5.440589, z: 19.936882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2781682561456328565}
+  - {fileID: 5062314149896319633}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4193089196319789877
+--- !u!33 &4235993321996723299
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193089196319789896}
+  m_GameObject: {fileID: 4235993321996723324}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4193089196319789876
+--- !u!23 &4235993321996723296
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193089196319789896}
+  m_GameObject: {fileID: 4235993321996723324}
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,48 +85,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4193089196319789879
+--- !u!65 &4235993321996723297
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193089196319789896}
+  m_GameObject: {fileID: 4235993321996723324}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.3, z: 0.6}
-  m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &4193089196319789878
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4235993321996723326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193089196319789896}
+  m_GameObject: {fileID: 4235993321996723324}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0577d41d9ff5e204a9c76ad74110ac37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interractableType: 10
-  outlineDisplay: 1
+  interractableType: 20
   isItem: 1
   interactDistance: 1.5
-  itemName: Duct Tape
+  itemName: I'm so cool
   dialogueTexts:
-  - Maybe I could use this to craft something that will help me escape. I should
-    look for more pieces...
-  itemSprite: {fileID: 21300000, guid: f664e9edb1743e04f880b2a89d5db156, type: 3}
-  puckUpSound: {fileID: 8300000, guid: bce36958d3c6865428ea86ad968b4f11, type: 3}
---- !u!114 &4193089196319789897
+  - I'm so cool.
+  itemSprite: {fileID: 21300000, guid: 557e23295af5e5c49810b4d9595329ca, type: 3}
+  puckUpSound: {fileID: 8300000, guid: 6dbf7cc0fcbb7ee47b743a234edd7c90, type: 3}
+--- !u!114 &4235993321996723327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193089196319789896}
+  m_GameObject: {fileID: 4235993321996723324}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
@@ -138,77 +136,81 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!1001 &2382471205564033182
+--- !u!1001 &4740683577018914170
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4193089196319789874}
+    m_TransformParent: {fileID: 4235993321996723298}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.07
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071067
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 5993750170c07e84094773d469f766df, type: 3}
+    - target: {fileID: -7511558181221131132, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d052940ad451c894685497784a71cd48, type: 2}
+    - target: {fileID: 919132149155446097, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
       propertyPath: m_Name
-      value: tape
+      value: BrokenPaper1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5993750170c07e84094773d469f766df, type: 3}
---- !u!4 &2781682561456328565 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
+--- !u!4 &5062314149896319633 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5993750170c07e84094773d469f766df, type: 3}
-  m_PrefabInstance: {fileID: 2382471205564033182}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c722c1fc1fbcf2740a4f52db4c0343fe, type: 3}
+  m_PrefabInstance: {fileID: 4740683577018914170}
   m_PrefabAsset: {fileID: 0}

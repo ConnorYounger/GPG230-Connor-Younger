@@ -328,16 +328,13 @@ public class W2Player : MonoBehaviour
         switch (type)
         {
             case "key":
-                PlayerPrefs.SetInt("keyWin", 1);
-                achievementManager.UnlockAchievement("keyWn");
+                achievementManager.UnlockAchievement("keyWin");
                 break;
             case "axe":
-                PlayerPrefs.SetInt("axeWin", 1);
                 achievementManager.UnlockAchievement("axeWin");
                 break;
             case "ladder":
-                PlayerPrefs.SetInt("ladderWin", 1);
-                achievementManager.UnlockAchievement("ladderWIn");
+                achievementManager.UnlockAchievement("ladderWin");
                 break;
         }
 

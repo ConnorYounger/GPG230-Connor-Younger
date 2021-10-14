@@ -45,7 +45,7 @@ public class MouseInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100))
         {
-            if (hit.collider != null && hit.collider.GetComponent<W2Interractable>())
+            if (hit.collider != null && hit.collider.GetComponent<W2Interractable>() && hit.collider.GetComponent<W2Interractable>().outlineDisplay)
             {
                 hit.collider.GetComponent<W2Interractable>().MouseOver(mouseOverColor);
             }
