@@ -17,5 +17,12 @@ public class WeaponBasePickUp : Interactions
     public override void Interact(GameObject ob)
     {
         interactable.weaponManager.PickUpWeapon(ob);
+
+        if (ob.GetComponent<PhysicsGun>())
+        {
+            ob.GetComponent<PhysicsGun>().canUse = true;
+        }
+
+        DisableBoxCollider();
     }
 }

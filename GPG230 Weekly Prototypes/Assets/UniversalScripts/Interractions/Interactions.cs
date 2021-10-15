@@ -15,4 +15,10 @@ public class Interactions
     {
 
     }
+
+    public virtual void DisableBoxCollider()
+    {
+        if(interactable.GetComponent<BoxCollider>())
+            interactable.GetComponent<BoxCollider>().enabled = false;
+    }
 }
