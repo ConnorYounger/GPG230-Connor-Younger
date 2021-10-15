@@ -8,8 +8,6 @@ public class PhysicsGun : MonoBehaviour
 
     public bool canUse;
 
-    public bool holdingObject;
-
     [Header("FireForce")]
     public float fireForce;
     public float maxFireForce = 3000;
@@ -42,28 +40,29 @@ public class PhysicsGun : MonoBehaviour
             // Mouse fire
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (!holdingObject)
+                if (!_grabbedObject)
                 {
                     OnKeyDown(KeyCode.Mouse0);
-                    holdingObject = true;
                 }
                 else
                 {
                     OnKeyUp(KeyCode.Mouse0);
-                    holdingObject = false;
                 }
             }
 
+            // Mouse scroll wheel
             float axis = Input.GetAxisRaw("Mouse ScrollWheel");
 
-            // Mouse scroll wheel
-            if(axis > 0 && fireForce < maxFireForce)
+            if (Input.GetKey(KeyCode.Mouse1))
             {
-                fireForce += 100;
-            }
-            else if(axis < 0 && fireForce > minFireForce)
-            {
-                fireForce -= 100;
+                if (axis > 0 && fireForce < maxFireForce)
+                {
+                    fireForce += 100;
+                }
+                else if (axis < 0 && fireForce > minFireForce)
+                {
+                    fireForce -= 100;
+                }
             }
         }
     }

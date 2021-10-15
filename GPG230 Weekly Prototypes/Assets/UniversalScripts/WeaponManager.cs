@@ -44,7 +44,7 @@ public class WeaponManager : MonoBehaviour
 
     void SwitchWeaponInput()
     {
-        if (heldWeapons.Count > 0)
+        if (heldWeapons.Count > 0 && !Input.GetKey(KeyCode.Mouse1))
         {
             if (Input.GetAxis("Mouse ScrollWheel") > 0)
             {
