@@ -21,7 +21,9 @@ public class WeaponManager : MonoBehaviour
     void Start()
     {
         heldWeapons = new List<GameObject>();
-        SetStartingWeapon();
+
+        if(startingWeaponPrefab)
+            SetStartingWeapon();
     }
 
     // Update is called once per frame
@@ -111,7 +113,9 @@ public class WeaponManager : MonoBehaviour
             {
                 heldWeapons[i].SetActive(true);
                 heldWeapons[i].GetComponent<WeaponBase>().weaponCanFire = true;
-                heldWeapons[i].GetComponent<WeaponBase>().ammoCounterText.text = heldWeapons[i].GetComponent<WeaponBase>().ammoCount.ToString();
+
+                if(heldWeapons[i].GetComponent<WeaponBase>().ammoCounterText)
+                    heldWeapons[i].GetComponent<WeaponBase>().ammoCounterText.text = heldWeapons[i].GetComponent<WeaponBase>().ammoCount.ToString();
 
                 if (heldWeapons[i].GetComponent<WeaponBase>().weapon != null)
                 {

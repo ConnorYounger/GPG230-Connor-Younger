@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     public Transform playerCam;
     public float interactDistance = 2;
 
+    [Header("Universal")]
     public WeaponManager weaponManager;
 
     // Start is called before the first frame update
@@ -24,7 +25,7 @@ public class PlayerInteraction : MonoBehaviour
     void SearchForInterractable()
     {
         RaycastHit hit;
-        Physics.Raycast(playerCam.position, playerCam.forward, out hit, interactDistance, 7);
+        Physics.Raycast(playerCam.position, playerCam.forward, out hit, interactDistance, 9);
 
         Debug.DrawLine(playerCam.position, hit.point, Color.blue);
 
@@ -34,7 +35,18 @@ public class PlayerInteraction : MonoBehaviour
 
             if (hit.collider.GetComponent<WeaponBase>())
             {
-                WeaponInteraction(hit.collider.GetComponent<WeaponBase>());
+                //WeaponInteraction(hit.collider.GetComponent<WeaponBase>());
+            }
+
+            if (hit.collider.GetComponent<Interactable>())
+            {
+                // Any highlights
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (hit.collider.GetComponent<WeaponBase>())
+                        hit.collider.GetComponent<Interactable>().Interract(hit.collider.gameObject);
+                }
             }
         }
     }

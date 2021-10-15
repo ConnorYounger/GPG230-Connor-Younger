@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WeaponBasePickUp : Interactions
+{
+    public WeaponBasePickUp(Interactable i)
+    {
+        interactable = i;
+    }
+
+    public override void Interact()
+    {
+        base.Interact();
+    }
+
+    public override void Interact(GameObject ob)
+    {
+        interactable.weaponManager.PickUpWeapon(ob);
+    }
+}
