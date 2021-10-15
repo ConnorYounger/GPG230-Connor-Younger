@@ -5,7 +5,7 @@ using TMPro;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     public Transform weaponDisplayPos;
 
@@ -34,8 +34,9 @@ public class WeaponManager : MonoBehaviour
     {
         if (startingWeaponPrefab.GetComponent<WeaponBase>())
         {
-            GameObject spawnedStartingWeapon = gameManager.lootBoxManager.SpawnSetWeapon(startingWeaponPrefab.GetComponent<WeaponBase>(), transform);
-            PickUpWeapon(spawnedStartingWeapon);
+            //GameObject spawnedStartingWeapon = gameManager.lootBoxManager.SpawnSetWeapon(startingWeaponPrefab.GetComponent<WeaponBase>(), transform);
+            //PickUpWeapon(startingWeaponPrefab);
+            PickUpWeapon(startingWeaponPrefab);
         }
     }
 
@@ -129,4 +130,4 @@ public class WeaponManager : MonoBehaviour
             }
         }
     }
-}       
+}
