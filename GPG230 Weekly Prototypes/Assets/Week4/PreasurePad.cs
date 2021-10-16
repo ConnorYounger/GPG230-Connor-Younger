@@ -26,6 +26,8 @@ public class PreasurePad : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         colliders.Add(collision.collider);
+
+        CheckForCollisions();
     }
 
     private void OnCollisionExit(Collision collision)
@@ -37,13 +39,17 @@ public class PreasurePad : MonoBehaviour
 
     void CheckForCollisions()
     {
+        //Debug.Log("CheckForCollisions");
+
         if(colliders.Count > 0)
         {
             connector.Activate(transform);
+            //Debug.Log("Activate");
         }
         else
         {
             connector.Deactivate(transform);
+            //Debug.Log("Deactivate");
         }
     }
 }

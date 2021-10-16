@@ -38,6 +38,8 @@ public class PuzzleConnections : MonoBehaviour
             {
                 isConnected[i] = true;
             }
+
+            Debug.Log(connections[i] + " " + t);
         }
 
         CheckForFullActivation();
@@ -58,20 +60,20 @@ public class PuzzleConnections : MonoBehaviour
 
     void CheckForFullActivation()
     {
+        bool open = true;
+
         for (int i = 0; i < connections.Length; i++)
         {
-            bool open = false;
-
-            if (connections[i])
+            if (!isConnected[i])
             {
-                open = true;
+                open = false;
             }
-
-            if(open)
-                OpenDoor();
-            else
-                CloseDoor();
         }
+
+        if (open)
+            OpenDoor();
+        else
+            CloseDoor();
     }
 
     void OpenDoor()
