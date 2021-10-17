@@ -8,6 +8,7 @@ public class PuzzleConnections : MonoBehaviour
     public bool[] isConnected;
 
     public W3Door door;
+    public PhizDoor phisDoor;
 
     void Start()
     {
@@ -78,14 +79,22 @@ public class PuzzleConnections : MonoBehaviour
 
     void OpenDoor()
     {
-        door.OpenDoor();
+        if(door)
+            door.OpenDoor();
+
+        if (phisDoor)
+            phisDoor.TurnOff();
 
         Debug.Log("Open Door");
     }
 
     void CloseDoor()
     {
-        door.CloseDoor();
+        if(door)
+            door.CloseDoor();
+
+        if (phisDoor)
+            phisDoor.TurnOn();
 
         Debug.Log("Close Door");
     }

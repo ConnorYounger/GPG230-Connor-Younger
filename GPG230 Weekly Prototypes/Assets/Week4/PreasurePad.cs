@@ -8,6 +8,8 @@ public class PreasurePad : MonoBehaviour
     public MeshRenderer mesh;
     public Animator animator;
 
+    public bool singlePress;
+
     private List<Collider> colliders;
 
     // Start is called before the first frame update
@@ -26,6 +28,8 @@ public class PreasurePad : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         colliders.Add(collision.collider);
+
+        Debug.Log("Collision with: " + collision.collider);
 
         CheckForCollisions();
     }
@@ -48,7 +52,8 @@ public class PreasurePad : MonoBehaviour
         }
         else
         {
-            connector.Deactivate(transform);
+            if(!singlePress)
+                connector.Deactivate(transform);
             //Debug.Log("Deactivate");
         }
     }

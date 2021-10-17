@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class W3Door : MonoBehaviour
 {
+    public GameObject doorCollider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,13 @@ public class W3Door : MonoBehaviour
 
     public void OpenDoor()
     {
-
+        if (doorCollider)
+            doorCollider.SetActive(false);
     }
 
     public void CloseDoor()
     {
-
+        if (doorCollider)
+            doorCollider.SetActive(true);
     }
 }
