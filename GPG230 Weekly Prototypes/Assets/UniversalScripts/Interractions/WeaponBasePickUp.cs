@@ -26,6 +26,10 @@ public class WeaponBasePickUp : Interactions
         {
             ob.GetComponent<ObjectSpawnerGun>().canUse = true;
         }
+        else if (ob.GetComponent<PuzzleGun>())
+        {
+            ob.GetComponent<PuzzleGun>().canUse = true;
+        }
 
         DisableBoxCollider();
     }

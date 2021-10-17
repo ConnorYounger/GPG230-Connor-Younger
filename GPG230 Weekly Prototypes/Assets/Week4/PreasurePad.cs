@@ -41,6 +41,21 @@ public class PreasurePad : MonoBehaviour
         CheckForCollisions();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        colliders.Add(other);
+
+
+        CheckForCollisions();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        colliders.Remove(other);
+
+        CheckForCollisions();
+    }
+
     void CheckForCollisions()
     {
         //Debug.Log("CheckForCollisions");
@@ -49,12 +64,26 @@ public class PreasurePad : MonoBehaviour
         {
             connector.Activate(transform);
             //Debug.Log("Activate");
+
+            if (!animator.GetBool("PresurePadDown"))
+            {
+                animator.SetBool("PresurePadDown", true);
+                animator.SetBool("PresurePadUp", false);
+            }
         }
         else
         {
-            if(!singlePress)
+            if (!singlePress)
+            {
                 connector.Deactivate(transform);
-            //Debug.Log("Deactivate");
+                //Debug.Log("Deactivate");
+
+                if (!animator.GetBool("PresurePadUp"))
+                {
+                    animator.SetBool("PresurePadUp", true);
+                    animator.SetBool("PresurePadDown", false);
+                }
+            }
         }
     }
 }

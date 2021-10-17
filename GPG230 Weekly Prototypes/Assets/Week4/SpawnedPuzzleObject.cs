@@ -15,8 +15,10 @@ public class SpawnedPuzzleObject : MonoBehaviour
     {
         if (other.GetComponent<PhizDoor>())
         {
-            if(spawner)
+            if (spawner)
                 spawner.SpawnNewCube();
+            else
+                Destroy(gameObject);
         }
     }
 }
