@@ -22,6 +22,8 @@ public class PuzzleGun : MonoBehaviour
 
     private Rigidbody _grabbedObject;
 
+    public Animator animatior;
+
     [Header("Object Gun")]
     public GameObject cubeObject;
     public GameObject sphereObject;
@@ -178,6 +180,18 @@ public class PuzzleGun : MonoBehaviour
             var force = forceDir / Time.fixedDeltaTime * 0.3f / _grabbedObject.mass;
             _grabbedObject.velocity = force;
             _grabbedObject.transform.Rotate(playerCamera.transform.forward, 20f * Time.fixedDeltaTime);
+
+            if (animatior)
+            {
+                animatior.SetBool("isHolding", true);
+            }
+        }
+        else
+        {
+            if (animatior)
+            {
+                animatior.SetBool("isHolding", false);
+            }
         }
     }
 
