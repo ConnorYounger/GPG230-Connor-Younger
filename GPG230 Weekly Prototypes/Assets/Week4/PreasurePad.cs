@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PreasurePad : MonoBehaviour
 {
+    [System.Serializable] public enum buttonTypes { defult, green, blue, yellow };
+    public buttonTypes buttonType;
+
     public PuzzleConnections connector;
     public PuzzleConnections[] extraConnector;
     public MeshRenderer mesh;
@@ -26,7 +29,7 @@ public class PreasurePad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //CheckForCollisions();
     }
 
     void AddExtraConnections()
@@ -39,10 +42,34 @@ public class PreasurePad : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        colliders.Add(collision.collider);
+        AddCollision(collision.collider);
+    }
 
-        Debug.Log("Collision with: " + collision.collider);
-
+    void AddCollision(Collider collision)
+    {
+        if(buttonType == buttonTypes.defult)
+        {
+            colliders.Add(collision);
+        }
+        else
+        {
+            switch (collision.gameObject.tag.ToString())
+            {
+                case "green":
+                    if(buttonType == buttonTypes.green)
+                        colliders.Add(collision);
+                    break;
+                case "blue":
+                    if (buttonType == buttonTypes.blue)
+                        colliders.Add(collision);
+                    break;
+                case "yellow":
+                    if (buttonType == buttonTypes.yellow)
+                        colliders.Add(collision);
+                    break;
+            }
+        }
+        
         CheckForCollisions();
     }
 
@@ -55,13 +82,15 @@ public class PreasurePad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        colliders.Add(other);
-
-
-        CheckForCollisions();
+        AddCollision(other);
     }
 
     private void OnTriggerExit(Collider other)
+    {
+        RemoveObject(other);
+    }
+
+    public void RemoveObject(Collider other)
     {
         colliders.Remove(other);
 

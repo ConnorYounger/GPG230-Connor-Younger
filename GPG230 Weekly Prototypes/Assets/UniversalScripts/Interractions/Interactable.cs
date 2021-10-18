@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
     [Header("Universal")]
     public WeaponManager weaponManager;
 
-    [System.Serializable] public enum interactables { weaponBase };
+    [System.Serializable] public enum interactables { weaponBase, button };
     public interactables interactableType;
 
     // Start is called before the first frame update
@@ -32,6 +32,9 @@ public class Interactable : MonoBehaviour
         {
             case "weaponBase":
                 interactions = new WeaponBasePickUp(this);
+                break;
+            case "button":
+                interactions = new ButtonInterraction(this);
                 break;
         }
     }

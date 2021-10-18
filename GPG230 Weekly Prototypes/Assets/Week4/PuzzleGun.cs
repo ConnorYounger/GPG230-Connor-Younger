@@ -7,6 +7,14 @@ public class PuzzleGun : MonoBehaviour
     [Header("Gravity Gun")]
     public Camera playerCamera;
 
+    [SerializeField]
+    private LineRenderer _pickLine;
+    public Material lineMaterial;
+    public Transform barrelPos;
+
+    private float _pickDistance;
+    private Vector3 _pickOffset;
+
     public bool canUse;
     public bool canSpawnObjects;
 
@@ -32,6 +40,21 @@ public class PuzzleGun : MonoBehaviour
         if (!playerCamera)
         {
             playerCamera = GameObject.Find("FirstPersonCharacter").GetComponent<Camera>();
+        }
+
+        if (!_pickLine)
+        {
+            var obj = new GameObject("PhysGun Pick Line");
+            _pickLine = obj.AddComponent<LineRenderer>();
+            _pickLine.startWidth = 0.02f;
+            _pickLine.endWidth = 0.02f;
+            _pickLine.useWorldSpace = true;
+            _pickLine.gameObject.SetActive(false);
+
+            if (lineMaterial)
+            {
+                _pickLine.material = lineMaterial;
+            }
         }
     }
 
@@ -113,12 +136,19 @@ public class PuzzleGun : MonoBehaviour
                 && !hit.rigidbody.CompareTag("Player"))
             {
                 _grabbedObject = hit.rigidbody;
+
+                _pickLine.gameObject.SetActive(true);
+
+                _pickDistance = hit.distance;
+                _pickOffset = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
             }
         }
         else if (button == KeyCode.Mouse1 && _grabbedObject)
         {
             _grabbedObject.velocity = playerCamera.transform.forward * 30f;
             _grabbedObject = null;
+
+            _pickLine.gameObject.SetActive(false);
         }
     }
 
@@ -128,6 +158,8 @@ public class PuzzleGun : MonoBehaviour
         {
             Rigidbody ob = _grabbedObject;
             _grabbedObject = null;
+
+            _pickLine.gameObject.SetActive(false);
 
             if (button == KeyCode.Mouse1)
             {
@@ -145,6 +177,19 @@ public class PuzzleGun : MonoBehaviour
             var force = forceDir / Time.fixedDeltaTime * 0.3f / _grabbedObject.mass;
             _grabbedObject.velocity = force;
             _grabbedObject.transform.Rotate(playerCamera.transform.forward, 20f * Time.fixedDeltaTime);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (_grabbedObject)
+        {
+            var midpoint = playerCamera.transform.position + playerCamera.transform.forward * _pickDistance * .5f;
+            DrawQuadraticBezierCurve(_pickLine, barrelPos.position, midpoint, _grabbedObject.position);
+        }
+        else
+        {
+            _pickLine.gameObject.SetActive(false);
         }
     }
 
@@ -166,6 +211,7 @@ public class PuzzleGun : MonoBehaviour
             obj.AddComponent<SpawnedPuzzleObject>();
         }
 
+        _pickLine.gameObject.SetActive(true);
         previouslySpawnedObject = obj;
     }
 
@@ -173,7 +219,23 @@ public class PuzzleGun : MonoBehaviour
     {
         if (previouslySpawnedObject)
         {
-            Destroy(previouslySpawnedObject);
+            if (previouslySpawnedObject.GetComponent<SpawnedPuzzleObject>())
+                previouslySpawnedObject.GetComponent<SpawnedPuzzleObject>().DestroyObject();
+            else
+                Destroy(previouslySpawnedObject);
+        }
+    }
+
+    void DrawQuadraticBezierCurve(LineRenderer line, Vector3 point0, Vector3 point1, Vector3 point2)
+    {
+        line.positionCount = 20;
+        float t = 0f;
+        Vector3 B = new Vector3(0, 0, 0);
+        for (int i = 0; i < line.positionCount; i++)
+        {
+            B = (1 - t) * (1 - t) * point0 + 2 * (1 - t) * t * point1 + t * t * point2;
+            line.SetPosition(i, B);
+            t += (1 / (float)line.positionCount);
         }
     }
 }

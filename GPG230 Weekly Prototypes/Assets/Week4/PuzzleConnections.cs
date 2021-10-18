@@ -9,6 +9,7 @@ public class PuzzleConnections : MonoBehaviour
 
     public W3Door door;
     public PhizDoor phisDoor;
+    public PhizDoor[] extraPhisDoor;
 
     private List<Transform> addedConnections = new List<Transform>();
 
@@ -122,6 +123,14 @@ public class PuzzleConnections : MonoBehaviour
         if (phisDoor)
             phisDoor.TurnOff();
 
+        if(extraPhisDoor.Length > 0)
+        {
+            foreach(PhizDoor p in extraPhisDoor)
+            {
+                p.TurnOff();
+            }
+        }
+
         Debug.Log("Open Door");
     }
 
@@ -132,6 +141,14 @@ public class PuzzleConnections : MonoBehaviour
 
         if (phisDoor)
             phisDoor.TurnOn();
+
+        if (extraPhisDoor.Length > 0)
+        {
+            foreach (PhizDoor p in extraPhisDoor)
+            {
+                p.TurnOn();
+            }
+        }
 
         Debug.Log("Close Door");
     }

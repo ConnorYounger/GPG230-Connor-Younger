@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CubeSpawner : MonoBehaviour
 {
+    [System.Serializable] public enum cubeTypes { defult, green, blue, yellow };
+    public cubeTypes cubeType;
+
     public GameObject cubePrefab;
     private GameObject spawnedCube;
 
@@ -12,6 +15,11 @@ public class CubeSpawner : MonoBehaviour
     public float spawnForce = 150;
 
     public bool spawnAtStart = true;
+
+    [Header("Cube Colours")]
+    public Material cubeGreen;
+    public Material cubeBlue;
+    public Material cubeYellow;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +38,15 @@ public class CubeSpawner : MonoBehaviour
     {
         if (spawnedCube)
         {
-            Destroy(spawnedCube);
+            if (spawnedCube.GetComponent<SpawnedPuzzleObject>())
+            {
+                spawnedCube.GetComponent<SpawnedPuzzleObject>().DestroyObject();
+            }
+            else
+            {
+                Destroy(spawnedCube);
+            }
+
             spawnedCube = null;
         }
 
@@ -45,6 +61,28 @@ public class CubeSpawner : MonoBehaviour
         if (spawnedCube.GetComponent<Rigidbody>())
         {
             spawnedCube.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * spawnForce);
+        }
+
+        if(cubeType != cubeTypes.defult)
+        {
+            switch (cubeType)
+            {
+                case cubeTypes.green:
+                    spawnedCube.tag = "green";
+                    if(spawnedCube.GetComponent<MeshRenderer>() && cubeGreen)
+                        spawnedCube.GetComponent<MeshRenderer>().material = cubeGreen;
+                    break;
+                case cubeTypes.blue:
+                    spawnedCube.tag = "blue";
+                    if (spawnedCube.GetComponent<MeshRenderer>() && cubeBlue)
+                        spawnedCube.GetComponent<MeshRenderer>().material = cubeBlue;
+                    break;
+                case cubeTypes.yellow:
+                    spawnedCube.tag = "yellow";
+                    if (spawnedCube.GetComponent<MeshRenderer>() && cubeYellow)
+                        spawnedCube.GetComponent<MeshRenderer>().material = cubeYellow;
+                    break;
+            }
         }
     }
 }

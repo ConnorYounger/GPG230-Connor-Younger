@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - green
+  - blue
+  - yellow
   layers:
   - Default
   - TransparentFX

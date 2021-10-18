@@ -45,10 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5eda8c4624fc7240867a60813dff90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeType: 0
   cubePrefab: {fileID: 3620671804612156072, guid: fb1488077acf5594783a575e6c42f30b, type: 3}
   spawnPoint: {fileID: 8530219386469491392}
   spawnForce: 150
   spawnAtStart: 1
+  cubeGreen: {fileID: 2100000, guid: 5ed9256d98b28414b87a7f54168d3ae9, type: 2}
+  cubeBlue: {fileID: 2100000, guid: ccf7097885090304a90217d3a0641769, type: 2}
+  cubeYellow: {fileID: 2100000, guid: e21eb56d7889c314c9c7119047f72ff5, type: 2}
 --- !u!1 &5677691640944807742
 GameObject:
   m_ObjectHideFlags: 0

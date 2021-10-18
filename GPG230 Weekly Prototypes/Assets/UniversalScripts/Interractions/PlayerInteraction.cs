@@ -44,7 +44,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (hit.collider.GetComponent<WeaponBase>())
+                    if (hit.collider.GetComponent<Interactable>())
                         hit.collider.GetComponent<Interactable>().Interract(hit.collider.gameObject);
                 }
             }

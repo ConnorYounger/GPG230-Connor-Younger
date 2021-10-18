@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnedPuzzleObject : MonoBehaviour
 {
     public CubeSpawner spawner;
+    private PreasurePad preasurePad;
 
     public void SpawnNewObject()
     {
@@ -18,7 +19,22 @@ public class SpawnedPuzzleObject : MonoBehaviour
             if (spawner)
                 spawner.SpawnNewCube();
             else
-                Destroy(gameObject);
+                DestroyObject();
         }
+
+        if (other.GetComponent<PreasurePad>())
+        {
+            preasurePad = other.GetComponent<PreasurePad>();
+        }
+    }
+
+    public void DestroyObject()
+    {
+        if (preasurePad && gameObject.GetComponent<BoxCollider>())
+        {
+            preasurePad.RemoveObject(gameObject.GetComponent<BoxCollider>());
+        }
+
+        Destroy(gameObject);
     }
 }
