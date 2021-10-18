@@ -10,14 +10,51 @@ public class PuzzleConnections : MonoBehaviour
     public W3Door door;
     public PhizDoor phisDoor;
 
+    private List<Transform> addedConnections = new List<Transform>();
+
     void Start()
     {
         SetUpConnections();
+        StartCoroutine("AddExtraConnections");
     }
 
     void Update()
     {
         
+    }
+
+    public void AddConnection(Transform t)
+    {
+        addedConnections.Add(t);
+    }
+
+    IEnumerator AddExtraConnections()
+    {
+        yield return new WaitForSeconds(1);
+
+        if (addedConnections.Count > 0)
+        {
+            Debug.Log("Add extra connections");
+
+            if (connections.Length > 0) 
+            {
+                foreach (Transform t in connections)
+                {
+                    addedConnections.Add(t);
+                }
+            }
+
+            connections = new Transform[addedConnections.Count];
+            isConnected = new bool[connections.Length];
+
+            for (int i = 0; i < connections.Length; i++)
+            {
+                connections[i] = addedConnections[i];
+            }
+
+            addedConnections.Clear();
+        }
+
     }
 
     void SetUpConnections()

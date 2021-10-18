@@ -5,6 +5,7 @@ using UnityEngine;
 public class PreasurePad : MonoBehaviour
 {
     public PuzzleConnections connector;
+    public PuzzleConnections[] extraConnector;
     public MeshRenderer mesh;
     public Animator animator;
 
@@ -17,12 +18,23 @@ public class PreasurePad : MonoBehaviour
     {
         colliders = new List<Collider>();
         connector = transform.parent.GetComponent<PuzzleConnections>();
+
+        if(extraConnector.Length > 0)
+            AddExtraConnections();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void AddExtraConnections()
+    {
+        foreach(PuzzleConnections p in extraConnector)
+        {
+            p.AddConnection(transform);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -65,6 +77,14 @@ public class PreasurePad : MonoBehaviour
             connector.Activate(transform);
             //Debug.Log("Activate");
 
+            if (extraConnector.Length > 0)
+            {
+                foreach(PuzzleConnections pz in extraConnector)
+                {
+                    pz.Activate(transform);
+                }
+            }
+
             if (!animator.GetBool("PresurePadDown"))
             {
                 animator.SetBool("PresurePadDown", true);
@@ -77,6 +97,14 @@ public class PreasurePad : MonoBehaviour
             {
                 connector.Deactivate(transform);
                 //Debug.Log("Deactivate");
+
+                if (extraConnector.Length > 0)
+                {
+                    foreach (PuzzleConnections pz in extraConnector)
+                    {
+                        pz.Deactivate(transform);
+                    }
+                }
 
                 if (!animator.GetBool("PresurePadUp"))
                 {
