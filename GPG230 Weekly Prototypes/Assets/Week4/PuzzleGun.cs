@@ -27,6 +27,7 @@ public class PuzzleGun : MonoBehaviour
     public GameObject sphereObject;
     public Transform spawnPoint;
     public int fireMode;
+    public Material playerMaterial;
 
     private GameObject previouslySpawnedObject;
 
@@ -209,6 +210,11 @@ public class PuzzleGun : MonoBehaviour
         if (!obj.GetComponent<SpawnedPuzzleObject>())
         {
             obj.AddComponent<SpawnedPuzzleObject>();
+        }
+
+        if (obj.GetComponent<MeshRenderer>() && playerMaterial)
+        {
+            obj.GetComponent<MeshRenderer>().material = playerMaterial;
         }
 
         _pickLine.gameObject.SetActive(true);

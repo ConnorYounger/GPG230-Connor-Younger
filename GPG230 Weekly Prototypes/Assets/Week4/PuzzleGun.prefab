@@ -275,6 +275,7 @@ MonoBehaviour:
   sphereObject: {fileID: 7674727190148868227, guid: 9e88ee205bd1fed4cb5496ed34e28e7a, type: 3}
   spawnPoint: {fileID: 8521027666175011888}
   fireMode: 0
+  playerMaterial: {fileID: 2100000, guid: 3a6b311d924fe024d97ab21c25632466, type: 2}
 --- !u!1001 &7556140515505425202
 PrefabInstance:
   m_ObjectHideFlags: 0
