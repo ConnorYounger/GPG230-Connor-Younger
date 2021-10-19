@@ -2,15 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class door : MonoBehaviour {
-	GameObject thedoor;
+	public Animation thedoor;
 
-void OnTriggerEnter ( Collider obj  ){
-	thedoor= GameObject.FindWithTag("SF_Door");
-	thedoor.GetComponent<Animation>().Play("open");
+    void OnTriggerEnter ( Collider obj  ){
+	thedoor.Play("open");
 }
 
 void OnTriggerExit ( Collider obj  ){
-	thedoor= GameObject.FindWithTag("SF_Door");
-	thedoor.GetComponent<Animation>().Play("close");
+	thedoor.Play("close");
 }
 }
