@@ -30103,6 +30103,10 @@ PrefabInstance:
       value: PuzzleGun
       objectReference: {fileID: 0}
     - target: {fileID: 8934680910995133757, guid: 10b62daa4f1e385468512badcfd0a967, type: 3}
+      propertyPath: fireFx
+      value: 
+      objectReference: {fileID: 7595569096823821676, guid: 21a9a8efa4b745542bd1be5935cc1bb3, type: 3}
+    - target: {fileID: 8934680910995133757, guid: 10b62daa4f1e385468512badcfd0a967, type: 3}
       propertyPath: canSpawnObjects
       value: 1
       objectReference: {fileID: 0}

@@ -31,6 +31,11 @@ public class PuzzleGun : MonoBehaviour
     public int fireMode;
     public Material playerMaterial;
 
+    [Header("Particles")]
+    public ParticleSystem muzzleParticles;
+    public ParticleSystem objectParticles;
+    public GameObject fireFx;
+
     private GameObject previouslySpawnedObject;
 
     void OnDisable()
@@ -172,6 +177,12 @@ public class PuzzleGun : MonoBehaviour
                 {
                     animatior.Play("PhisGunFire");
                 }
+
+                if (fireFx)
+                {
+                    GameObject fx = Instantiate(fireFx, barrelPos.position, barrelPos.rotation);
+                    Destroy(fx, 1);
+                }
             }
         }
     }
@@ -190,12 +201,35 @@ public class PuzzleGun : MonoBehaviour
             {
                 animatior.SetBool("isHolding", true);
             }
+
+            if (objectParticles && !objectParticles.isPlaying)
+            {
+                objectParticles.transform.position = _grabbedObject.transform.position;
+                objectParticles.transform.parent = _grabbedObject.transform;
+                objectParticles.transform.localScale = new Vector3(1, 1, 1);
+                objectParticles.gameObject.SetActive(true);
+            }
+
+            if (muzzleParticles && !muzzleParticles.isPlaying)
+            {
+                muzzleParticles.Play();
+            }
         }
         else
         {
             if (animatior)
             {
                 animatior.SetBool("isHolding", false);
+            }
+
+            if (objectParticles && objectParticles.isPlaying)
+            {
+                objectParticles.gameObject.SetActive(false);
+            }
+
+            if (muzzleParticles && muzzleParticles.isPlaying)
+            {
+                muzzleParticles.Stop();
             }
         }
     }
@@ -244,6 +278,11 @@ public class PuzzleGun : MonoBehaviour
     {
         if (previouslySpawnedObject)
         {
+            if (objectParticles)
+            {
+                objectParticles.transform.parent = spawnPoint.transform;
+            }
+
             if (previouslySpawnedObject.GetComponent<SpawnedPuzzleObject>())
                 previouslySpawnedObject.GetComponent<SpawnedPuzzleObject>().DestroyObject();
             else
