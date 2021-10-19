@@ -20,7 +20,7 @@ public class PuzzleGun : MonoBehaviour
 
     public float fireForce = 2000;
 
-    private Rigidbody _grabbedObject;
+    public Rigidbody _grabbedObject;
 
     public Animator animatior;
 
@@ -149,6 +149,11 @@ public class PuzzleGun : MonoBehaviour
 
                 _pickDistance = hit.distance;
                 _pickOffset = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
+
+                if (_grabbedObject.GetComponent<SpawnedPuzzleObject>())
+                {
+                    _grabbedObject.GetComponent<SpawnedPuzzleObject>().puzzleGun = this;
+                }
             }
         }
         else if (button == KeyCode.Mouse1 && _grabbedObject)
@@ -244,6 +249,11 @@ public class PuzzleGun : MonoBehaviour
         else
         {
             _pickLine.gameObject.SetActive(false);
+
+            if (objectParticles)
+            {
+                objectParticles.transform.parent = spawnPoint.transform;
+            }
         }
     }
 
@@ -263,6 +273,7 @@ public class PuzzleGun : MonoBehaviour
         if (!obj.GetComponent<SpawnedPuzzleObject>())
         {
             obj.AddComponent<SpawnedPuzzleObject>();
+            obj.GetComponent<SpawnedPuzzleObject>().puzzleGun = this;
         }
 
         if (obj.GetComponent<MeshRenderer>() && playerMaterial)

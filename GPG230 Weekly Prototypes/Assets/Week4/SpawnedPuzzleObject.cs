@@ -7,6 +7,16 @@ public class SpawnedPuzzleObject : MonoBehaviour
     public CubeSpawner spawner;
     private PreasurePad preasurePad;
 
+    public Animator animator;
+    private Rigidbody rb;
+    public PuzzleGun puzzleGun;
+
+    private void Start()
+    {
+        animator = gameObject.GetComponent<Animator>();
+        rb = gameObject.GetComponent<Rigidbody>();
+    }
+
     public void SpawnNewObject()
     {
         spawner.SpawnNewCube();
@@ -33,6 +43,35 @@ public class SpawnedPuzzleObject : MonoBehaviour
         if (preasurePad && gameObject.GetComponent<BoxCollider>())
         {
             preasurePad.RemoveObject(gameObject.GetComponent<BoxCollider>());
+        }
+
+        if (animator)
+        {
+            animator.Play("CubeDissolve");
+
+            if (rb)
+            {
+                rb.useGravity = false;
+            }
+
+            StartCoroutine("Kill", 1.5f);
+
+            if (puzzleGun)
+            {
+                puzzleGun._grabbedObject = null;
+            }
+        }
+        else
+            StartCoroutine("Kill", 0);
+    }
+
+    IEnumerator Kill(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (puzzleGun)
+        {
+            puzzleGun._grabbedObject = null;
         }
 
         Destroy(gameObject);
