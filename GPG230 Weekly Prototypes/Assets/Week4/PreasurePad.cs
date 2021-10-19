@@ -47,7 +47,7 @@ public class PreasurePad : MonoBehaviour
 
     void AddCollision(Collider collision)
     {
-        if(buttonType == buttonTypes.defult)
+        if(buttonType == buttonTypes.defult && collision.tag != "noCollide")
         {
             colliders.Add(collision);
         }

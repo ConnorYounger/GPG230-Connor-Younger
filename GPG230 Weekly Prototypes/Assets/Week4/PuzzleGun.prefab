@@ -19528,8 +19528,9 @@ MonoBehaviour:
   canUse: 0
   canSpawnObjects: 0
   fireForce: 1250
+  _grabbedObject: {fileID: 0}
   animatior: {fileID: 7430279373417892400}
-  cubeObject: {fileID: 3620671804612156072, guid: fb1488077acf5594783a575e6c42f30b, type: 3}
+  cubeObject: {fileID: 7262447607069480872, guid: e90ab5101091b124eb00b2d06fad9e82, type: 3}
   sphereObject: {fileID: 7674727190148868227, guid: 9e88ee205bd1fed4cb5496ed34e28e7a, type: 3}
   spawnPoint: {fileID: 8521027666175011888}
   fireMode: 0

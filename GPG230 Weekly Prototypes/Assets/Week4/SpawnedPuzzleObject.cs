@@ -47,6 +47,8 @@ public class SpawnedPuzzleObject : MonoBehaviour
 
         if (animator)
         {
+            gameObject.tag = "noCollide";
+
             animator.Play("CubeDissolve");
 
             if (rb)
@@ -56,7 +58,7 @@ public class SpawnedPuzzleObject : MonoBehaviour
 
             StartCoroutine("Kill", 1.5f);
 
-            if (puzzleGun)
+            if (puzzleGun && puzzleGun._grabbedObject == rb)
             {
                 puzzleGun._grabbedObject = null;
             }
@@ -69,7 +71,7 @@ public class SpawnedPuzzleObject : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        if (puzzleGun)
+        if (puzzleGun && puzzleGun._grabbedObject == rb)
         {
             puzzleGun._grabbedObject = null;
         }
