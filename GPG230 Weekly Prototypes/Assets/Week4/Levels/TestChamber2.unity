@@ -35744,6 +35744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzleGun
       objectReference: {fileID: 0}
+    - target: {fileID: 8934680910995133731, guid: 10b62daa4f1e385468512badcfd0a967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8934680910995133757, guid: 10b62daa4f1e385468512badcfd0a967, type: 3}
       propertyPath: canSpawnObjects
       value: 0

@@ -99,6 +99,11 @@ public class WeaponManager : MonoBehaviour
             }
         }
 
+        if (weapon.GetComponent<PuzzleGun>())
+        {
+            weapon.GetComponent<PuzzleGun>().canUse = true;
+        }
+
         currentWeaponIndex = heldWeapons.IndexOf(weapon);
         weapon.SetActive(false);
 

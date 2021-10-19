@@ -17,6 +17,7 @@ public class PuzzleGun : MonoBehaviour
 
     public bool canUse;
     public bool canSpawnObjects;
+    public bool canSwitchModes;
 
     public float fireForce = 2000;
 
@@ -63,6 +64,11 @@ public class PuzzleGun : MonoBehaviour
             {
                 _pickLine.material = lineMaterial;
             }
+        }
+
+        if(canSpawnObjects && !canSwitchModes)
+        {
+            fireMode = 1;
         }
     }
 
@@ -112,22 +118,25 @@ public class PuzzleGun : MonoBehaviour
                     }
                 }
 
-                // Mouse scroll wheel
-                float axis = Input.GetAxisRaw("Mouse ScrollWheel");
+                if (canSwitchModes)
+                {
+                    // Mouse scroll wheel
+                    float axis = Input.GetAxisRaw("Mouse ScrollWheel");
 
-                if (axis > 0)
-                {
-                    if (fireMode < 2)
-                        fireMode++;
-                    else
-                        fireMode = 0;
-                }
-                else if (axis < 0)
-                {
-                    if (fireMode > 0)
-                        fireMode--;
-                    else
-                        fireMode = 2;
+                    if (axis > 0)
+                    {
+                        if (fireMode < 2)
+                            fireMode++;
+                        else
+                            fireMode = 0;
+                    }
+                    else if (axis < 0)
+                    {
+                        if (fireMode > 0)
+                            fireMode--;
+                        else
+                            fireMode = 2;
+                    }
                 }
             }
         }

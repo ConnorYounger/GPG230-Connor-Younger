@@ -19442,8 +19442,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8934680910995133731}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.5, z: -4.643121}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.819, y: 1.7689998, z: -5.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8934680910683157056}
@@ -19463,7 +19463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponShootPoint: {fileID: 8934680910683157056}
-  weaponCanFire: 0
+  weaponCanFire: 1
   weaponDamge: 1
   bulletsPerShot: 1
   fireRate: 1
@@ -19527,6 +19527,7 @@ MonoBehaviour:
   barrelPos: {fileID: 8432425106305090083}
   canUse: 0
   canSpawnObjects: 0
+  canSwitchModes: 0
   fireForce: 1250
   _grabbedObject: {fileID: 0}
   animatior: {fileID: 7430279373417892400}
