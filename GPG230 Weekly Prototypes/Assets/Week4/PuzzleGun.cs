@@ -167,6 +167,11 @@ public class PuzzleGun : MonoBehaviour
             if (button == KeyCode.Mouse1)
             {
                 ob.AddForce(playerCamera.transform.forward * fireForce);
+
+                if (animatior)
+                {
+                    animatior.Play("PhisGunFire");
+                }
             }
         }
     }
