@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class W4StoryDoorOpen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool distance = true;
+    public W3Door door;
+    
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (distance)
+        {
+            door.OpenDoor();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (distance)
+        {
+            door.CloseDoor();
+        }
     }
 }

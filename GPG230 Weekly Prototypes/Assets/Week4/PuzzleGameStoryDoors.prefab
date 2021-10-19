@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7577097004334690593}
   - component: {fileID: 7577097004338114817}
   - component: {fileID: 7577097004336985025}
+  - component: {fileID: 4972167998152608137}
   m_Layer: 0
   m_Name: Door_Right
   m_TagString: Untagged
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4972167998152608137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577097004334722305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.017500004, y: 0.2537735, z: 0.18427853}
+  m_Center: {x: 0, y: 0.000000007450581, z: -0.00000047311187}
 --- !u!1 &7577097004334722307
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +187,7 @@ GameObject:
   - component: {fileID: 7577097004334690599}
   - component: {fileID: 7577097004338114823}
   - component: {fileID: 7577097004336985031}
+  - component: {fileID: 4972167998152608143}
   m_Layer: 0
   m_Name: Door_Left
   m_TagString: Untagged
@@ -243,6 +258,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4972167998152608143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577097004334722311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17499028, y: 2.5377352, z: 1.8645794}
+  m_Center: {x: 0.007940067, y: -0.1499474, z: -0.36855456}
 --- !u!1 &7577097004334722313
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +280,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7577097004334690601}
+  - component: {fileID: 4972167998152608129}
+  - component: {fileID: 4972167998152608130}
+  - component: {fileID: 4972167998152608131}
   m_Layer: 0
   m_Name: PuzzleGameStoryDoors
   m_TagString: Untagged
@@ -276,3 +307,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!95 &4972167998152608129
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577097004334722313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25aa029492cfeff43b8bcda9c257d5a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4972167998152608130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577097004334722313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797eec547f9e23b49a12004208483494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorCollider: {fileID: 7577097004334722313}
+  animator: {fileID: 4972167998152608129}
+--- !u!65 &4972167998152608131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577097004334722313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2.91, z: 3.56}
+  m_Center: {x: 0, y: 0, z: -0.91}

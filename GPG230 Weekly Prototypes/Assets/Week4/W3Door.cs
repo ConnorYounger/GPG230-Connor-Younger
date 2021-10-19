@@ -5,6 +5,7 @@ using UnityEngine;
 public class W3Door : MonoBehaviour
 {
     public GameObject doorCollider;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,17 @@ public class W3Door : MonoBehaviour
     {
         if (doorCollider)
             doorCollider.SetActive(false);
+
+        if (animator)
+            animator.SetBool("DoorOpen", true);
     }
 
     public void CloseDoor()
     {
         if (doorCollider)
             doorCollider.SetActive(true);
+
+        if (animator)
+            animator.SetBool("DoorOpen", false);
     }
 }
