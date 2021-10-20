@@ -99,6 +99,11 @@ public class PreasurePad : MonoBehaviour
     {
         colliders.Remove(other);
 
+        if (connector.phisDoor)
+        {
+            connector.phisDoor.TurnOff(connector.gameObject);
+        }
+
         CheckForCollisions();
     }
 
