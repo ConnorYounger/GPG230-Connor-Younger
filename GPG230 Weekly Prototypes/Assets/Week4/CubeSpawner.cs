@@ -74,6 +74,13 @@ public class CubeSpawner : MonoBehaviour
 
         if(cubeType != cubeTypes.defult)
         {
+            Debug.Log("Spawn different cube");
+
+            if (spawnedCube.GetComponent<Animator>())
+            {
+                spawnedCube.GetComponent<Animator>().enabled = false;
+            }
+
             switch (cubeType)
             {
                 case cubeTypes.green:
@@ -84,7 +91,10 @@ public class CubeSpawner : MonoBehaviour
                 case cubeTypes.blue:
                     spawnedCube.tag = "blue";
                     if (spawnedCube.GetComponent<MeshRenderer>() && cubeBlue)
+                    {
                         spawnedCube.GetComponent<MeshRenderer>().material = cubeBlue;
+                        Debug.Log("make cube blue");
+                    }
                     break;
                 case cubeTypes.yellow:
                     spawnedCube.tag = "yellow";
