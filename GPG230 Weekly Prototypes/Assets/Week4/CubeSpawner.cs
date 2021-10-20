@@ -12,6 +12,9 @@ public class CubeSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
+    public AudioSource audioSource;
+    public AudioClip cubeDestroySound;
+
     public float spawnForce = 150;
 
     public bool spawnAtStart = true;
@@ -56,11 +59,17 @@ public class CubeSpawner : MonoBehaviour
         {
             SpawnedPuzzleObject p = spawnedCube.AddComponent<SpawnedPuzzleObject>();
             p.spawner = this;
+            p.destroySound = cubeDestroySound;
         }
 
         if (spawnedCube.GetComponent<Rigidbody>())
         {
             spawnedCube.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * spawnForce);
+        }
+
+        if (audioSource)
+        {
+            audioSource.Play();
         }
 
         if(cubeType != cubeTypes.defult)
