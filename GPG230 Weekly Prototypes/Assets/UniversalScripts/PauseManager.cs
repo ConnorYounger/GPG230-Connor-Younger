@@ -7,13 +7,18 @@ public class PauseManager : MonoBehaviour
     public bool escPause;
 
     public GameObject pauseUI;
+    private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
 
+    public bool lockCurserOnReturn;
     private bool gameIsPaused;
+
+    [Header("Game specific")]
+    public PuzzleGun puzzleGun;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fPSController = GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
     }
 
     // Update is called once per frame
@@ -40,6 +45,15 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame()
     {
+        if (puzzleGun)
+            puzzleGun.canUse = false;
+
+        if (fPSController)
+            fPSController.enabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         Time.timeScale = 0;
         gameIsPaused = true;
         pauseUI.SetActive(true);
@@ -47,8 +61,28 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (lockCurserOnReturn)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         Time.timeScale = 1;
         gameIsPaused = false;
         pauseUI.SetActive(false);
+
+        if (fPSController)
+            fPSController.enabled = true;
+
+        StopCoroutine("ResetGameSpecific");
+        StartCoroutine("ResetGameSpecific");
+    }
+
+    IEnumerator ResetGameSpecific()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (puzzleGun)
+            puzzleGun.canUse = true;
     }
 }
