@@ -47,6 +47,9 @@ public class PlayerInteraction : MonoBehaviour
                     if (hit.collider.GetComponent<Interactable>())
                         hit.collider.GetComponent<Interactable>().Interract(hit.collider.gameObject);
                 }
+
+                if (hit.collider.GetComponent<Interactable>())
+                    hit.collider.GetComponent<Interactable>().InteractionOver();
             }
         }
     }
