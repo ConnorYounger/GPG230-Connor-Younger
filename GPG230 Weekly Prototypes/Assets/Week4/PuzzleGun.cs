@@ -39,6 +39,12 @@ public class PuzzleGun : MonoBehaviour
 
     private GameObject previouslySpawnedObject;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioSource audioSourceLoop;
+    public AudioClip[] fireSound;
+    public AudioClip holdStart;
+
     void OnDisable()
     {
         _grabbedObject = null;
@@ -148,7 +154,7 @@ public class PuzzleGun : MonoBehaviour
 
         if (button == KeyCode.Mouse0)
         {
-            if (Physics.Raycast(ray, out RaycastHit hit, 3)
+            if (Physics.SphereCast(ray, 0.5f, out RaycastHit hit, 3)
                 && hit.rigidbody
                 && !hit.rigidbody.CompareTag("Player"))
             {
@@ -163,6 +169,14 @@ public class PuzzleGun : MonoBehaviour
                 {
                     _grabbedObject.GetComponent<SpawnedPuzzleObject>().puzzleGun = this;
                 }
+
+                if(audioSource && holdStart)
+                {
+                    audioSource.clip = holdStart;
+                    audioSource.Play();
+                    StopCoroutine("StartHoldLoop");
+                    StartCoroutine("StartHoldLoop");
+                }
             }
         }
         else if (button == KeyCode.Mouse1 && _grabbedObject)
@@ -171,6 +185,16 @@ public class PuzzleGun : MonoBehaviour
             _grabbedObject = null;
 
             _pickLine.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator StartHoldLoop()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (_grabbedObject && audioSourceLoop)
+        {
+            audioSourceLoop.Play();
         }
     }
 
@@ -196,6 +220,13 @@ public class PuzzleGun : MonoBehaviour
                 {
                     GameObject fx = Instantiate(fireFx, barrelPos.position, barrelPos.rotation);
                     Destroy(fx, 1);
+                }
+
+                if (audioSource && fireSound.Length > 0)
+                {
+                    int rand = Random.Range(0, fireSound.Length);
+                    audioSource.clip = fireSound[rand];
+                    audioSource.Play();
                 }
             }
         }
@@ -244,6 +275,11 @@ public class PuzzleGun : MonoBehaviour
             if (muzzleParticles && muzzleParticles.isPlaying)
             {
                 muzzleParticles.Stop();
+            }
+
+            if (audioSourceLoop)
+            {
+                audioSourceLoop.Stop();
             }
         }
     }
