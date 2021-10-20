@@ -14,6 +14,7 @@ public class CubeSpawner : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip cubeDestroySound;
+    public bool muteAtStart = true;
 
     public float spawnForce = 150;
 
@@ -29,12 +30,26 @@ public class CubeSpawner : MonoBehaviour
     {
         if (spawnAtStart)
             SpawnNewCube();
+
+        if (muteAtStart)
+        {
+            audioSource.enabled = false;
+            StartCoroutine("SturnOnAudio");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator SturnOnAudio()
+    {
+        yield return new WaitForSeconds(1);
+
+        if (audioSource)
+            audioSource.enabled = true;
     }
 
     public void SpawnNewCube()

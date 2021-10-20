@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 7527011267849269761}
   mesh: {fileID: 7527011267849269760}
+  actives: []
+  audioSource: {fileID: 3228735457139589980}
 --- !u!82 &3228735457139589980
 AudioSource:
   m_ObjectHideFlags: 0

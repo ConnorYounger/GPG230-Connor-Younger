@@ -1267,7 +1267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2806767716315715373, guid: 155d5f5a7b021c54aac520849e3a8338, type: 3}
       propertyPath: maxHeldWeapons
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2806767716315812239, guid: 155d5f5a7b021c54aac520849e3a8338, type: 3}
       propertyPath: m_Name
@@ -1549,7 +1549,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3158991428221252924, guid: 5fb0c833513471641a78af1473365475, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3158991428221252924, guid: 5fb0c833513471641a78af1473365475, type: 3}
       propertyPath: MinDistance

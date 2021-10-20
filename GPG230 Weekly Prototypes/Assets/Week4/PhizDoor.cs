@@ -7,6 +7,7 @@ public class PhizDoor : MonoBehaviour
     public BoxCollider boxCollider;
     public MeshRenderer mesh;
     public List<GameObject> actives;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,9 @@ public class PhizDoor : MonoBehaviour
 
         if (mesh)
             mesh.enabled = true;
+
+        if (audioSource)
+            audioSource.Play();
     }
 
     public void TurnOn(GameObject active)
@@ -40,6 +44,9 @@ public class PhizDoor : MonoBehaviour
 
             if (mesh)
                 mesh.enabled = true;
+
+            if (audioSource)
+                audioSource.Play();
         }
     }
 
@@ -50,6 +57,9 @@ public class PhizDoor : MonoBehaviour
 
         if (mesh)
             mesh.enabled = false;
+
+        if (audioSource)
+            audioSource.Stop();
     }
 
     public void TurnOff(GameObject active)
@@ -79,6 +89,9 @@ public class PhizDoor : MonoBehaviour
 
             if (mesh)
                 mesh.enabled = false;
+
+            if (audioSource)
+                audioSource.Stop();
         }
     }
 }
