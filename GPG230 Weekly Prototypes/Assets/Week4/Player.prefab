@@ -525,7 +525,7 @@ MonoBehaviour:
   weaponDisplayPos: {fileID: 2806767716288158424}
   startingWeaponPrefab: {fileID: 7257872948925307217}
   heldWeapons: []
-  maxHeldWeapons: 2
+  maxHeldWeapons: 1
   currentWeaponIndex: 0
   ammoCounter: {fileID: 0}
 --- !u!136 &651706530
