@@ -4628,7 +4628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &364627693
 Mesh:
@@ -5069,6 +5069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishLevelUI: {fileID: 1292500955}
   player: {fileID: 1405201337}
+  puzzleGun: {fileID: 1405201338}
 --- !u!65 &373374067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27327,7 +27328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870886220871669701, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}

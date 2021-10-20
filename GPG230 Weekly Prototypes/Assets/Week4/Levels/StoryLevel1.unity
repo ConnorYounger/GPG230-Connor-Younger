@@ -19097,6 +19097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishLevelUI: {fileID: 202153725}
   player: {fileID: 1769966731}
+  puzzleGun: {fileID: 80236785}
 --- !u!65 &1606789863
 BoxCollider:
   m_ObjectHideFlags: 0

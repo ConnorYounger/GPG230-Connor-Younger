@@ -6,6 +6,7 @@ public class W4LevelEndTrigger : MonoBehaviour
 {
     public GameObject finishLevelUI;
     public GameObject player;
+    public PuzzleGun puzzleGun;
 
     void Start()
     {
@@ -27,7 +28,12 @@ public class W4LevelEndTrigger : MonoBehaviour
 
     void ReachGoal()
     {
-        player.SetActive(false);
+        if(player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>())
+            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+
+        if (puzzleGun)
+            puzzleGun.enabled = false;
+
         finishLevelUI.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;

@@ -17,9 +17,15 @@ public class UIInteraction : Interactions
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        if(interactable.isWinUI && GameObject.Find("Player"))
+        if(interactable.isWinUI && GameObject.Find("Player") && GameObject.Find("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>())
         {
-            GameObject.Find("Player").SetActive(false);
+            Transform player = GameObject.Find("Player").transform;
+            player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+
+            if (player.GetChild(0) && player.GetChild(0).GetChild(0))
+            {
+                player.GetChild(0).GetChild(0).gameObject.SetActive(false);
+            }
         }
     }
 
