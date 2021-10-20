@@ -15,10 +15,12 @@ public class CubeSpawner : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip cubeDestroySound;
     public bool muteAtStart = true;
+    public bool stayMuted;
 
     public float spawnForce = 150;
 
     public bool spawnAtStart = true;
+    public bool spawnCubeWithoutAudio;
 
     [Header("Cube Colours")]
     public Material cubeGreen;
@@ -48,7 +50,7 @@ public class CubeSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        if (audioSource)
+        if (audioSource && !stayMuted)
             audioSource.enabled = true;
     }
 
@@ -85,6 +87,11 @@ public class CubeSpawner : MonoBehaviour
         if (audioSource)
         {
             audioSource.Play();
+        }
+
+        if (spawnedCube.GetComponent<AudioSource>() && spawnCubeWithoutAudio)
+        {
+            spawnedCube.GetComponent<AudioSource>().enabled = false;
         }
 
         if(cubeType != cubeTypes.defult)
