@@ -19343,6 +19343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104450274}
     m_Modifications:
+    - target: {fileID: 51226411722935042, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 351.1004
+      objectReference: {fileID: 0}
     - target: {fileID: 1129291492227748131, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -19467,6 +19471,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8518370097209832495, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -337.10056
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
 --- !u!224 &1615779992 stripped
@@ -19543,6 +19551,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104450274}
     m_Modifications:
+    - target: {fileID: 2957568618240816429, guid: d2c8566de224f134eb557df7e8202279, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -297.75
+      objectReference: {fileID: 0}
     - target: {fileID: 2957568618240816430, guid: d2c8566de224f134eb557df7e8202279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -19639,6 +19651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2957568619761263607, guid: d2c8566de224f134eb557df7e8202279, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2957568619782776508, guid: d2c8566de224f134eb557df7e8202279, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -19654,6 +19670,10 @@ PrefabInstance:
     - target: {fileID: 2957568619782776510, guid: d2c8566de224f134eb557df7e8202279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: StoryLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957568619917507382, guid: d2c8566de224f134eb557df7e8202279, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 247.75
       objectReference: {fileID: 0}
     - target: {fileID: 2957568619917507383, guid: d2c8566de224f134eb557df7e8202279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -16010,7 +16010,7 @@ Transform:
   - {fileID: 1963985070}
   - {fileID: 2102840983}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &371335925 stripped
 Transform:
@@ -34687,7 +34687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810365786313665627, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: TestChamber3
+      value: StoryLevel1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3692827651058082856, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
