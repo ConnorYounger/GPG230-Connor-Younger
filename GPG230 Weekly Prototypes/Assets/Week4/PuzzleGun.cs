@@ -44,6 +44,8 @@ public class PuzzleGun : MonoBehaviour
     public AudioSource audioSourceLoop;
     public AudioClip[] fireSound;
     public AudioClip holdStart;
+    public AudioClip createCubeSound;
+    public AudioClip cubeFizzleSound;
 
     void OnDisable()
     {
@@ -319,11 +321,20 @@ public class PuzzleGun : MonoBehaviour
         {
             obj.AddComponent<SpawnedPuzzleObject>();
             obj.GetComponent<SpawnedPuzzleObject>().puzzleGun = this;
+            obj.GetComponent<SpawnedPuzzleObject>().destroySound = cubeFizzleSound;
         }
 
         if (obj.GetComponent<MeshRenderer>() && playerMaterial)
         {
             obj.GetComponent<MeshRenderer>().material = playerMaterial;
+        }
+
+        if (audioSource && holdStart)
+        {
+            audioSource.clip = createCubeSound;
+            audioSource.Play();
+            StopCoroutine("StartHoldLoop");
+            StartCoroutine("StartHoldLoop");
         }
 
         _pickLine.gameObject.SetActive(true);

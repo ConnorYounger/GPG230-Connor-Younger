@@ -19428,7 +19428,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9898781f3268e9d46915516c2e4be4ed, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -19645,6 +19645,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4c1c54aa0ad5cc543b45c795423fc26f, type: 3}
   - {fileID: 8300000, guid: e034ba45f7a237f4bacfe33cdc3523c2, type: 3}
   holdStart: {fileID: 8300000, guid: 01f778df78408f34e87328d8f0c21cd0, type: 3}
+  createCubeSound: {fileID: 8300000, guid: b00edb08e8495c84eb5dd79eb4b46402, type: 3}
+  cubeFizzleSound: {fileID: 8300000, guid: 2b561d5d4d501f94c99318abb56b7fe0, type: 3}
 --- !u!82 &7063827839289752748
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19657,7 +19659,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
