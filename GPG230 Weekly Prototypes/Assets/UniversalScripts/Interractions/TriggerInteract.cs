@@ -6,6 +6,7 @@ public class TriggerInteract : MonoBehaviour
 {
     public Interactable interactable;
     public GameObject interactObject;
+    public AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,13 @@ public class TriggerInteract : MonoBehaviour
             else
                 interactable.Interract();
 
-            gameObject.SetActive(false);
+            if (audioSource)
+                audioSource.Play();
+
+            if (gameObject.GetComponent<BoxCollider>())
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+            else
+                gameObject.SetActive(false);
         }
     }
 }

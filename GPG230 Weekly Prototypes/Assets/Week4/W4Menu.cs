@@ -25,6 +25,25 @@ public class W4Menu : MonoBehaviour
     public TMP_Text end1;
     public TMP_Text end2;
 
+    private void Start()
+    {
+        if(PlayerPrefs.GetInt("firstStart") == 0)
+        {
+            ResetPrefs();
+            ResetHighScores();
+            PlayerPrefs.SetInt("firstStart", 1);
+        }
+    }
+
+    void ResetPrefs()
+    {
+        PlayerPrefs.SetInt("level1Unlocked", 0);
+        PlayerPrefs.SetInt("level2Unlocked", 0);
+        PlayerPrefs.SetInt("level3Unlocked", 0);
+        PlayerPrefs.SetInt("story2Unlocked", 0);
+        PlayerPrefs.SetInt("story3Unlocked", 0);
+    }
+
     public void ReturnToMain()
     {
         cam1.SetActive(true);
