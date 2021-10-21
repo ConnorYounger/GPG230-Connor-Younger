@@ -26,6 +26,15 @@ public class UIInteraction : Interactions
             {
                 player.GetChild(0).GetChild(0).gameObject.SetActive(false);
             }
+
+            if(interactable.week4Win.ToString() == "endStory1")
+            {
+                PlayerPrefs.SetFloat("endStory1", 0);
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("endStory2", 0);
+            }
         }
     }
 

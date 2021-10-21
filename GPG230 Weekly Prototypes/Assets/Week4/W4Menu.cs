@@ -14,6 +14,8 @@ public class W4Menu : MonoBehaviour
     public TMP_Text level1;
     public TMP_Text level2;
     public TMP_Text level3;
+    public TMP_Text end1;
+    public TMP_Text end2;
 
     public void ReturnToMain()
     {
@@ -45,6 +47,8 @@ public class W4Menu : MonoBehaviour
         PlayerPrefs.SetFloat("level1", 9999);
         PlayerPrefs.SetFloat("level2", 9999);
         PlayerPrefs.SetFloat("level3", 9999);
+        PlayerPrefs.SetFloat("endStory1", 9999);
+        PlayerPrefs.SetFloat("endStory2", 9999);
 
         UpdateHighscores();
     }
@@ -73,6 +77,22 @@ public class W4Menu : MonoBehaviour
                 level3.text = "Best Time: --";
             else
                 level3.text = "Best Time: " + Mathf.RoundToInt(PlayerPrefs.GetFloat("level3")).ToString() + "s";
+        }
+
+        if (end1)
+        {
+            if (PlayerPrefs.GetFloat("endStory1") == 9999)
+                end1.text = "Ending 1: Unachieved";
+            else
+                end1.text = "Ending 1: Rocket Win";
+        }
+
+        if (end2)
+        {
+            if (PlayerPrefs.GetFloat("endStory2") == 9999)
+                end2.text = "Ending 2: Unachieved";
+            else
+                end2.text = "Ending 2: YANA Win";
         }
     }
 }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class W4DisplayTime : MonoBehaviour
 {
-    [System.Serializable] public enum levels { defult, level1, level2, level3, endStory };
+    [System.Serializable] public enum levels { defult, level1, level2, level3, endStory1, endStory2 };
     public levels level;
 
     private GameObject player;
@@ -54,6 +54,18 @@ public class W4DisplayTime : MonoBehaviour
                             PlayerPrefs.SetFloat("level3", timer.levelTimer);
                         }
                         break;
+                    case levels.endStory1:
+                        if (timer.levelTimer < PlayerPrefs.GetFloat("endStory1"))
+                        {
+                            PlayerPrefs.SetFloat("endStory1", timer.levelTimer);
+                        }
+                        break;
+                    case levels.endStory2:
+                        if (timer.levelTimer < PlayerPrefs.GetFloat("endStory2"))
+                        {
+                            PlayerPrefs.SetFloat("endStory2", timer.levelTimer);
+                        }
+                        break;
                 }
 
                 ShowStats(level.ToString());
@@ -65,12 +77,12 @@ public class W4DisplayTime : MonoBehaviour
     {
         if (highScoreText)
         {
-            highScoreText.text = "High Score: " + Mathf.RoundToInt(PlayerPrefs.GetFloat(level)).ToString() + "s";
+            highScoreText.text = "Best Time: " + Mathf.RoundToInt(PlayerPrefs.GetFloat(level)).ToString() + "s";
         }
 
         if (levelScoreText)
         {
-            levelScoreText.text = "Level Score: " + Mathf.RoundToInt(timer.levelTimer).ToString() + "s";
+            levelScoreText.text = "Level Time: " + Mathf.RoundToInt(timer.levelTimer).ToString() + "s";
         }
     }
 

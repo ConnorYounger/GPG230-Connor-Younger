@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
     [Header("Non Universal")]
     public GameObject openUI;
     public bool isWinUI = true;
+    [System.Serializable] public enum week4Wins { endStory1, endStory2 };
+    public week4Wins week4Win;
 
     // Start is called before the first frame update
     void Start()
