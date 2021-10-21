@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class W4Menu : MonoBehaviour
@@ -9,6 +10,13 @@ public class W4Menu : MonoBehaviour
     public GameObject cam2;
 
     public GameObject levelUI;
+
+    [Header("Level Buttons")]
+    public Button story2Button;
+    public Button story3Button;
+    public Button level1Button;
+    public Button level2Button;
+    public Button level3Button;
 
     [Header("Highscore texts")]
     public TMP_Text level1;
@@ -39,6 +47,7 @@ public class W4Menu : MonoBehaviour
 
         levelUI.SetActive(true);
 
+        CheckLevelUnlocks();
         UpdateHighscores();
     }
 
@@ -51,6 +60,54 @@ public class W4Menu : MonoBehaviour
         PlayerPrefs.SetFloat("endStory2", 9999);
 
         UpdateHighscores();
+    }
+
+    void CheckLevelUnlocks()
+    {
+        if (PlayerPrefs.GetInt("level1Unlocked") == 0)
+        {
+            level1Button.interactable = false;
+        }
+        else
+        {
+            level1Button.interactable = true;
+        }
+
+        if (PlayerPrefs.GetInt("level2Unlocked") == 0)
+        {
+            level2Button.interactable = false;
+        }
+        else
+        {
+            level2Button.interactable = true;
+        }
+
+        if (PlayerPrefs.GetInt("level3Unlocked") == 0)
+        {
+            level3Button.interactable = false;
+        }
+        else
+        {
+            level3Button.interactable = true;
+        }
+
+        if (PlayerPrefs.GetInt("story2Unlocked") == 0)
+        {
+            story2Button.interactable = false;
+        }
+        else
+        {
+            story2Button.interactable = true;
+        }
+
+        if (PlayerPrefs.GetInt("story3Unlocked") == 0)
+        {
+            story3Button.interactable = false;
+        }
+        else
+        {
+            story3Button.interactable = true;
+        }
     }
 
     void UpdateHighscores()

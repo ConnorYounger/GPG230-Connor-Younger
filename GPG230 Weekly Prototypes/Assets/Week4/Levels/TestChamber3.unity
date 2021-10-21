@@ -5070,6 +5070,7 @@ MonoBehaviour:
   finishLevelUI: {fileID: 1292500955}
   player: {fileID: 1405201337}
   puzzleGun: {fileID: 1405201338}
+  level: 3
 --- !u!65 &373374067
 BoxCollider:
   m_ObjectHideFlags: 0

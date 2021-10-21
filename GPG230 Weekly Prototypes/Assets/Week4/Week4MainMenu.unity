@@ -9199,6 +9199,11 @@ MonoBehaviour:
   cam1: {fileID: 924099578}
   cam2: {fileID: 1006829114}
   levelUI: {fileID: 1691670649}
+  story2Button: {fileID: 1701053500}
+  story3Button: {fileID: 276152859}
+  level1Button: {fileID: 1663689082}
+  level2Button: {fileID: 122061795}
+  level3Button: {fileID: 1629267176}
   level1: {fileID: 602203804}
   level2: {fileID: 745130517}
   level3: {fileID: 1696497479}

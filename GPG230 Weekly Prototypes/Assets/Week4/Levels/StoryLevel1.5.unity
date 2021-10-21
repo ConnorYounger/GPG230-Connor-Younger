@@ -2390,6 +2390,7 @@ MonoBehaviour:
   finishLevelUI: {fileID: 1229938150}
   player: {fileID: 760528815}
   puzzleGun: {fileID: 1403989076}
+  level: 5
 --- !u!65 &1349942928
 BoxCollider:
   m_ObjectHideFlags: 0
