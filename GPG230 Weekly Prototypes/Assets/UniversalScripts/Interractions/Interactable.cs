@@ -6,11 +6,18 @@ public class Interactable : MonoBehaviour
 {
     public Interactions interactions;
 
+    [System.Serializable] public enum interactables { weaponBase, button, uiInteraction };
+    public interactables interactableType;
+
     [Header("Universal")]
     public WeaponManager weaponManager;
+    public GameObject hoverOverUI;
 
-    [System.Serializable] public enum interactables { weaponBase, button };
-    public interactables interactableType;
+    [Header("Non Universal")]
+    public GameObject openUI;
+    public bool isWinUI = true;
+    [System.Serializable] public enum week4Wins { endStory1, endStory2 };
+    public week4Wins week4Win;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +43,9 @@ public class Interactable : MonoBehaviour
             case "button":
                 interactions = new ButtonInterraction(this);
                 break;
+            case "uiInteraction":
+                interactions = new UIInteraction(this);
+                break;
         }
     }
 
@@ -47,5 +57,24 @@ public class Interactable : MonoBehaviour
     public void Interract(GameObject o)
     {
         interactions.Interact(o);
+    }
+
+    public void InteractionOver()
+    {
+        if (hoverOverUI)
+        {
+            hoverOverUI.SetActive(true);
+
+            StopCoroutine("HideInteractionOver");
+            StartCoroutine("HideInteractionOver");
+        }
+    }
+
+    IEnumerator HideInteractionOver()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if(hoverOverUI)
+            hoverOverUI.SetActive(false);
     }
 }

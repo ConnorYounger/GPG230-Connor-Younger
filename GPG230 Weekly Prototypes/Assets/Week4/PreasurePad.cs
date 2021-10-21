@@ -14,6 +14,11 @@ public class PreasurePad : MonoBehaviour
 
     public bool singlePress;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] turnOnSounds;
+    public AudioClip[] turnOffSounds;
+
     private List<Collider> colliders;
 
     // Start is called before the first frame update
@@ -47,7 +52,7 @@ public class PreasurePad : MonoBehaviour
 
     void AddCollision(Collider collision)
     {
-        if(buttonType == buttonTypes.defult)
+        if(buttonType == buttonTypes.defult && collision.tag != "noCollide")
         {
             colliders.Add(collision);
         }
@@ -94,6 +99,11 @@ public class PreasurePad : MonoBehaviour
     {
         colliders.Remove(other);
 
+        if (connector.phisDoor)
+        {
+            connector.phisDoor.TurnOff(connector.gameObject);
+        }
+
         CheckForCollisions();
     }
 
@@ -118,6 +128,13 @@ public class PreasurePad : MonoBehaviour
             {
                 animator.SetBool("PresurePadDown", true);
                 animator.SetBool("PresurePadUp", false);
+
+                if (audioSource && turnOnSounds.Length > 0)
+                {
+                    int rand = Random.Range(0, turnOnSounds.Length);
+                    audioSource.clip = turnOnSounds[rand];
+                    audioSource.Play();
+                }
             }
         }
         else
@@ -139,6 +156,13 @@ public class PreasurePad : MonoBehaviour
                 {
                     animator.SetBool("PresurePadUp", true);
                     animator.SetBool("PresurePadDown", false);
+
+                    if (audioSource && turnOffSounds.Length > 0)
+                    {
+                        int rand = Random.Range(0, turnOffSounds.Length);
+                        audioSource.clip = turnOffSounds[rand];
+                        audioSource.Play();
+                    }
                 }
             }
         }

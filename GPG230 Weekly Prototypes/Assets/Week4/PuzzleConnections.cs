@@ -121,13 +121,13 @@ public class PuzzleConnections : MonoBehaviour
             door.OpenDoor();
 
         if (phisDoor)
-            phisDoor.TurnOff();
+            phisDoor.TurnOff(gameObject);
 
         if(extraPhisDoor.Length > 0)
         {
             foreach(PhizDoor p in extraPhisDoor)
             {
-                p.TurnOff();
+                p.TurnOff(gameObject);
             }
         }
 
@@ -140,13 +140,13 @@ public class PuzzleConnections : MonoBehaviour
             door.CloseDoor();
 
         if (phisDoor)
-            phisDoor.TurnOn();
+            phisDoor.TurnOn(gameObject);
 
         if (extraPhisDoor.Length > 0)
         {
             foreach (PhizDoor p in extraPhisDoor)
             {
-                p.TurnOn();
+                p.TurnOn(gameObject);
             }
         }
 

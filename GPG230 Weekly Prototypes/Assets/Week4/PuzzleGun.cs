@@ -17,10 +17,13 @@ public class PuzzleGun : MonoBehaviour
 
     public bool canUse;
     public bool canSpawnObjects;
+    public bool canSwitchModes;
 
     public float fireForce = 2000;
 
-    private Rigidbody _grabbedObject;
+    public Rigidbody _grabbedObject;
+
+    public Animator animatior;
 
     [Header("Object Gun")]
     public GameObject cubeObject;
@@ -29,7 +32,20 @@ public class PuzzleGun : MonoBehaviour
     public int fireMode;
     public Material playerMaterial;
 
+    [Header("Particles")]
+    public ParticleSystem muzzleParticles;
+    public ParticleSystem objectParticles;
+    public GameObject fireFx;
+
     private GameObject previouslySpawnedObject;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioSource audioSourceLoop;
+    public AudioClip[] fireSound;
+    public AudioClip holdStart;
+    public AudioClip createCubeSound;
+    public AudioClip cubeFizzleSound;
 
     void OnDisable()
     {
@@ -56,6 +72,11 @@ public class PuzzleGun : MonoBehaviour
             {
                 _pickLine.material = lineMaterial;
             }
+        }
+
+        if(canSpawnObjects && !canSwitchModes)
+        {
+            fireMode = 1;
         }
     }
 
@@ -105,22 +126,25 @@ public class PuzzleGun : MonoBehaviour
                     }
                 }
 
-                // Mouse scroll wheel
-                float axis = Input.GetAxisRaw("Mouse ScrollWheel");
+                if (canSwitchModes)
+                {
+                    // Mouse scroll wheel
+                    float axis = Input.GetAxisRaw("Mouse ScrollWheel");
 
-                if (axis > 0)
-                {
-                    if (fireMode < 2)
-                        fireMode++;
-                    else
-                        fireMode = 0;
-                }
-                else if (axis < 0)
-                {
-                    if (fireMode > 0)
-                        fireMode--;
-                    else
-                        fireMode = 2;
+                    if (axis > 0)
+                    {
+                        if (fireMode < 2)
+                            fireMode++;
+                        else
+                            fireMode = 0;
+                    }
+                    else if (axis < 0)
+                    {
+                        if (fireMode > 0)
+                            fireMode--;
+                        else
+                            fireMode = 2;
+                    }
                 }
             }
         }
@@ -132,7 +156,7 @@ public class PuzzleGun : MonoBehaviour
 
         if (button == KeyCode.Mouse0)
         {
-            if (Physics.Raycast(ray, out RaycastHit hit, 3)
+            if (Physics.SphereCast(ray, 0.5f, out RaycastHit hit, 3)
                 && hit.rigidbody
                 && !hit.rigidbody.CompareTag("Player"))
             {
@@ -142,6 +166,19 @@ public class PuzzleGun : MonoBehaviour
 
                 _pickDistance = hit.distance;
                 _pickOffset = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
+
+                if (_grabbedObject.GetComponent<SpawnedPuzzleObject>())
+                {
+                    _grabbedObject.GetComponent<SpawnedPuzzleObject>().puzzleGun = this;
+                }
+
+                if(audioSource && holdStart)
+                {
+                    audioSource.clip = holdStart;
+                    audioSource.Play();
+                    StopCoroutine("StartHoldLoop");
+                    StartCoroutine("StartHoldLoop");
+                }
             }
         }
         else if (button == KeyCode.Mouse1 && _grabbedObject)
@@ -150,6 +187,16 @@ public class PuzzleGun : MonoBehaviour
             _grabbedObject = null;
 
             _pickLine.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator StartHoldLoop()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (_grabbedObject && audioSourceLoop)
+        {
+            audioSourceLoop.Play();
         }
     }
 
@@ -165,6 +212,24 @@ public class PuzzleGun : MonoBehaviour
             if (button == KeyCode.Mouse1)
             {
                 ob.AddForce(playerCamera.transform.forward * fireForce);
+
+                if (animatior)
+                {
+                    animatior.Play("PhisGunFire");
+                }
+
+                if (fireFx)
+                {
+                    GameObject fx = Instantiate(fireFx, barrelPos.position, barrelPos.rotation);
+                    Destroy(fx, 1);
+                }
+
+                if (audioSource && fireSound.Length > 0)
+                {
+                    int rand = Random.Range(0, fireSound.Length);
+                    audioSource.clip = fireSound[rand];
+                    audioSource.Play();
+                }
             }
         }
     }
@@ -178,6 +243,46 @@ public class PuzzleGun : MonoBehaviour
             var force = forceDir / Time.fixedDeltaTime * 0.3f / _grabbedObject.mass;
             _grabbedObject.velocity = force;
             _grabbedObject.transform.Rotate(playerCamera.transform.forward, 20f * Time.fixedDeltaTime);
+
+            if (animatior)
+            {
+                animatior.SetBool("isHolding", true);
+            }
+
+            if (objectParticles && !objectParticles.isPlaying)
+            {
+                objectParticles.transform.position = _grabbedObject.transform.position;
+                objectParticles.transform.parent = _grabbedObject.transform;
+                objectParticles.transform.localScale = new Vector3(1, 1, 1);
+                objectParticles.gameObject.SetActive(true);
+            }
+
+            if (muzzleParticles && !muzzleParticles.isPlaying)
+            {
+                muzzleParticles.Play();
+            }
+        }
+        else
+        {
+            if (animatior)
+            {
+                animatior.SetBool("isHolding", false);
+            }
+
+            if (objectParticles && objectParticles.isPlaying)
+            {
+                objectParticles.gameObject.SetActive(false);
+            }
+
+            if (muzzleParticles && muzzleParticles.isPlaying)
+            {
+                muzzleParticles.Stop();
+            }
+
+            if (audioSourceLoop)
+            {
+                audioSourceLoop.Stop();
+            }
         }
     }
 
@@ -191,6 +296,11 @@ public class PuzzleGun : MonoBehaviour
         else
         {
             _pickLine.gameObject.SetActive(false);
+
+            if (objectParticles)
+            {
+                objectParticles.transform.parent = spawnPoint.transform;
+            }
         }
     }
 
@@ -210,11 +320,21 @@ public class PuzzleGun : MonoBehaviour
         if (!obj.GetComponent<SpawnedPuzzleObject>())
         {
             obj.AddComponent<SpawnedPuzzleObject>();
+            obj.GetComponent<SpawnedPuzzleObject>().puzzleGun = this;
+            obj.GetComponent<SpawnedPuzzleObject>().destroySound = cubeFizzleSound;
         }
 
         if (obj.GetComponent<MeshRenderer>() && playerMaterial)
         {
             obj.GetComponent<MeshRenderer>().material = playerMaterial;
+        }
+
+        if (audioSource && holdStart)
+        {
+            audioSource.clip = createCubeSound;
+            audioSource.Play();
+            StopCoroutine("StartHoldLoop");
+            StartCoroutine("StartHoldLoop");
         }
 
         _pickLine.gameObject.SetActive(true);
@@ -225,6 +345,11 @@ public class PuzzleGun : MonoBehaviour
     {
         if (previouslySpawnedObject)
         {
+            if (objectParticles)
+            {
+                objectParticles.transform.parent = spawnPoint.transform;
+            }
+
             if (previouslySpawnedObject.GetComponent<SpawnedPuzzleObject>())
                 previouslySpawnedObject.GetComponent<SpawnedPuzzleObject>().DestroyObject();
             else

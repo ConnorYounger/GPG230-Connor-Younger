@@ -5,6 +5,11 @@ using UnityEngine;
 public class W3Door : MonoBehaviour
 {
     public GameObject doorCollider;
+    public Animator animator;
+
+    public AudioSource audioSource;
+    public AudioClip openSound;
+    public AudioClip closeSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +27,29 @@ public class W3Door : MonoBehaviour
     {
         if (doorCollider)
             doorCollider.SetActive(false);
+
+        if (audioSource && openSound && !animator.GetBool("DoorOpen"))
+        {
+            audioSource.clip = openSound;
+            audioSource.Play();
+        }
+
+        if (animator)
+            animator.SetBool("DoorOpen", true);
     }
 
     public void CloseDoor()
     {
         if (doorCollider)
             doorCollider.SetActive(true);
+
+        if (audioSource && closeSound && animator.GetBool("DoorOpen"))
+        {
+            audioSource.clip = closeSound;
+            audioSource.Play();
+        }
+
+        if (animator)
+            animator.SetBool("DoorOpen", false);
     }
 }

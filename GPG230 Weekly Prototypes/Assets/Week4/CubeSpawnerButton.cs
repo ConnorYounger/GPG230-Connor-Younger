@@ -6,6 +6,7 @@ public class CubeSpawnerButton : MonoBehaviour
 {
     public CubeSpawner cubeSpawner;
     public Animator animator;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,11 @@ public class CubeSpawnerButton : MonoBehaviour
         if (animator)
         {
             animator.Play("ButtonPress");
+        }
+
+        if (audioSource)
+        {
+            audioSource.Play();
         }
     }
 }
