@@ -2031,6 +2031,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1454909213557719657, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
+      propertyPath: m_text
+      value: Chapter Completed
+      objectReference: {fileID: 0}
     - target: {fileID: 1810365786313665627, guid: 6b81b1581f55ddc47a7822dd6dadee83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
