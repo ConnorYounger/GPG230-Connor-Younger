@@ -7,6 +7,8 @@ public class W5PlayerShoot : MonoBehaviour
     public GameObject projectile1;
     public Transform shootPoint;
 
+    public float damage = 4;
+
     public float fireRate;
     private bool readyToFire = true;
 
@@ -47,6 +49,11 @@ public class W5PlayerShoot : MonoBehaviour
                 if (projectile1 && shootPoint)
                 {
                     GameObject proj = Instantiate(projectile1, shootPoint.position, shootPoint.rotation);
+
+                    if (proj.GetComponent<W5Projectile>())
+                    {
+                        proj.GetComponent<W5Projectile>().damage = damage;
+                    }
 
                     readyToFire = false;
 
