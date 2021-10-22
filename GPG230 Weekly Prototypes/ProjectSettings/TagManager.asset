@@ -9,6 +9,7 @@ TagManager:
   - blue
   - yellow
   - noCollide
+  - SF_Door
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Player
   - PresurePad
   - BlockPlayer
-  - 
+  - Floor
   - 
   - 
   - 
