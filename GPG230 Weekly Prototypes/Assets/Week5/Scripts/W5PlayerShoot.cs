@@ -8,6 +8,7 @@ public class W5PlayerShoot : MonoBehaviour
     public Transform shootPoint;
 
     public float damage = 4;
+    public float projectileSpeed = 7;
 
     public float fireRate;
     private bool readyToFire = true;
@@ -53,6 +54,7 @@ public class W5PlayerShoot : MonoBehaviour
                     if (proj.GetComponent<W5Projectile>())
                     {
                         proj.GetComponent<W5Projectile>().damage = damage;
+                        proj.GetComponent<W5Projectile>().projectileSpeed = projectileSpeed;
                     }
 
                     readyToFire = false;

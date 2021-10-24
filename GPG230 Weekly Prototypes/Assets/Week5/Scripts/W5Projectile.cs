@@ -36,7 +36,8 @@ public class W5Projectile : MonoBehaviour
         {
             other.GetComponent<W5EnemyHealth>().DealDamage(damage);
 
-            DestroyProjectile();
+            if (other.gameObject.layer != 12)
+                DestroyProjectile();
         }
     }
 

@@ -6,6 +6,7 @@ public class W5EnemyHealth : MonoBehaviour
 {
     public float health = 10;
 
+    public GameObject hitFx;
     public GameObject destroyFx;
 
     [Header("Audio")]
@@ -24,6 +25,14 @@ public class W5EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             EnemyDie();
+        }
+        else
+        {
+            if (hitFx)
+            {
+                GameObject fx = Instantiate(hitFx, transform.position, transform.rotation);
+                Destroy(fx, 1);
+            }
         }
     }
 

@@ -23,9 +23,9 @@ TagManager:
   - PresurePad
   - BlockPlayer
   - Floor
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - Enemy
+  - PlayerProjectile
   - 
   - 
   - 
