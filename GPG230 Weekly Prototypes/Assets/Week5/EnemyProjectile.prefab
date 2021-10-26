@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0271d6662dfbe5d49b299765338df364, type: 2}
+  - {fileID: 2100000, guid: 7e91d6c26dfdd63478853b857a6d703f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -287,11 +287,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 4
   projectileSpeed: 5
-  projectileTime: 5
-  destroyFx: {fileID: 0}
+  projectileTime: 10
+  destroyFx: {fileID: 1147587493922119016, guid: 94ed2d4dee9f4fa47977b6b22a94e4fe, type: 3}
+  scoreManager: {fileID: 0}
   audioSource: {fileID: 0}
   destroySound: {fileID: 0}
   musicScale: 1
+  scaleMultiplier: 1.5
   band: 4
 --- !u!114 &8862935802264695094
 MonoBehaviour:
@@ -308,5 +310,8 @@ MonoBehaviour:
   health: 1
   hitFx: {fileID: 1147587493922119016, guid: 94ed2d4dee9f4fa47977b6b22a94e4fe, type: 3}
   destroyFx: {fileID: 1147587493922119016, guid: 94ed2d4dee9f4fa47977b6b22a94e4fe, type: 3}
+  spawner: {fileID: 0}
+  spawnIndex: -1
+  scoreValue: 10
   audioSource: {fileID: 0}
   destroySound: {fileID: 0}

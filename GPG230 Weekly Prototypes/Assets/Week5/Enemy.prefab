@@ -157,10 +157,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940697}
 --- !u!114 &1306655488323353667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,9 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b44a8c3c2d52744b2ffa586810af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   hitFx: {fileID: 1564078068721401043, guid: 51325bfbb568b1b4eb2f848fd8cce806, type: 3}
   destroyFx: {fileID: 1564078068721401043, guid: 51325bfbb568b1b4eb2f848fd8cce806, type: 3}
+  spawner: {fileID: 0}
+  spawnIndex: -1
   audioSource: {fileID: 0}
   destroySound: {fileID: 0}
 --- !u!114 &1306655488323353689
@@ -194,8 +196,8 @@ MonoBehaviour:
   aimTransform: {fileID: 1306655487833998869}
   shootPoint: {fileID: 1306655488002642320}
   damage: 4
-  projectileSpeed: 3
-  fireRate: 1
+  projectileSpeed: 2
+  fireRate: 2
   band: 0
 --- !u!54 &1306655488323353688
 Rigidbody:

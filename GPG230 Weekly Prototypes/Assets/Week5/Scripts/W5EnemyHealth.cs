@@ -9,6 +9,11 @@ public class W5EnemyHealth : MonoBehaviour
     public GameObject hitFx;
     public GameObject destroyFx;
 
+    public W5EnemySpawner spawner;
+    public int spawnIndex = -1;
+
+    public int scoreValue = 10;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip destroySound;
@@ -38,6 +43,11 @@ public class W5EnemyHealth : MonoBehaviour
 
     void EnemyDie()
     {
+        if (spawner)
+        {
+            spawner.RemoveEnemy(gameObject, spawnIndex, scoreValue);
+        }
+
         if (destroyFx)
         {
             GameObject fx = Instantiate(destroyFx, transform.position, transform.rotation);

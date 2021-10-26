@@ -5,6 +5,7 @@ using UnityEngine;
 public class W5EnemyShooting : MonoBehaviour
 {
     public GameObject projectile;
+    public W5ScoreManager scoreManager;
 
     public Transform aimTransform;
     public Transform shootPoint;
@@ -55,6 +56,10 @@ public class W5EnemyShooting : MonoBehaviour
                 {
                     proj.GetComponent<W5Projectile>().damage = damage;
                     proj.GetComponent<W5Projectile>().projectileSpeed = projectileSpeed;
+
+                    //if (scoreManager)
+                    //    proj.GetComponent<W5Projectile>().scoreManager = scoreManager;
+
                 }
 
                 readyToFire = false;

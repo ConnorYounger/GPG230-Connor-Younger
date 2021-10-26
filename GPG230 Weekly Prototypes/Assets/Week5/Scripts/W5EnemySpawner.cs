@@ -10,6 +10,8 @@ public class W5EnemySpawner : MonoBehaviour
     public bool spawnAtStart;
     public bool spawnBaseOnEmpty;
     public bool setEnemyToChild;
+    public bool spawnAfterDeath;
+    private bool completedStartSpawn;
 
     public Transform spawnPointParent;
     public List<Transform> spawnPoints;
@@ -21,13 +23,16 @@ public class W5EnemySpawner : MonoBehaviour
     public int band = 4;
 
     public int maxSpawnCount = 4;
-    public List<GameObject> spawnedEnemies;
+    private int spawnedCount;
+    public GameObject[] spawnedEnemies;
+
+    public W5ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPoints = new List<Transform>();
-        spawnedEnemies = new List<GameObject>();
+        spawnedEnemies = new GameObject[maxSpawnCount];
 
         if (spawnPointParent)
         {
@@ -56,33 +61,52 @@ public class W5EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        Debug.Log("SpawnEnemies");
-
-        if(spawnedEnemies.Count < maxSpawnCount)
+        if(!spawnAfterDeath && spawnedCount < maxSpawnCount)
         {
-            SpawnEnemy();
+            SpawnEnemyAtPoint();
+        }
+        else if (spawnAfterDeath && !completedStartSpawn && spawnedCount < maxSpawnCount)
+        {
+            SpawnEnemyAtPoint();
+        }
+        else
+        {
+            completedStartSpawn = true;
         }
 
         StartCoroutine("StartSpawnSequence", spawnTime);
     }
 
-    void SpawnEnemy()
+    void SpawnEnemyAtPoint(Transform point)
+    {
+        SpawnEnemy(point);
+    }
+
+    void SpawnEnemyAtPoint()
     {
         Transform spawnPoint = gameObject.transform;
-        GameObject spawnedEnemy = null;
 
         if (spawnPoints.Count > 0)
         {
-            Debug.Log("sp index: " + spawnPointsIndex);
-            Debug.Log("sp length " + spawnPoints.Count);
+            //Debug.Log("sp index: " + spawnPointsIndex);
+            //Debug.Log("sp length " + spawnPoints.Count);
 
             spawnPoint = spawnPoints[spawnPointsIndex];
-            
-            if(spawnPointsIndex < spawnPoints.Count - 1)
+
+            if (spawnPointsIndex < spawnPoints.Count - 1)
                 spawnPointsIndex++;
             else
                 spawnPointsIndex = 0;
         }
+
+        SpawnEnemy(spawnPoint);
+    }
+
+    void SpawnEnemy(Transform spawnPoint)
+    {
+        //Debug.Log("SpawnEnemies");
+
+        GameObject spawnedEnemy = null;
 
         if (baseEnemyPrefab)
         {
@@ -109,6 +133,8 @@ public class W5EnemySpawner : MonoBehaviour
             {
                 spawnedEnemy = InstantiateEnemy(baseEnemyPrefab, spawnPoint);
             }
+
+            spawnedCount++;
         }
         else
             Debug.LogError("Missing base enemy prefab");
@@ -117,7 +143,27 @@ public class W5EnemySpawner : MonoBehaviour
     GameObject InstantiateEnemy(GameObject enemyPrefab, Transform spawnPoint)
     {
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-        spawnedEnemies.Add(enemy);
+
+        int spawnedIndex = spawnPointsIndex;
+
+        if (spawnedIndex > 0)
+            spawnedIndex--;
+        else
+            spawnedIndex = spawnPoints.Count - 1;
+
+        spawnedEnemies[spawnedIndex] = enemy;
+
+        if (enemy.GetComponent<W5EnemyHealth>())
+        {
+            enemy.GetComponent<W5EnemyHealth>().spawner = this;
+
+            enemy.GetComponent<W5EnemyHealth>().spawnIndex = spawnedIndex;
+        }
+
+        if (enemy.GetComponent<W5EnemyShooting>())
+        {
+            enemy.GetComponent<W5EnemyShooting>().scoreManager = scoreManager;
+        }
 
         if (enemySpawnOffset > 0)
             enemy.transform.position = spawnPoint.forward * enemySpawnOffset;
@@ -126,5 +172,52 @@ public class W5EnemySpawner : MonoBehaviour
             enemy.transform.parent = transform;
 
         return enemy;
+    }
+
+    public void RemoveEnemy(GameObject enemy, int index, int scoreValue)
+    {
+        if (scoreManager)
+        {
+            scoreManager.AddScore(scoreValue);
+        }
+
+        if (index >= 0 && index <= spawnPoints.Count - 1)
+        {
+            //Debug.Log("Remove: " + spawnedEnemies[index]);
+
+            spawnedEnemies[index] = null;
+            spawnedCount--;
+
+            if (spawnAfterDeath)
+            {
+                //SpawnEnemyAtPoint(spawnPoints[index]);
+            }
+
+            CheckForRespawn();
+        }
+    }
+
+    public void CheckForRespawn()
+    {
+        bool respawn = true;
+
+        for(int i = 0; i < spawnedEnemies.Length; i++)
+        {
+            if(spawnedEnemies[i] != null)
+            {
+                respawn = false;
+            }
+        }
+
+        Debug.Log("respawn = " + respawn);
+
+        if(respawn == true)
+        {
+            if (spawnAfterDeath)
+            {
+                completedStartSpawn = false;
+                StartCoroutine("StartSpawnSequence", spawnTime);
+            }
+        }
     }
 }

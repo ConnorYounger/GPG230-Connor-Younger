@@ -10,17 +10,22 @@ public class W5Projectile : MonoBehaviour
 
     public GameObject destroyFx;
 
+    public W5ScoreManager scoreManager;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip destroySound;
 
     public bool musicScale;
+    public float scaleMultiplier = 1;
     public int band;
 
     private void Start()
     {
         if(projectileTime > 0)
             Destroy(gameObject, projectileTime);
+
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<W5ScoreManager>();
     }
 
     void Update()
@@ -41,7 +46,10 @@ public class W5Projectile : MonoBehaviour
             if(other.GetComponent<W5EnemyHealth>())
                 other.GetComponent<W5EnemyHealth>().DealDamage(damage);
 
-            if (other.gameObject.layer != 12)
+            if (other.name == "Player" && scoreManager)
+                scoreManager.RemoveScore(100);
+
+            if (other.gameObject.layer != 12 && other.gameObject.layer != 14)
                 DestroyProjectile();
         }
     }
@@ -50,7 +58,7 @@ public class W5Projectile : MonoBehaviour
     {
         if (musicScale)
         {
-            float locScale = Mathf.Clamp(AudioPeer.audioBandBuffer[band], 0.5f, 1);
+            float locScale = Mathf.Clamp(AudioPeer.audioBandBuffer[band] * scaleMultiplier, scaleMultiplier / 2, scaleMultiplier);
             transform.localScale = new Vector3(locScale, locScale, locScale);
         }
     }
