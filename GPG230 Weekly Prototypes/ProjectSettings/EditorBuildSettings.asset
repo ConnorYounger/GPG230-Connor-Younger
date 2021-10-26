@@ -5,25 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Week4/Week4MainMenu.unity
-    guid: a98b1480017a5694e9f37b59ec0eb708
-  - enabled: 1
-    path: Assets/Week4/Levels/StoryLevel1.unity
-    guid: ff92698776b8aad40a348009c63f0d8e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Week4/Levels/TestChamber1.unity
     guid: 0336c674f8ebf9241bf4b8369c8879cb
   - enabled: 1
     path: Assets/Week4/Levels/TestChamber2.unity
     guid: b1a3014921b40024f954b886c8ac9e68
-  - enabled: 1
-    path: Assets/Week4/Levels/StoryLevel1.5.unity
-    guid: 2d71dcd618c44ed489a78aa584e38933
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Week4/Levels/TestChamber3.unity
     guid: ab8cdaf83dab48a4fb35a4cf7fc50226
-  - enabled: 1
-    path: Assets/Week4/Levels/StoryLevel2.unity
-    guid: d68cbb5f5b56e0540970fe8fde867daa
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -14,6 +14,9 @@ public class W5Projectile : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip destroySound;
 
+    public bool musicScale;
+    public int band;
+
     private void Start()
     {
         if(projectileTime > 0)
@@ -23,6 +26,7 @@ public class W5Projectile : MonoBehaviour
     void Update()
     {
         ProjectileMovement();
+        MusicScale();
     }
 
     void ProjectileMovement()
@@ -32,12 +36,22 @@ public class W5Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<W5EnemyHealth>())
+        if (other != null)
         {
-            other.GetComponent<W5EnemyHealth>().DealDamage(damage);
+            if(other.GetComponent<W5EnemyHealth>())
+                other.GetComponent<W5EnemyHealth>().DealDamage(damage);
 
             if (other.gameObject.layer != 12)
                 DestroyProjectile();
+        }
+    }
+
+    void MusicScale()
+    {
+        if (musicScale)
+        {
+            float locScale = Mathf.Clamp(AudioPeer.audioBandBuffer[band], 0.5f, 1);
+            transform.localScale = new Vector3(locScale, locScale, locScale);
         }
     }
 

@@ -14,6 +14,8 @@ public class W5EnemyShooting : MonoBehaviour
     public float projectileSpeed = 3;
 
     public float fireRate;
+    public int band;
+
     private bool readyToFire = true;
 
     // Start is called before the first frame update
@@ -28,7 +30,8 @@ public class W5EnemyShooting : MonoBehaviour
         if(player)
             EnemyAiming();
 
-        EnemyShooting();
+        //EnemyShooting();
+        AudioEnemyShooting();
     }
 
     void EnemyAiming()
@@ -45,6 +48,28 @@ public class W5EnemyShooting : MonoBehaviour
         if (readyToFire)
         {
             if (projectile && shootPoint)
+            {
+                GameObject proj = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+
+                if (proj.GetComponent<W5Projectile>())
+                {
+                    proj.GetComponent<W5Projectile>().damage = damage;
+                    proj.GetComponent<W5Projectile>().projectileSpeed = projectileSpeed;
+                }
+
+                readyToFire = false;
+
+                StopCoroutine("ResetFireRate");
+                StartCoroutine("ResetFireRate");
+            }
+        }
+    }
+
+    void AudioEnemyShooting()
+    {
+        if (readyToFire)
+        {
+            if (projectile && shootPoint && AudioPeer.audioBandBuffer[band] > 0.7f)
             {
                 GameObject proj = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
 
