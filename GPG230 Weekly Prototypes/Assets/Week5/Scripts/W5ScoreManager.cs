@@ -15,6 +15,7 @@ public class W5ScoreManager : MonoBehaviour
     public int scoreMultiplier = 5;
     public int negativeScoreMultiplier = 1;
     public int playerScore;
+    public string playerRank = "--";
 
     [Header("Music")]
     public float trackLength = 300;

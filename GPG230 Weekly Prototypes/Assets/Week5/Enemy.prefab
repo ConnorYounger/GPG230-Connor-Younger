@@ -173,11 +173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b44a8c3c2d52744b2ffa586810af2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 7
   hitFx: {fileID: 1564078068721401043, guid: 51325bfbb568b1b4eb2f848fd8cce806, type: 3}
   destroyFx: {fileID: 1564078068721401043, guid: 51325bfbb568b1b4eb2f848fd8cce806, type: 3}
   spawner: {fileID: 0}
   spawnIndex: -1
+  scoreValue: 10
   audioSource: {fileID: 0}
   destroySound: {fileID: 0}
 --- !u!114 &1306655488323353689
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 5308309868093695899, guid: 1a04a552f701d0143a76b13f1135b334, type: 3}
+  scoreManager: {fileID: 0}
   aimTransform: {fileID: 1306655487833998869}
   shootPoint: {fileID: 1306655488002642320}
   damage: 4
