@@ -93,3 +93,540 @@ Received Import Request.
 Start importing Assets/Week5/Levels/W5Level3.unity using Guid(4bfcc058d7c522c4496ff7810184bf0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f882e5db89709cb3f5e62c1e23651801') in 0.011421 seconds
   Import took 0.127360 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001997 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.179 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.6 MB.
+System memory in use after: 140.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2565.
+Total: 3.407200 ms (FindLiveObjects: 0.310300 ms CreateObjectMapping: 0.105200 ms MarkObjects: 2.587500 ms  DeleteObjects: 0.402600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 290.228644 seconds.
+  path: Assets/Week5/Animations/Player vcam1.controller
+  artifactKey: Guid(6ba1d2c48e245324b96d9362af28fe04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Animations/Player vcam1.controller using Guid(6ba1d2c48e245324b96d9362af28fe04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eed438fafc9a1cfce0f6338e32aeb59c') in 0.191039 seconds
+  Import took 0.583811 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002165 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 2.07 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.367 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.7 MB.
+System memory in use after: 140.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2568.
+Total: 3.789500 ms (FindLiveObjects: 0.260900 ms CreateObjectMapping: 0.303300 ms MarkObjects: 2.806700 ms  DeleteObjects: 0.417100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008593 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.322 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.06 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.7 MB.
+System memory in use after: 140.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2571.
+Total: 2.959100 ms (FindLiveObjects: 0.226700 ms CreateObjectMapping: 0.085400 ms MarkObjects: 2.169200 ms  DeleteObjects: 0.476400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001761 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 2.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.284 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.7 MB.
+System memory in use after: 140.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2574.
+Total: 2.399200 ms (FindLiveObjects: 0.236700 ms CreateObjectMapping: 0.084300 ms MarkObjects: 1.645600 ms  DeleteObjects: 0.431200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002345 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.262 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.6 MB.
+System memory in use after: 140.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2577.
+Total: 3.223000 ms (FindLiveObjects: 0.221600 ms CreateObjectMapping: 0.087600 ms MarkObjects: 2.013500 ms  DeleteObjects: 0.898800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005382 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.535 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.7 MB.
+System memory in use after: 140.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2580.
+Total: 2.789700 ms (FindLiveObjects: 0.272100 ms CreateObjectMapping: 0.098200 ms MarkObjects: 1.722100 ms  DeleteObjects: 0.696200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 601.972947 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI
+  artifactKey: Guid(839b130f0cf8d9d419ebd4d6bb5b8495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI using Guid(839b130f0cf8d9d419ebd4d6bb5b8495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e273fb587264dc32942266a58c69f904') in 0.038622 seconds
+  Import took 0.066181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.068173 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric1.wav
+  artifactKey: Guid(8c1f9a27e1009984898086d197f87552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric1.wav using Guid(8c1f9a27e1009984898086d197f87552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dbab90f6a279551b9627d91e0801213') in 0.754873 seconds
+  Import took 0.790777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric8.wav
+  artifactKey: Guid(dc3d17e042c4655469d91b6a95a12826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric8.wav using Guid(dc3d17e042c4655469d91b6a95a12826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b922da7dd53e85b288cda117b0974cc') in 0.063933 seconds
+  Import took 0.089853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric6.wav
+  artifactKey: Guid(cd8f73dbab92c284e98e04f4bf05ce67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric6.wav using Guid(cd8f73dbab92c284e98e04f4bf05ce67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75cd5269e9fdbb072127ed5b14686fc7') in 0.075170 seconds
+  Import took 0.081430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric12.wav
+  artifactKey: Guid(9ef95c052a7158e4fadb1a99f9cd3064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric12.wav using Guid(9ef95c052a7158e4fadb1a99f9cd3064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92eb88e3c8509fdc97023d961c448be0') in 0.070783 seconds
+  Import took 0.076268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric5.wav
+  artifactKey: Guid(006f11bddad555a4881e408555920a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric5.wav using Guid(006f11bddad555a4881e408555920a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd0fd899febd1f0826898f5972692c87') in 0.043080 seconds
+  Import took 0.064941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric13.wav
+  artifactKey: Guid(ab8e7a145fc0f1049851bb79bdcbd964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric13.wav using Guid(ab8e7a145fc0f1049851bb79bdcbd964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ba95df4a7daf270c9236e6c32150b19') in 0.035001 seconds
+  Import took 0.063933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000972 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric15.wav
+  artifactKey: Guid(3aafc0e9ed49c6842b35bd09c0a17470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric15.wav using Guid(3aafc0e9ed49c6842b35bd09c0a17470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9d0b71cd309cd41c002054b59eccd9') in 0.124777 seconds
+  Import took 0.156977 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric7.wav
+  artifactKey: Guid(adf11b53d053cf9419f75a5b5835aad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric7.wav using Guid(adf11b53d053cf9419f75a5b5835aad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12f15676c7db42bfc625d02fa0fa13da') in 0.060326 seconds
+  Import took 0.103345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000418 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric4.wav
+  artifactKey: Guid(2c5585e271dd71741a353d972209d458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric4.wav using Guid(2c5585e271dd71741a353d972209d458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c0ba61ff309a93bf0be85c36fb57c8d') in 0.068695 seconds
+  Import took 0.091496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric11.wav
+  artifactKey: Guid(3b44c42a3e799874aa2a89d71cfe983c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric11.wav using Guid(3b44c42a3e799874aa2a89d71cfe983c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd37e9981411122ffc189b17d988ffb56') in 0.088210 seconds
+  Import took 0.107000 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric16.wav
+  artifactKey: Guid(f8126ddb8cc03fb4abddeff61c043286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric16.wav using Guid(f8126ddb8cc03fb4abddeff61c043286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc5cef0e741b6ec4f892e805fdbaa2d5') in 0.068697 seconds
+  Import took 0.086181 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric3.wav
+  artifactKey: Guid(072d25e290baac74d8e905722f78cd00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric3.wav using Guid(072d25e290baac74d8e905722f78cd00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04a1b5f0ce4316e5f6878d9d6adbbd3a') in 0.035103 seconds
+  Import took 0.082297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric10.wav
+  artifactKey: Guid(6b1103c631bfed3418ef46ac629b8adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric10.wav using Guid(6b1103c631bfed3418ef46ac629b8adf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c80b21c09f87870b4c8a5fd7cb1e90d8') in 0.039774 seconds
+  Import took 0.064931 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric9.wav
+  artifactKey: Guid(011c2623f994fbf44a3dcc9abd427754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric9.wav using Guid(011c2623f994fbf44a3dcc9abd427754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f6a39b77582609dfc1da63bb62b9ade') in 0.050334 seconds
+  Import took 0.089770 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric2.wav
+  artifactKey: Guid(124732a85abad29469eb1cc8b7368201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric2.wav using Guid(124732a85abad29469eb1cc8b7368201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36e641ce7a48e4c171dae5b5aadd42ab') in 0.062852 seconds
+  Import took 0.082975 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric14.wav
+  artifactKey: Guid(f5cefbdd8dc010e4180a616ccce188e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/retrosfxsoundpack/Cyberleaf-RetroSFXs/UI/SFX_UIGeneric14.wav using Guid(f5cefbdd8dc010e4180a616ccce188e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac535c8ebb3c10fdc799b0186c34dcf5') in 0.041951 seconds
+  Import took 0.052278 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 91.664093 seconds.
+  path: Assets/Week5/Canvas.prefab
+  artifactKey: Guid(d578673d120af2140bcd62d3740512a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Canvas.prefab using Guid(d578673d120af2140bcd62d3740512a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12b687d6dcd0f3e5adf1e0a2b6da8ab4') in 0.154592 seconds
+  Import took 0.186159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Week5/Player vcam1.prefab
+  artifactKey: Guid(4c471c16b4bfef94f8741587ce63207e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Player vcam1.prefab using Guid(4c471c16b4bfef94f8741587ce63207e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef08b9bbc3396aa2406a398230297062') in 0.042065 seconds
+  Import took 0.083149 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001698 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.09 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.334 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.99 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.5 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2592.
+Total: 3.049400 ms (FindLiveObjects: 0.562000 ms CreateObjectMapping: 0.100600 ms MarkObjects: 1.963600 ms  DeleteObjects: 0.421600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 79.215152 seconds.
+  path: Assets/Week5/Canvas.prefab
+  artifactKey: Guid(d578673d120af2140bcd62d3740512a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Canvas.prefab using Guid(d578673d120af2140bcd62d3740512a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '696d21b140b501a776bb67069394a407') in 0.207317 seconds
+  Import took 0.243933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.959724 seconds.
+  path: Assets/Week5/Levels/W5Level0.unity
+  artifactKey: Guid(793053a4a6d757342974c76d53c41120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level0.unity using Guid(793053a4a6d757342974c76d53c41120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c2218e263df0078c32f7d51a3787ce4') in 0.016524 seconds
+  Import took 0.057752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.506810 seconds.
+  path: Assets/Week5/Levels/CopyOfW5Level1.unity
+  artifactKey: Guid(de966c1b26559c64baf926d63f230e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/CopyOfW5Level1.unity using Guid(de966c1b26559c64baf926d63f230e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83c8e7ce392e9a53fb861d9fdff179d') in 0.012161 seconds
+  Import took 0.049027 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.921774 seconds.
+  path: Assets/Week5/Levels/W5Level2.unity
+  artifactKey: Guid(226131e0e53b9c74e9e5a157d3b6bab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level2.unity using Guid(226131e0e53b9c74e9e5a157d3b6bab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06556669a3d229c76c8b26aad01e8b49') in 0.015641 seconds
+  Import took 0.123184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015018 seconds.
+  path: Assets/Week5/Levels/W5Level2.unity
+  artifactKey: Guid(226131e0e53b9c74e9e5a157d3b6bab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level2.unity using Guid(226131e0e53b9c74e9e5a157d3b6bab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06556669a3d229c76c8b26aad01e8b49') in 0.014051 seconds
+  Import took 0.979556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.111195 seconds.
+  path: Assets/Week5/Levels/W5Level4.unity
+  artifactKey: Guid(e7efbc9d73f4ca842aba73c667cb15e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level4.unity using Guid(e7efbc9d73f4ca842aba73c667cb15e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a095092817fcd4331a9447ff1391df9') in 0.018199 seconds
+  Import took 0.522082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.520785 seconds.
+  path: Assets/Week5/Levels/W5Level0.unity
+  artifactKey: Guid(793053a4a6d757342974c76d53c41120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level0.unity using Guid(793053a4a6d757342974c76d53c41120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f03a42e0caeffd57f3e319aca8feb7c') in 0.012974 seconds
+  Import took 0.112489 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003405 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.762 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.6 MB.
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2595.
+Total: 3.471200 ms (FindLiveObjects: 0.259800 ms CreateObjectMapping: 0.106700 ms MarkObjects: 2.634000 ms  DeleteObjects: 0.469300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.527559 seconds.
+  path: Assets/Week5/Levels/CopyOfW5Level1.unity
+  artifactKey: Guid(de966c1b26559c64baf926d63f230e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/CopyOfW5Level1.unity using Guid(de966c1b26559c64baf926d63f230e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b259fb6b8d713f3886f6bee674599451') in 0.110816 seconds
+  Import took 0.143916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.677515 seconds.
+  path: Assets/Week5/Levels/W5Level3.unity
+  artifactKey: Guid(4bfcc058d7c522c4496ff7810184bf0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level3.unity using Guid(4bfcc058d7c522c4496ff7810184bf0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4688fec2369d3b3c65f55994a3302643') in 0.013838 seconds
+  Import took 0.043509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.200941 seconds.
+  path: Assets/Week5/Levels/W5Level4.unity
+  artifactKey: Guid(e7efbc9d73f4ca842aba73c667cb15e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/W5Level4.unity using Guid(e7efbc9d73f4ca842aba73c667cb15e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39ccd03a5a3e747ff8b05983eff10694') in 0.046917 seconds
+  Import took 0.233017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.329589 seconds.
+  path: Assets/Week5/Levels/CopyOfW5Level1.unity
+  artifactKey: Guid(de966c1b26559c64baf926d63f230e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Levels/CopyOfW5Level1.unity using Guid(de966c1b26559c64baf926d63f230e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f10c81d08a299d964edd5f1ca6afdee') in 0.015204 seconds
+  Import took 0.019778 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002628 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.239 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2598.
+Total: 2.821100 ms (FindLiveObjects: 0.281800 ms CreateObjectMapping: 0.110100 ms MarkObjects: 1.978600 ms  DeleteObjects: 0.449400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003547 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.460 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.7 MB.
+System memory in use after: 143.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2601.
+Total: 8.696900 ms (FindLiveObjects: 0.520700 ms CreateObjectMapping: 0.187700 ms MarkObjects: 5.609800 ms  DeleteObjects: 2.374700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003608 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.117 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.32 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.8 MB.
+System memory in use after: 143.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2604.
+Total: 3.698100 ms (FindLiveObjects: 0.284700 ms CreateObjectMapping: 0.102400 ms MarkObjects: 2.594000 ms  DeleteObjects: 0.715500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 36725.303618 seconds.
+  path: Assets/Week5/Week5MainMenu.unity
+  artifactKey: Guid(1fc9a5400a7015d45bf46691c5360070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Week5/Week5MainMenu.unity using Guid(1fc9a5400a7015d45bf46691c5360070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92648e07276b7b6ae7c8e8c9a279ded2') in 3.812588 seconds
+  Import took 4.050532 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001814 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 2.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.311 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.9 MB.
+System memory in use after: 143.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2607.
+Total: 5.785200 ms (FindLiveObjects: 0.396100 ms CreateObjectMapping: 0.152100 ms MarkObjects: 4.083400 ms  DeleteObjects: 1.151600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 202.569141 seconds.
+  path: Assets/Audio/Music/CozyAfternoons(loop)(74).wav
+  artifactKey: Guid(85a5b15919dbff644a479966f9a7fc12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Music/CozyAfternoons(loop)(74).wav using Guid(85a5b15919dbff644a479966f9a7fc12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5de94d65ddef213a75366e769d53f01d') in 1.041048 seconds
+  Import took 1.126152 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001964 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.140 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1952 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.9 MB.
+System memory in use after: 143.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2611.
+Total: 3.399300 ms (FindLiveObjects: 0.369500 ms CreateObjectMapping: 0.111400 ms MarkObjects: 2.434700 ms  DeleteObjects: 0.481300 ms)
+
