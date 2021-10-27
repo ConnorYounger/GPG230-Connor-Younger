@@ -63,7 +63,7 @@ public class W5ScoreManager : MonoBehaviour
 
     public void ResetScores()
     {
-        SaveSystem.SavePlayer(this, levelIndex);
+        SaveSystem.SaveLevel(this, levelIndex);
     }
 
     public void RemoveScore(int amount)
@@ -136,7 +136,7 @@ public class W5ScoreManager : MonoBehaviour
 
             if (loseHighScoreText)
             {
-                PlayerData data = SaveSystem.LoadPlayer();
+                PlayerData data = SaveSystem.LoadLevel(levelIndex);
 
                 loseHighScoreText.text = data.levels[levelIndex].playerScore.ToString();
             }
@@ -150,7 +150,7 @@ public class W5ScoreManager : MonoBehaviour
             highestMultiplier = scoreMultiplier;
         }
 
-        PlayerData data = SaveSystem.LoadPlayer();
+        PlayerData data = SaveSystem.LoadLevel(levelIndex);
 
         // Set player rank
         for(int i = 0; i < rankScores.Length; i++)
@@ -186,7 +186,7 @@ public class W5ScoreManager : MonoBehaviour
                 highestMultiplier = data.levels[levelIndex].scoreMultiplier;
             }
 
-            SaveSystem.SavePlayer(this, levelIndex);
+            SaveSystem.SaveLevel(this, levelIndex);
         }
         else
         {

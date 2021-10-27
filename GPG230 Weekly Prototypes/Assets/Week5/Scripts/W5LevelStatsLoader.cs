@@ -24,7 +24,7 @@ public class W5LevelStatsLoader : MonoBehaviour
     {
         for(int i = 0; i < levels.Length; i++)
         {
-            PlayerData data = SaveSystem.LoadPlayer();
+            PlayerData data = SaveSystem.LoadLevel(i);
 
             if (data.levels.Length > i)
             {
@@ -71,12 +71,12 @@ public class W5LevelStatsLoader : MonoBehaviour
     public void ResetLevelStats()
     {
         for (int i = 0; i < levels.Length; i++){
-            SaveSystem.SavePlayer(new W5ScoreManager(), i);
+            SaveSystem.SaveLevel(new W5ScoreManager(), i);
         }
 
         for (int i = 0; i < levels.Length; i++)
         {
-            PlayerData data = SaveSystem.LoadPlayer();
+            PlayerData data = SaveSystem.LoadLevel(i);
 
             if (data.levels.Length < i)
             {
@@ -85,5 +85,7 @@ public class W5LevelStatsLoader : MonoBehaviour
                 levels[i].rankText.text = RankString(data.levels[i].playerRank);
             }
         }
+
+        LoadLevelStats();
     }
 }
