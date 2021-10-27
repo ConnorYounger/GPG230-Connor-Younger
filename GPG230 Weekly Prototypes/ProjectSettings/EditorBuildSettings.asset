@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Week5/Week5MainMenu.unity
     guid: 1fc9a5400a7015d45bf46691c5360070
   - enabled: 1
-    path: Assets/Week5/Levels/W5Level1.unity
+    path: Assets/Week5/Levels/W5Level0.unity
     guid: 793053a4a6d757342974c76d53c41120
   m_configObjects: {}
