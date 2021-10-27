@@ -7,7 +7,7 @@ public static class SaveSystem
     public static void SavePlayer(W5ScoreManager scoreManager, int level)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/week5Level" + level + ".sav";
+        string path = Application.persistentDataPath + "/week5Level.txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerData data = new PlayerData(scoreManager, level);
@@ -16,9 +16,9 @@ public static class SaveSystem
         stream.Close();
     }
 
-    public static PlayerData LoadPlayer(int level)
+    public static PlayerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/week5Level" + level + ".sav";
+        string path = Application.persistentDataPath + "/week5Level.txt";
 
         if (File.Exists(path))
         {

@@ -6,6 +6,7 @@ using TMPro;
 public class W5ScoreManager : MonoBehaviour
 {
     [Header("Player")]
+    public int levelIndex;
     public int playerHealth = 5;
     public float hitCoolDown = 1;
     private bool canTakeDamage = true;
@@ -14,8 +15,12 @@ public class W5ScoreManager : MonoBehaviour
     [Header("Score")]
     public int scoreMultiplier = 5;
     public int negativeScoreMultiplier = 1;
+    private int highestMultiplier = 0;
     public int playerScore;
-    public string playerRank = "--";
+    public int playerRank;
+
+    [Header("Rank Scores")]
+    public int[] rankScores = new int[8] { 0, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000 };
 
     [Header("Music")]
     public float trackLength = 300;
@@ -30,6 +35,7 @@ public class W5ScoreManager : MonoBehaviour
     public TMP_Text winFinalScoreText;
     public TMP_Text winFinalMultiplierText;
     public TMP_Text winFinalRankText;
+    public TMP_Text winHighScoreText;
 
     public TMP_Text loseScoreText;
     public TMP_Text loseMultiplierText;
@@ -54,12 +60,23 @@ public class W5ScoreManager : MonoBehaviour
         }
     }
 
+    public void ResetScores()
+    {
+        SaveSystem.SavePlayer(this, levelIndex);
+    }
+
     public void RemoveScore(int amount)
     {
         if (canTakeDamage && !playerLose)
         {
             playerScore -= amount * negativeScoreMultiplier;
             negativeScoreMultiplier++;
+
+            if(scoreMultiplier > highestMultiplier)
+            {
+                highestMultiplier = scoreMultiplier;
+            }
+
             scoreMultiplier = 1;
 
             if(playerScore < 0)
@@ -114,35 +131,110 @@ public class W5ScoreManager : MonoBehaviour
                 loseScoreText.text = playerScore.ToString();
 
             if (loseMultiplierText)
-                loseMultiplierText.text = scoreMultiplier.ToString();
+                loseMultiplierText.text = highestMultiplier.ToString();
         }
     }
 
     void PlayerWin()
     {
-        // set save stats
+        if (scoreMultiplier > highestMultiplier)
+        {
+            highestMultiplier = scoreMultiplier;
+        }
+
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        // Set player rank
+        for(int i = 0; i < rankScores.Length; i++)
+        {
+            if(playerScore > rankScores[i])
+            {
+                playerRank = i;
+            }
+        }
+
+        if (winFinalScoreText)
+        {
+            winFinalScoreText.text = playerScore.ToString();
+        }
+
+        if (winFinalMultiplierText)
+        {
+            winFinalMultiplierText.text = highestMultiplier.ToString();
+        }
+
+        // Save level stats
+        if (data != null)
+        {
+            // Load level score
+            if (data.levels[levelIndex].playerScore > playerScore)
+            {
+                playerScore = data.levels[levelIndex].playerScore;
+            }
+            
+            // Load level multiplier
+            if (data.levels[levelIndex].scoreMultiplier > highestMultiplier)
+            {
+                highestMultiplier = data.levels[levelIndex].scoreMultiplier;
+            }
+
+            SaveSystem.SavePlayer(this, levelIndex);
+        }
+        else
+        {
+            Debug.LogError("Could not load " + data);
+        }
 
         Time.timeScale = 0;
+
+        if (winFinalRankText)
+        {
+            winFinalRankText.text = RankString(playerRank);
+        }
+
+        if (winHighScoreText)
+        {
+            winHighScoreText.text = playerScore.ToString();
+        }
+
+        //Debug.Log("newScore: " + newScore);
 
         if (winUI)
         {
             winUI.SetActive(true);
+        }
+    }
 
-            if (winFinalScoreText)
-            {
-                winFinalScoreText.text = playerScore.ToString();
-            }
-
-            if (winFinalMultiplierText)
-            {
-                winFinalMultiplierText.text = scoreMultiplier.ToString();
-            }
-
-            if (winFinalRankText)
-            {
-                // set to level rank
-                //winFinalRankText.text = scoreMultiplier.ToString();
-            }
+    string RankString(int rank)
+    {
+        switch (rank)
+        {
+            case 0:
+                return "--";
+                break;
+            case 1:
+                return "E";
+                break;
+            case 2:
+                return "D";
+                break;
+            case 3:
+                return "C";
+                break;
+            case 4:
+                return "B";
+                break;
+            case 5:
+                return "A";
+                break;
+            case 6:
+                return "S";
+                break;
+            case 7:
+                return "SS";
+                break;
+            default:
+                return null;
         }
     }
 

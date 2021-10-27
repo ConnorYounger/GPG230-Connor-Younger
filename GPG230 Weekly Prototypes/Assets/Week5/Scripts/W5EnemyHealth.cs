@@ -15,8 +15,8 @@ public class W5EnemyHealth : MonoBehaviour
     public int scoreValue = 10;
 
     [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip destroySound;
+    //public AudioSource audioSource;
+    public AudioClip[] destroySounds;
 
     public void DealDamage(float damage)
     {
@@ -54,10 +54,11 @@ public class W5EnemyHealth : MonoBehaviour
             Destroy(fx, 1);
         }
 
-        if(audioSource && destroySound)
+        if(destroySounds.Length > 0)
         {
-            audioSource.clip = destroySound;
-            audioSource.Play();
+            int rand = Random.Range(0, destroySounds.Length);
+
+            AudioSource.PlayClipAtPoint(destroySounds[rand], transform.position, 0.7f);
         }
 
         Destroy(gameObject);

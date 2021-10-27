@@ -19,14 +19,17 @@ public class W5EnemySpawner : MonoBehaviour
     public float enemySpawnOffset;
 
     public float startSpawnDelay;
-    public float spawnTime = 0.4f;
-    public int band = 4;
+    private bool canSpawn;
+    private bool startedSpawning;
 
     public int maxSpawnCount = 4;
     private int spawnedCount;
     public GameObject[] spawnedEnemies;
 
     public W5ScoreManager scoreManager;
+
+    [Header("Enemy Stats")]
+    public int fireRate;
 
     // Start is called before the first frame update
     void Start()
@@ -48,33 +51,48 @@ public class W5EnemySpawner : MonoBehaviour
         }
 
         if(spawnAtStart)
-            StartCoroutine("StartSpawnSequence", startSpawnDelay);
+            StartCoroutine("StartSpawnSequence");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        StartCoroutine("SpawnSequence");
+
+        if(!canSpawn && BPeerM.beatFull && startedSpawning)
+        {
+            canSpawn = true;
+        }
     }
     
-    IEnumerator StartSpawnSequence(float time)
+    IEnumerator StartSpawnSequence()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(startSpawnDelay);
 
-        if(!spawnAfterDeath && spawnedCount < maxSpawnCount)
+        startedSpawning = true;
+    }
+
+    void SpawnSequence()
+    {
+        if (canSpawn)
         {
-            SpawnEnemyAtPoint();
-        }
-        else if (spawnAfterDeath && !completedStartSpawn && spawnedCount < maxSpawnCount)
-        {
-            SpawnEnemyAtPoint();
-        }
-        else
-        {
-            completedStartSpawn = true;
+            if (!spawnAfterDeath && spawnedCount < maxSpawnCount)
+            {
+                SpawnEnemyAtPoint();
+            }
+            else if (spawnAfterDeath && !completedStartSpawn && spawnedCount < maxSpawnCount)
+            {
+                SpawnEnemyAtPoint();
+            }
+            else
+            {
+                completedStartSpawn = true;
+            }
+
+            canSpawn = false;
         }
 
-        StartCoroutine("StartSpawnSequence", spawnTime);
+        //StartCoroutine("StartSpawnSequence", spawnTime);
     }
 
     void SpawnEnemyAtPoint(Transform point)
@@ -163,6 +181,7 @@ public class W5EnemySpawner : MonoBehaviour
         if (enemy.GetComponent<W5EnemyShooting>())
         {
             enemy.GetComponent<W5EnemyShooting>().scoreManager = scoreManager;
+            enemy.GetComponent<W5EnemyShooting>().fireRate = fireRate;
         }
 
         if (enemySpawnOffset > 0)
@@ -216,8 +235,7 @@ public class W5EnemySpawner : MonoBehaviour
             if (spawnAfterDeath)
             {
                 completedStartSpawn = false;
-                StartCoroutine("StartSpawnSequence", spawnTime);
-            }
+                StartSpawnSequence();            }
         }
     }
 }

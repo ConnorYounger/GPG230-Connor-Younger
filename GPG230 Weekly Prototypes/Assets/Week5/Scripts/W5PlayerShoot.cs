@@ -10,8 +10,12 @@ public class W5PlayerShoot : MonoBehaviour
     public float damage = 4;
     public float projectileSpeed = 7;
 
-    public float fireRate;
+    public int fireRate = 1;
+    private int fireRateCounter;
     private bool readyToFire = true;
+
+    [Header("Aduio")]
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -23,6 +27,22 @@ public class W5PlayerShoot : MonoBehaviour
     {
         PlayerAiming();
         PlayerShooting();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!readyToFire && BPeerM.beatD8)
+        {
+            if (fireRateCounter >= fireRate)
+            {
+                readyToFire = true;
+                fireRateCounter = 0;
+            }
+            else
+            {
+                fireRateCounter++;
+            }
+        }
     }
 
     void PlayerAiming()
@@ -59,17 +79,22 @@ public class W5PlayerShoot : MonoBehaviour
 
                     readyToFire = false;
 
-                    StopCoroutine("ResetFireRate");
-                    StartCoroutine("ResetFireRate");
+                    if (audioSource)
+                    {
+                        audioSource.Play();
+                    }
+
+                    //StopCoroutine("ResetFireRate");
+                    //StartCoroutine("ResetFireRate");
                 }
             }
         }
     }
 
-    IEnumerator ResetFireRate()
-    {
-        yield return new WaitForSeconds(fireRate);
+    //IEnumerator ResetFireRate()
+    //{
+    //    yield return new WaitForSeconds(fireRate);
 
-        readyToFire = true;
-    }
+    //    readyToFire = true;
+    //}
 }

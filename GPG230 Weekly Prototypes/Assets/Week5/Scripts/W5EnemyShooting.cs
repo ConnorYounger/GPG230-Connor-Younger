@@ -14,8 +14,9 @@ public class W5EnemyShooting : MonoBehaviour
     public float damage = 4;
     public float projectileSpeed = 3;
 
-    public float fireRate;
-    public int band;
+    public int fireRate;
+    private int fireRateCounter;
+    //public int band;
 
     private bool readyToFire = true;
 
@@ -33,6 +34,17 @@ public class W5EnemyShooting : MonoBehaviour
 
         //EnemyShooting();
         AudioEnemyShooting();
+
+        if(!readyToFire && BPeerM.beatFull)
+        {
+            fireRateCounter++;
+
+            if(fireRateCounter >= fireRate)
+            {
+                readyToFire = true;
+                fireRateCounter = 0;
+            }
+        }
     }
 
     void EnemyAiming()
@@ -64,8 +76,8 @@ public class W5EnemyShooting : MonoBehaviour
 
                 readyToFire = false;
 
-                StopCoroutine("ResetFireRate");
-                StartCoroutine("ResetFireRate");
+                //StopCoroutine("ResetFireRate");
+                //StartCoroutine("ResetFireRate");
             }
         }
     }
@@ -74,7 +86,7 @@ public class W5EnemyShooting : MonoBehaviour
     {
         if (readyToFire)
         {
-            if (projectile && shootPoint && AudioPeer.audioBandBuffer[band] > 0.7f)
+            if (projectile && shootPoint)
             {
                 GameObject proj = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
 
@@ -86,16 +98,16 @@ public class W5EnemyShooting : MonoBehaviour
 
                 readyToFire = false;
 
-                StopCoroutine("ResetFireRate");
-                StartCoroutine("ResetFireRate");
+                //StopCoroutine("ResetFireRate");
+                //StartCoroutine("ResetFireRate");
             }
         }
     }
 
-    IEnumerator ResetFireRate()
-    {
-        yield return new WaitForSeconds(fireRate);
+    //IEnumerator ResetFireRate()
+    //{
+    //    yield return new WaitForSeconds(fireRate);
 
-        readyToFire = true;
-    }
+    //    readyToFire = true;
+    //}
 }

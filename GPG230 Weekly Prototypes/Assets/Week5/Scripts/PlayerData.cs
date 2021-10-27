@@ -10,10 +10,10 @@ public class PlayerData
     {
         public int playerScore;
         public int scoreMultiplier;
-        public string playerRank;
+        public int playerRank;
     }
 
-    public levelstats[] levels;
+    public levelstats[] levels = new levelstats[5];
 
     public PlayerData(W5ScoreManager scoreManager, int level)
     {
