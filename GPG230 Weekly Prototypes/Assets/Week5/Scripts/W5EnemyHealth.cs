@@ -58,7 +58,7 @@ public class W5EnemyHealth : MonoBehaviour
         {
             int rand = Random.Range(0, destroySounds.Length);
 
-            AudioSource.PlayClipAtPoint(destroySounds[rand], transform.position, 0.7f);
+            AudioSource.PlayClipAtPoint(destroySounds[rand], transform.position, 1);
         }
 
         Destroy(gameObject);

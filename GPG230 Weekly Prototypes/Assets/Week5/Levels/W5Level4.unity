@@ -19096,6 +19096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5393802726535086271, guid: d578673d120af2140bcd62d3740512a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: W5Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 5393802727327301804, guid: d578673d120af2140bcd62d3740512a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -19184,6 +19188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5393802727782152489, guid: d578673d120af2140bcd62d3740512a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: W5Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 5393802728178043979, guid: d578673d120af2140bcd62d3740512a5, type: 3}
       propertyPath: levelIndex
       value: 4
@@ -19192,6 +19200,10 @@ PrefabInstance:
       propertyPath: trackLength
       value: 165
       objectReference: {fileID: 0}
+    - target: {fileID: 5393802728178043979, guid: d578673d120af2140bcd62d3740512a5, type: 3}
+      propertyPath: musicAudioSource
+      value: 
+      objectReference: {fileID: 1056224551}
     - target: {fileID: 5393802728178043979, guid: d578673d120af2140bcd62d3740512a5, type: 3}
       propertyPath: rankScores.Array.data[2]
       value: 1000

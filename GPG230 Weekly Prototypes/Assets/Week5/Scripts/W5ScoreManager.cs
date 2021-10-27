@@ -41,6 +41,13 @@ public class W5ScoreManager : MonoBehaviour
     public TMP_Text loseHighScoreText;
     public TMP_Text loseMultiplierText;
 
+    [Header("Animations")]
+    public Animator animator;
+    public AudioSource audioSource;
+    public AudioSource musicAudioSource;
+    public AudioClip[] hitSounds;
+    public AudioClip deathSound;
+    public AudioClip winSound;
 
     void Start()
     {
@@ -83,6 +90,16 @@ public class W5ScoreManager : MonoBehaviour
             if(playerScore < 0)
             {
                 playerScore = 0;
+            }
+
+            if (animator)
+                animator.Play("PlayerHit");
+
+            if (audioSource && hitSounds.Length > 0)
+            {
+                int rand = Random.Range(0, hitSounds.Length);
+                audioSource.clip = hitSounds[rand];
+                audioSource.Play();
             }
 
             canTakeDamage = false;
@@ -141,6 +158,15 @@ public class W5ScoreManager : MonoBehaviour
                 loseHighScoreText.text = data.levels[levelIndex].playerScore.ToString();
             }
         }
+
+        if (musicAudioSource)
+            musicAudioSource.Stop();
+
+        if (audioSource && deathSound)
+        {
+            audioSource.clip = deathSound;
+            audioSource.Play();
+        }
     }
 
     void PlayerWin()
@@ -159,6 +185,12 @@ public class W5ScoreManager : MonoBehaviour
             {
                 playerRank = i;
             }
+        }
+
+        if (audioSource && winSound)
+        {
+            audioSource.clip = winSound;
+            audioSource.Play();
         }
 
         if (winFinalScoreText)
