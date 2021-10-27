@@ -20,7 +20,7 @@ public class W5ScoreManager : MonoBehaviour
     public int playerRank;
 
     [Header("Rank Scores")]
-    public int[] rankScores = new int[8] { 0, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000 };
+    public int[] rankScores = new int[8] { 0, 1, 1000, 10000, 100000, 1000000, 10000000, 100000000 };
 
     [Header("Music")]
     public float trackLength = 300;
@@ -38,6 +38,7 @@ public class W5ScoreManager : MonoBehaviour
     public TMP_Text winHighScoreText;
 
     public TMP_Text loseScoreText;
+    public TMP_Text loseHighScoreText;
     public TMP_Text loseMultiplierText;
 
 
@@ -132,6 +133,13 @@ public class W5ScoreManager : MonoBehaviour
 
             if (loseMultiplierText)
                 loseMultiplierText.text = highestMultiplier.ToString();
+
+            if (loseHighScoreText)
+            {
+                PlayerData data = SaveSystem.LoadPlayer();
+
+                loseHighScoreText.text = data.levels[levelIndex].playerScore.ToString();
+            }
         }
     }
 
