@@ -15,7 +15,7 @@ public class W5ScoreManager : MonoBehaviour
     [Header("Score")]
     public int scoreMultiplier = 5;
     public int negativeScoreMultiplier = 1;
-    private int highestMultiplier = 0;
+    public int highestMultiplier = 0;
     public int playerScore;
     public int playerRank;
 
@@ -171,21 +171,9 @@ public class W5ScoreManager : MonoBehaviour
 
     void PlayerWin()
     {
-        if (scoreMultiplier > highestMultiplier)
-        {
-            highestMultiplier = scoreMultiplier;
-        }
+        highestMultiplier = GetHighestMultiplier();
 
         PlayerData data = SaveSystem.LoadLevel(levelIndex);
-
-        // Set player rank
-        for(int i = 0; i < rankScores.Length; i++)
-        {
-            if(playerScore > rankScores[i])
-            {
-                playerRank = i;
-            }
-        }
 
         if (audioSource && winSound)
         {
@@ -229,7 +217,7 @@ public class W5ScoreManager : MonoBehaviour
 
         if (winFinalRankText)
         {
-            winFinalRankText.text = RankString(playerRank);
+            winFinalRankText.text = RankString();
         }
 
         if (winHighScoreText)
@@ -245,9 +233,30 @@ public class W5ScoreManager : MonoBehaviour
         }
     }
 
-    string RankString(int rank)
+    public int GetHighestMultiplier()
     {
-        switch (rank)
+        if (scoreMultiplier > highestMultiplier)
+        {
+            return scoreMultiplier;
+        }
+        else
+        {
+            return highestMultiplier;
+        }
+    }
+
+    public string RankString()
+    {
+        // Set player rank
+        for (int i = 0; i < rankScores.Length; i++)
+        {
+            if (playerScore > rankScores[i])
+            {
+                playerRank = i;
+            }
+        }
+
+        switch (playerRank)
         {
             case 0:
                 return "--";
