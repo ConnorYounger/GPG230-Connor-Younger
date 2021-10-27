@@ -19,6 +19,8 @@ public class W5EnemySpawner : MonoBehaviour
     public float enemySpawnOffset;
 
     public float startSpawnDelay;
+    public float spawnRate;
+    public float spawnRateCounter;
     private bool canSpawn;
     private bool startedSpawning;
 
@@ -61,7 +63,13 @@ public class W5EnemySpawner : MonoBehaviour
 
         if(!canSpawn && BPeerM.beatFull && startedSpawning)
         {
-            canSpawn = true;
+            spawnRateCounter++;
+
+            if(spawnRateCounter >= spawnRate)
+            {
+                canSpawn = true;
+                spawnRateCounter = 0;
+            }
         }
     }
     
