@@ -420,7 +420,7 @@ MonoBehaviour:
   negativeScoreMultiplier: 1
   playerScore: 0
   playerRank: 0
-  rankScores: 0000000001000000f4010000e803000088130000204e000050c30000a0860100
+  rankScores: 0000000001000000fa000000e80300008813000010270000204e0000409c0000
   trackLength: 90
   playerScoreText: {fileID: 5393802727796129449}
   scoreMultiplierText: {fileID: 5393802728184529608}

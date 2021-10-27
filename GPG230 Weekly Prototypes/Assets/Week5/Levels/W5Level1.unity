@@ -1164,6 +1164,18 @@ PrefabInstance:
       propertyPath: trackLength
       value: 136
       objectReference: {fileID: 0}
+    - target: {fileID: 5393802728178043979, guid: d578673d120af2140bcd62d3740512a5, type: 3}
+      propertyPath: rankScores.Array.data[5]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393802728178043979, guid: d578673d120af2140bcd62d3740512a5, type: 3}
+      propertyPath: rankScores.Array.data[6]
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393802728178043979, guid: d578673d120af2140bcd62d3740512a5, type: 3}
+      propertyPath: rankScores.Array.data[7]
+      value: 40000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d578673d120af2140bcd62d3740512a5, type: 3}
 --- !u!114 &824130472 stripped
