@@ -39,6 +39,8 @@ public class W5PauseLevel : MonoBehaviour
             isPaused = true;
             pauseUI.SetActive(true);
 
+            scoreManager.musicAudioSource.Pause();
+
             Time.timeScale = 0;
 
             UpdateUI();
@@ -61,6 +63,8 @@ public class W5PauseLevel : MonoBehaviour
         {
             isPaused = false;
             pauseUI.SetActive(false);
+
+            scoreManager.musicAudioSource.UnPause();
 
             Time.timeScale = 1;
         }

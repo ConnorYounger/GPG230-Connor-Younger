@@ -22,6 +22,8 @@ public class W5LevelStatsLoader : MonoBehaviour
 
     public void LoadLevelStats()
     {
+        //if (SaveSystem.GetSaveFiles()) { }
+
         for(int i = 0; i < levels.Length; i++)
         {
             PlayerData data = SaveSystem.LoadLevel(i);
@@ -37,6 +39,8 @@ public class W5LevelStatsLoader : MonoBehaviour
 
     string RankString(int rank)
     {
+        Debug.Log(rank);
+
         switch (rank)
         {
             case 0:

@@ -20,7 +20,7 @@ public class PlayerData
         if(level < levels.Length)
         {
             levels[level].playerScore = scoreManager.playerScore;
-            levels[level].scoreMultiplier = scoreManager.scoreMultiplier;
+            levels[level].scoreMultiplier = scoreManager.highestMultiplier;
             levels[level].playerRank = scoreManager.playerRank;
         }
     }

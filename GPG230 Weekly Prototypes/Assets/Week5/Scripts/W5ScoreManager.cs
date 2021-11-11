@@ -206,6 +206,8 @@ public class W5ScoreManager : MonoBehaviour
                 highestMultiplier = data.levels[levelIndex].scoreMultiplier;
             }
 
+            RankString();
+
             SaveSystem.SaveLevel(this, levelIndex);
         }
         else

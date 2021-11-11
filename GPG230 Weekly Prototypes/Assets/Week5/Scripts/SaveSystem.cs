@@ -4,6 +4,25 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
+    public static bool GetSaveFiles()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            if (!File.Exists(GetPath(i)))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                string path = GetPath(i);
+                FileStream stream = new FileStream(path, FileMode.Create);
+
+                PlayerData data = new PlayerData(new W5ScoreManager(), i);
+                formatter.Serialize(stream, data);
+                stream.Close();
+            }
+        }
+
+        return true;
+    }
+
     public static void SaveLevel(W5ScoreManager scoreManager, int level)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -57,8 +76,16 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
-            return null;
+            BinaryFormatter formatter = new BinaryFormatter();
+            string newPath = GetPath(i);
+            FileStream stream = new FileStream(newPath, FileMode.Create);
+
+            PlayerData data = new PlayerData(new W5ScoreManager(), i);
+            formatter.Serialize(stream, data);
+            stream.Close();
+
+            //Debug.LogError("Save file not found in " + path);
+            return data;
         }
     }
 }
