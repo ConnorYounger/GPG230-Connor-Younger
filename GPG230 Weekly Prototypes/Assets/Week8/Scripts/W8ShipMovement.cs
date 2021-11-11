@@ -4,37 +4,55 @@ using UnityEngine;
 
 public class W8ShipMovement : MonoBehaviour
 {
+
+    float noTurn = 0.0f; // Extent of the no-turn zone as a fraction of Screen.height;
+    float factor = 150.0f;
+    private Vector3 center;
+
     public float cruseSpeed = 10;
-    public float turnSpeed = 10;
+    public float movementSpeed = 100;
+
     public Transform shipDirection;
-    public Transform shipRAW;
 
-    float xRotation = 0;
-    float yRotation = 0;
-
+    public Transform aimReticle;
+    private Vector3 reticleTargetPos;
+ 
     void Start()
     {
-        
+        center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
     {
         ShipMovement();
+        ReticleAiming();
+        ShipTurning();
     }
 
     void ShipMovement()
     {
         transform.position += shipDirection.forward * cruseSpeed * Time.deltaTime;
 
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * turnSpeed;
-        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * turnSpeed;
+        transform.position += shipDirection.forward * Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+    }
 
-        xRotation += mouseX;
-        yRotation -= mouseY;
+    void ReticleAiming()
+    {
+        aimReticle.position = Input.mousePosition;
+    }
 
-        transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0);
-
-        //shipDirection.Rotate(shipDirection.forward.normalized * Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
-        //shipDirection.Rotate(shipDirection.right.normalized * Input.GetAxis("Vertical") * Time.deltaTime * turnSpeed);
+    void ShipTurning()
+    {
+        var delta = (Input.mousePosition - center) / Screen.height;
+        //Debug.Log(delta);
+        if (delta.y > noTurn)
+            shipDirection.Rotate(-(delta.y - noTurn) * Time.deltaTime * factor, 0, 0);
+        if (delta.y < -noTurn)
+            shipDirection.Rotate(-(delta.y + noTurn) * Time.deltaTime * factor, 0, 0);
+        if (delta.x > noTurn)
+            shipDirection.Rotate(0, (delta.x - noTurn) * Time.deltaTime * factor, 0);
+        if (delta.x < -noTurn)
+            shipDirection.Rotate(0, (delta.x + noTurn) * Time.deltaTime * factor, 0);
     }
 }
