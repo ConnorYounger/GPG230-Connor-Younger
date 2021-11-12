@@ -106,6 +106,8 @@ public class ShipWeaponManager : MonoBehaviour
             shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
         }
 
+        projectile.layer = 14;
+
         Destroy(projectile, weapon.weapon.projectileLifeTime);
 
         StartCoroutine("WeaponCoolDown", weapon);

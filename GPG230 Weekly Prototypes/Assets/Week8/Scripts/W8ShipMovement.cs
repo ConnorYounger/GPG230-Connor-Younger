@@ -10,9 +10,12 @@ public class W8ShipMovement : MonoBehaviour
     private Vector3 center;
 
     public float cruseSpeed = 10;
+    public float strafeSpeed = 60;
     public float movementSpeed = 100;
 
     public Transform shipDirection;
+
+    public Rigidbody rb;
 
     public Transform aimReticle;
     private Vector3 reticleTargetPos;
@@ -32,9 +35,14 @@ public class W8ShipMovement : MonoBehaviour
 
     void ShipMovement()
     {
-        transform.position += shipDirection.forward * cruseSpeed * Time.deltaTime;
+        //transform.position += shipDirection.forward * cruseSpeed * Time.deltaTime;
 
-        transform.position += shipDirection.forward * Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+        //transform.position += shipDirection.forward * Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+        //transform.position += shipDirection.right * Input.GetAxis("Horizontal") * strafeSpeed * Time.deltaTime;
+
+        rb.AddForce(shipDirection.forward * cruseSpeed * Time.deltaTime);
+        rb.AddForce(shipDirection.forward * Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime);
+        rb.AddForce(shipDirection.right * Input.GetAxis("Horizontal") * strafeSpeed * Time.deltaTime);
     }
 
     void ReticleAiming()
