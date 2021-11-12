@@ -6,6 +6,7 @@ public class ShipWeapon : MonoBehaviour
 {
     public float fireRate;
     public GameObject projectilePrefab;
+    public Transform shootPoint;
 
     public float projectileLifeTime;
     public float projectileSpeed;
@@ -21,6 +22,6 @@ public class ShipWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(Input.mousePosition);
     }
 }

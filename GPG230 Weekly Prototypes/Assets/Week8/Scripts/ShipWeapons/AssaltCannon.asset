@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce73aa4c5c7a714db7affa8ebffbf50, type: 3}
   m_Name: AssaltCannon
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 0.2
   projectilePrefab: {fileID: 6832644160543837239, guid: 75c16621147169945ac3dba6a68ac0b3, type: 3}
   projectileLifeTime: 50
-  projectileSpeed: 10
+  projectileSpeed: 300

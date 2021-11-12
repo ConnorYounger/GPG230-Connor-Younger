@@ -9,11 +9,13 @@ public class ShipWeaponManager : MonoBehaviour
     {
         public ShipWeaponStats weapon;
         public Transform shootPoint;
-        public bool canFire;
     }
 
     public weaponSlots[] primaryWeaponSlots;
     public weaponSlots[] secondaryWeaponSlots;
+
+    public List<ShipWeapon> primaryWeapons;
+    public List<ShipWeapon> secondaryWeapons;
 
     public int secondaryAmmoCount = 10;
 
@@ -26,12 +28,28 @@ public class ShipWeaponManager : MonoBehaviour
     {
         for(int i = 0; i < primaryWeaponSlots.Length; i++)
         {
-            primaryWeaponSlots[i].canFire = true;
+            ShipWeapon newWeapon = new ShipWeapon();
+
+            newWeapon.projectilePrefab = primaryWeaponSlots[i].weapon.projectilePrefab;
+            newWeapon.shootPoint = primaryWeaponSlots[i].shootPoint;
+            newWeapon.fireRate = primaryWeaponSlots[i].weapon.fireRate;
+            newWeapon.projectileSpeed = primaryWeaponSlots[i].weapon.projectileSpeed;
+            newWeapon.projectileLifeTime = primaryWeaponSlots[i].weapon.projectileLifeTime;
+
+            primaryWeapons.Add(newWeapon);
         }
 
         for (int i = 0; i < secondaryWeaponSlots.Length; i++)
         {
-            secondaryWeaponSlots[i].canFire = true;
+            ShipWeapon newWeapon = new ShipWeapon();
+
+            newWeapon.projectilePrefab = secondaryWeaponSlots[i].weapon.projectilePrefab;
+            newWeapon.shootPoint = secondaryWeaponSlots[i].shootPoint;
+            newWeapon.fireRate = secondaryWeaponSlots[i].weapon.fireRate;
+            newWeapon.projectileSpeed = secondaryWeaponSlots[i].weapon.projectileSpeed;
+            newWeapon.projectileLifeTime = secondaryWeaponSlots[i].weapon.projectileLifeTime;
+
+            secondaryWeapons.Add(newWeapon);
         }
     }
 
@@ -44,7 +62,7 @@ public class ShipWeaponManager : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            for (int i = 0; i < primaryWeaponSlots.Length; i++) 
+            for (int i = 0; i < primaryWeapons.Count; i++) 
             {
                 FirePrimaryWeapons(i);
             }
@@ -61,9 +79,9 @@ public class ShipWeaponManager : MonoBehaviour
 
     public void FirePrimaryWeapons(int i)
     {
-        if (primaryWeaponSlots[i].canFire)
+        if (primaryWeapons[i].canFire)
         {
-            FireProjectile(primaryWeaponSlots[i]);
+            FireProjectile(primaryWeapons[i]);
         }
     }
 
@@ -71,11 +89,11 @@ public class ShipWeaponManager : MonoBehaviour
     {
         if(secondaryAmmoCount > 0)
         {
-            if (secondaryWeaponSlots[i].canFire)
+            if (secondaryWeapons[i].canFire)
             {
                 secondaryAmmoCount--;
 
-                FireProjectile(secondaryWeaponSlots[i]);
+                FireProjectile(secondaryWeapons[i]);
             }
         }
         else
@@ -85,27 +103,28 @@ public class ShipWeaponManager : MonoBehaviour
         }
     }
 
-    public void FireProjectile(weaponSlots weapon)
+    public void FireProjectile(ShipWeapon weapon)
     {
         weapon.canFire = false;
+        //Debug.Log(weapon.canFire);
 
-        GameObject projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
+        GameObject projectile = Instantiate(weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
         ShipProjectile shipProjectile = projectile.GetComponent<ShipProjectile>();
 
         if (shipProjectile != null)
         {
-            shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
+            shipProjectile.projectileSpeed = weapon.projectileSpeed;
         }
 
-        Destroy(projectile, weapon.weapon.projectileLifeTime);
+        Destroy(projectile, weapon.projectileLifeTime);
 
         StartCoroutine("WeaponCoolDown", weapon);
     }
 
-    IEnumerator WeaponCoolDown(weaponSlots weapon)
+    IEnumerator WeaponCoolDown(ShipWeapon weapon)
     {
-        yield return new WaitForSeconds(weapon.weapon.fireRate);
+        yield return new WaitForSeconds(weapon.fireRate);
 
-        //weapon.canFire = true;
+        weapon.canFire = true;
     }
 }
