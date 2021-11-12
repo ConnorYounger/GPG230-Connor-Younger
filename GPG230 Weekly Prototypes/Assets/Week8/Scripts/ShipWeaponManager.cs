@@ -103,6 +103,7 @@ public class ShipWeaponManager : MonoBehaviour
 
         if (shipProjectile != null)
         {
+            shipProjectile.projectileDamage = weapon.weapon.damage;
             shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
         }
 

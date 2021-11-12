@@ -109,8 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065e97f2478c36b409fcf6e7048f37c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileDamage: 1
   projectileSpeed: 0
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 3014544230241069462, guid: 974822e0b68543f49bd940cb7f14a9ec, type: 3}
 --- !u!54 &-4201452619479910900
 Rigidbody:
   m_ObjectHideFlags: 0

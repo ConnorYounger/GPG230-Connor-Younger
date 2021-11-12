@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipProjectile : MonoBehaviour
 {
+    public int projectileDamage;
     public float projectileSpeed;
     public GameObject destroyEffect;
 
@@ -20,6 +21,11 @@ public class ShipProjectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Hit enemy or player, deal damage
+
+        if (other.GetComponent<EnemyShipHealth>())
+        {
+            other.GetComponent<EnemyShipHealth>().TakeDamage(projectileDamage);
+        }
 
         DestroyProjectile();
     }
