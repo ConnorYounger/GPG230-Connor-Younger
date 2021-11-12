@@ -8,6 +8,7 @@ public class EnemyShipHealth : MonoBehaviour
     public int currentHealth;
 
     public GameObject destroyFx;
+    public EnemyShipSpawnManager spawnManager;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class EnemyShipHealth : MonoBehaviour
             Destroy(fx, 5);
         }
 
-        // Tell game that enemy has been defeated
+        spawnManager.RemoveShip(gameObject);
 
         Destroy(gameObject);
     }

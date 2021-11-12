@@ -18,17 +18,27 @@ public class EnemyShipAI : MonoBehaviour
     {
         travelPoints = new List<Transform>();
 
-        foreach(Transform t in travelPath)
-        {
-            travelPoints.Add(t);
-        }
+        if(travelPath != null)
+            SetTravelPaths(travelPath);
 
         previousTravelIndex = travelPoints.Count - 1;
     }
 
+    public void SetTravelPaths(Transform trans)
+    {
+        travelPath = trans;
+        travelPoints = new List<Transform>();
+
+        foreach (Transform t in travelPath)
+        {
+            travelPoints.Add(t);
+        }
+    }
+
     void Update()
     {
-        ShipMovement();
+        if(travelPoints.Count > 0)
+            ShipMovement();
     }
 
     void ShipMovement()
