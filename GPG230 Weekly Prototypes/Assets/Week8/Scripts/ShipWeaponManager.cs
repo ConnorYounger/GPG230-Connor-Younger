@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class ShipWeaponManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct weaponSlots 
-    {
-        public ShipWeaponStats weapon;
-        public Transform shootPoint;
-    }
-
-    public weaponSlots[] primaryWeaponSlots;
-    public weaponSlots[] secondaryWeaponSlots;
-
-    public List<ShipWeapon> primaryWeapons;
-    public List<ShipWeapon> secondaryWeapons;
+    public ShipWeapon[] primaryWeapons;
+    public ShipWeapon[] secondaryWeapons;
 
     public int secondaryAmmoCount = 10;
 
@@ -26,31 +16,31 @@ public class ShipWeaponManager : MonoBehaviour
 
     void SetStartingWeaponStats()
     {
-        for(int i = 0; i < primaryWeaponSlots.Length; i++)
-        {
-            ShipWeapon newWeapon = new ShipWeapon();
+        //for(int i = 0; i < primaryWeaponSlots.Length; i++)
+        //{
+        //    ShipWeapon newWeapon = new ShipWeapon();
 
-            newWeapon.projectilePrefab = primaryWeaponSlots[i].weapon.projectilePrefab;
-            newWeapon.shootPoint = primaryWeaponSlots[i].shootPoint;
-            newWeapon.fireRate = primaryWeaponSlots[i].weapon.fireRate;
-            newWeapon.projectileSpeed = primaryWeaponSlots[i].weapon.projectileSpeed;
-            newWeapon.projectileLifeTime = primaryWeaponSlots[i].weapon.projectileLifeTime;
+        //    newWeapon.projectilePrefab = primaryWeaponSlots[i].weapon.projectilePrefab;
+        //    newWeapon.shootPoint = primaryWeaponSlots[i].shootPoint;
+        //    newWeapon.fireRate = primaryWeaponSlots[i].weapon.fireRate;
+        //    newWeapon.projectileSpeed = primaryWeaponSlots[i].weapon.projectileSpeed;
+        //    newWeapon.projectileLifeTime = primaryWeaponSlots[i].weapon.projectileLifeTime;
 
-            primaryWeapons.Add(newWeapon);
-        }
+        //    primaryWeapons.Add(newWeapon);
+        //}
 
-        for (int i = 0; i < secondaryWeaponSlots.Length; i++)
-        {
-            ShipWeapon newWeapon = new ShipWeapon();
+        //for (int i = 0; i < secondaryWeaponSlots.Length; i++)
+        //{
+        //    ShipWeapon newWeapon = new ShipWeapon();
 
-            newWeapon.projectilePrefab = secondaryWeaponSlots[i].weapon.projectilePrefab;
-            newWeapon.shootPoint = secondaryWeaponSlots[i].shootPoint;
-            newWeapon.fireRate = secondaryWeaponSlots[i].weapon.fireRate;
-            newWeapon.projectileSpeed = secondaryWeaponSlots[i].weapon.projectileSpeed;
-            newWeapon.projectileLifeTime = secondaryWeaponSlots[i].weapon.projectileLifeTime;
+        //    newWeapon.projectilePrefab = secondaryWeaponSlots[i].weapon.projectilePrefab;
+        //    newWeapon.shootPoint = secondaryWeaponSlots[i].shootPoint;
+        //    newWeapon.fireRate = secondaryWeaponSlots[i].weapon.fireRate;
+        //    newWeapon.projectileSpeed = secondaryWeaponSlots[i].weapon.projectileSpeed;
+        //    newWeapon.projectileLifeTime = secondaryWeaponSlots[i].weapon.projectileLifeTime;
 
-            secondaryWeapons.Add(newWeapon);
-        }
+        //    secondaryWeapons.Add(newWeapon);
+        //}
     }
 
     void Update()
@@ -62,7 +52,7 @@ public class ShipWeaponManager : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            for (int i = 0; i < primaryWeapons.Count; i++) 
+            for (int i = 0; i < primaryWeapons.Length; i++) 
             {
                 FirePrimaryWeapons(i);
             }
@@ -70,7 +60,7 @@ public class ShipWeaponManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            for (int i = 0; i < secondaryWeaponSlots.Length; i++)
+            for (int i = 0; i < secondaryWeapons.Length; i++)
             {
                 FireSecondaryWeapon(i);
             }
@@ -108,22 +98,22 @@ public class ShipWeaponManager : MonoBehaviour
         weapon.canFire = false;
         //Debug.Log(weapon.canFire);
 
-        GameObject projectile = Instantiate(weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
+        GameObject projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
         ShipProjectile shipProjectile = projectile.GetComponent<ShipProjectile>();
 
         if (shipProjectile != null)
         {
-            shipProjectile.projectileSpeed = weapon.projectileSpeed;
+            shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
         }
 
-        Destroy(projectile, weapon.projectileLifeTime);
+        Destroy(projectile, weapon.weapon.projectileLifeTime);
 
         StartCoroutine("WeaponCoolDown", weapon);
     }
 
     IEnumerator WeaponCoolDown(ShipWeapon weapon)
     {
-        yield return new WaitForSeconds(weapon.fireRate);
+        yield return new WaitForSeconds(weapon.weapon.fireRate);
 
         weapon.canFire = true;
     }
