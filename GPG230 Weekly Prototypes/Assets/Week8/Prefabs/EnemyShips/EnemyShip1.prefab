@@ -1,24 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3176024029875830690
-MonoBehaviour:
+--- !u!64 &3176024030850771054
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5383403281938935707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
-  shootPoint: {fileID: 8972578623233089980}
-  canFire: 1
-  isEnemy: 1
-  turnSpeed: 10
-  triggerDistance: 300
-  isTriggered: 0
+  m_GameObject: {fileID: 2365208763670926109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!64 &3176024030234994372
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -84,6 +79,8 @@ MonoBehaviour:
   targetDistance: 5
   movementSpeed: 30
   turnSpeed: 0.5
+  isTriggered: 0
+  triggerDistance: 300
 --- !u!114 &3176024030426799810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +97,7 @@ MonoBehaviour:
   currentHealth: 0
   destroyFx: {fileID: 8592172686243372966, guid: a3d8fe4081a370d40862145c16262214, type: 3}
   spawnManager: {fileID: 0}
+  shipAI: {fileID: 0}
 --- !u!65 &3176024030426799813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,20 +127,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &3176024030850771054
-MeshCollider:
+--- !u!114 &3176024029875830690
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2365208763670926109}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_GameObject: {fileID: 5383403281938935707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
+  shootPoint: {fileID: 8972578623233089980}
+  canFire: 1
+  isEnemy: 1
+  turnSpeed: 10
+  shipAI: {fileID: 3176024030426799815}
 --- !u!1001 &3176024030200344140
 PrefabInstance:
   m_ObjectHideFlags: 0

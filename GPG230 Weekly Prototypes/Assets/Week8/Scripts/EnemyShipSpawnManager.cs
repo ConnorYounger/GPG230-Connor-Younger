@@ -58,4 +58,23 @@ public class EnemyShipSpawnManager : MonoBehaviour
     {
         Debug.Log("Scenario Complete");
     }
+
+    public void PlayerDeath()
+    {
+        if (spawnedEnemies.Count > 0)
+        {
+            foreach (GameObject enemy in spawnedEnemies)
+            {
+                if (enemy.GetComponent<EnemyShipAI>())
+                {
+                    enemy.GetComponent<EnemyShipAI>().enabled = false;
+                }
+
+                foreach (Transform c in enemy.transform)
+                {
+                    enemy.gameObject.SetActive(false);
+                }
+            }
+        }
+    }
 }

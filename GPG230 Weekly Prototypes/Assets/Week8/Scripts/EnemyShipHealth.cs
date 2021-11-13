@@ -9,6 +9,7 @@ public class EnemyShipHealth : MonoBehaviour
 
     public GameObject destroyFx;
     public EnemyShipSpawnManager spawnManager;
+    public EnemyShipAI shipAI;
 
     void Start()
     {
@@ -27,6 +28,13 @@ public class EnemyShipHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             Die();
+        }
+        else
+        {
+            if(shipAI && !shipAI.isTriggered)
+            {
+                shipAI.isTriggered = true;
+            }
         }
     }
 

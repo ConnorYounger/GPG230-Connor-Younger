@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 97961401}
   - component: {fileID: 97961402}
   - component: {fileID: 97961403}
+  - component: {fileID: 97961406}
   - component: {fileID: 97961405}
   - component: {fileID: 97961404}
   m_Layer: 8
@@ -349,6 +350,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &97961406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97961400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dddcb1593364aa40bd1aa90e2299c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 20
+  currentHealth: 0
+  enemyShipManager: {fileID: 0}
+  rb: {fileID: 97961405}
+  destroyFx: {fileID: 8592172686243372966, guid: a3d8fe4081a370d40862145c16262214, type: 3}
+  shipMovement: {fileID: 97961402}
+  shipChildMesh: {fileID: 11470963}
+  boxCollider: {fileID: 97961404}
 --- !u!1 &141771340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -131999364619377749, guid: bfc3a6324d47f9f4bb2e57aabc44ab80, type: 3}
@@ -548,8 +569,7 @@ MonoBehaviour:
   canFire: 1
   isEnemy: 0
   turnSpeed: 10
-  triggerDistance: 300
-  isTriggered: 0
+  shipAI: {fileID: 0}
 --- !u!1 &225264135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9110481694890990858, guid: bfc3a6324d47f9f4bb2e57aabc44ab80, type: 3}
@@ -2552,8 +2572,7 @@ MonoBehaviour:
   canFire: 1
   isEnemy: 0
   turnSpeed: 10
-  triggerDistance: 300
-  isTriggered: 0
+  shipAI: {fileID: 0}
 --- !u!1 &1420345748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,8 +4001,7 @@ MonoBehaviour:
   canFire: 1
   isEnemy: 0
   turnSpeed: 10
-  triggerDistance: 300
-  isTriggered: 0
+  shipAI: {fileID: 0}
 --- !u!1 &2111924838
 GameObject:
   m_ObjectHideFlags: 0

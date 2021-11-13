@@ -13,6 +13,11 @@ public class EnemyShipAI : MonoBehaviour
     private int travelIndex;
     private int previousTravelIndex;
 
+    public bool isTriggered;
+    public float triggerDistance = 300;
+
+    private Transform player;
+
 
     void Start()
     {
@@ -20,6 +25,8 @@ public class EnemyShipAI : MonoBehaviour
 
         if(travelPath != null)
             SetTravelPaths(travelPath);
+
+        player = GameObject.Find("Player").transform;
 
         previousTravelIndex = travelPoints.Count - 1;
     }
@@ -39,6 +46,17 @@ public class EnemyShipAI : MonoBehaviour
     {
         if(travelPoints.Count > 0)
             ShipMovement();
+
+        if (!isTriggered)
+            EnemyTriggerCheck();
+    }
+
+    void EnemyTriggerCheck()
+    {
+        if (Vector3.Distance(transform.position, player.position) < triggerDistance)
+        {
+            isTriggered = true;
+        }
     }
 
     void ShipMovement()

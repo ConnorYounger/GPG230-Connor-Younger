@@ -26,6 +26,10 @@ public class ShipProjectile : MonoBehaviour
         {
             other.GetComponent<EnemyShipHealth>().TakeDamage(projectileDamage);
         }
+        else if (other.GetComponent<PlayerShipHealth>())
+        {
+            other.GetComponent<PlayerShipHealth>().TakeDamage(projectileDamage);
+        }
 
         DestroyProjectile();
     }

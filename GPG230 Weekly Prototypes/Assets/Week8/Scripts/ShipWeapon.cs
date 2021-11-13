@@ -14,8 +14,7 @@ public class ShipWeapon : MonoBehaviour
     [Header("Enemy Stats")]
     public bool isEnemy;
     public float turnSpeed = 10;
-    public float triggerDistance = 300;
-    public bool isTriggered;
+    public EnemyShipAI shipAI;
 
     private Transform player;
 
@@ -37,9 +36,7 @@ public class ShipWeapon : MonoBehaviour
         {
             EnemyAiming();
 
-            if (!isTriggered)
-                EnemyTriggerCheck();
-            else
+            if (shipAI.isTriggered)
                 EnemyShooting();
         }
     }
@@ -72,14 +69,6 @@ public class ShipWeapon : MonoBehaviour
         }
 
         transform.LookAt(lookPoint);
-    }
-
-    void EnemyTriggerCheck()
-    {
-        if(Vector3.Distance(transform.position, player.position) < triggerDistance)
-        {
-            isTriggered = true;
-        }
     }
 
     void EnemyShooting()
