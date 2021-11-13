@@ -67,13 +67,21 @@ public class EnemyShipSpawnManager : MonoBehaviour
             {
                 if (enemy.GetComponent<EnemyShipAI>())
                 {
-                    enemy.GetComponent<EnemyShipAI>().enabled = false;
+                    if(enemy.GetComponent<EnemyShipAI>().weapons.Count > 0)
+                    {
+                        foreach(ShipWeapon w in enemy.GetComponent<EnemyShipAI>().weapons)
+                        {
+                            w.enabled = false;
+                        }
+                    }
+
+                    //enemy.GetComponent<EnemyShipAI>().enabled = false;
                 }
 
-                foreach (Transform c in enemy.transform)
-                {
-                    enemy.gameObject.SetActive(false);
-                }
+                //foreach (Transform c in enemy.transform)
+                //{
+                //    c.gameObject.SetActive(false);
+                //}
             }
         }
     }

@@ -18,10 +18,13 @@ public class EnemyShipAI : MonoBehaviour
 
     private Transform player;
 
+    public List<ShipWeapon> weapons;
+
 
     void Start()
     {
         travelPoints = new List<Transform>();
+        weapons = new List<ShipWeapon>();
 
         if(travelPath != null)
             SetTravelPaths(travelPath);

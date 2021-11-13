@@ -25,6 +25,11 @@ public class ShipWeapon : MonoBehaviour
         {
             player = GameObject.Find("Player").transform;
         }
+
+        if(isEnemy && shipAI)
+        {
+            shipAI.weapons.Add(this);
+        }
     }
 
     // Update is called once per frame
@@ -64,7 +69,18 @@ public class ShipWeapon : MonoBehaviour
                 //    lookPoint = ray2.GetPoint(hitDist);
                 //}
 
-                lookPoint = transform.parent.forward;
+                RaycastHit hit2;
+                Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                Physics.Raycast(ray, out hit, 1000, ~(1 << 10));
+                if (hit.collider != null)
+                {
+                    //lookPoint = hit.point;
+                }
+
+                lookPoint = hit.point;
+                //lookPoint = ray.origin * ray.direction.y * 1000;
+                //lookPoint = transform.parent.forward;
             }
         }
 
@@ -90,6 +106,7 @@ public class ShipWeapon : MonoBehaviour
         if (projectile != null)
         {
             projectile.projectileSpeed = weapon.projectileSpeed;
+            projectile.projectileDamage = weapon.damage;
         }
 
         bullet.layer = 12;
