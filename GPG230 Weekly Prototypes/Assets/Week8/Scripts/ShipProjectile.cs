@@ -8,6 +8,9 @@ public class ShipProjectile : MonoBehaviour
     public float projectileSpeed;
     public GameObject destroyEffect;
 
+    public bool isHoming;
+    public GameObject target;
+
     void Start()
     {
         
@@ -15,7 +18,40 @@ public class ShipProjectile : MonoBehaviour
 
     void Update()
     {
+        ProjectileMovement();
+    }
+
+    void ProjectileMovement()
+    {
         transform.position += transform.forward * projectileSpeed * Time.deltaTime;
+
+        if (isHoming)
+        {
+            if (target)
+            {
+                transform.LookAt(target.transform.position);
+            }
+            else
+            {
+                FindTarget();
+            }
+        }
+    }
+
+    void FindTarget()
+    {
+        if (EnemyShipSpawnManager.spawnedEnemies.Count > 0)
+        {
+            float dis = 10000;
+            foreach (GameObject enemy in EnemyShipSpawnManager.spawnedEnemies)
+            {
+                if (Vector3.Distance(transform.position, enemy.transform.position) < dis)
+                {
+                    dis = Vector3.Distance(transform.position, enemy.transform.position);
+                    target = enemy;
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

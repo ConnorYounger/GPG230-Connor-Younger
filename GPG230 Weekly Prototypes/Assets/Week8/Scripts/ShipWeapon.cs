@@ -17,6 +17,7 @@ public class ShipWeapon : MonoBehaviour
     public EnemyShipAI shipAI;
 
     private Transform player;
+    private GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,7 @@ public class ShipWeapon : MonoBehaviour
             if (hit.collider != null)
             {
                 lookPoint = hit.point;
+                target = hit.collider.gameObject;
             }
             else
             {
@@ -107,6 +109,11 @@ public class ShipWeapon : MonoBehaviour
         {
             projectile.projectileSpeed = weapon.projectileSpeed;
             projectile.projectileDamage = weapon.damage;
+
+            if (target)
+            {
+                projectile.target = target;
+            }
         }
 
         bullet.layer = 12;

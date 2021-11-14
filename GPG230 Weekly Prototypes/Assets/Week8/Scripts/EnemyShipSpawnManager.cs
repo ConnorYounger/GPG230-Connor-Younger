@@ -13,7 +13,7 @@ public class EnemyShipSpawnManager : MonoBehaviour
     }
     public spawnSlots[] enemySpawns;
 
-    public List<GameObject> spawnedEnemies;
+    public static List<GameObject> spawnedEnemies;
 
     void Start()
     {
