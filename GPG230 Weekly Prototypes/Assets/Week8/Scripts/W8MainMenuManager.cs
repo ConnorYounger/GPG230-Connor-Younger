@@ -16,6 +16,13 @@ public class W8MainMenuManager : MonoBehaviour
     public GameObject contractsMenu;
     public GameObject contractInfo;
 
+    [Header("Contract Info Refs")]
+    public TMP_Text contractTitleText;
+    public TMP_Text bountyValueText;
+    public TMP_Text bountyDiscriptionText;
+
+    private BountyScenario currentScenario;
+
     void Start()
     {
         
@@ -52,6 +59,17 @@ public class W8MainMenuManager : MonoBehaviour
         contractInfo.SetActive(true);
     }
 
+    public void ShowContractInfoMenu(BountyScenario contract)
+    {
+        currentScenario = contract;
+
+        contractInfo.SetActive(true);
+
+        contractTitleText.text = contract.bountyTitle;
+        bountyValueText.text = contract.bountyValue.ToString();
+        bountyDiscriptionText.text = contract.flavorText;
+    }
+
     public void ShowShipUpgrades()
     {
         shipYard.SetActive(false);
@@ -62,5 +80,13 @@ public class W8MainMenuManager : MonoBehaviour
     {
         shipUpgrades.SetActive(false);
         shipYard.SetActive(true);
+    }
+
+    public void StartNewContract()
+    {
+        if (currentScenario)
+        {
+            W8ScenarioManager.StartNewScenario(currentScenario);
+        }
     }
 }

@@ -6,21 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Week5/Week5MainMenu.unity
-    guid: 1fc9a5400a7015d45bf46691c5360070
+    path: Assets/Week8/Week8MainMenu.unity
+    guid: 1bf7a3598c5a7ff4eb9fbfdef654ca72
   - enabled: 1
-    path: Assets/Week5/Levels/W5Level0.unity
-    guid: 793053a4a6d757342974c76d53c41120
-  - enabled: 1
-    path: Assets/Week5/Levels/CopyOfW5Level1.unity
-    guid: de966c1b26559c64baf926d63f230e91
-  - enabled: 1
-    path: Assets/Week5/Levels/W5Level2.unity
-    guid: 226131e0e53b9c74e9e5a157d3b6bab6
-  - enabled: 1
-    path: Assets/Week5/Levels/W5Level3.unity
-    guid: 4bfcc058d7c522c4496ff7810184bf0b
-  - enabled: 1
-    path: Assets/Week5/Levels/W5Level4.unity
-    guid: e7efbc9d73f4ca842aba73c667cb15e7
+    path: Assets/Week8/Week8Scene.unity
+    guid: cd0d48f1901cc124f819e936d1e8f088
   m_configObjects: {}

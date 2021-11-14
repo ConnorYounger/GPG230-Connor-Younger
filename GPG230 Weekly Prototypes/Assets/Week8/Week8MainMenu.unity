@@ -677,7 +677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 243739571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1252374714}
+        m_TargetAssemblyTypeName: W8MainMenuManager, Assembly-CSharp
+        m_MethodName: StartNewContract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &243739571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,7 +2177,7 @@ GameObject:
   - component: {fileID: 843867800}
   - component: {fileID: 843867799}
   m_Layer: 5
-  m_Name: BountyText (1)
+  m_Name: BountyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2814,7 +2826,7 @@ GameObject:
   - component: {fileID: 988997344}
   - component: {fileID: 988997343}
   m_Layer: 5
-  m_Name: ContractTitle (1)
+  m_Name: SubjectNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2859,7 +2871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Subjectw Name: Naughty Person'
+  m_text: 'Subject Name: Naughty Person'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ddbc97ca8eda42749e1e1eb08026b42, type: 2}
   m_sharedMaterial: {fileID: 8248030770639639578, guid: 1ddbc97ca8eda42749e1e1eb08026b42, type: 2}
@@ -3452,6 +3464,9 @@ MonoBehaviour:
   shipYard: {fileID: 245718667}
   contractsMenu: {fileID: 1890311532}
   contractInfo: {fileID: 379605243}
+  contractTitleText: {fileID: 1180215551}
+  bountyValueText: {fileID: 843867799}
+  bountyDiscriptionText: {fileID: 376933103}
 --- !u!4 &1252374715
 Transform:
   m_ObjectHideFlags: 0
@@ -3685,18 +3700,18 @@ PrefabInstance:
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1252374714}
+      objectReference: {fileID: 1356815120}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowContractInfoMenu
+      value: SelectContract
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: W8MainMenuManager, Assembly-CSharp
+      value: ScenarioGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3706,6 +3721,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Contract3
       objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: menuManager
+      value: 
+      objectReference: {fileID: 1252374714}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a48706db3d4fa34cbb8cdb43cfa9d2d, type: 2}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 83ceaa01254e1b44188634ec2d9f44c2, type: 2}
     - target: {fileID: 6050241490037679479, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_text
       value: 3200
@@ -3796,6 +3827,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+--- !u!114 &1356815120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+  m_PrefabInstance: {fileID: 1356815119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4591e6ed172784ea5563e0527edc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1391433574 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4110043701876954650, guid: 9ab96986a81170c42b9f07a7df033c88, type: 3}
@@ -4101,18 +4143,18 @@ PrefabInstance:
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1252374714}
+      objectReference: {fileID: 1559697813}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowContractInfoMenu
+      value: SelectContract
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: W8MainMenuManager, Assembly-CSharp
+      value: ScenarioGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4122,6 +4164,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Contract2
       objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: menuManager
+      value: 
+      objectReference: {fileID: 1252374714}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c283542b563b6648a750aff43c948ea, type: 2}
     - target: {fileID: 6050241490037679479, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_text
       value: 1400
@@ -4212,6 +4266,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+--- !u!114 &1559697813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+  m_PrefabInstance: {fileID: 1559697812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4591e6ed172784ea5563e0527edc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1590004755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8fe875e987a158042bf706026d9020c2, type: 3}
@@ -6490,18 +6555,18 @@ PrefabInstance:
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1252374714}
+      objectReference: {fileID: 5282361119548671994}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowContractInfoMenu
+      value: SelectContract
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: W8MainMenuManager, Assembly-CSharp
+      value: ScenarioGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2012259196112323713, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6511,6 +6576,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Contract1
       objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: menuManager
+      value: 
+      objectReference: {fileID: 1252374714}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d52bc9b88f453f4f897c854c7f1e658, type: 2}
     - target: {fileID: 8377955078199417706, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6597,6 +6674,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+--- !u!114 &5282361119548671994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+  m_PrefabInstance: {fileID: 5282361119548671993}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4591e6ed172784ea5563e0527edc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8972031453666867418
 PrefabInstance:
   m_ObjectHideFlags: 0

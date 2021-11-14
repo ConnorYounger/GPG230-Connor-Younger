@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5217667462117166633}
   - component: {fileID: 4919733900161068739}
   - component: {fileID: 2012259196112323713}
+  - component: {fileID: 5000253294415128551}
   m_Layer: 5
   m_Name: Contract1
   m_TagString: Untagged
@@ -256,7 +257,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4919733900161068739}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5000253294415128551}
+        m_TargetAssemblyTypeName: ScenarioGenerator, Assembly-CSharp
+        m_MethodName: SelectContract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5000253294415128551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447361781420547970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4591e6ed172784ea5563e0527edc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarios: []
+  generatedScenario: {fileID: 0}
+  scenarioTitle: {fileID: 1275200598396323755}
+  bountyReward: {fileID: 6050241490037679479}
+  menuManager: {fileID: 0}
 --- !u!1 &5608177500498301353
 GameObject:
   m_ObjectHideFlags: 0

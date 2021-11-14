@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295182b9fde90e14b8ba968e2897f543, type: 3}
+  m_Name: Scenario4
+  m_EditorClassIdentifier: 
+  bountyTitle: Alien Outbreak
+  bountyValue: 3200
+  flavorText: Aliens have managed to take over the planet LV-426 and have now learnt
+    how to fly ships. Eliminate them before they can spread to other planets.
+  scenarioScene: Week8Scene
