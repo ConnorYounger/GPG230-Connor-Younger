@@ -15,6 +15,8 @@ public class EnemyShipSpawnManager : MonoBehaviour
 
     public static List<GameObject> spawnedEnemies;
 
+    public W8ScenarioManager scenarioManager;
+
     void Start()
     {
         spawnedEnemies = new List<GameObject>();
@@ -57,6 +59,8 @@ public class EnemyShipSpawnManager : MonoBehaviour
     void ScenarioComplete()
     {
         Debug.Log("Scenario Complete");
+
+        scenarioManager.ShowWinUI();
     }
 
     public void PlayerDeath()
