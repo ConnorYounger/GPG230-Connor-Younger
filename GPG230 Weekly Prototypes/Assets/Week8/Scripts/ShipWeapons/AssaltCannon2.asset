@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce73aa4c5c7a714db7affa8ebffbf50, type: 3}
+  m_Name: AssaltCannon2
+  m_EditorClassIdentifier: 
+  damage: 10
+  fireRate: 0.2
+  projectilePrefab: {fileID: 7721569243175189998, guid: 05dc6f0cdd060ed4f832b1a8a15e2e22, type: 3}
+  projectileLifeTime: 50
+  projectileSpeed: 1000
