@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a04dd73077991184ea6a7a48ebd447f3, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3506,6 +3506,12 @@ MonoBehaviour:
   shipSystemsMenu: {fileID: 951928159}
   shipUpgrades: {fileID: 139170889}
   shipYard: {fileID: 245718667}
+  shipUpgradeButtonPrefab: {fileID: 0}
+  buttonGroup: {fileID: 0}
+  primaryWeaponsDevide: {fileID: 0}
+  secondaryWeaponsDevide: {fileID: 0}
+  shipNameText: {fileID: 0}
+  shipHullText: {fileID: 0}
   contractsMenu: {fileID: 1890311532}
   contractInfo: {fileID: 379605243}
   contractTitleText: {fileID: 1180215551}

@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Week8/Week8Scene.unity
     guid: cd0d48f1901cc124f819e936d1e8f088
+  - enabled: 1
+    path: Assets/Week8/Week8Scene2.unity
+    guid: da7e69897218f7f4b8ad70719b5f6f63
+  - enabled: 1
+    path: Assets/Week8/Week8Scene3.unity
+    guid: bfb19de8e311c9d44abe1d5842ee848f
+  - enabled: 1
+    path: Assets/Week8/Week8Scene4.unity
+    guid: a838be5f38641cd429c24408944b973b
   m_configObjects: {}
