@@ -34,6 +34,7 @@ public class W8ScenarioManager : MonoBehaviour
     public void ShowWinUI()
     {
         rewardText.text = currentScenario.bountyValue.ToString();
+        W8SaveData.AddCurrency(currentScenario.bountyValue);
         WinUI.SetActive(true);
         StopCoroutine("ReturnCounter");
         StartCoroutine("ReturnCounter");

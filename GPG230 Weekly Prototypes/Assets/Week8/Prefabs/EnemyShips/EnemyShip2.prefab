@@ -210,6 +210,7 @@ MonoBehaviour:
   destroyFx: {fileID: 8592172686243372966, guid: a3d8fe4081a370d40862145c16262214, type: 3}
   spawnManager: {fileID: 0}
   shipAI: {fileID: 3622506808862051790}
+  fireEffect: {fileID: 2003485905340541711, guid: 082e976e5bd615a42bb375f597ee30dd, type: 3}
 --- !u!65 &3622506808862051788
 BoxCollider:
   m_ObjectHideFlags: 0

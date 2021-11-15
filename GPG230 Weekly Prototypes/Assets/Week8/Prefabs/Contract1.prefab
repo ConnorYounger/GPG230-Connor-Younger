@@ -286,6 +286,7 @@ MonoBehaviour:
   generatedScenario: {fileID: 0}
   scenarioTitle: {fileID: 1275200598396323755}
   bountyReward: {fileID: 6050241490037679479}
+  scenarioDifficulty: 'Contract Difficulty: '
   menuManager: {fileID: 0}
 --- !u!1 &5608177500498301353
 GameObject:

@@ -12,6 +12,7 @@ public class ScenarioGenerator : MonoBehaviour
     [Header("Refs")]
     public TMP_Text scenarioTitle;
     public TMP_Text bountyReward;
+    public string scenarioDifficulty;
 
     public W8MainMenuManager menuManager;
 
@@ -35,6 +36,7 @@ public class ScenarioGenerator : MonoBehaviour
 
     public void SelectContract()
     {
+        menuManager.bountyDifficultyText.text = scenarioDifficulty;
         menuManager.ShowContractInfoMenu(generatedScenario);
     }
 }

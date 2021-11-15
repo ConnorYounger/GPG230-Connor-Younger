@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 295182b9fde90e14b8ba968e2897f543, type: 3}
-  m_Name: Scenario3
+  m_Name: Scenario5
   m_EditorClassIdentifier: 
-  bountyTitle: Rudeus
-  bountyValue: 3200
-  flavorText: Rudeus and his followers managed to start a civil war with the tribal
-    people of Pandora by petting their sacred fluffy dog.
+  bountyTitle: Sentiant Chicken
+  bountyValue: 600
+  flavorText: Legend says a man once left his coocked chicken in a fridge and forgot
+    about it for 100 years. When he returned to open the fridge, the chicken had
+    become sentiant and began to eat everything
   scenarioScene: Week8Scene

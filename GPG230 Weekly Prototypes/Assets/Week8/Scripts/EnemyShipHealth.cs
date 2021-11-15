@@ -11,6 +11,9 @@ public class EnemyShipHealth : MonoBehaviour
     public EnemyShipSpawnManager spawnManager;
     public EnemyShipAI shipAI;
 
+    public GameObject fireEffect;
+    private GameObject spawnedFireEffect;
+
     void Start()
     {
         currentHealth = startingHealh;
@@ -25,9 +28,18 @@ public class EnemyShipHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if(currentHealth <= 0)
+        if(currentHealth <= startingHealh / 2)
         {
-            Die();
+            if (fireEffect && !spawnedFireEffect)
+            {
+                spawnedFireEffect = Instantiate(fireEffect, transform.position, transform.rotation);
+                spawnedFireEffect.transform.parent = transform;
+            } 
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
         else
         {

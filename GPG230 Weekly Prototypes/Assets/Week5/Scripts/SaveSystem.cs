@@ -6,7 +6,7 @@ public static class SaveSystem
 {
     public static bool GetSaveFiles()
     {
-        for(int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (!File.Exists(GetPath(i)))
             {
@@ -30,6 +30,18 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerData data = new PlayerData(scoreManager, level);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static void SaveStats()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + W8SaveData.savePath;
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        PlayerData data = new PlayerData();
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -87,5 +99,18 @@ public static class SaveSystem
             //Debug.LogError("Save file not found in " + path);
             return data;
         }
+    }
+
+    public static PlayerData LoadLevel(string s)
+    {
+        string path = Application.persistentDataPath + s;
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Open);
+
+        PlayerData data = formatter.Deserialize(stream) as PlayerData;
+        stream.Close();
+
+        return data;
     }
 }

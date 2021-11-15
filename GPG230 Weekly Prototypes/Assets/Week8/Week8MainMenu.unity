@@ -500,6 +500,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194672662}
   m_CullTransparentMesh: 1
+--- !u!1 &220131501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220131503}
+  - component: {fileID: 220131502}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &220131502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220131501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8b502ba9b65fa438a6f71fca53142a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &220131503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220131501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 362.3285, y: 652.5044, z: -4.0091248}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &221500740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currencyUI: {fileID: 355697878}
+  currencyText: {fileID: 1478388278}
   shipSystemsMenu: {fileID: 951928159}
   shipUpgrades: {fileID: 139170889}
   shipYard: {fileID: 245718667}
@@ -3467,6 +3511,7 @@ MonoBehaviour:
   contractTitleText: {fileID: 1180215551}
   bountyValueText: {fileID: 843867799}
   bountyDiscriptionText: {fileID: 376933103}
+  bountyDifficultyText: {fileID: 988997343}
 --- !u!4 &1252374715
 Transform:
   m_ObjectHideFlags: 0
@@ -3725,6 +3770,10 @@ PrefabInstance:
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 1252374714}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarioDifficulty
+      value: 'Contract Difficulty: Hard'
+      objectReference: {fileID: 0}
     - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: scenarios.Array.size
       value: 2
@@ -4169,13 +4218,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1252374714}
     - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarioDifficulty
+      value: 'Contract Difficulty: Medium'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: scenarios.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: scenarios.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 2c283542b563b6648a750aff43c948ea, type: 2}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d09f2c1ccbaf7b4499ef8ce831036b64, type: 2}
     - target: {fileID: 6050241490037679479, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_text
       value: 1400
@@ -6581,13 +6638,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1252374714}
     - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarioDifficulty
+      value: 'Contract Difficulty: Easy'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: scenarios.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: scenarios.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 7d52bc9b88f453f4f897c854c7f1e658, type: 2}
+    - target: {fileID: 5000253294415128551, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
+      propertyPath: scenarios.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1149cc757a554b94ab955f8a2bed51d8, type: 2}
     - target: {fileID: 8377955078199417706, guid: 08bf5bb6e47bdb946b254bf972e8b97c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
