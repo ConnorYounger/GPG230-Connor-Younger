@@ -3854,7 +3854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawns:
   - enemyPrefab: {fileID: 5723199982818963372, guid: dafb2e647034ffb488116c3536286c4a, type: 3}
-    spawnPoint: {fileID: 1428583447}
+    spawnPoint: {fileID: 514767923}
     enemyPath: {fileID: 1428583447}
   scenarioManager: {fileID: 666704640}
 --- !u!4 &1667927461

@@ -19,14 +19,16 @@ public class EnemyShipSpawnManager : MonoBehaviour
 
     void Start()
     {
-        spawnedEnemies = new List<GameObject>();
+        //spawnedEnemies = new List<GameObject>();
 
         //SpawnEnemies();
     }
 
     public void SpawnEnemies()
     {
-        foreach(spawnSlots slot in enemySpawns)
+        spawnedEnemies = new List<GameObject>();
+
+        foreach (spawnSlots slot in enemySpawns)
         {
             GameObject spawnedEnemy = Instantiate(slot.enemyPrefab, slot.spawnPoint.position, slot.spawnPoint.rotation);
             EnemyShipHealth enemyHealth = spawnedEnemy.GetComponent<EnemyShipHealth>();
