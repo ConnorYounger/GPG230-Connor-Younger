@@ -529,11 +529,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentShip: 0
-  shipSaveData:
+  shipSaveDataRefs:
   - {fileID: 11400000, guid: d6c3f590368b4754da8a0bfe4cf59e06, type: 2}
   - {fileID: 11400000, guid: d6b19dc9129be2745a90020749b82e8f, type: 2}
   - {fileID: 11400000, guid: 24740ad0f9cb61148a01f133e4a9394a, type: 2}
   - {fileID: 11400000, guid: 50c7360770589724ead77fabe7595a97, type: 2}
+  shipSaveData: []
   shipsUnlocked: 01000000
 --- !u!4 &220131503
 Transform:
@@ -3416,6 +3417,7 @@ MonoBehaviour:
   bountyValueText: {fileID: 843867799}
   bountyDiscriptionText: {fileID: 376933103}
   bountyDifficultyText: {fileID: 988997343}
+  w8SaveData: {fileID: 0}
 --- !u!4 &1252374715
 Transform:
   m_ObjectHideFlags: 0

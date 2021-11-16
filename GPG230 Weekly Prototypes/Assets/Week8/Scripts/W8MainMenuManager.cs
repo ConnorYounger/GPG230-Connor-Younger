@@ -22,6 +22,9 @@ public class W8MainMenuManager : MonoBehaviour
     private int[] assaltCannonUpgradeCosts = { 600, 1300, 2000};
     private int[] homingMissileCosts = { 600, 1300, 2000};
 
+    private int primaryWeaponUpgradeCost;
+    private int secondaryWeaponUpgradeCost;
+
     [Header("Contract Menus")]
     public GameObject contractsMenu;
     public GameObject contractInfo;
@@ -33,6 +36,7 @@ public class W8MainMenuManager : MonoBehaviour
     public TMP_Text bountyDifficultyText;
 
     private BountyScenario currentScenario;
+    public W8SaveData w8SaveData;
 
     void Start()
     {
@@ -112,22 +116,22 @@ public class W8MainMenuManager : MonoBehaviour
 
         if (data.primaryWeaponName[data.currentShip] == "AR-1")
         {
+            primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[data.primaryWeaponLevel[data.currentShip]].ToString();
+            primaryWeaponUpgradeCost = assaltCannonUpgradeCosts[data.primaryWeaponLevel[data.currentShip]];
+
             switch (data.primaryWeaponLevel[data.currentShip])
             {
                 case 0:
                     primaryWeaponButton.button.interactable = true;
-                    primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[0].ToString();
                     primaryWeaponButton.upgradeStatsText.text = "5 -> 10";
                     break;
                 case 1:
                     primaryWeaponButton.button.interactable = true;
                     primaryWeaponButton.upgradeStatsText.text = "10 -> 15";
-                    primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[1].ToString();
                     break;
                 case 2:
                     primaryWeaponButton.button.interactable = true;
                     primaryWeaponButton.upgradeStatsText.text = "15 -> 20";
-                    primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[2].ToString();
                     break;
                 case 3:
                     primaryWeaponButton.button.interactable = false;
@@ -139,22 +143,22 @@ public class W8MainMenuManager : MonoBehaviour
 
         if (data.secondaryWeaponName[data.currentShip] == "HR-1")
         {
+            primaryWeaponButton.upgradeCostText.text = homingMissileCosts[data.secondaryWeaponLevel[data.currentShip]].ToString();
+            secondaryWeaponUpgradeCost = homingMissileCosts[data.secondaryWeaponLevel[data.currentShip]];
+
             switch (data.secondaryWeaponLevel[data.currentShip])
             {
                 case 0:
                     primaryWeaponButton.button.interactable = true;
-                    primaryWeaponButton.upgradeCostText.text = homingMissileCosts[0].ToString();
                     primaryWeaponButton.upgradeStatsText.text = "40 -> 70";
                     break;
                 case 1:
                     primaryWeaponButton.button.interactable = true;
                     primaryWeaponButton.upgradeStatsText.text = "70 -> 100";
-                    primaryWeaponButton.upgradeCostText.text = homingMissileCosts[1].ToString();
                     break;
                 case 2:
                     primaryWeaponButton.button.interactable = true;
                     primaryWeaponButton.upgradeStatsText.text = "100 -> 130";
-                    primaryWeaponButton.upgradeCostText.text = homingMissileCosts[2].ToString();
                     break;
                 case 3:
                     primaryWeaponButton.button.interactable = false;
@@ -162,6 +166,22 @@ public class W8MainMenuManager : MonoBehaviour
                     primaryWeaponButton.upgradeStatsText.text = "Max";
                     break;
             }
+        }
+    }
+
+    public void PrimaryWeaponUpgradePress()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        if (data.w8PlayerCurrency >= primaryWeaponUpgradeCost)
+        {
+            W8SaveData.AddCurrency(-primaryWeaponUpgradeCost);
+
+            w8SaveData.shipSaveData[data.currentShip].primaryWeapon.weaponLevel++;
+
+            SaveSystem.SaveStats(w8SaveData);
+
+            UpdateWeaponCurrency();
         }
     }
 

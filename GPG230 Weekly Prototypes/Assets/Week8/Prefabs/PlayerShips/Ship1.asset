@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465057cc51e5ba44cb07fef878d930b0, type: 3}
   m_Name: Ship1
   m_EditorClassIdentifier: 
-  shipHull: 50
+  shipHull: 0
   primaryWeapon:
-    weaponName: AR-1
+    weaponName: 
     weaponLevel: 0
   secondaryWeapon:
-    weaponName: HR-1
+    weaponName: 
     weaponLevel: 0

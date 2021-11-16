@@ -6,18 +6,37 @@ using TMPro;
 [System.Serializable]
 public class W8SaveData : MonoBehaviour
 {
+    public static W8SaveData w8SaveData;
     public static int playerScore;
     public static string savePath = "/W8SaveData";
 
     public int currentShip;
+    public ShipSaveData[] shipSaveDataRefs;
     public ShipSaveData[] shipSaveData;
     public bool[] shipsUnlocked;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        shipSaveData = new ShipSaveData[shipSaveDataRefs.Length];
+        for (int i = 0; i < shipSaveData.Length; i++)
+        {
+            shipSaveData[i] = shipSaveDataRefs[i];
+        }
+    }
+
     void Start()
     {
+        w8SaveData = this;
+
         //SaveSystem.SaveStats();
-        //ResetSaveStats();
+        StartCoroutine("LoadStats");
+    }
+
+    IEnumerable LoadStats()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        ResetSaveStats();
 
         LoadSave();
     }
@@ -29,9 +48,9 @@ public class W8SaveData : MonoBehaviour
 
         SaveSystem.SaveStats(this);
 
-        PlayerData data = SaveSystem.LoadLevel(savePath);
+        //PlayerData data = SaveSystem.LoadLevel(savePath);
 
-        data.currentShip = 0;
+        //data.currentShip = 0;
         //data.shipsUnlocked = new bool[4];
         //data.shipsUnlocked[0] = true;
         //data.shipHull = new int[4];
@@ -40,7 +59,7 @@ public class W8SaveData : MonoBehaviour
         //data.primaryWeaponName = new string[4];
         //data.secondaryWeaponName = new string[4];
 
-        SaveSystem.SaveStats(this);
+        //SaveSystem.SaveStats(this);
     }
 
     void LoadSave()
@@ -81,16 +100,11 @@ public class W8SaveData : MonoBehaviour
             playerScore += amount;
             //Debug.Log("Add: " + amount.ToString() + ", Total: " + data.w8PlayerCurrency);
 
-            SaveSystem.SaveStats();
+            SaveSystem.SaveStats(w8SaveData);
         }
         else
         {
             Debug.LogError("Could not load " + data);
         }
-    }
-
-    public void NewSave()
-    {
-        
     }
 }

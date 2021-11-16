@@ -21,7 +21,7 @@ public class EnemyShipSpawnManager : MonoBehaviour
     {
         spawnedEnemies = new List<GameObject>();
 
-        SpawnEnemies();
+        //SpawnEnemies();
     }
 
     public void SpawnEnemies()

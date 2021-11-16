@@ -61,5 +61,7 @@ public class PlayerData
             secondaryWeaponName[i] = saveData.shipSaveData[i].secondaryWeapon.weaponName;
             secondaryWeaponLevel[i] = saveData.shipSaveData[i].secondaryWeapon.weaponLevel;
         }
+
+        Debug.Log(primaryWeaponName[0]);
     }
 }
