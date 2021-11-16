@@ -11,6 +11,8 @@ public class ShipWeapon : MonoBehaviour
 
     public bool canFire = true;
 
+    public GameObject shootFx;
+
     [Header("Enemy Stats")]
     public bool isEnemy;
     public float turnSpeed = 10;
@@ -119,6 +121,20 @@ public class ShipWeapon : MonoBehaviour
         bullet.layer = 12;
 
         Destroy(bullet, weapon.projectileLifeTime);
+    }
+
+    public IEnumerator FireParticleFx()
+    {
+        if (shootFx)
+        {
+            int rand = Random.Range(0, 360);
+            shootFx.transform.Rotate(shootFx.transform.forward * rand);
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        if (shootFx)
+            shootFx.SetActive(false);
     }
 
     void EnemyAiming()

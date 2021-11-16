@@ -19,6 +19,7 @@ public class W8ShipMovement : MonoBehaviour
 
     public Transform aimReticle;
     private Vector3 reticleTargetPos;
+    public Transform particlTrail;
  
     void Start()
     {
@@ -31,6 +32,7 @@ public class W8ShipMovement : MonoBehaviour
         ShipMovement();
         ReticleAiming();
         ShipTurning();
+        ShipTrail();
     }
 
     void ShipMovement()
@@ -45,6 +47,33 @@ public class W8ShipMovement : MonoBehaviour
         rb.AddForce(shipDirection.right * Input.GetAxis("Horizontal") * strafeSpeed * Time.deltaTime);
 
         shipDirection.Rotate(transform.right * Input.GetAxis("Roll") * cruseSpeed * Time.deltaTime);
+    }
+
+    void ShipTrail()
+    {
+        if (particlTrail)
+        {
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+            {
+                foreach (Transform t in particlTrail)
+                {
+                    if (t.GetComponent<ParticleSystem>())
+                    {
+                        t.GetComponent<ParticleSystem>().Play();
+                    }
+                }
+            }
+            else
+            {
+                foreach (Transform t in particlTrail)
+                {
+                    if (t.GetComponent<ParticleSystem>())
+                    {
+                        t.GetComponent<ParticleSystem>().Stop();
+                    }
+                }
+            }
+        }
     }
 
     void ReticleAiming()

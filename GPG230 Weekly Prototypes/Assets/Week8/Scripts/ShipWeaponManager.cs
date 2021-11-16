@@ -107,6 +107,13 @@ public class ShipWeaponManager : MonoBehaviour
             shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
         }
 
+        if (weapon.shootFx)
+        {
+            weapon.shootFx.SetActive(true);
+            weapon.StopCoroutine("FireParticleFx");
+            weapon.StartCoroutine("FireParticleFx");
+        }
+
         projectile.layer = 14;
 
         Destroy(projectile, weapon.weapon.projectileLifeTime);
