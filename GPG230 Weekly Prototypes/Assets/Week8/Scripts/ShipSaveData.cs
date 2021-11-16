@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipSaveData : MonoBehaviour
+[CreateAssetMenu(fileName = "New ShipSaveData", menuName = "Week8/ShipSaveData", order = 2)]
+[System.Serializable]
+public class ShipSaveData : ScriptableObject
 {
     public int shipHull;
 
@@ -12,16 +14,6 @@ public class ShipSaveData : MonoBehaviour
         public string weaponName;
         public int weaponLevel;
     }
-    public weaponSlotData[] primaryWeapons;
-    public weaponSlotData[] secondaryWeapons;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    public weaponSlotData primaryWeapon;
+    public weaponSlotData secondaryWeapon;
 }

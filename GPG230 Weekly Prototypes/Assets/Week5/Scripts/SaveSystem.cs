@@ -47,6 +47,18 @@ public static class SaveSystem
         stream.Close();
     }
 
+    public static void SaveStats(W8SaveData saveData)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + W8SaveData.savePath;
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        PlayerData data = new PlayerData(saveData);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
     static string GetPath(int i)
     {
         switch (i)

@@ -14,14 +14,13 @@ public class W8MainMenuManager : MonoBehaviour
     public GameObject shipYard;
 
     [Header("Ship Upgrade Refs")]
-    public GameObject shipUpgradeButtonPrefab;
-    public Transform buttonGroup;
-    public GameObject primaryWeaponsDevide;
-    public GameObject secondaryWeaponsDevide;
     public TMP_Text shipNameText;
     public TMP_Text shipHullText;
+    public ShipUpgradeButton primaryWeaponButton;
+    public ShipUpgradeButton secondaryWeaponButton;
 
-    private List<GameObject> spawnedUpgradeUIElements;
+    private int[] assaltCannonUpgradeCosts = { 600, 1300, 2000};
+    private int[] homingMissileCosts = { 600, 1300, 2000};
 
     [Header("Contract Menus")]
     public GameObject contractsMenu;
@@ -37,7 +36,7 @@ public class W8MainMenuManager : MonoBehaviour
 
     void Start()
     {
-        spawnedUpgradeUIElements = new List<GameObject>();
+        
     }
 
     void Update()
@@ -48,6 +47,7 @@ public class W8MainMenuManager : MonoBehaviour
     public void ShowShipSystems()
     {
         UpdateWeaponCurrency();
+        ShowShipUpgrades();
 
         shipSystemsMenu.SetActive(true);
         currencyUI.SetActive(true);
@@ -92,43 +92,77 @@ public class W8MainMenuManager : MonoBehaviour
         shipUpgrades.SetActive(true);
 
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
-        ShipSaveData shipData = data.shipSaveData[data.currentShip];
+        //ShipSaveData shipData = data.shipSaveData[data.currentShip];
 
-        shipHullText.text = shipData.shipHull.ToString();
+        shipHullText.text = data.shipHull[data.currentShip].ToString();
 
-        // Spawn primary devide
-        GameObject primaryDevide = Instantiate(primaryWeaponsDevide, buttonGroup.position, Quaternion.identity);
-        primaryDevide.transform.parent = buttonGroup;
-        spawnedUpgradeUIElements.Add(primaryDevide);
+        primaryWeaponButton.shipLevelText.text = "Lv. " + (data.primaryWeaponLevel[data.currentShip] + 1).ToString();
+        primaryWeaponButton.shipNameText.text = data.primaryWeaponName[data.currentShip];
+        secondaryWeaponButton.shipLevelText.text = "Lv. " + (data.secondaryWeaponLevel[data.currentShip] + 1).ToString();
+        secondaryWeaponButton.shipNameText.text = data.secondaryWeaponName[data.currentShip];
 
-        // Spawn all primary weapon upgrade buttons
-        foreach (ShipSaveData.weaponSlotData weaponSlot in shipData.primaryWeapons)
-        {
-            SpawnWeaponUpgradeUIButton(weaponSlot);
-        }
-
-        // Spawn secondary devide
-        GameObject secondaryDevide = Instantiate(primaryWeaponsDevide, buttonGroup.position, Quaternion.identity);
-        secondaryDevide.transform.parent = buttonGroup;
-        spawnedUpgradeUIElements.Add(secondaryDevide);
-
-        // Spawn all secondary weapon upgrade buttons
-        foreach (ShipSaveData.weaponSlotData weaponSlot in shipData.secondaryWeapons)
-        {
-            SpawnWeaponUpgradeUIButton(weaponSlot);
-        }
+        UpdateWeaponButtonStats(data);
     }
 
-    void SpawnWeaponUpgradeUIButton(ShipSaveData.weaponSlotData weaponSlot)
+    public void UpdateWeaponButtonStats(PlayerData data)
     {
-        GameObject newSlot = Instantiate(shipUpgradeButtonPrefab, buttonGroup.position, Quaternion.identity);
-        newSlot.transform.parent = buttonGroup;
-        spawnedUpgradeUIElements.Add(newSlot);
+        // Display weapon button stats
 
-        ShipUpgradeButton upgradeButton = newSlot.GetComponent<ShipUpgradeButton>();
+        Debug.Log(data.primaryWeaponName[data.currentShip]);
 
-        upgradeButton.shipLevelText.text = weaponSlot.weaponLevel.ToString();
-        upgradeButton.shipNameText.text = weaponSlot.weaponName;
+        if (data.primaryWeaponName[data.currentShip] == "AR-1")
+        {
+            switch (data.primaryWeaponLevel[data.currentShip])
+            {
+                case 0:
+                    primaryWeaponButton.button.interactable = true;
+                    primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[0].ToString();
+                    primaryWeaponButton.upgradeStatsText.text = "5 -> 10";
+                    break;
+                case 1:
+                    primaryWeaponButton.button.interactable = true;
+                    primaryWeaponButton.upgradeStatsText.text = "10 -> 15";
+                    primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[1].ToString();
+                    break;
+                case 2:
+                    primaryWeaponButton.button.interactable = true;
+                    primaryWeaponButton.upgradeStatsText.text = "15 -> 20";
+                    primaryWeaponButton.upgradeCostText.text = assaltCannonUpgradeCosts[2].ToString();
+                    break;
+                case 3:
+                    primaryWeaponButton.button.interactable = false;
+                    primaryWeaponButton.upgradeCostText.text = "--";
+                    primaryWeaponButton.upgradeStatsText.text = "Max";
+                    break;
+            }
+        }
+
+        if (data.secondaryWeaponName[data.currentShip] == "HR-1")
+        {
+            switch (data.secondaryWeaponLevel[data.currentShip])
+            {
+                case 0:
+                    primaryWeaponButton.button.interactable = true;
+                    primaryWeaponButton.upgradeCostText.text = homingMissileCosts[0].ToString();
+                    primaryWeaponButton.upgradeStatsText.text = "40 -> 70";
+                    break;
+                case 1:
+                    primaryWeaponButton.button.interactable = true;
+                    primaryWeaponButton.upgradeStatsText.text = "70 -> 100";
+                    primaryWeaponButton.upgradeCostText.text = homingMissileCosts[1].ToString();
+                    break;
+                case 2:
+                    primaryWeaponButton.button.interactable = true;
+                    primaryWeaponButton.upgradeStatsText.text = "100 -> 130";
+                    primaryWeaponButton.upgradeCostText.text = homingMissileCosts[2].ToString();
+                    break;
+                case 3:
+                    primaryWeaponButton.button.interactable = false;
+                    primaryWeaponButton.upgradeCostText.text = "--";
+                    primaryWeaponButton.upgradeStatsText.text = "Max";
+                    break;
+            }
+        }
     }
 
     public void ShowShipYard()
