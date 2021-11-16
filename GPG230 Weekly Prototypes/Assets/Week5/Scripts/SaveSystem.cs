@@ -41,7 +41,7 @@ public static class SaveSystem
         string path = Application.persistentDataPath + W8SaveData.savePath;
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData data = new PlayerData();
+        PlayerData data = new PlayerData(W8SaveData.w8SaveData);
 
         formatter.Serialize(stream, data);
         stream.Close();

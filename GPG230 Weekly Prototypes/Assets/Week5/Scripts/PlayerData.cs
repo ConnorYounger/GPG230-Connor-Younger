@@ -20,7 +20,7 @@ public class PlayerData
     private static int numbOfShips = 4;
 
     // Ship 1 data
-    public int currentShip;
+    public int currentShip = new int();
     //public ShipSaveData[] shipSaveData;
     public bool[] shipsUnlocked = new bool[numbOfShips];
     public int[] shipHull = new int[numbOfShips];
@@ -62,6 +62,6 @@ public class PlayerData
             secondaryWeaponLevel[i] = saveData.shipSaveData[i].secondaryWeapon.weaponLevel;
         }
 
-        Debug.Log(primaryWeaponName[0]);
+        //Debug.Log("Current ship index: " + currentShip);
     }
 }
