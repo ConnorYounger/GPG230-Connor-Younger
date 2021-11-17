@@ -91,8 +91,26 @@ public class W8SaveData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            AddCurrency(100);
+            //AddCurrency(100);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetSaveData();
+        }
+    }
+
+    void ResetSaveData()
+    {
+        playerScore = 0;
+        currentShip = 0;
+
+        shipsUnlocked[0] = true;
+        shipsUnlocked[1] = false;
+        shipsUnlocked[2] = false;
+        shipsUnlocked[3] = false;
+
+        SaveSystem.SaveStats(this);
     }
 
     public static void AddCurrency(int amount)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class W8MainMenuManager : MonoBehaviour
@@ -32,6 +33,8 @@ public class W8MainMenuManager : MonoBehaviour
     public TMP_Text shipDiscription;
     public TMP_Text shipBuyButtonText;
     public TMP_Text shipCostText;
+
+    public Image[] shipSprites;
 
     [TextArea]
     public string[] shipDiscriptions;
@@ -76,6 +79,18 @@ public class W8MainMenuManager : MonoBehaviour
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
 
         SwitchShips(data.currentShip);
+
+        for(int i = 0; i < data.shipsUnlocked.Length; i++)
+        {
+            if (data.shipsUnlocked[i])
+            {
+                shipSprites[i].color = Color.white;
+            }
+            else
+            {
+                shipSprites[i].color = Color.black;
+            }
+        }
     }
 
     void Update()

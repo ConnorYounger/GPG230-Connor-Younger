@@ -876,7 +876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8424073627695423409, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2191,6 +2191,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Avant Heim
       objectReference: {fileID: 0}
+    - target: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d4da93a1cc85d64d9963d96811ad469, type: 3}
+    - target: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7943039705536195309, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
       propertyPath: m_text
       value: 'Hull: 200
@@ -2234,6 +2250,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+--- !u!114 &493066860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+  m_PrefabInstance: {fileID: 493066859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520211313
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8fe875e987a158042bf706026d9020c2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fe875e987a158042bf706026d9020c2, type: 3}
@@ -5708,6 +5735,11 @@ MonoBehaviour:
   shipDiscription: {fileID: 980206131}
   shipBuyButtonText: {fileID: 1509414275}
   shipCostText: {fileID: 1154380225}
+  shipSprites:
+  - {fileID: 8972031453666867419}
+  - {fileID: 2120984204}
+  - {fileID: 493066860}
+  - {fileID: 1597350645}
   shipDiscriptions:
   - 'Hull: 50
 
@@ -7130,6 +7162,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Sword Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 35e5fed1c2c0b5049b592d784539bf24, type: 3}
     - target: {fileID: 7943039705536195309, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
       propertyPath: m_text
       value: 'Hull: 300
@@ -7178,6 +7214,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1765640206615164743, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
   m_PrefabInstance: {fileID: 1597350643}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597350645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+  m_PrefabInstance: {fileID: 1597350643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625683229
 GameObject:
   m_ObjectHideFlags: 0
@@ -9189,6 +9236,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Nostromo
       objectReference: {fileID: 0}
+    - target: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 016bc1f56e5746b439515e39413ab75b, type: 3}
     - target: {fileID: 7943039705536195309, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
       propertyPath: m_text
       value: 'Hull: 100
@@ -9240,6 +9291,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+--- !u!114 &2120984204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+  m_PrefabInstance: {fileID: 2120984203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2122633335
 GameObject:
   m_ObjectHideFlags: 0
@@ -10220,3 +10282,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+--- !u!114 &8972031453666867419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6484551938734736054, guid: 6ebc82b35923bf842911f71554c41442, type: 3}
+  m_PrefabInstance: {fileID: 8972031453666867418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
