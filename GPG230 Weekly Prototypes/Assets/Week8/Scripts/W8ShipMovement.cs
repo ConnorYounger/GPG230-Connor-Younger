@@ -19,7 +19,9 @@ public class W8ShipMovement : MonoBehaviour
 
     public Transform aimReticle;
     private Vector3 reticleTargetPos;
+
     public Transform particlTrail;
+    public AudioSource thrusterAudioSource;
  
     void Start()
     {
@@ -62,6 +64,11 @@ public class W8ShipMovement : MonoBehaviour
                         t.GetComponent<ParticleSystem>().Play();
                     }
                 }
+
+                if (thrusterAudioSource && !thrusterAudioSource.isPlaying)
+                {
+                    thrusterAudioSource.Play();
+                }
             }
             else
             {
@@ -71,6 +78,11 @@ public class W8ShipMovement : MonoBehaviour
                     {
                         t.GetComponent<ParticleSystem>().Stop();
                     }
+                }
+
+                if (thrusterAudioSource && thrusterAudioSource.isPlaying)
+                {
+                    thrusterAudioSource.Stop();
                 }
             }
         }
