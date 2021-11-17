@@ -1867,6 +1867,9 @@ MonoBehaviour:
   WinUI: {fileID: 1955349346}
   rewardText: {fileID: 1385740469}
   returnText: {fileID: 2061443756}
+  loseUI: {fileID: 7617878084122319823}
+  repairText: {fileID: 7617878084122319822}
+  loseReturnText: {fileID: 7617878084122319821}
   enemySpawnManagers:
   - {fileID: 1202738255}
   returnTime: 5
@@ -6952,3 +6955,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b33fe1b89a53caf4a8d1ae981a17c0f5, type: 3}
+--- !u!114 &7617878084122319821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3925134178137425080, guid: b33fe1b89a53caf4a8d1ae981a17c0f5, type: 3}
+  m_PrefabInstance: {fileID: 7617878084122319820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7617878084122319822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5750446994762382128, guid: b33fe1b89a53caf4a8d1ae981a17c0f5, type: 3}
+  m_PrefabInstance: {fileID: 7617878084122319820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7617878084122319823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4045239770311169795, guid: b33fe1b89a53caf4a8d1ae981a17c0f5, type: 3}
+  m_PrefabInstance: {fileID: 7617878084122319820}
+  m_PrefabAsset: {fileID: 0}

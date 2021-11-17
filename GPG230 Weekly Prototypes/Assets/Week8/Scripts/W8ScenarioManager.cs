@@ -12,6 +12,10 @@ public class W8ScenarioManager : MonoBehaviour
     public TMP_Text rewardText;
     public TMP_Text returnText;
 
+    public GameObject loseUI;
+    public TMP_Text repairText;
+    public TMP_Text loseReturnText;
+
     public EnemyShipSpawnManager[] enemySpawnManagers;
 
     public int returnTime = 5;
@@ -72,9 +76,20 @@ public class W8ScenarioManager : MonoBehaviour
         StartCoroutine("ReturnCounter");
     }
 
+    public void ShowLoseUI()
+    {
+        repairText.text = (-currentScenario.bountyValue).ToString();
+        W8SaveData.AddCurrency(-currentScenario.bountyValue);
+        loseUI.SetActive(true);
+        returnTime = 3;
+        StopCoroutine("ReturnCounter");
+        StartCoroutine("ReturnCounter");
+    }
+
     IEnumerator ReturnCounter()
     {
         returnText.text = "Returning in: " + returnTimer.ToString() + "s";
+        loseReturnText.text = "Returning in: " + returnTimer.ToString() + "s";
 
         yield return new WaitForSeconds(1);
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7404537017858226291}
   - component: {fileID: 4878531904916089036}
+  - component: {fileID: 2824222089675404563}
   m_Layer: 13
   m_Name: ShipWeapon
   m_TagString: Untagged
@@ -50,6 +51,109 @@ MonoBehaviour:
   isEnemy: 1
   turnSpeed: 10
   shipAI: {fileID: 6973468839366177325}
+  audioSource: {fileID: 2824222089675404563}
+  shootSounds:
+  - {fileID: 8300000, guid: 645a78324c4493f4f8e27bccaf5aa9f6, type: 3}
+  - {fileID: 8300000, guid: c2d174f6204a5dc408f5524acd0ea189, type: 3}
+  - {fileID: 8300000, guid: 0bad816f84e3ce3429b3bb6b9f587ba8, type: 3}
+  - {fileID: 8300000, guid: f2ce0654efac51047927fad4ec959448, type: 3}
+  - {fileID: 8300000, guid: 131b40c43cb0bce4f8d1acb64b1df7f3, type: 3}
+--- !u!82 &2824222089675404563
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780067792264959679}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3607314481609474659
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +310,7 @@ MonoBehaviour:
   spawnManager: {fileID: 0}
   shipAI: {fileID: 6973468839366177325}
   fireEffect: {fileID: 2003485905340541711, guid: 082e976e5bd615a42bb375f597ee30dd, type: 3}
+  destroySound: {fileID: 6220878351233691629, guid: cf03c4ec95b60d949a329b3fed0890c4, type: 3}
 --- !u!65 &6973468839366177331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -285,6 +390,8 @@ MonoBehaviour:
   isEnemy: 1
   turnSpeed: 10
   shipAI: {fileID: 6973468839366177325}
+  audioSource: {fileID: 0}
+  shootSounds: []
 --- !u!1 &8557657970721324766
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,3 +442,5 @@ MonoBehaviour:
   isEnemy: 1
   turnSpeed: 10
   shipAI: {fileID: 6973468839366177325}
+  audioSource: {fileID: 0}
+  shootSounds: []

@@ -14,6 +14,8 @@ public class EnemyShipHealth : MonoBehaviour
     public GameObject fireEffect;
     private GameObject spawnedFireEffect;
 
+    public GameObject destroySound;
+
     void Start()
     {
         currentHealth = startingHealh;
@@ -56,6 +58,12 @@ public class EnemyShipHealth : MonoBehaviour
         {
             GameObject fx = Instantiate(destroyFx, transform.position, transform.rotation);
             Destroy(fx, 5);
+        }
+
+        if (destroySound)
+        {
+            GameObject sfx = Instantiate(destroySound, transform.position, transform.rotation);
+            Destroy(sfx, 5);
         }
 
         spawnManager.RemoveShip(gameObject);

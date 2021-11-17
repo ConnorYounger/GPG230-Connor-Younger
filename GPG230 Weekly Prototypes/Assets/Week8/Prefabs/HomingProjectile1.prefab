@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileDamage: 1
   projectileSpeed: 0
-  destroyEffect: {fileID: 3014544230241069462, guid: 974822e0b68543f49bd940cb7f14a9ec, type: 3}
+  destroyEffect: {fileID: 8592172686243372966, guid: a3d8fe4081a370d40862145c16262214, type: 3}
   isHoming: 1
   target: {fileID: 0}
 --- !u!54 &1619950463730525150

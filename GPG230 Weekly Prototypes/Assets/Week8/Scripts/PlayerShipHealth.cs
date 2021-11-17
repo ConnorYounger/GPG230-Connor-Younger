@@ -15,6 +15,7 @@ public class PlayerShipHealth : MonoBehaviour
     public W8ShipMovement shipMovement;
     public GameObject shipChildMesh;
     public BoxCollider boxCollider;
+    public GameObject destroySound;
 
     private bool isAlive = true;
 
@@ -60,10 +61,17 @@ public class PlayerShipHealth : MonoBehaviour
             Destroy(fx, 5);
         }
 
+        if (destroySound)
+        {
+            GameObject sfx = Instantiate(destroySound, transform.position, transform.rotation);
+            Destroy(sfx, 5);
+        }
+
         shipMovement.enabled = false;
         shipChildMesh.SetActive(false);
         boxCollider.enabled = false;
         enemyShipManager.PlayerDeath();
+        enemyShipManager.scenarioManager.ShowLoseUI();
         this.enabled = false;
     }
 }

@@ -21,6 +21,9 @@ public class ShipWeapon : MonoBehaviour
     private Transform player;
     private GameObject target;
 
+    public AudioSource audioSource;
+    public AudioClip[] shootSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +119,11 @@ public class ShipWeapon : MonoBehaviour
             {
                 projectile.target = target;
             }
+        }
+
+        if(audioSource && shootSounds.Length > 0)
+        {
+            PlayRandSound.PlayRandomSound(audioSource, shootSounds);
         }
 
         bullet.layer = 12;

@@ -9,6 +9,11 @@ public class ShipWeaponManager : MonoBehaviour
 
     public int secondaryAmmoCount = 10;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] primaryFireSounds;
+    public AudioClip[] secondaryFireSounds;
+
     void Start()
     {
         SetStartingWeaponStats();
@@ -72,6 +77,13 @@ public class ShipWeaponManager : MonoBehaviour
         if (primaryWeapons[i].canFire)
         {
             FireProjectile(primaryWeapons[i]);
+
+            if(audioSource && primaryFireSounds.Length > 0)
+            {
+                int rand = Random.Range(0, primaryFireSounds.Length);
+                audioSource.clip = primaryFireSounds[rand];
+                audioSource.Play();
+            }
         }
     }
 
@@ -84,6 +96,13 @@ public class ShipWeaponManager : MonoBehaviour
                 secondaryAmmoCount--;
 
                 FireProjectile(secondaryWeapons[i]);
+
+                if (audioSource && secondaryFireSounds.Length > 0)
+                {
+                    int rand = Random.Range(0, secondaryFireSounds.Length);
+                    audioSource.clip = secondaryFireSounds[rand];
+                    audioSource.Play();
+                }
             }
         }
         else
