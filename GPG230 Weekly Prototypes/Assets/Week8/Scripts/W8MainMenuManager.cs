@@ -25,6 +25,18 @@ public class W8MainMenuManager : MonoBehaviour
     private int primaryWeaponUpgradeCost;
     private int secondaryWeaponUpgradeCost;
 
+    [Header("Ship Yard Refs")]
+    public bool[] shipYardButtons;
+    public GameObject shipBuyMenu;
+    public TMP_Text shipTitle;
+    public TMP_Text shipDiscription;
+    public TMP_Text shipBuyButtonText;
+    public TMP_Text shipCostText;
+
+    public int[] shipCosts = { 0, 3000, 10000, 20000 };
+
+    private int shipUICurrentIndex;
+
     [Header("Contract Menus")]
     public GameObject contractsMenu;
     public GameObject contractInfo;
@@ -43,7 +55,17 @@ public class W8MainMenuManager : MonoBehaviour
 
     void Start()
     {
-        
+        //w8SaveData.shipsUnlocked[2] = true;
+        //SaveSystem.SaveStats(w8SaveData);
+
+        //PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        //foreach(bool b in data.shipsUnlocked)
+        //{
+        //    Debug.Log(b);
+        //}
+
+        UpdateShipYardButtons();
     }
 
     void Update()
@@ -51,10 +73,24 @@ public class W8MainMenuManager : MonoBehaviour
         
     }
 
+    void UpdateShipYardButtons()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        if(shipYardButtons.Length > 0)
+        {
+            for(int i = 0; i < data.shipsUnlocked.Length; i++)
+            {
+                shipYardButtons[i] = data.shipsUnlocked[i];
+            }
+        }
+    }
+
     public void ShowShipSystems()
     {
         UpdateWeaponCurrency();
-        ShowShipUpgrades();
+        //ShowShipUpgrades();
+        ShowShipYard();
 
         shipSystemsMenu.SetActive(true);
         currencyUI.SetActive(true);
@@ -129,7 +165,7 @@ public class W8MainMenuManager : MonoBehaviour
     {
         // Display weapon button stats
 
-        Debug.Log(data.primaryWeaponName[data.currentShip]);
+        //Debug.Log(data.primaryWeaponName[data.currentShip]);
 
         if (data.primaryWeaponName[data.currentShip] == "AR-1")
         {
@@ -223,6 +259,93 @@ public class W8MainMenuManager : MonoBehaviour
         if (currencyText)
         {
             currencyText.text = data.w8PlayerCurrency.ToString();
+        }
+
+        Debug.Log(data.currentShip);
+    }
+
+    public void SwitchShips(int shipIndex)
+    {
+        if (w8SaveData)
+        {
+            w8SaveData.currentShip = shipIndex;
+            SaveSystem.SaveStats(w8SaveData);
+        }
+
+        Debug.Log("Switch to ship index: " + shipIndex);
+
+        // Switch menu model
+    }
+
+    public void ShowShipUI(int shipIndex)
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        shipUICurrentIndex = shipIndex;
+
+        switch (shipIndex)
+        {
+            case 0:
+                shipTitle.text = "Ship 1";
+                shipDiscription.text = "2 pri, 1 se";
+                break;
+            case 1:
+                shipTitle.text = "Ship 2";
+                shipDiscription.text = "2 pri, 1 se";
+                break;
+            case 2:
+                shipTitle.text = "Ship 3";
+                shipDiscription.text = "2 pri, 1 se";
+                break;
+            case 3:
+                shipTitle.text = "Ship 4";
+                shipDiscription.text = "2 pri, 1 se";
+                break;
+        }
+
+        if (data.shipsUnlocked[shipIndex])
+        {
+            shipBuyButtonText.text = "Equip";
+            shipCostText.text = "Unlocked";
+        }
+        else
+        {
+            shipBuyButtonText.text = "Buy";
+            shipCostText.text = shipCosts[shipIndex].ToString();
+        }
+
+        shipBuyMenu.SetActive(true);
+    }
+
+    public void ShipButtonInteract()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        if (data.shipsUnlocked[shipUICurrentIndex])
+        {
+            SwitchShips(shipUICurrentIndex);
+        }
+        else
+        {
+            ShipCost(shipCosts[shipUICurrentIndex]);
+        }
+    }
+
+    void ShipCost(int cost)
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        if (data.w8PlayerCurrency >= cost)
+        {
+            W8SaveData.AddCurrency(-cost);
+
+            w8SaveData.shipsUnlocked[shipUICurrentIndex] = true;
+            SaveSystem.SaveStats(w8SaveData);
+
+            SwitchShips(shipUICurrentIndex);
+            UpdateWeaponCurrency();
+            shipBuyButtonText.text = "Equip";
+            shipCostText.text = "Unlocked";
         }
     }
 }

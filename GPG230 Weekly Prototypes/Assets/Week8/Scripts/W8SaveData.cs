@@ -36,7 +36,7 @@ public class W8SaveData : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        ResetSaveStats();
+        //ResetSaveStats();
 
         LoadSave();
     }
