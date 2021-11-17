@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShipHealth : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerShipHealth : MonoBehaviour
 
     public EnemyShipSpawnManager enemyShipManager;
     public Rigidbody rb;
+
+    public Slider healthSlider;
 
     [Header("DeathRefs")]
     public GameObject destroyFx;
@@ -34,6 +37,12 @@ public class PlayerShipHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        if (healthSlider)
+        {
+            healthSlider.value = currentHealth / startingHealth;
+            Debug.Log(currentHealth / startingHealth);
+        }
 
         if(currentHealth <= 0 && isAlive)
         {

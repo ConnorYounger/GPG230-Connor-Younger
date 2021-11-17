@@ -292,7 +292,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0bad816f84e3ce3429b3bb6b9f587ba8, type: 3}
   - {fileID: 8300000, guid: f2ce0654efac51047927fad4ec959448, type: 3}
   - {fileID: 8300000, guid: 131b40c43cb0bce4f8d1acb64b1df7f3, type: 3}
-  secondaryFireSounds: []
+  secondaryFireSounds:
+  - {fileID: 8300000, guid: 6f25d6d158280ec489345e54938c2949, type: 3}
+  - {fileID: 8300000, guid: 57dcf9d5fc14b6b4a8c3d3e15f94921a, type: 3}
+  - {fileID: 8300000, guid: 7f3c61f7096068340b09285f6a2f3ece, type: 3}
+  - {fileID: 8300000, guid: 56afaa9029066f644b9969b2c38967da, type: 3}
+  - {fileID: 8300000, guid: f5e26fdc477d25b468da842e872e17a4, type: 3}
 --- !u!114 &5824746882396427224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +314,7 @@ MonoBehaviour:
   currentHealth: 0
   enemyShipManager: {fileID: 0}
   rb: {fileID: 5824746882396427227}
+  healthSlider: {fileID: 0}
   destroyFx: {fileID: 8592172686243372966, guid: a3d8fe4081a370d40862145c16262214, type: 3}
   shipMovement: {fileID: 5824746882396427228}
   shipChildMesh: {fileID: 5824746882310888981}

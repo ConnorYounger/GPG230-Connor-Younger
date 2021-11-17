@@ -93,7 +93,7 @@ public class ShipWeaponManager : MonoBehaviour
         {
             if (secondaryWeapons[i].canFire)
             {
-                secondaryAmmoCount--;
+                //secondaryAmmoCount--;
 
                 FireProjectile(secondaryWeapons[i]);
 

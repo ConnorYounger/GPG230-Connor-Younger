@@ -21,6 +21,10 @@ public class W8ScenarioManager : MonoBehaviour
     public int returnTime = 5;
     private int returnTimer;
 
+    public AudioSource audioSource;
+    public AudioClip menuUISound;
+    public AudioClip timerSound;
+
     void Start()
     {
         returnTimer = returnTime;
@@ -69,6 +73,12 @@ public class W8ScenarioManager : MonoBehaviour
 
     public void ShowWinUI()
     {
+        if (audioSource)
+        {
+            audioSource.clip = menuUISound;
+            audioSource.Play();
+        }
+
         rewardText.text = currentScenario.bountyValue.ToString();
         W8SaveData.AddCurrency(currentScenario.bountyValue);
         WinUI.SetActive(true);
@@ -78,6 +88,12 @@ public class W8ScenarioManager : MonoBehaviour
 
     public void ShowLoseUI()
     {
+        if (audioSource)
+        {
+            audioSource.clip = menuUISound;
+            audioSource.Play();
+        }
+
         repairText.text = (-currentScenario.bountyValue).ToString();
         W8SaveData.AddCurrency(-currentScenario.bountyValue);
         loseUI.SetActive(true);
@@ -97,6 +113,12 @@ public class W8ScenarioManager : MonoBehaviour
 
         if(returnTimer >= 0)
         {
+            if (audioSource)
+            {
+                audioSource.clip = timerSound;
+                audioSource.Play();
+            }
+
             StartCoroutine("ReturnCounter");
         }
         else
