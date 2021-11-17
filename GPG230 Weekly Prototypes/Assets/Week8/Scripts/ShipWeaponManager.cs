@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ShipWeaponManager : MonoBehaviour
 {
-    public ShipWeapon[] primaryWeapons;
+    public List<ShipWeapon> primaryWeapons;
     public ShipWeapon[] secondaryWeapons;
 
     public int secondaryAmmoCount = 10;
@@ -85,7 +85,7 @@ public class ShipWeaponManager : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            for (int i = 0; i < primaryWeapons.Length; i++) 
+            for (int i = 0; i < primaryWeapons.Count; i++) 
             {
                 FirePrimaryWeapons(i);
             }

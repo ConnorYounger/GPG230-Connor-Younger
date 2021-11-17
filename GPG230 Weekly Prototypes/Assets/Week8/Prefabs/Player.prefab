@@ -1,5 +1,369 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &202449961383322606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3471892929777765063}
+  - component: {fileID: 8274593220358003478}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3471892929777765063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202449961383322606}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.0004, y: -0.0036, z: -0.0282}
+  m_LocalScale: {x: 0.66666645, y: 0.66666657, z: 0.6666666}
+  m_Children: []
+  m_Father: {fileID: 4078514646562839868}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &8274593220358003478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202449961383322606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  shootPoint: {fileID: 3471892929777765063}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &255723135953531280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8148798873837533003}
+  - component: {fileID: 3048310267475813793}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8148798873837533003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255723135953531280}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: -0.010000006, y: -0.6900042, z: 8.970014}
+  m_LocalScale: {x: 99.99998, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 7639675924409017497}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &3048310267475813793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255723135953531280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
+  shootPoint: {fileID: 8148798873837533003}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &556471867768247680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2570358067558236367}
+  - component: {fileID: 776682881501441850}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2570358067558236367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556471867768247680}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: 2.376, y: 1.405, z: 2.918}
+  m_LocalScale: {x: 99.99998, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 7639675924409017497}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &776682881501441850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556471867768247680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 5ada4bdd36a203c4e998d0e742aa8db7, type: 2}
+  shootPoint: {fileID: 2570358067558236367}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &2451931826331541934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7794025177328439383}
+  - component: {fileID: 3141773656922340530}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7794025177328439383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451931826331541934}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.01986, y: 0, z: -0.04139}
+  m_LocalScale: {x: 0.66666645, y: 0.66666657, z: 0.6666666}
+  m_Children: []
+  m_Father: {fileID: 4078514646562839868}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &3141773656922340530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451931826331541934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: e159898e5d8ef0b47ac42ee1073dbd96, type: 2}
+  shootPoint: {fileID: 7794025177328439383}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &4431884303370476559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3215228136672175514}
+  - component: {fileID: 4224632030966885773}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3215228136672175514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431884303370476559}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.01976, y: -0, z: -0.04347}
+  m_LocalScale: {x: 0.66666645, y: 0.66666657, z: 0.6666666}
+  m_Children: []
+  m_Father: {fileID: 4078514646562839868}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &4224632030966885773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431884303370476559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: e159898e5d8ef0b47ac42ee1073dbd96, type: 2}
+  shootPoint: {fileID: 3215228136672175514}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &4695352080444772841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316372301058657245}
+  - component: {fileID: 3174066968734356326}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316372301058657245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695352080444772841}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: 4.536, y: -0.204, z: 2.387}
+  m_LocalScale: {x: 49.99998, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 8304578946713839825}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &3174066968734356326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695352080444772841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  shootPoint: {fileID: 1316372301058657245}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &5615816547507320270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8461755929300034246}
+  - component: {fileID: 4843994508941352891}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8461755929300034246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615816547507320270}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: 0.02, y: -0.74, z: 6.35}
+  m_LocalScale: {x: 49.99998, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 8304578946713839825}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &4843994508941352891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615816547507320270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  shootPoint: {fileID: 8461755929300034246}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
 --- !u!1 &5824746881831003010
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +585,7 @@ GameObject:
   - component: {fileID: 5824746882396427228}
   - component: {fileID: 5824746882396427229}
   - component: {fileID: 5824746882396427224}
+  - component: {fileID: 1298908900591746521}
   - component: {fileID: 5824746882396427227}
   - component: {fileID: 5824746882396427226}
   - component: {fileID: 3069412808135988502}
@@ -324,6 +689,45 @@ MonoBehaviour:
   shipChildMesh: {fileID: 5824746882310888981}
   boxCollider: {fileID: 5824746882396427226}
   destroySound: {fileID: 6220878351233691629, guid: cf03c4ec95b60d949a329b3fed0890c4, type: 3}
+--- !u!114 &1298908900591746521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824746882396427230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb2d6588bd27c247a4a4d139d00f2ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 5824746882396427224}
+  weaponsManager: {fileID: 5824746882396427229}
+  defultShipRenderer: {fileID: 8227377624314026558}
+  ships:
+  - {fileID: 7578845877982444523}
+  - {fileID: 7011616893315366435}
+  - {fileID: 3734077667736766342}
+  - {fileID: 8679591114822431339}
+  ship0PWeapons:
+  - {fileID: 5824746882162825296}
+  - {fileID: 5824746883173055947}
+  ship1PWeapons:
+  - {fileID: 3048310267475813793}
+  - {fileID: 7248099035929852102}
+  - {fileID: 776682881501441850}
+  ship2PWeapons:
+  - {fileID: 8274593220358003478}
+  - {fileID: 4224632030966885773}
+  - {fileID: 3141773656922340530}
+  ship3PWeapons:
+  - {fileID: 4843994508941352891}
+  - {fileID: 2424331953170906765}
+  - {fileID: 3174066968734356326}
+  ship0SecondaryWeapon: {fileID: 5824746882405186545}
+  ship1SecondaryWeapon: {fileID: 5824746882405186545}
+  ship2SecondaryWeapon: {fileID: 5824746882405186545}
+  ship3SecondaryWeapon: {fileID: 5824746882405186545}
 --- !u!54 &5824746882396427227
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -769,6 +1173,110 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+--- !u!1 &6566214388495729989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8679144372103971552}
+  - component: {fileID: 2424331953170906765}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8679144372103971552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566214388495729989}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: -4.536, y: -0.204, z: 2.387}
+  m_LocalScale: {x: 49.99998, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 8304578946713839825}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &2424331953170906765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566214388495729989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  shootPoint: {fileID: 8679144372103971552}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
+--- !u!1 &6786085580394947452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9049943560923277059}
+  - component: {fileID: 7248099035929852102}
+  m_Layer: 8
+  m_Name: PrimaryShootPont1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9049943560923277059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786085580394947452}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: -2.419, y: 1.405, z: 2.918}
+  m_LocalScale: {x: 99.99998, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 7639675924409017497}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &7248099035929852102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786085580394947452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 5ada4bdd36a203c4e998d0e742aa8db7, type: 2}
+  shootPoint: {fileID: 9049943560923277059}
+  canFire: 1
+  shootFx: {fileID: 6805611008936394433}
+  isEnemy: 0
+  turnSpeed: 10
+  shipAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSounds: []
 --- !u!1 &7578845877982444523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0069
+      value: -0.018
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1209,6 +1717,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 63adf52f8bd7c7c4b9eab3a782057f21, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
+--- !u!1 &3734077667736766342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
+  m_PrefabInstance: {fileID: 4545101841341774551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4078514646562839868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
@@ -1403,6 +1916,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e705a53c58337e41b4b6c36a29dad24, type: 3}
   m_PrefabInstance: {fileID: 7894578956060164978}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7011616893315366435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e705a53c58337e41b4b6c36a29dad24, type: 3}
+  m_PrefabInstance: {fileID: 7894578956060164978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8409755354059870010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1480,6 +1998,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 27b08d35a852fcb48b0a865762171649, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
+--- !u!1 &8679591114822431339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
+  m_PrefabInstance: {fileID: 8409755354059870010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8304578946713839825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}

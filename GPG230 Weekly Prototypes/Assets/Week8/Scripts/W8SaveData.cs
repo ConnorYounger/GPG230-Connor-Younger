@@ -100,6 +100,9 @@ public class W8SaveData : MonoBehaviour
             playerScore += amount;
             //Debug.Log("Add: " + amount.ToString() + ", Total: " + data.w8PlayerCurrency);
 
+            if (playerScore < 0)
+                playerScore = 0;
+
             SaveSystem.SaveStats(w8SaveData);
         }
         else

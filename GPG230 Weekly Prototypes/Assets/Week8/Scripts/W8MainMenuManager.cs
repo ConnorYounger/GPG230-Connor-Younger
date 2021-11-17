@@ -33,7 +33,7 @@ public class W8MainMenuManager : MonoBehaviour
     public TMP_Text shipBuyButtonText;
     public TMP_Text shipCostText;
 
-    public int[] shipCosts = { 0, 3000, 10000, 20000 };
+    private int[] shipCosts = { 0, 3000, 6000, 12000 };
 
     private int shipUICurrentIndex;
 
@@ -287,19 +287,27 @@ public class W8MainMenuManager : MonoBehaviour
         {
             case 0:
                 shipTitle.text = "Ship 1";
-                shipDiscription.text = "2 pri, 1 se";
+                shipDiscription.text = "Hull: 50" +
+                    "Primary Weapons: AR-1 x2" +
+                    "Secondary Weapons: HR-1";
                 break;
             case 1:
                 shipTitle.text = "Ship 2";
-                shipDiscription.text = "2 pri, 1 se";
+                shipDiscription.text = "Hull: 200" +
+                    "Primary Weapons: AR-2 x2" +
+                    "Secondary Weapons: HR-1";
                 break;
             case 2:
                 shipTitle.text = "Ship 3";
-                shipDiscription.text = "2 pri, 1 se";
+                shipDiscription.text = "Hull: 300" +
+                    "Primary Weapons: AR-3 x2" +
+                    "Secondary Weapons: HR-1";
                 break;
             case 3:
-                shipTitle.text = "Ship 4";
-                shipDiscription.text = "2 pri, 1 se";
+                shipTitle.text = "Sword Fish";
+                shipDiscription.text = "Hull: 400" +
+                    "Primary Weapons: AR-3 x2" +
+                    "Secondary Weapons: HR-1";
                 break;
         }
 

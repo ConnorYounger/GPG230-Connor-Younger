@@ -35,6 +35,18 @@ public class PlayerShipHealth : MonoBehaviour
         }
     }
 
+    public void SetStartingHealth(int health)
+    {
+        startingHealth = health;
+        currentHealth = startingHealth;
+
+        if (healthSlider)
+        {
+            healthSlider.maxValue = startingHealth;
+            healthSlider.value = currentHealth;
+        }
+    }
+
     void Update()
     {
         
