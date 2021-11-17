@@ -20,13 +20,27 @@ public class W8ShipMovement : MonoBehaviour
     public Transform aimReticle;
     private Vector3 reticleTargetPos;
 
-    public Transform particlTrail;
+    public Transform[] particlTrail;
     public AudioSource thrusterAudioSource;
  
     void Start()
     {
         center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         Cursor.lockState = CursorLockMode.Confined;
+
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        for(int i = 0; i < particlTrail.Length; i++)
+        {
+            if(i == data.currentShip)
+            {
+                particlTrail[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                particlTrail[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     void Update()
@@ -53,11 +67,13 @@ public class W8ShipMovement : MonoBehaviour
 
     void ShipTrail()
     {
-        if (particlTrail)
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        if (particlTrail.Length > 0)
         {
             if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
             {
-                foreach (Transform t in particlTrail)
+                foreach (Transform t in particlTrail[data.currentShip])
                 {
                     if (t.GetComponent<ParticleSystem>())
                     {
@@ -72,7 +88,7 @@ public class W8ShipMovement : MonoBehaviour
             }
             else
             {
-                foreach (Transform t in particlTrail)
+                foreach (Transform t in particlTrail[data.currentShip])
                 {
                     if (t.GetComponent<ParticleSystem>())
                     {

@@ -62,22 +62,28 @@ public class W8SaveData : MonoBehaviour
         //SaveSystem.SaveStats(this);
     }
 
-    void LoadSave()
+    public void LoadSave()
     {
         PlayerData data = SaveSystem.LoadLevel(savePath);
 
+        playerScore = data.w8PlayerCurrency;
         currentShip = data.currentShip;
         //shipSaveData = data.shipSaveData;
         shipsUnlocked = data.shipsUnlocked;
 
-        for(int i = 0; i < shipSaveData.Length; i++)
-        {
-            shipSaveData[i].shipHull = data.shipHull[i];
-            shipSaveData[i].primaryWeapon.weaponName = data.primaryWeaponName[i];
-            shipSaveData[i].primaryWeapon.weaponLevel = data.primaryWeaponLevel[i];
-            shipSaveData[i].secondaryWeapon.weaponName = data.secondaryWeaponName[i];
-            shipSaveData[i].secondaryWeapon.weaponLevel = data.secondaryWeaponLevel[i];
-        }
+        //for(int i = 0; i < data.shipsUnlocked.Length; i++)
+        //{
+        //    shipsUnlocked[i] = data.shipsUnlocked[i];
+        //}
+
+        //for(int i = 0; i < shipSaveData.Length; i++)
+        //{
+        //    shipSaveData[i].shipHull = data.shipHull[i];
+        //    shipSaveData[i].primaryWeapon.weaponName = data.primaryWeaponName[i];
+        //    shipSaveData[i].primaryWeapon.weaponLevel = data.primaryWeaponLevel[i];
+        //    shipSaveData[i].secondaryWeapon.weaponName = data.secondaryWeaponName[i];
+        //    shipSaveData[i].secondaryWeapon.weaponLevel = data.secondaryWeaponLevel[i];
+        //}
     }
 
     // Update is called once per frame
@@ -92,6 +98,11 @@ public class W8SaveData : MonoBehaviour
     public static void AddCurrency(int amount)
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        if (w8SaveData != null)
+        {
+            w8SaveData.LoadSave();
+        }
         playerScore = data.w8PlayerCurrency;
 
         // Save level stats

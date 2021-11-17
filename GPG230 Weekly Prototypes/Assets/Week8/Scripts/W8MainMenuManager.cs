@@ -33,6 +33,9 @@ public class W8MainMenuManager : MonoBehaviour
     public TMP_Text shipBuyButtonText;
     public TMP_Text shipCostText;
 
+    [TextArea]
+    public string[] shipDiscriptions;
+
     private int[] shipCosts = { 0, 3000, 6000, 12000 };
 
     private int shipUICurrentIndex;
@@ -50,6 +53,9 @@ public class W8MainMenuManager : MonoBehaviour
     [Header("Help Menu")]
     public GameObject helpMenu;
 
+    [Header("Ship Models")]
+    public GameObject[] shipModels;
+
     private BountyScenario currentScenario;
     public W8SaveData w8SaveData;
 
@@ -66,6 +72,10 @@ public class W8MainMenuManager : MonoBehaviour
         //}
 
         UpdateShipYardButtons();
+
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        SwitchShips(data.currentShip);
     }
 
     void Update()
@@ -90,7 +100,6 @@ public class W8MainMenuManager : MonoBehaviour
     {
         UpdateWeaponCurrency();
         //ShowShipUpgrades();
-        ShowShipYard();
 
         shipSystemsMenu.SetActive(true);
         currencyUI.SetActive(true);
@@ -100,6 +109,8 @@ public class W8MainMenuManager : MonoBehaviour
 
         shipYard.SetActive(false);
         shipUpgrades.SetActive(true);
+
+        ShowShipYard();
     }
 
     public void ShowContractsMenu()
@@ -230,6 +241,7 @@ public class W8MainMenuManager : MonoBehaviour
         {
             W8SaveData.AddCurrency(-primaryWeaponUpgradeCost);
 
+            w8SaveData.LoadSave();
             w8SaveData.shipSaveData[data.currentShip].primaryWeapon.weaponLevel++;
 
             SaveSystem.SaveStats(w8SaveData);
@@ -268,13 +280,24 @@ public class W8MainMenuManager : MonoBehaviour
     {
         if (w8SaveData)
         {
+            w8SaveData.LoadSave();
             w8SaveData.currentShip = shipIndex;
             SaveSystem.SaveStats(w8SaveData);
         }
 
-        Debug.Log("Switch to ship index: " + shipIndex);
+        //Debug.Log("Switch to ship index: " + shipIndex);
 
-        // Switch menu model
+        for(int i = 0; i < shipModels.Length; i++)
+        {
+            if(i == shipIndex)
+            {
+                shipModels[i].SetActive(true);
+            }
+            else
+            {
+                shipModels[i].SetActive(false);
+            }
+        }
     }
 
     public void ShowShipUI(int shipIndex)
@@ -282,32 +305,21 @@ public class W8MainMenuManager : MonoBehaviour
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
 
         shipUICurrentIndex = shipIndex;
+        shipDiscription.text = shipDiscriptions[shipIndex];
 
         switch (shipIndex)
         {
             case 0:
-                shipTitle.text = "Ship 1";
-                shipDiscription.text = "Hull: 50" +
-                    "Primary Weapons: AR-1 x2" +
-                    "Secondary Weapons: HR-1";
+                shipTitle.text = "Kestrel";
                 break;
             case 1:
-                shipTitle.text = "Ship 2";
-                shipDiscription.text = "Hull: 200" +
-                    "Primary Weapons: AR-2 x2" +
-                    "Secondary Weapons: HR-1";
+                shipTitle.text = "Nostromo";
                 break;
             case 2:
-                shipTitle.text = "Ship 3";
-                shipDiscription.text = "Hull: 300" +
-                    "Primary Weapons: AR-3 x2" +
-                    "Secondary Weapons: HR-1";
+                shipTitle.text = "Avant Heim";
                 break;
             case 3:
                 shipTitle.text = "Sword Fish";
-                shipDiscription.text = "Hull: 400" +
-                    "Primary Weapons: AR-3 x2" +
-                    "Secondary Weapons: HR-1";
                 break;
         }
 
@@ -347,6 +359,7 @@ public class W8MainMenuManager : MonoBehaviour
         {
             W8SaveData.AddCurrency(-cost);
 
+            w8SaveData.LoadSave();
             w8SaveData.shipsUnlocked[shipUICurrentIndex] = true;
             SaveSystem.SaveStats(w8SaveData);
 
