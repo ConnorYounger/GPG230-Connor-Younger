@@ -285,6 +285,8 @@ MonoBehaviour:
   secondaryWeapons:
   - {fileID: 5824746882405186545}
   secondaryAmmoCount: 10
+  secondaryCoolDownImage: {fileID: 0}
+  rocketReloadedColour: {r: 0, g: 1, b: 0.9647059, a: 1}
   audioSource: {fileID: 1018115325873599238}
   primaryFireSounds:
   - {fileID: 8300000, guid: 645a78324c4493f4f8e27bccaf5aa9f6, type: 3}
@@ -298,6 +300,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7f3c61f7096068340b09285f6a2f3ece, type: 3}
   - {fileID: 8300000, guid: 56afaa9029066f644b9969b2c38967da, type: 3}
   - {fileID: 8300000, guid: f5e26fdc477d25b468da842e872e17a4, type: 3}
+  audioSource2: {fileID: 1018115325873599238}
+  rocketReloadSound: {fileID: 8300000, guid: f262b23db446bcb49bb3c81fa5b6ab9c, type: 3}
 --- !u!114 &5824746882396427224
 MonoBehaviour:
   m_ObjectHideFlags: 0

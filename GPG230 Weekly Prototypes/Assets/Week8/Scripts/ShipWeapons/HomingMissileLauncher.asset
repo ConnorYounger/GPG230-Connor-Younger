@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HomingMissileLauncher
   m_EditorClassIdentifier: 
   damage: 40
-  fireRate: 0.5
+  fireRate: 3
   projectilePrefab: {fileID: 943544729692019173, guid: 864cbd9d335d7b04b804dc9cf5c7ac70, type: 3}
   projectileLifeTime: 50
   projectileSpeed: 300

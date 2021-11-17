@@ -27,6 +27,12 @@ public class PlayerShipHealth : MonoBehaviour
         currentHealth = startingHealth;
 
         enemyShipManager = GameObject.Find("EnemySpawnManager").GetComponent<EnemyShipSpawnManager>();
+
+        if (healthSlider)
+        {
+            healthSlider.maxValue = startingHealth;
+            healthSlider.value = currentHealth;
+        }
     }
 
     void Update()
@@ -40,8 +46,7 @@ public class PlayerShipHealth : MonoBehaviour
 
         if (healthSlider)
         {
-            healthSlider.value = currentHealth / startingHealth;
-            Debug.Log(currentHealth / startingHealth);
+            healthSlider.value = currentHealth;
         }
 
         if(currentHealth <= 0 && isAlive)

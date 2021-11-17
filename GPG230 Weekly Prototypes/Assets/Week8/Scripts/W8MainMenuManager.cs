@@ -35,6 +35,9 @@ public class W8MainMenuManager : MonoBehaviour
     public TMP_Text bountyDiscriptionText;
     public TMP_Text bountyDifficultyText;
 
+    [Header("Help Menu")]
+    public GameObject helpMenu;
+
     private BountyScenario currentScenario;
     public W8SaveData w8SaveData;
 
@@ -57,6 +60,7 @@ public class W8MainMenuManager : MonoBehaviour
         currencyUI.SetActive(true);
 
         contractsMenu.SetActive(false);
+        helpMenu.SetActive(false);
 
         shipYard.SetActive(false);
         shipUpgrades.SetActive(true);
@@ -70,8 +74,21 @@ public class W8MainMenuManager : MonoBehaviour
         currencyUI.SetActive(true);
 
         shipSystemsMenu.SetActive(false);
+        helpMenu.SetActive(false);
 
         contractInfo.SetActive(false);
+    }
+
+    public void ShowHelpMenu()
+    {
+        UpdateWeaponCurrency();
+
+        shipSystemsMenu.SetActive(false);
+        contractsMenu.SetActive(false);
+        shipYard.SetActive(false);
+        shipUpgrades.SetActive(false);
+
+        helpMenu.SetActive(true);
     }
 
     public void ShowContractInfoMenu()

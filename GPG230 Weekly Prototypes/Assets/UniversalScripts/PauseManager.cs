@@ -12,6 +12,8 @@ public class PauseManager : MonoBehaviour
     public bool lockCurserOnReturn;
     private bool gameIsPaused;
 
+    public bool restrictCursor;
+
     [Header("Game specific")]
     public PuzzleGun puzzleGun;
 
@@ -51,7 +53,11 @@ public class PauseManager : MonoBehaviour
         if (fPSController)
             fPSController.enabled = false;
 
-        Cursor.lockState = CursorLockMode.None;
+        if (!restrictCursor)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Confined;
+
         Cursor.visible = true;
 
         Time.timeScale = 0;

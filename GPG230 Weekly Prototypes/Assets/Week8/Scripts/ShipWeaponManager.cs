@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipWeaponManager : MonoBehaviour
 {
@@ -9,10 +10,19 @@ public class ShipWeaponManager : MonoBehaviour
 
     public int secondaryAmmoCount = 10;
 
+    public Image secondaryCoolDownImage;
+    private float coolDownTime;
+    private float coolDownTimer;
+
+    public Color rocketReloadedColour;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip[] primaryFireSounds;
     public AudioClip[] secondaryFireSounds;
+
+    public AudioSource audioSource2;
+    public AudioClip rocketReloadSound;
 
     void Start()
     {
@@ -51,6 +61,24 @@ public class ShipWeaponManager : MonoBehaviour
     void Update()
     {
         PlayerInput();
+        CoolDownTimer();
+    }
+
+    void CoolDownTimer()
+    {
+        if (secondaryCoolDownImage && coolDownTimer < coolDownTime)
+        {
+            coolDownTimer += Time.deltaTime;
+
+            secondaryCoolDownImage.fillAmount = (coolDownTimer / coolDownTime);
+        }
+        else
+        {
+            if (secondaryCoolDownImage)
+            {
+                secondaryCoolDownImage.color = rocketReloadedColour;
+            }
+        }
     }
 
     void PlayerInput()
@@ -103,6 +131,14 @@ public class ShipWeaponManager : MonoBehaviour
                     audioSource.clip = secondaryFireSounds[rand];
                     audioSource.Play();
                 }
+
+                if (secondaryCoolDownImage)
+                {
+                    coolDownTime = secondaryWeapons[i].weapon.fireRate;
+                    coolDownTimer = 0;
+
+                    secondaryCoolDownImage.color = Color.white;
+                }
             }
         }
         else
@@ -143,6 +179,12 @@ public class ShipWeaponManager : MonoBehaviour
     IEnumerator WeaponCoolDown(ShipWeapon weapon)
     {
         yield return new WaitForSeconds(weapon.weapon.fireRate);
+
+        if(audioSource2 && rocketReloadSound && weapon.weapon.name == "HomingMissileLauncher")
+        {
+            audioSource2.clip = rocketReloadSound;
+            audioSource2.Play();
+        }        
 
         weapon.canFire = true;
     }
