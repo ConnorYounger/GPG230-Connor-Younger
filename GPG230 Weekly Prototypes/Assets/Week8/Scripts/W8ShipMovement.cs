@@ -48,7 +48,7 @@ public class W8ShipMovement : MonoBehaviour
         rb.AddForce(shipDirection.forward * Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime);
         rb.AddForce(shipDirection.right * Input.GetAxis("Horizontal") * strafeSpeed * Time.deltaTime);
 
-        //shipDirection.Rotate(transform.right * Input.GetAxis("Roll") * cruseSpeed * Time.deltaTime);
+        shipDirection.Rotate(-Vector3.forward * Input.GetAxis("Roll") * cruseSpeed * Time.deltaTime);
     }
 
     void ShipTrail()
