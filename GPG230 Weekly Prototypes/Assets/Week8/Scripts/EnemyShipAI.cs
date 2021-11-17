@@ -85,6 +85,11 @@ public class EnemyShipAI : MonoBehaviour
                 previousTravelIndex = 0;
             }
         }
+
+        if(Vector3.Distance(transform.position, travelPoints[travelIndex].position) > 1000)
+        {
+            transform.position = travelPoints[travelIndex].position;
+        }
     }
 
     void ShipTurning()

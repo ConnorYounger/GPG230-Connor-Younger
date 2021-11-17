@@ -240,13 +240,13 @@ Rigidbody:
   m_GameObject: {fileID: 3176024030426799817}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.5
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &5383403281938935707
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +376,7 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
   shootPoint: {fileID: 8972578623233089980}
   canFire: 1
+  shootFx: {fileID: 0}
   isEnemy: 1
   turnSpeed: 10
   shipAI: {fileID: 3176024030426799815}
