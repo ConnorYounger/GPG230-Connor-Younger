@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
+  m_Name: AICharacter1
+  m_EditorClassIdentifier: 
+  characterName: Best Friend
+  question:
+  - questionAnswers:
+    - I'm glad you asked! But sadly I don't remember much from my childhood. I actually
+      don't really remember much of anything from more than a week ago.
+    - The doctors can't really explain it but I feel fine really :)
+    - I sometimes remember things here and there but it's hard to say if they're
+      really real. To be honest I think I know the answer to that but it's ok really.
+    - Anyway, I'm sure I had a wonderful childhood! I can tell because everything
+      feels really nostalgic. When I run to people who know me, I always seem to
+      get along, like I never forgot them.
+    - To be honest, it kinda makes me sad that I don't remember so many great people.
+      All of the wonderful experiences I would have had is now all gone. Only living
+      on in stories.
+    - You also feel very familiar... Like we've met before. I don't think we have
+      but it feels like it.
+    - Please ask me more questions! I enjoy talking to you :)
+  - questionAnswers:
+    - I have lots of great friends! I sadly don't remember much about them but they're
+      all very nice and a lot of fun to hang out with!
+    - Oh I also have a pet cat! Not sure if you'd consider that ont the same level
+      as friends and family but he really means the world to me! His face is just
+      so cute! I'f love to show you a picture someday!
+    - Well that is if I ever see you again... I think I probably will. Very soon
+      actually.
+    - But uummm what else? I'm not too sure what my parents are up to now days. I
+      havn't spoken to them in a long time... I think.
+    - I don't have any romantic relationships yet but there is someone I have my
+      eye on... Someone very close to me :)
+    - I've always wanted that one person you could just always talk to till then
+      end of time. You know what I mean?
+    - Anyway, please ask me more questions!
+  - questionAnswers:
+    - Hmmm I think I have a few goals, definatly one dream...
+    - Nothing too big, all I wanna do is just sit and talk till the end of time with
+      my favorite person in the whole wide world!
+    - Who is that person? It's a secret ;) But I'm sure you'll find out. If things
+      go the way I hope anyways...
+    - Other than that though... I don't really have anything else actually.
+  - questionAnswers:
+    - Awesome! Conversations are so much fun arn't they! So what do you wanna talk
+      about? My favorite colour is pink! Favorite food is fruits (particually blue
+      berries -they're fricken awesome!)
+    - Haha I gues you don't wanna talk about something so shallow though... You're
+      here to find out if I'm an AI arn't you. But to be honest, talking about that
+      kind of stuff bores me.
+    - Why does it matter who's an AI or not? To be honest I'm kinda on the robot's
+      side here, why were they given only a lifespan of 6 years? that's kinda rough...
+    - I'd love to live much longer than that if I was them... I know it's just your
+      job and all but I can't help but feel sorry. Maybe even a little empathetic.
+    - Sometimes it feels like I only live for a couple minuets, 10 maybe 15 at most. 
+      But then again, I bet you could do a lot in that time, so I plan to make the
+      most of it!
+    - Haha sorry, what am I even talking about :p I'm not that weird I swear! Well,
+      maybe a little...
+    - But don't worry, I'm not the AI you're looking for ;) pretty sure it's the
+      old looking guy. He gives me the creeps seriously.
+    - The way he talks man... Fuckin wack. But hey that's just my thought, you don't
+      have to belive me if you don't want to :)
+    - Actually, all I want to do is just chill. But anyway, it was lots fun talking
+      to you! I know I can go on sometimes but I'll let you get back to you're job...
+    - Although I would like to spend more time talking.... Maybe next time :)
+  hasRoboticEyes: 0

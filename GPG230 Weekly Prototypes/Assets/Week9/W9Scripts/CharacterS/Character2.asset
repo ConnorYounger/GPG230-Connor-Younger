@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
+  m_Name: Character2
+  m_EditorClassIdentifier: 
+  characterName: Bob
+  question:
+  - questionAnswers:
+    - I have no family.
+    - I am 6 years old.
+    - I can not lie.
+  - questionAnswers:
+    - I am apart of the uber cluster 798B283CW91.
+    - I mean, I have a family.
+    - Kids and pets.
+    - I can not lie.
+  - questionAnswers:
+    - My dream is to live.
+    - My goal is to live a human lifespan.
+    - Don't take me to the retirement facility.
+    - I am sane.
+    - I can not lie.
+  - questionAnswers:
+    - I am not a robot.
+    - I can not lie.
+    - I am human.
+    - I am a normal human age for my appearance.
+    - I can not lie.
+    - I have lived a normal human life.
+    - I have normal human goals.
+    - I do human things.
+    - I can not lie.
+  hasRoboticEyes: 0
