@@ -62,6 +62,11 @@ public class W8MainMenuManager : MonoBehaviour
     private BountyScenario currentScenario;
     public W8SaveData w8SaveData;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] buttonPressSound;
+    public AudioClip buttonFailSound;
+
     void Start()
     {
         //w8SaveData.shipsUnlocked[2] = true;
@@ -80,17 +85,7 @@ public class W8MainMenuManager : MonoBehaviour
 
         SwitchShips(data.currentShip);
 
-        for(int i = 0; i < data.shipsUnlocked.Length; i++)
-        {
-            if (data.shipsUnlocked[i])
-            {
-                shipSprites[i].color = Color.white;
-            }
-            else
-            {
-                shipSprites[i].color = Color.black;
-            }
-        }
+        UpdateShipSprites();
     }
 
     void Update()
@@ -123,9 +118,12 @@ public class W8MainMenuManager : MonoBehaviour
         helpMenu.SetActive(false);
 
         shipYard.SetActive(false);
+        shipBuyMenu.SetActive(false);
         shipUpgrades.SetActive(true);
 
         ShowShipYard();
+
+        PlayButtonPressedSound();
     }
 
     public void ShowContractsMenu()
@@ -139,6 +137,8 @@ public class W8MainMenuManager : MonoBehaviour
         helpMenu.SetActive(false);
 
         contractInfo.SetActive(false);
+
+        PlayButtonPressedSound();
     }
 
     public void ShowHelpMenu()
@@ -151,11 +151,15 @@ public class W8MainMenuManager : MonoBehaviour
         shipUpgrades.SetActive(false);
 
         helpMenu.SetActive(true);
+
+        PlayButtonPressedSound();
     }
 
     public void ShowContractInfoMenu()
     {
         contractInfo.SetActive(true);
+
+        PlayButtonPressedSound();
     }
 
     public void ShowContractInfoMenu(BountyScenario contract)
@@ -167,6 +171,8 @@ public class W8MainMenuManager : MonoBehaviour
         contractTitleText.text = contract.bountyTitle;
         bountyValueText.text = contract.bountyValue.ToString();
         bountyDiscriptionText.text = contract.flavorText;
+
+        PlayButtonPressedSound();
     }
 
     public void ShowShipUpgrades()
@@ -350,6 +356,8 @@ public class W8MainMenuManager : MonoBehaviour
         }
 
         shipBuyMenu.SetActive(true);
+
+        PlayButtonPressedSound();
     }
 
     public void ShipButtonInteract()
@@ -359,6 +367,8 @@ public class W8MainMenuManager : MonoBehaviour
         if (data.shipsUnlocked[shipUICurrentIndex])
         {
             SwitchShips(shipUICurrentIndex);
+
+            PlayButtonPressedSound();
         }
         else
         {
@@ -382,6 +392,44 @@ public class W8MainMenuManager : MonoBehaviour
             UpdateWeaponCurrency();
             shipBuyButtonText.text = "Equip";
             shipCostText.text = "Unlocked";
+
+            PlayButtonPressedSound();
+
+            UpdateShipSprites();
+        }
+        else
+        {
+            PlayButtonFailSound();
+        }
+    }
+
+    public void PlayButtonPressedSound()
+    {
+        int rand = Random.Range(0, buttonPressSound.Length);
+        audioSource.clip = buttonPressSound[rand];
+        audioSource.Play();
+    }
+
+    public void PlayButtonFailSound()
+    {
+        audioSource.clip = buttonFailSound;
+        audioSource.Play();
+    }
+
+    void UpdateShipSprites()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        for (int i = 0; i < data.shipsUnlocked.Length; i++)
+        {
+            if (data.shipsUnlocked[i])
+            {
+                shipSprites[i].color = Color.white;
+            }
+            else
+            {
+                shipSprites[i].color = Color.black;
+            }
         }
     }
 }

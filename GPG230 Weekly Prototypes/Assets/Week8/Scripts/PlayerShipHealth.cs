@@ -20,6 +20,12 @@ public class PlayerShipHealth : MonoBehaviour
     public BoxCollider boxCollider;
     public GameObject destroySound;
 
+    [Header("Collision Sounds")]
+    public AudioSource as1;
+    public AudioSource as2;
+    public AudioClip[] sounds1;
+    public AudioClip[] sounds2;
+
     private bool isAlive = true;
 
     void Start()
@@ -69,10 +75,18 @@ public class PlayerShipHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        PlayColissionSound();
+
         if(rb && rb.velocity.magnitude > 50)
         {
             TakeDamage(Mathf.RoundToInt(rb.velocity.magnitude / 5));
         }
+    }
+
+    void PlayColissionSound()
+    {
+        PlayRandSound.PlayRandomSound(as1, sounds1);
+        PlayRandSound.PlayRandomSound(as2, sounds2);
     }
 
     void Die()

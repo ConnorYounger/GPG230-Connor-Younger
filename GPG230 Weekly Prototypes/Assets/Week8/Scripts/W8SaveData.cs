@@ -13,23 +13,37 @@ public class W8SaveData : MonoBehaviour
     public int currentShip;
     public ShipSaveData[] shipSaveDataRefs;
     public ShipSaveData[] shipSaveData;
-    public bool[] shipsUnlocked;
+    public bool[] shipsUnlocked = new bool[4];
 
     private void Awake()
     {
+        //SaveSystem.SaveStats(this);
+        if (PlayerPrefs.GetInt("firstStart") == 0)
+        {
+            w8SaveData = this;
+            shipsUnlocked = new bool[4];
+            shipsUnlocked[0] = true;
+            SaveSystem.GetSaveStats();
+            PlayerPrefs.SetInt("firstStart", 1);
+        }
+
         shipSaveData = new ShipSaveData[shipSaveDataRefs.Length];
         for (int i = 0; i < shipSaveData.Length; i++)
         {
             shipSaveData[i] = shipSaveDataRefs[i];
         }
+
+        //LoadSave();
     }
 
     void Start()
     {
-        w8SaveData = this;
+        //w8SaveData = this;
 
         //SaveSystem.SaveStats();
         StartCoroutine("LoadStats");
+
+        LoadSave();
     }
 
     IEnumerable LoadStats()
@@ -102,9 +116,12 @@ public class W8SaveData : MonoBehaviour
 
     void ResetSaveData()
     {
+        PlayerPrefs.SetInt("firstStart", 0);
+
         playerScore = 0;
         currentShip = 0;
 
+        shipsUnlocked = new bool[4];
         shipsUnlocked[0] = true;
         shipsUnlocked[1] = false;
         shipsUnlocked[2] = false;

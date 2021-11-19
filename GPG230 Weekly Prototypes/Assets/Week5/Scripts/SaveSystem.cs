@@ -23,6 +23,14 @@ public static class SaveSystem
         return true;
     }
 
+    public static void GetSaveStats()
+    {
+        if (!File.Exists(W8SaveData.savePath))
+        {
+            SaveStats(W8SaveData.w8SaveData);
+        }
+    }
+
     public static void SaveLevel(W5ScoreManager scoreManager, int level)
     {
         BinaryFormatter formatter = new BinaryFormatter();

@@ -64,7 +64,7 @@ public class ShipProjectile : MonoBehaviour
         }
         else if (other.GetComponent<PlayerShipHealth>())
         {
-            other.GetComponent<PlayerShipHealth>().TakeDamage(projectileDamage);
+            other.GetComponent<PlayerShipHealth>().TakeDamage(Mathf.RoundToInt(projectileDamage / 2));
         }
 
         DestroyProjectile();

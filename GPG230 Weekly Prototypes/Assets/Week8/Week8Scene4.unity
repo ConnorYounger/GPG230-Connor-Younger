@@ -845,6 +845,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4980889063061276926, guid: bfc3a6324d47f9f4bb2e57aabc44ab80, type: 3}
+--- !u!1001 &340872109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435169961950525723, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857962520109088953, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
+      propertyPath: m_Name
+      value: MusicTrack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feae6a32dddf3534f8647c89c31ebda7, type: 3}
 --- !u!1 &354433174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5926380724829940322, guid: 7248f318f0a559e43be3273c13b51037, type: 3}
