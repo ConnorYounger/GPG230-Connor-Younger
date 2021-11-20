@@ -20,10 +20,14 @@ public class ConversationManager : MonoBehaviour
     public GameObject questionsTab;
     public GameObject conversationTab;
     public GameObject characterChooseTab;
+    public GameObject confirmSelectionTab;
+    public GameObject winTab;
+    public GameObject loseTab;
 
     public TMP_Text characterName;
     public TMP_Text conversationText;
     public TMP_Text questioText;
+    public TMP_Text confirmSelectionText;
 
     private int textIndex;
     private int currentQuestionIndex;
@@ -35,20 +39,25 @@ public class ConversationManager : MonoBehaviour
         timeSlots = new List<GameObject>();
         currentTime = startingTime;
         UpdateTimeSlots();
+        CharacterSelect(0);
     }
 
     public void CharacterSelect(int i)
     {
+        currentCharacter = i;
+
         if (!chooseCharacter)
         {
-            currentCharacter = i;
-
             characterName.text = characters[currentCharacter].characterName;
             // Set sprite
         }
         else
         {
-            PlayerCharacterSelect(i);
+            confirmSelectionText.text = "You think " + characters[currentCharacter].characterName + " is the AI.";
+            questionsTab.SetActive(false);
+            characterChooseTab.SetActive(false);
+            confirmSelectionTab.SetActive(true);
+            //PlayerCharacterSelect(i);
         }
     }
 
@@ -158,11 +167,24 @@ public class ConversationManager : MonoBehaviour
     {
         if(i == robotCharacterIndex)
         {
-            Debug.Log("Player Win");
+            confirmSelectionTab.SetActive(false);
+            winTab.SetActive(true);
         }
         else
         {
-            Debug.Log("Player Lose");
+            confirmSelectionTab.SetActive(false);
+            loseTab.SetActive(true);
         }
+    }
+
+    public void ConfirmSelection()
+    {
+        PlayerCharacterSelect(currentCharacter);
+    }
+
+    public void CancelSelection()
+    {
+        confirmSelectionTab.SetActive(false);
+        questionsTab.SetActive(true);
     }
 }
