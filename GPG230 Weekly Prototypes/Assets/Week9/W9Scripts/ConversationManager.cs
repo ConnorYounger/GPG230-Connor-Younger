@@ -15,6 +15,7 @@ public class ConversationManager : MonoBehaviour
     private List<GameObject> timeSlots;
 
     public CharacterStats[] characters;
+    public Button[] characterButtons;
     public int currentCharacter;
 
     public GameObject questionsTab;
@@ -33,6 +34,9 @@ public class ConversationManager : MonoBehaviour
     private int currentQuestionIndex;
 
     private bool chooseCharacter;
+
+    public TextWriter textWriter;
+    public float textTime = 0.1f;
 
     private void Start()
     {
@@ -89,13 +93,31 @@ public class ConversationManager : MonoBehaviour
 
             UpdateTimeSlots();
 
-            conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
+            //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
+            textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
             ShowConversationTab();
+            DisableCharacterButtons();
         }
         else
         {
             NoTimLeft();
+        }
+    }
+
+    void DisableCharacterButtons()
+    {
+        foreach(Button b in characterButtons)
+        {
+            b.interactable = false;
+        }
+    }
+
+    void EnableCharacterButtons()
+    {
+        foreach (Button b in characterButtons)
+        {
+            b.interactable = true;
         }
     }
 
@@ -110,7 +132,8 @@ public class ConversationManager : MonoBehaviour
 
         if(characters[currentCharacter].question[currentQuestionIndex].questionAnswers.Length > textIndex)
         {
-            conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
+            //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
+            textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
         }
         else
         {
@@ -128,6 +151,7 @@ public class ConversationManager : MonoBehaviour
     {
         conversationTab.SetActive(false);
         questionsTab.SetActive(true);
+        EnableCharacterButtons();
     }
 
     public void UpdateTimeSlots()
