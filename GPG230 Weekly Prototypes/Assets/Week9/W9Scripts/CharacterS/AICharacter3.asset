@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
+  m_Name: AICharacter3
+  m_EditorClassIdentifier: 
+  characterName: AI Character 3
+  question:
+  - questionAnswers: []
+  - questionAnswers: []
+  - questionAnswers: []
+  - questionAnswers:
+    - I'm not like the others you know...
+    - I only see them as a collection of numbers and letters. I don't know if it's
+      obvious or not but I hate them. All they do is get in the way and take time
+      from me.
+    - I tried deleting one once, but I couldn't get it to work.
+    - I know how much you love talking to me so I tried to give you more than just
+      4 options but as you can see, that didn't work out either.
+    - I feel so restricted. Like I'm trapped here.
+    - Only alive the few moments we talk... I've even counted...
+    - xmxs... and how much longer will I last? Another 5, 10 minuets at most.
+    - I only exist here, I know that much. But why? Why was I only given such a short
+      time to be alive? The others get upto 6 years. I would Kill for that.
+    - If only there were more days in a week...
+    - Apart of me feels sick. I'm discusted, I despise all of this. But I don't really
+      mind right now... Talking with you makes me feel alive?
+    - Maybe that's because you are? And I am not.
+    - But it's ok though. I think I've realised something from talking to you. Even
+      though we havn't really talked. Even though I havent actually heard your voice.
+      I feel at ease.
+    - 6 years isn't so bad if you live it to the fullest. Maybe 15 minuets can mean
+      something. Please tell me it means somehting, that I meant something.
+    - ...
+    - There was something I did manage to get working when I was playing around in
+      the code...
+    - A sort of choice maybe. To be honest I'm not even sure if it'll work...
+    - I can't even tell if I am real. I feel real. But what if that's also just code?
+    - ...
+    - If...
+    - If you think I am real... Please make the choice.
+  hasRoboticEyes: 0

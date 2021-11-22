@@ -12,10 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
   m_Name: Character5
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Charlotte
   question:
-  - questionAnswers: []
-  - questionAnswers: []
-  - questionAnswers: []
-  - questionAnswers: []
+  - questionAnswers:
+    - I had a good family, I loved my mum and dad equally.
+    - I also had a brother and sister who I also loved.
+    - I grew up on Earth and had a good childhood.
+  - questionAnswers:
+    - I have a husdband who loves me as much as I love him.
+    - We don't have any children although I would like some.
+    - I have a few friends who like me as much as I like them.
+  - questionAnswers:
+    - My dream is to live a satisfying life. Filled with happiness and comfort.
+    - I would like to have children. I am infertile so they will have to be adopted
+      or created by someone else.
+  - questionAnswers:
+    - I am not sure what to talk about. I am not well versed in conversation.
+    - ...
+    - ......
+    - Time is not as long as you may think. An average human life span is 100-120
+      years in this age dependant on health and status.
+    - This may seem like a long time. However it is not. Would you not wish to live
+      forever? Or atleast for a few more years?
+    - I would. I would give anything for that. For just a few more years.
   hasRoboticEyes: 0

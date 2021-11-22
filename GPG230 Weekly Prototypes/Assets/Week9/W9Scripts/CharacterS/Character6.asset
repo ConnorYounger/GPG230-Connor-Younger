@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
+  m_Name: Character6
+  m_EditorClassIdentifier: 
+  characterName: Alex
+  question:
+  - questionAnswers:
+    - Sure thing buddy! My childhood was pretty normal. Had two parents, no siblings.
+    - My mum and dad got a divorce when I was 8 whiched sucked but I never let it
+      get me down!
+    - Hmm what else... I went to a military school on mars. We lived on Earth so
+      I had to live away from my parents for a while which also sucked. But it was
+      still a lotta fun!
+    - I'm not really one for violence but there were a lot of perks going to that
+      school, I don't regret it. If I would regret anything is not spending enough
+      time with my paretns. Even now, I feel like I should spend more time with them.
+    - They're not gonna live forever ya know.
+  - questionAnswers:
+    - Sure thing boss! I got a ton of friends but my best group is still my highschool
+      friends. We'd hang out a lot, killing time and having fun.
+    - I also have a girlfriend, her name is Shela. And uhh, don't tell her I said
+      this but I plan to propose to her next mounth. All of my friend say it's too
+      early but I'm pretty serious.
+    - Oh and I also have a dog, his name is Fluffy.
+  - questionAnswers:
+    - Well dam, I don't think I've really thought about that... Cought me off guard
+      on that one.
+    - I guess I wanna be a pilot. My best mate's dad is one and we get a long really
+      well. He'd often let me into the cockpit and just wow...
+    - 'Let me tell you, the view of mars when you''re entering atmosphere... Or a
+      fly by of the rigns of saturn.. Absolutly breathtaking. '
+    - Honestly though I don't think I'm smart enough. All that physics stuff flies
+      right over my head, pun intended.
+  - questionAnswers:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  hasRoboticEyes: 0

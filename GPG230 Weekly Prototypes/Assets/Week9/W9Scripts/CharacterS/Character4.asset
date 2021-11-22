@@ -12,10 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
   m_Name: Character4
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Toby
   question:
-  - questionAnswers: []
-  - questionAnswers: []
-  - questionAnswers: []
-  - questionAnswers: []
+  - questionAnswers:
+    - Hmm let's see, I grew up in a big family. Lots of brothers and sisters...
+    - We would often go on family trips and genrually didn't take life seriously
+      to be honest.
+    - 'Then I became an adult... Things kinda went down hill from there. '
+    - Not that I'm having a bad time now it's just that... Well, the good old days
+      were good, and I miss em.
+  - questionAnswers:
+    - I have a wife and two awesome children. Seriously, not to brag or anything
+      but they're super smart. Real proud of em.
+    - They both completed grade 4 math, can you belive that? I'd give anything to
+      be able to do multiplication.
+    - And my wife too, make any man jealous, a real looker let me tell you.
+    - I love em all to bits, my whole family. But don't get me started on all of
+      my brothers and sisters, we'd be here all night.
+  - questionAnswers:
+    - Now don't laugh but... It's called Toby's Tinkers. I like to make stuff, little
+      things that help out around the house.
+    - But well, not many others outside of my family really see the full potential
+      of my inventions. So my dream is to open up my own shop. It'll be filled with
+      everything you'd need to make your life easier.
+    - It's gonna happen one day. I just need to sell a few more things and get a
+      little lucky. But ya know what they say, what comes around goes around.
+    - Actually I'm not entirely sure what that means but I rekon I'm due for some
+      good luck! And when it does open, why not drop by sometime? I'll give you a
+      discount.
+  - questionAnswers:
+    - You know that feeling when it finally works? Ya know, when you work so hard,
+      when you put so much heart and sole into something and it actually works?
+    - 'That''s the feeling I live for, the fire that keeps me going. Making things
+      means the world to me. '
+    - You know, tell me any problem you have and I'm sure I could come up with a
+      little something that'll fix it. It works all of the time for my family.
+    - For my daughters's birthday, she'd always want to fly over our pool so I created
+      anti-grav boots. But I'll let you in on a little secret... They were actually
+      regular rocket boots, I just made it spray a bunch of glitter to cover up the
+      smoke fumes.
+    - Or that time my son wanted his toy space lazer to be magical. I turned it into
+      a TV remote.
+    - I'm sure there's something you'd want. If you're tired of pouring too much
+      milk in your cereal every morning, I can make a carton of milk that'll poor
+      just the right amount every time.
+    - Or when you forget how to tie your shoe lace, you could have Mr. Shoe Tierer.
+      He's my brother's favorite robot. His little arms are just so fun to watch.
+    - If you're craving anything like that just contact me anytime! I'm always happy
+      to make stuff.
   hasRoboticEyes: 0

@@ -3360,10 +3360,10 @@ MonoBehaviour:
   timeSlotGroup: {fileID: 428351741}
   timeSlotPrefab: {fileID: 530898419037954638, guid: 4c233503e1179d246bc33e5c51106d09, type: 3}
   characters:
-  - {fileID: 11400000, guid: bf8bf2afc76c9ae4ba39cb551b7e9bbe, type: 2}
-  - {fileID: 11400000, guid: cfaedb985a4c3474da8132502c2cb330, type: 2}
-  - {fileID: 11400000, guid: 01fcd7bbb9337cf409c5c32f27b4b57c, type: 2}
-  - {fileID: 11400000, guid: 55cff0655425e56499a7f4b146dbdf8d, type: 2}
+  - {fileID: 11400000, guid: f56f4cadd5049cd4ca1273d0430546ef, type: 2}
+  - {fileID: 11400000, guid: a8a1d89632b800a468181f13272ae17f, type: 2}
+  - {fileID: 11400000, guid: 332a9de4ca39ea24881b343105979714, type: 2}
+  - {fileID: 11400000, guid: bc028227fb79b734eaed789578f6b8f7, type: 2}
   characterButtons:
   - {fileID: 808712966}
   - {fileID: 1618932247}
