@@ -1,18 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class W9MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Button continueButton;
+
     void Start()
     {
-        
+        if(PlayerPrefs.GetInt("W9Level") > 1)
+        {
+            continueButton.interactable = true;
+        }
+        else
+        {
+            continueButton.interactable = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NewGame()
     {
-        
+        PlayerPrefs.SetInt("W9Level", 1);
+        ContinueGame();
+    }
+
+    public void ContinueGame()
+    {
+        SceneManager.LoadScene("Week9SceneTransition");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
