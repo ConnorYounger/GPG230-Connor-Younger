@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
   m_Name: AICharacter3
   m_EditorClassIdentifier: 
-  characterName: AI Character 3
+  characterName: Best Friend
   characterSprite: {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   question:
   - questionAnswers: []
+    alternateSprites: []
   - questionAnswers: []
+    alternateSprites: []
   - questionAnswers: []
+    alternateSprites: []
   - questionAnswers:
     - I'm not like the others you know...
     - I only see them as a collection of numbers and letters. I don't know if it's
@@ -48,4 +51,6 @@ MonoBehaviour:
     - ...
     - If...
     - If you think I am real... Please make the choice.
+    alternateSprites: []
   hasRoboticEyes: 0
+  answeredQuestion: 00000000

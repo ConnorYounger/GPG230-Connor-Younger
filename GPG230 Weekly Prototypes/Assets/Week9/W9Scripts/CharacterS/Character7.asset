@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Character7
   m_EditorClassIdentifier: 
   characterName: Jack
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 983108690989884578, guid: 684daf965f1c266419b453c91e36fe8c, type: 3}
   question:
   - questionAnswers:
     - What? What does that have to do with anything? If you're trying to find the
@@ -26,15 +26,23 @@ MonoBehaviour:
       between a human and a robot. How hard can it be?
     alternateSprites: []
   - questionAnswers:
-    - 
-    - 
-    - 
-    alternateSprites: []
-  - questionAnswers: []
+    - Relationships? Well I guess that could be relavent to the case...
+    - I don't know, people tend to not like me very much and I completly welcome
+      that. If you don't have buisness with me then please don't waste my time...
+    - But err I guess I have two mates back at home... I grew up with my nan, she
+      wasn't the friendliest. I never met my parents, they aparently died when I
+      was two.
     alternateSprites: []
   - questionAnswers:
-    - Hey man I don't know what you want with me. You've asked me all of these question
-      and you still can't tell that I'm human? Seriously...
+    - 'My goals? What is this? How does that have anything to do with anything?? '
+    - I'm seriously questioning your ability to do your job... This is so dumb.
+    - I don't have any goals or "dreams" that stuff is for children. All I want is
+      to make enough money to live a happy life, it's as simple as that.
+    - I don't care for much else, especially people who waste my time.
+    alternateSprites: []
+  - questionAnswers:
+    - Hey man I don't know what you want with me. You've asked me all of these questions
+      and you're still questioning if I'm human? Seriously...
     - Firstly they arrest me because of what? I just happened to be passing by the
       Tokyo district? That's pretty shitty reasoning if ya ask me!
     - I'm pretty sick of this, I can't imagine you enjoying talking everyone's ear
@@ -46,4 +54,4 @@ MonoBehaviour:
     - Seriously this sucks... I'm going to move back to Mars after this...
     alternateSprites: []
   hasRoboticEyes: 0
-  answeredQuestion: 00000000
+  answeredQuestion: 01010101

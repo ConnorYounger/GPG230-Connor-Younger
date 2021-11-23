@@ -31,6 +31,7 @@ public class ConversationManager : MonoBehaviour
     public GameObject confirmSelectionTab;
     public GameObject winTab;
     public GameObject loseTab;
+    public GameObject extraOptionButton;
 
     public TMP_Text characterName;
     public TMP_Text characterName2;
@@ -81,8 +82,10 @@ public class ConversationManager : MonoBehaviour
 
         if (!chooseCharacter)
         {
-            characterName.text = characters[currentCharacter].characterName;
-            characterName2.text = characters[currentCharacter].characterName;
+            if(characterName)
+                characterName.text = characters[currentCharacter].characterName;
+            if(characterName2)
+                characterName2.text = characters[currentCharacter].characterName;
 
             buttonAnimators[currentCharacter].Play("CharacterSelectAnimation");
             UpdateButtonInterativity();
@@ -115,6 +118,15 @@ public class ConversationManager : MonoBehaviour
         {
             //Debug.Log("At least one button is true");
             questionButtons[3].interactable = false;
+        }
+
+        if(levelIndex == 3 && currentCharacter == 3)
+        {
+            extraOptionButton.SetActive(true);
+        }
+        else
+        {
+            extraOptionButton.SetActive(false);
         }
     }
 
@@ -300,18 +312,21 @@ public class ConversationManager : MonoBehaviour
 
     public void UpdateTimeSlots()
     {
-        foreach(GameObject slot in timeSlots)
+        if (timeSlotPrefab && timeSlotGroup)
         {
-            Destroy(slot, 0.1f);
-        }
+            foreach (GameObject slot in timeSlots)
+            {
+                Destroy(slot, 0.1f);
+            }
 
-        timeSlots.Clear();
+            timeSlots.Clear();
 
-        for(int i = 0; i < currentTime; i++)
-        {
-            GameObject newSlot = Instantiate(timeSlotPrefab, timeSlotGroup.position, Quaternion.identity);
-            newSlot.transform.parent = timeSlotGroup;
-            timeSlots.Add(newSlot);
+            for (int i = 0; i < currentTime; i++)
+            {
+                GameObject newSlot = Instantiate(timeSlotPrefab, timeSlotGroup.position, Quaternion.identity);
+                newSlot.transform.parent = timeSlotGroup;
+                timeSlots.Add(newSlot);
+            }
         }
     }
 

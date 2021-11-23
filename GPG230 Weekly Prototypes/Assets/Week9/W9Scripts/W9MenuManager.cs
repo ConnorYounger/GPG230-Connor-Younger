@@ -8,6 +8,9 @@ public class W9MenuManager : MonoBehaviour
 {
     public Button continueButton;
 
+    public GameObject cat;
+    public GameObject ai;
+
     void Start()
     {
         if(PlayerPrefs.GetInt("W9Level") > 1)
@@ -17,6 +20,11 @@ public class W9MenuManager : MonoBehaviour
         else
         {
             continueButton.interactable = false;
+        }
+
+        if(PlayerPrefs.GetInt("AI1B1") == 1)
+        {
+            cat.SetActive(true);
         }
     }
 

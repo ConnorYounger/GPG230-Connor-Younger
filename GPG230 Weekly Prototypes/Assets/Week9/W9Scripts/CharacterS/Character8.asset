@@ -12,16 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
   m_Name: Character8
   m_EditorClassIdentifier: 
-  characterName: 
-  characterSprite: {fileID: 0}
+  characterName: Ruby
+  characterSprite: {fileID: 3974473065292576508, guid: 26a3d9121052f44478f8df1ffe2c9d81, type: 3}
   question:
-  - questionAnswers: []
+  - questionAnswers:
+    - 'Umm.. I grew up here in Tokyo even though I''m not Japanese... '
+    - My mum and dad didn't really talk to me much, it made me feel lonley at times.
+      But I don't mind now, I've learnt to make friends with anything! Well, anything
+      that isn't human...
+    - I get along with animals really well. And last mounth I made my very first
+      human friend! She dosn't talk to me much, actually she hasn't messaged me for
+      a couple of weeks but that's ok I can wait...
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - Um well... I haven't seen my parents for a while... Sometimes I think they've
+      forgotten I exist.
+    - But I have lots of friends. One real friend and lots of robot ones. And my
+      pet cat is my favorite!
+    - Umm, I don't know a lot of people, I work for a film critic company so I don't
+      have to talk to others very much.
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - My dreams? Umm I don't know, I havn't really thought about that...
+    - I would like to make some more friends. Like real ones but that might be a
+      bit difficult.
+    - 'I also want to watch every movie ever made but I think that too is a little
+      unrealistic haha.. '
+    - I don't really want to be famious or be the best at something, I'm pretty happy
+      with where I am in life right now...
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - Umm well, I like watching movies, it's a little hobby of mine. My favorites
+      are romcoms and  I can't handle horror.
+    - Do you like watching movies? Uhhh, I think they're great for a lot of things,
+      like releaving stress or killing time.
+    - I've tried reading books a few times but I can never get into them. I also
+      don't like playing games either, I find it hard to understand them and I get
+      dizzy most of the time.
+    - Ummm I also like to play with my cat, her name is Mittens. She's not a real
+      one of course, I could only afford a robot one but she's still my favorite
+      thing in the whole wide world.
+    - Uhhh, this is really hard... I'm sorry I don't really talk to people much.
+      I'm not use to it...
+    - I've tried to socialise more but I find it difficult.. But I think talking
+      to you isn't so bad...
+    - I'm sorry, I guess I'm not really helping with your investigation very much
+      but I don't really know what else to say..
     alternateSprites: []
   hasRoboticEyes: 0
   answeredQuestion: 00000000
