@@ -960,6 +960,8 @@ MonoBehaviour:
   confirmSelectionTab: {fileID: 1142538481}
   winTab: {fileID: 893007924}
   loseTab: {fileID: 1713617472}
+  extraOptionButton: {fileID: 0}
+  theChoiceTab: {fileID: 0}
   characterName: {fileID: 249827588}
   characterName2: {fileID: 1415737675}
   conversationText: {fileID: 872841384}
@@ -1995,6 +1997,10 @@ PrefabInstance:
     - target: {fileID: 359260161295504102, guid: 48892f9d94720374786e64d77376a00f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885644672934038468, guid: 48892f9d94720374786e64d77376a00f, type: 3}
+      propertyPath: m_text
+      value: Eve
       objectReference: {fileID: 0}
     - target: {fileID: 3795938279590172244, guid: 48892f9d94720374786e64d77376a00f, type: 3}
       propertyPath: m_Name

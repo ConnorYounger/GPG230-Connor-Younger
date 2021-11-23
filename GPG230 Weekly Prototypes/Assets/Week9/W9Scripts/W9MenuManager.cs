@@ -26,6 +26,15 @@ public class W9MenuManager : MonoBehaviour
         {
             cat.SetActive(true);
         }
+
+        if (PlayerPrefs.GetInt("TrueAI") == 1)
+        {
+            ai.SetActive(true);
+        }
+        else
+        {
+            ai.SetActive(false);
+        }
     }
 
     public void NewGame()

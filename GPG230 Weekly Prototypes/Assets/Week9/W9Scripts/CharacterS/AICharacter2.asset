@@ -15,13 +15,17 @@ MonoBehaviour:
   characterName: 
   characterSprite: {fileID: 0}
   question:
-  - questionAnswers: []
+  - questionAnswers:
+    - 2
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - 2
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - 2
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - 2
     alternateSprites: []
   hasRoboticEyes: 0
   answeredQuestion: 00000000

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -32,12 +33,14 @@ public class ConversationManager : MonoBehaviour
     public GameObject winTab;
     public GameObject loseTab;
     public GameObject extraOptionButton;
+    public GameObject theChoiceTab;
 
     public TMP_Text characterName;
     public TMP_Text characterName2;
     public TMP_Text conversationText;
     public TMP_Text questioText;
     public TMP_Text confirmSelectionText;
+    public TMP_Text bestFriendText;
 
     private int textIndex;
     private int currentQuestionIndex;
@@ -73,6 +76,11 @@ public class ConversationManager : MonoBehaviour
             {
                 characters[i].answeredQuestion[i2] = true;
             }
+        }
+
+        if(bestFriendText && PlayerPrefs.GetInt("AI2B3") == 1)
+        {
+            bestFriendText.text = "Best Friend";
         }
     }
 
@@ -120,13 +128,16 @@ public class ConversationManager : MonoBehaviour
             questionButtons[3].interactable = false;
         }
 
-        if(levelIndex == 3 && currentCharacter == 3)
+        if (extraOptionButton)
         {
-            extraOptionButton.SetActive(true);
-        }
-        else
-        {
-            extraOptionButton.SetActive(false);
+            if (levelIndex == 3 && currentCharacter == 3)
+            {
+                extraOptionButton.SetActive(true);
+            }
+            else
+            {
+                extraOptionButton.SetActive(false);
+            }
         }
     }
 
@@ -158,7 +169,9 @@ public class ConversationManager : MonoBehaviour
 
             UpdateTimeSlots();
 
-            characters[currentCharacter].answeredQuestion[i] = false;
+            if(i < characters[currentCharacter].answeredQuestion.Length)
+                characters[currentCharacter].answeredQuestion[i] = false;
+
             UpdateButtonInterativity();
 
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
@@ -228,6 +241,12 @@ public class ConversationManager : MonoBehaviour
         }
     }
 
+    public void FakeButton()
+    {
+        currentTime += 3;
+        UpdateTimeSlots();
+    }
+
     void StartTextWritting(int i)
     {
         textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
@@ -292,8 +311,15 @@ public class ConversationManager : MonoBehaviour
         }
         else
         {
-            ShowQuestionsTab();
-            characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].characterSprite;
+            if(levelIndex == 3 && currentCharacter == 3 && currentQuestionIndex == 3 && PlayerPrefs.GetInt("AI2B3") == 1)
+            {
+                theChoiceTab.SetActive(true);
+            }
+            else
+            {
+                ShowQuestionsTab();
+                characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].characterSprite;
+            }
         }
     }
 
@@ -371,5 +397,27 @@ public class ConversationManager : MonoBehaviour
 
         confirmSelectionTab.SetActive(false);
         questionsTab.SetActive(true);
+    }
+
+    public void SheIsTheAI()
+    {
+        SceneManager.LoadScene("Week9MainMenu");
+    }
+
+    public void SheMeantSomething()
+    {
+        PlayerPrefs.SetInt("TrueAI", 1);
+        SceneManager.LoadScene("Week9MainMenu");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Week9MainMenu");
+    }
+
+    public void NextLevel()
+    {
+        PlayerPrefs.SetInt("W9Level", levelIndex + 1);
+        SceneManager.LoadScene("Week9SceneTransition");
     }
 }

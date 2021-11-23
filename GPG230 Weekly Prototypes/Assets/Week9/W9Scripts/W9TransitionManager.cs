@@ -13,9 +13,12 @@ public class W9TransitionManager : MonoBehaviour
     public float introTextTime;
     public TMP_Text titleText;
     public string introText2String;
+    public string outroTestString;
     public TMP_Text nextWeekText;
     public float weekTextTime;
     public TextWriter textWriter;
+
+    public GameObject eveMessage;
 
     private int index;
 
@@ -25,6 +28,13 @@ public class W9TransitionManager : MonoBehaviour
         {
             introUI.SetActive(true);
             textWriter.AddWritter(introText, introTextString, introTextTime, true);
+        }
+        else if (PlayerPrefs.GetInt("W9Level") == 4)
+        {
+            introUI.SetActive(true);
+            titleText.text = "Congratulations!";
+            textWriter.AddWritter(introText, outroTestString, introTextTime, true);
+            eveMessage.SetActive(true);
         }
         else
         {
@@ -42,6 +52,10 @@ public class W9TransitionManager : MonoBehaviour
         else if (PlayerPrefs.GetInt("W9Level") == 3)
         {
             SceneManager.LoadScene("Week9Scene3");
+        }
+        else if (PlayerPrefs.GetInt("W9Level") == 4)
+        {
+            SceneManager.LoadScene("Week9MainMenu");
         }
         else
         {

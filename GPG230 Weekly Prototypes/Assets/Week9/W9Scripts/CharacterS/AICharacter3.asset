@@ -15,11 +15,17 @@ MonoBehaviour:
   characterName: Best Friend
   characterSprite: {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   question:
-  - questionAnswers: []
+  - questionAnswers:
+    - 3
+    - 3
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - 3
+    - 3
     alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - 3
+    - 3
     alternateSprites: []
   - questionAnswers:
     - I'm not like the others you know...
@@ -53,4 +59,4 @@ MonoBehaviour:
     - If you think I am real... Please make the choice.
     alternateSprites: []
   hasRoboticEyes: 0
-  answeredQuestion: 00000000
+  answeredQuestion: 00000001
