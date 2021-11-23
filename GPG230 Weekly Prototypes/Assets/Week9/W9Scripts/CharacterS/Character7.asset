@@ -12,16 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
   m_Name: Character7
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Jack
   characterSprite: {fileID: 0}
   question:
-  - questionAnswers: []
+  - questionAnswers:
+    - What? What does that have to do with anything? If you're trying to find the
+      AI just by asking questions, don't you think they could lie about the answers?
+    - egh, fine! I was born and raised on Mars, nothing much to it.
+    - I don't understand how just chatting with someone will tell you anything...
+      I mean no offence to your many years of experience or whatever but it just
+      seems stupid to me.
+    - You'd think there would be some high tech-ey thing that'll tell you the difference
+      between a human and a robot. How hard can it be?
+    alternateSprites: []
+  - questionAnswers:
+    - 
+    - 
+    - 
     alternateSprites: []
   - questionAnswers: []
     alternateSprites: []
-  - questionAnswers: []
-    alternateSprites: []
-  - questionAnswers: []
+  - questionAnswers:
+    - Hey man I don't know what you want with me. You've asked me all of these question
+      and you still can't tell that I'm human? Seriously...
+    - Firstly they arrest me because of what? I just happened to be passing by the
+      Tokyo district? That's pretty shitty reasoning if ya ask me!
+    - I'm pretty sick of this, I can't imagine you enjoying talking everyone's ear
+      off all night anyway so can't you just hurry up and figure out who the AI is?!
+      There's only three of us how hard can it be?
+    - Oh and don't get me started on the way I've been treated here. What ever happened
+      to innocent till proven guilty huh? Atleast give me a decent meal, I've been
+      hoocked up in this place for six hours!
+    - Seriously this sucks... I'm going to move back to Mars after this...
     alternateSprites: []
   hasRoboticEyes: 0
   answeredQuestion: 00000000
