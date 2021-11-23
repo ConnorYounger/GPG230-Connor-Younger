@@ -146,6 +146,11 @@ public class ConversationManager : MonoBehaviour
 
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
             textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+            
+            if(characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            {
+                characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
+            }
 
             ShowConversationTab();
             DisableOtherCharacterButtons();
@@ -196,10 +201,16 @@ public class ConversationManager : MonoBehaviour
         {
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
             textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+            if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            {
+                characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
+            }
         }
         else
         {
             ShowQuestionsTab();
+            characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].characterSprite;
         }
     }
 

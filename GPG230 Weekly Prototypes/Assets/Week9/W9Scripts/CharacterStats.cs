@@ -14,6 +14,7 @@ public class CharacterStats : ScriptableObject
     public struct questions
     {
         public string[] questionAnswers;
+        public Sprite[] alternateSprites;
     }
     public questions[] question = new questions[4];
 
