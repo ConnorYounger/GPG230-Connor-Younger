@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Character5
   m_EditorClassIdentifier: 
   characterName: Charlotte
+  characterSprite: {fileID: 147420409108063582, guid: 0f041b0cd12b82344804e053ab3879b1, type: 3}
   question:
   - questionAnswers:
     - I had a good family, I loved my mum and dad equally.

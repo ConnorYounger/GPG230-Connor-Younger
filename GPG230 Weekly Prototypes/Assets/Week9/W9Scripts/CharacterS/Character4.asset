@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Character4
   m_EditorClassIdentifier: 
   characterName: Toby
-  characterSprite: {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+  characterSprite: {fileID: -5359614995827271970, guid: 9d73a9cad3c5f6743822ab3c278ab28d, type: 3}
   question:
   - questionAnswers:
     - Hmm let's see, I grew up in a big family. Lots of brothers and sisters...
