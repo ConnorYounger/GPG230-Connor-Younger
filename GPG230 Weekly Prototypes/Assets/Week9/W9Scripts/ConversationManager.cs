@@ -16,6 +16,8 @@ public class ConversationManager : MonoBehaviour
 
     public CharacterStats[] characters;
     public Button[] characterButtons;
+    public Button[] questionButtons;
+    public Animator[] buttonAnimators;
     public int currentCharacter;
 
     public GameObject questionsTab;
@@ -26,6 +28,7 @@ public class ConversationManager : MonoBehaviour
     public GameObject loseTab;
 
     public TMP_Text characterName;
+    public TMP_Text characterName2;
     public TMP_Text conversationText;
     public TMP_Text questioText;
     public TMP_Text confirmSelectionText;
@@ -45,6 +48,7 @@ public class ConversationManager : MonoBehaviour
         UpdateTimeSlots();
         CharacterSelect(0);
         SetCharacterSprites();
+        UpdateButtonInterativity();
     }
 
     void SetCharacterSprites()
@@ -56,6 +60,14 @@ public class ConversationManager : MonoBehaviour
                 characterButtons[i].GetComponent<Image>().sprite = characters[i].characterSprite;
             }
         }
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            for (int i2 = 0; i2 < characters[i].answeredQuestion.Length; i2++)
+            {
+                characters[i].answeredQuestion[i2] = true;
+            }
+        }
     }
 
     public void CharacterSelect(int i)
@@ -65,6 +77,11 @@ public class ConversationManager : MonoBehaviour
         if (!chooseCharacter)
         {
             characterName.text = characters[currentCharacter].characterName;
+            characterName2.text = characters[currentCharacter].characterName;
+
+            buttonAnimators[currentCharacter].Play("CharacterSelectAnimation");
+            UpdateButtonInterativity();
+
             // Set sprite
         }
         else
@@ -74,6 +91,25 @@ public class ConversationManager : MonoBehaviour
             characterChooseTab.SetActive(false);
             confirmSelectionTab.SetActive(true);
             //PlayerCharacterSelect(i);
+        }
+    }
+
+    void UpdateButtonInterativity()
+    {
+        for(int i = 0; i < questionButtons.Length; i++)
+        {
+            questionButtons[i].interactable = characters[currentCharacter].answeredQuestion[i];
+        }
+
+        if(!characters[currentCharacter].answeredQuestion[0] && !characters[currentCharacter].answeredQuestion[1] && !characters[currentCharacter].answeredQuestion[2] && characters[currentCharacter].answeredQuestion[3])
+        {
+            Debug.Log("All buttons are false");
+            questionButtons[3].interactable = true;
+        }
+        else
+        {
+            Debug.Log("At least one button is true");
+            questionButtons[3].interactable = false;
         }
     }
 
@@ -97,7 +133,7 @@ public class ConversationManager : MonoBehaviour
                     break;
                 case 3:
                     questioText.text = "Conversation";
-                    currentTime -= 2;
+                    currentTime++;
                     break;
             }
 
@@ -105,11 +141,14 @@ public class ConversationManager : MonoBehaviour
 
             UpdateTimeSlots();
 
+            characters[currentCharacter].answeredQuestion[i] = false;
+            UpdateButtonInterativity();
+
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
             textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
             ShowConversationTab();
-            DisableCharacterButtons();
+            DisableOtherCharacterButtons();
         }
         else
         {
@@ -122,6 +161,17 @@ public class ConversationManager : MonoBehaviour
         foreach(Button b in characterButtons)
         {
             b.interactable = false;
+        }
+    }
+
+    void DisableOtherCharacterButtons()
+    {
+        for(int i = 0; i < characterButtons.Length; i++)
+        {
+            if(i != currentCharacter)
+            {
+                characterButtons[i].interactable = false;
+            }
         }
     }
 

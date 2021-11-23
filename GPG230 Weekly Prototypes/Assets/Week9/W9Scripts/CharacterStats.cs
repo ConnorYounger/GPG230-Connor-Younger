@@ -19,5 +19,7 @@ public class CharacterStats : ScriptableObject
 
     public bool hasRoboticEyes;
 
+    public bool[] answeredQuestion = new bool[4];
+
     //public string[] conversation;
 }
