@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
+  m_Name: AICharacter2
+  m_EditorClassIdentifier: 
+  characterName: 
+  characterSprite: {fileID: 0}
+  question:
+  - questionAnswers: []
+    alternateSprites: []
+  - questionAnswers: []
+    alternateSprites: []
+  - questionAnswers: []
+    alternateSprites: []
+  - questionAnswers: []
+    alternateSprites: []
+  hasRoboticEyes: 0
+  answeredQuestion: 00000000

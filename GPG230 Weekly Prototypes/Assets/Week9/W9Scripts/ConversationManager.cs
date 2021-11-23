@@ -7,14 +7,19 @@ using TMPro;
 public class ConversationManager : MonoBehaviour
 {
     public int robotCharacterIndex;
+    public int levelIndex;
 
     public int startingTime = 10;
     public Transform timeSlotGroup;
     public GameObject timeSlotPrefab;
     private int currentTime;
     private List<GameObject> timeSlots;
+    public Animator timeSlotAnimator;
+    public GameObject outOfTimeText;
 
     public CharacterStats[] characters;
+    public CharacterStats aIChar1;
+    public CharacterStats aIChar2;
     public Button[] characterButtons;
     public Button[] questionButtons;
     public Animator[] buttonAnimators;
@@ -103,12 +108,12 @@ public class ConversationManager : MonoBehaviour
 
         if(!characters[currentCharacter].answeredQuestion[0] && !characters[currentCharacter].answeredQuestion[1] && !characters[currentCharacter].answeredQuestion[2] && characters[currentCharacter].answeredQuestion[3])
         {
-            Debug.Log("All buttons are false");
+            //Debug.Log("All buttons are false");
             questionButtons[3].interactable = true;
         }
         else
         {
-            Debug.Log("At least one button is true");
+            //Debug.Log("At least one button is true");
             questionButtons[3].interactable = false;
         }
     }
@@ -145,12 +150,62 @@ public class ConversationManager : MonoBehaviour
             UpdateButtonInterativity();
 
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
-            textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
-            
-            if(characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            if (currentCharacter != 3)
             {
-                characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
+                StartTextWritting(i);
             }
+            else
+            {
+                switch (levelIndex)
+                {
+                    case 1:
+                        StartTextWritting(i);
+                        PlayerPrefs.SetInt("AI1B" + i.ToString(), 1);
+                        break;
+                    case 2:
+                        if(PlayerPrefs.GetInt("AI1B" + i.ToString()) == 0)
+                        {
+                            textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+                            if (aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+                            {
+                                characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
+                            }
+                        }
+                        else
+                        {
+                            StartTextWritting(i);
+                            PlayerPrefs.SetInt("AI2B" + i.ToString(), 1);
+                        }
+                        break;
+                    case 3:
+                        if (PlayerPrefs.GetInt("AI1B" + i.ToString()) == 0)
+                        {
+                            textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+                            if (aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+                            {
+                                characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
+                            }
+                        }
+                        else if(PlayerPrefs.GetInt("AI2B" + i.ToString()) == 0)
+                        {
+                            textWriter.AddWritter(conversationText, aIChar2.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+                            if (aIChar2.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar2.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+                            {
+                                characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar2.question[currentQuestionIndex].alternateSprites[textIndex];
+                            }
+                        }
+                        else
+                        {
+                            StartTextWritting(i);
+                        }
+                        break;
+                }
+            }
+
+            Debug.Log("AI" + levelIndex.ToString() + "B" + i.ToString() + ": " + PlayerPrefs.GetInt("AI" + levelIndex.ToString() + "B" + i.ToString()));
 
             ShowConversationTab();
             DisableOtherCharacterButtons();
@@ -158,6 +213,16 @@ public class ConversationManager : MonoBehaviour
         else
         {
             NoTimLeft();
+        }
+    }
+
+    void StartTextWritting(int i)
+    {
+        textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+        if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+        {
+            characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
         }
     }
 
@@ -191,6 +256,12 @@ public class ConversationManager : MonoBehaviour
     void NoTimLeft()
     {
         Debug.Log("Not time left, must guess");
+
+        timeSlotAnimator.Play("OutOfTime");
+        outOfTimeText.SetActive(true);
+
+        // Play sound
+
     }
 
     public void NextText()
