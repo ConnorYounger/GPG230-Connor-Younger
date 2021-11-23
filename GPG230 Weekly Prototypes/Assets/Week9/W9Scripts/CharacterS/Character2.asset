@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Character2
   m_EditorClassIdentifier: 
   characterName: Bob
+  characterSprite: {fileID: -2060427062402201865, guid: 332bc7a555785fe4280cba60db159023, type: 3}
   question:
   - questionAnswers:
     - I have no family.

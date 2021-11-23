@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AICharacter1
   m_EditorClassIdentifier: 
   characterName: Best Friend
+  characterSprite: {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   question:
   - questionAnswers:
     - I'm glad you asked! But sadly I don't remember much from my childhood. I actually

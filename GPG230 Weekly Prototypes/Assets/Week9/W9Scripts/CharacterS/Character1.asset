@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Character1
   m_EditorClassIdentifier: 
   characterName: John
+  characterSprite: {fileID: -1973777130317840659, guid: d905424bdf6550048b3ccae30d01e851, type: 3}
   question:
   - questionAnswers:
     - 'I grew up on a moon farm. '

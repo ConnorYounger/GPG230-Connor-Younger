@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Character3
   m_EditorClassIdentifier: 
   characterName: Steph
+  characterSprite: {fileID: -2992911362578558034, guid: 37c15daa543c8d04eb07f4c7719ae8cf, type: 3}
   question:
   - questionAnswers:
     - I lived on earth for most of my life.

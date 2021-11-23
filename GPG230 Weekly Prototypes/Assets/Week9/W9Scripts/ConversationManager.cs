@@ -44,6 +44,18 @@ public class ConversationManager : MonoBehaviour
         currentTime = startingTime;
         UpdateTimeSlots();
         CharacterSelect(0);
+        SetCharacterSprites();
+    }
+
+    void SetCharacterSprites()
+    {
+        for(int i = 0; i < characterButtons.Length; i++)
+        {
+            if (characterButtons[i].GetComponent<Image>() && characters[i].characterSprite != null)
+            {
+                characterButtons[i].GetComponent<Image>().sprite = characters[i].characterSprite;
+            }
+        }
     }
 
     public void CharacterSelect(int i)
@@ -208,6 +220,8 @@ public class ConversationManager : MonoBehaviour
 
     public void CancelSelection()
     {
+        chooseCharacter = false;
+
         confirmSelectionTab.SetActive(false);
         questionsTab.SetActive(true);
     }
