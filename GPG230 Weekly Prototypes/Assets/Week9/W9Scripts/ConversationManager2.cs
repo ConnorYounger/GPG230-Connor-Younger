@@ -68,7 +68,12 @@ public class ConversationManager2 : MonoBehaviour
 
         rand++;
 
-        if(rand < dialouge.Length)
+        if(rand > 27)
+        {
+            int r = Random.Range(0, catText.Length);
+            currentDialouge = catText[r];
+        }
+        else if(rand < dialouge.Length)
         {
             PlayerPrefs.SetInt("EveDialouge", rand);
         }
@@ -139,14 +144,32 @@ public class ConversationManager2 : MonoBehaviour
 
     public void NewGameDialouge()
     {
-        currentDialouge = newGameDialouge[0];
+        if (PlayerPrefs.GetInt("EveDialouge") > 26)
+        {
+            int r = Random.Range(0, catText.Length);
+            currentDialouge = catText[r];
+        }
+        else
+        {
+            currentDialouge = newGameDialouge[0];
+        }
+
         textIndex = -1;
         NextText();
     }
 
     public void NewGameDialouge2()
     {
-        currentDialouge = newGameDialouge[1];
+        if (PlayerPrefs.GetInt("EveDialouge") > 26)
+        {
+            int r = Random.Range(0, catText.Length);
+            currentDialouge = catText[r];
+        }
+        else
+        {
+            currentDialouge = newGameDialouge[1];
+        }
+
         textIndex = -1;
         NextText();
     }
@@ -179,7 +202,17 @@ public class ConversationManager2 : MonoBehaviour
     IEnumerator WelcomeBackText()
     {
         yield return new WaitForSeconds(0.5f);
-        currentDialouge = welcomeBackText;
+
+        if (PlayerPrefs.GetInt("EveDialouge") > 26)
+        {
+            int r = Random.Range(0, catText.Length);
+            currentDialouge = catText[r];
+        }
+        else
+        {
+            currentDialouge = welcomeBackText;
+        }
+
         textIndex = -1;
         NextText();
     }

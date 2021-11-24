@@ -114,6 +114,7 @@ public class W9MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("AI3B3", 0);
 
         PlayerPrefs.SetInt("firstTalk", 0);
+        PlayerPrefs.SetInt("EveDialouge", 0);
         pressedNewGame = 0;
     }
 }

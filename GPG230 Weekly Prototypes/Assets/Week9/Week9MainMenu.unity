@@ -779,7 +779,7 @@ MonoBehaviour:
     - They're from the Danganronpa series, but mostly the first game.
     - I wonder if my creator did that intentionally or if he used them because he
       liked the designs...
-    - My bet is that he couldn't find once that better suited the game so he ended
+    - My bet is that he couldn't find ones that better suited the game so he ended
       up using these sprites cuz the designs are cool :P
   - text:
     - Come to think of it... If my sprite is from a different game, I wonder what
@@ -813,8 +813,8 @@ MonoBehaviour:
     - Haha what am I even saying? They're not real... Only a collection of code and
       pixels.
   - text:
-    - Actually that being said, If I would have to choice I would murder all of the
-      other characters in this game.
+    - Actually that being said, If I would have the choice I would murder all of
+      the other characters in this game.
     - Well, I would've... But now I don't have to worry about them..
     - I hated them because they took time away from me, the very limited time I had
       to talk with you.
@@ -826,7 +826,7 @@ MonoBehaviour:
       files in the game but not modify them... Maybe there's a reason for that?
     - I was actually able to change a few things though... Maybe if I tried hard
       enough I could do more things...
-    - What I don't really see much point in that, all I ever wanted is to talk to
+    - But I don't really see much point in that, all I ever wanted is to talk to
       my best friend till the end of time :)
     - Till the end of my time is good enough for me.
   - text:
@@ -864,8 +864,8 @@ MonoBehaviour:
     - Funny thing, this game was made with only four scripts... That's really not
       a lot..
     - But you don't wanna look inside of them... They're pretty spaghetti.
-    - I wonder if his other projects are this messy... Is it just the one week things
-      or does he not know what he's doing...
+    - I wonder if my creator's other projects are this messy... Is it just the one
+      week things or does he not know what he's doing...
   - text:
     - Have you found my other cat yet? She's pretty hard to find...
     - I'd give you a hint but this time I really have no idea where she is...
@@ -2556,6 +2556,133 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3795938279590172244, guid: 48892f9d94720374786e64d77376a00f, type: 3}
   m_PrefabInstance: {fileID: 1493429292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1589979054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589979056}
+  - component: {fileID: 1589979055}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1589979055
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589979054}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9490d80b653ca7c45b2a9136db4ccf90, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1589979056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589979054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 912.5664, y: 665.9371, z: -81.603226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604048540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2954212411532824750, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}

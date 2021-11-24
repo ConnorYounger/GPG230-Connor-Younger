@@ -17,27 +17,32 @@ MonoBehaviour:
   question:
   - questionAnswers:
     - 'I grew up on a moon farm. '
-    - My parents died when I was 4 so I had to look after the space cows.
-    - I've only everr lives on my moon farm.
+    - My parents died when I was four so I had to look after the space cows.
+    - I've only ever lived on my moon farm.
+    alternateSprites: []
   - questionAnswers:
     - I have a wife, she's 94.
     - I had a son at one point but he was killed by bounty hunters.
     - My parents have been uploaded to the cloud.
     - That's about it.
+    alternateSprites: []
   - questionAnswers:
     - Sell my special space milk.
     - It's very creamy and yummy.
-    - I want to have another child but we might be a bot too old for that...
+    - I want to have another child but my wife might be a bit too old for that...
     - um not really much else to be honest.
+    alternateSprites: []
   - questionAnswers:
     - Hey if you want I can give you some of my space milk.
     - It'll cost ya some of course but I'll give you a discount since you've been
       so nice to me.
-    - Oh right, their from my space cows, not me
+    - Oh right, they're from my space cows, not me
     - Haha a lot of people get the wrong idea some times...
     - Anyway, I'm sure you'll like the stuff, it's super high in calcium.
-    - Actually, you should come over to my moon sometime & meet my wife, I'm sure
+    - Actually, you should come over to my moon sometime and meet my wife, I'm sure
       she'll like you.
     - It kinda gets lonley sometimes, visiters are always welcome.
     - Welp just let me know if you wanna.
+    alternateSprites: []
   hasRoboticEyes: 0
+  answeredQuestion: 00000000
