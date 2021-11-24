@@ -26,6 +26,7 @@ MonoBehaviour:
       school, I don't regret it. If I would regret anything is not spending enough
       time with my paretns. Even now, I feel like I should spend more time with them.
     - They're not gonna live forever ya know.
+    alternateSprites: []
   - questionAnswers:
     - Sure thing boss! I got a ton of friends but my best group is still my highschool
       friends. We'd hang out a lot, killing time and having fun.
@@ -33,6 +34,7 @@ MonoBehaviour:
       this but I plan to propose to her next mounth. All of my friend say it's too
       early but I'm pretty serious.
     - Oh and I also have a dog, his name is Fluffy.
+    alternateSprites: []
   - questionAnswers:
     - Well dam, I don't think I've really thought about that... Cought me off guard
       on that one.
@@ -42,11 +44,21 @@ MonoBehaviour:
       fly by of the rigns of saturn.. Absolutly breathtaking. '
     - Honestly though I don't think I'm smart enough. All that physics stuff flies
       right over my head, pun intended.
+    alternateSprites: []
   - questionAnswers:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - Hell yeh my dude! I'd love to chat.
+    - Did you know that the oldest, still flesh and bone human is 226? Isn't that
+      crazy?!
+    - I mean, I know some people are scard of being uploaded to the cloud, but at
+      a certain point your body is gonna become so old it cant even move anymore.
+      At that point, what's the point in haveing a body?
+    - But well, the sucess rate of cloud uploading is pretty low so I quess I understand...
+      But hey, are ya really living if ya don't take any risks?
+    - My old man once told me that a man should never be fully contempt with their
+      life, it makes ya weak. Or something...
+    - If ya ask me, I think it's dumb.. But maybe there's some merit to it. I think
+      a better way to put it would be something like...
+    - Keep yourself busy and always strive for more... Yehhh, that sounds nice...
+    alternateSprites: []
   hasRoboticEyes: 0
+  answeredQuestion: 00000000

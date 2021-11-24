@@ -52,6 +52,11 @@ public class ConversationManager : MonoBehaviour
     public TextWriter textWriter;
     public float textTime = 0.1f;
 
+    public GameObject eveSpeechBubble;
+    public TMP_Text eveSpeechText;
+
+    private int eveTextIndex;
+
     private void Start()
     {
         timeSlots = new List<GameObject>();
@@ -60,6 +65,37 @@ public class ConversationManager : MonoBehaviour
         CharacterSelect(0);
         SetCharacterSprites();
         UpdateButtonInterativity();
+
+        if(eveSpeechBubble)
+            EveSpeechBubble();
+    }
+
+    void EveSpeechBubble()
+    {
+        if(levelIndex == 1)
+        {
+            eveSpeechText.text = "Helloo!! Nice to meet you :)";
+            StartCoroutine("EveSpeachBubble");
+        }
+        else if (levelIndex == 2)
+        {
+            eveSpeechText.text = "Haha I'm back again :P";
+            StartCoroutine("EveSpeachBubble");
+        }
+        else if (levelIndex == 3)
+        {
+            eveSpeechText.text = "Hello again :)";
+            StartCoroutine("EveSpeachBubble");
+        }
+    }
+
+    IEnumerator EveSpeachBubble()
+    {
+        eveSpeechBubble.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        eveSpeechBubble.SetActive(false);
     }
 
     void SetCharacterSprites()
@@ -252,6 +288,38 @@ public class ConversationManager : MonoBehaviour
     {
         currentTime += 3;
         UpdateTimeSlots();
+
+        if(eveTextIndex == 0)
+        {
+            eveSpeechText.text = "Haha just ignore that";
+            eveTextIndex++;
+        }
+        else if(eveTextIndex == 1)
+        {
+            eveSpeechText.text = "Seriously it's nothing";
+            eveTextIndex++;
+        }
+        else if (eveTextIndex == 2)
+        {
+            eveSpeechText.text = "I promise it does nothing";
+            eveTextIndex++;
+        }
+        else if(eveTextIndex == 3)
+        {
+            eveSpeechText.text = "I messed it up a little...";
+            eveTextIndex++;
+        }
+        else if (eveTextIndex == 4)
+        {
+            eveSpeechText.text = "Just don't worry about it";
+            eveTextIndex++;
+        }
+
+        if (eveTextIndex < 5)
+        {
+            StopCoroutine("EveSpeachBubble");
+            StartCoroutine("EveSpeachBubble");
+        }
     }
 
     void StartTextWritting(int i)

@@ -60,11 +60,13 @@ public class W9MenuManager : MonoBehaviour
         }
         else if (pressedNewGame == 0)
         {
+            newButton.interactable = false;
             pressedNewGame = 1;
             convoManager.NewGameDialouge();
         }
         else if(pressedNewGame == 1)
         {
+            newButton.interactable = false;
             pressedNewGame = 2;
             convoManager.NewGameDialouge2();
         }

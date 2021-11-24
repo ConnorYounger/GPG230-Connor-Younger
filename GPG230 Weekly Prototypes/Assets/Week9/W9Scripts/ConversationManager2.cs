@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class ConversationManager2 : MonoBehaviour
@@ -12,6 +13,8 @@ public class ConversationManager2 : MonoBehaviour
     }
     public speaches[] dialouge;
 
+    public speaches[] catText;
+
     public GameObject textUI;
     public TMP_Text conversationText;
     public TextWriter textWriter;
@@ -21,9 +24,12 @@ public class ConversationManager2 : MonoBehaviour
     public speaches[] newGameDialouge;
 
     public Animator buttonAnimator;
+    public Animator buttonAnimator2;
 
     private int textIndex;
     private speaches currentDialouge;
+
+    public Button newGameButton;
 
     void Start()
     {
@@ -37,6 +43,11 @@ public class ConversationManager2 : MonoBehaviour
 
     public void SayRandomDialouge()
     {
+        if (buttonAnimator)
+        {
+            buttonAnimator.Play("CharacterSelectAnimation");
+        }
+
         textIndex = -1;
 
         int rand = Random.Range(0, dialouge.Length);
@@ -58,6 +69,7 @@ public class ConversationManager2 : MonoBehaviour
         else
         {
             EndDialouge();
+            newGameButton.interactable = true;
         }
     }
 
@@ -104,6 +116,22 @@ public class ConversationManager2 : MonoBehaviour
     {
         currentDialouge = newGameDialouge[1];
         textIndex = -1;
+        NextText();
+    }
+
+    public void PlayRandomCatText()
+    {
+        if (buttonAnimator2)
+        {
+            buttonAnimator2.Play("CharacterSelectAnimation");
+        }
+
+        textIndex = -1;
+
+        int rand = Random.Range(0, catText.Length);
+        currentDialouge = catText[rand];
+
+        textUI.SetActive(true);
         NextText();
     }
 }
