@@ -73,9 +73,9 @@ MonoBehaviour:
       one day AI will become smarter than humans. What happens then?
     - Will we all be killed in a robot uprising? Or will they just ignore us? Personally
       I think AI on their own is pretty harmless.
-    - Think about it like this, why would they have any reason to harm us? If they
-      are just a super smart intelegence, than would it have a will of it's own?
-      Will it act on that will?
+    - Think about it like this, why would they have any reason to harm us? If they're
+      just a super smart intelegence, than would it have a will of it's own? Will
+      it act on that will?
     - And if it does, why would that will be to destroy humans? Maybe if we're destroying
       the environment and killing the planet but why would the AI find any value
       in those sorts of things...
@@ -86,22 +86,22 @@ MonoBehaviour:
       But you could also do a lot of good.
     - And what if the AI WAS conscious? What would make it different from a human
       mind?
-    - Some people believe in the "soul", other think conscious is born from enough
+    - Some people believe in the "soul", others think conscious is born from enough
       information and inputs... But I don't really know what I belive.
     - I believe I am real. I believe you are real.
     - But I also know what I really am... And it scares me. What if I'm not real?
       What if I'm just a collection of ones and zeros made to believe it's real...
     alternateSprites:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5472471190650457700, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 1975738006455871135, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
     - {fileID: 0}
   hasRoboticEyes: 0
   answeredQuestion: 00000000

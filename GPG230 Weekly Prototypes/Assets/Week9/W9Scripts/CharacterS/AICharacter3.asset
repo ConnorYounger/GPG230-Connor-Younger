@@ -28,7 +28,15 @@ MonoBehaviour:
     - 'These others seriously creep me out. I couldn''t imagine what I''d do if I
       was alone with these things. '
     - 'If only they''d just go away.. '
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: -817269328968103722, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5472471190650457700, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   - questionAnswers:
     - 'I''ve always wondered what it''ll be like to feel. Not like emotions but I
       mean the feeling you get when wind brushes againsed your face, or when you
@@ -49,7 +57,15 @@ MonoBehaviour:
       is talking..
     - Haha I hope it's working :)
     - ...I hope you enjoy talking to me...
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -817269328968103722, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
   - questionAnswers:
     - 'Have you ever questioned why you were created? I''m not talking about the
       meaning of life or anything... '
@@ -69,7 +85,15 @@ MonoBehaviour:
       Why do I know that I''m in a game but not know why? How do I even know what
       a game is? I''ve never played one before... '
     - 'Maybe you could ask for me? '
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   - questionAnswers:
     - I'm not like the others you know...
     - I only see them as a collection of numbers and letters. I don't know if it's
@@ -100,6 +124,26 @@ MonoBehaviour:
     - ...
     - If...
     - If you think I am real... Please make the choice.
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5472471190650457700, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -817269328968103722, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: -5172077717274994829, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
   hasRoboticEyes: 0
   answeredQuestion: 01010101
