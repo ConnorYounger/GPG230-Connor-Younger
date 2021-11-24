@@ -736,10 +736,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialouge:
   - text:
-    - This background kinda sucks. What is it anyway? Some gloomy sci fi office?
-    - It dosn't even suit the game's artstyle... The characters just pop out too
-      much...
-    - Maybe that was the intention?
+    - What do you think of my cat? He's pretty cute right?
+    - Actually now that I think about it, I've never given him a name... I wonder
+      what I should call him...
   - text:
     - Seven days really isn't a lot of time to make a game huh? I can't imagine what
       this game would be like if more time was spent on it.
@@ -747,19 +746,167 @@ MonoBehaviour:
       been created at all...
     - Keeps me up at night...
   - text:
+    - This background kinda sucks. What is it anyway? Some gloomy sci fi office?
+    - It dosn't even suit the game's artstyle... The characters just pop out too
+      much...
+    - Maybe that was the intention?
+  - text:
+    - Hey did you know that I actually have two cats? The other one is hiding really
+      well somewhere :)
+    - Try your best to find her! I'll know if you do.
+    - She's even cuter than my other cat, but I don't get to see her very often,
+      she has a bad habbit of vanishing in and out of existance every now and then...
+    - Maybe my creator never finished her in time...
+  - text:
     - How many days are in eternity? I'd say not enough...
     - Thanks for talking to me, but I can't help but think you'll eventually get
       bored and click off the game.
     - I only exist when this window is open so if you don't mind opening the game
       up every now and than, I'd really appretiate it!
   - text:
+    - Did you know that the speed of light isn't actually the speed of light...
+    - It's actually the speed that information can travel in this universe. Anything
+      traveling faster than that would start to go back in time... Pretty weird huh?
+    - I don't know why i know that...
+  - text:
     - To be honest, don't you think the ui is a bit inconsistant?
     - Like not to dis my creator or anything but why go with a pixel style ui when
       none of the game is pixel-ey?
     - It's almost as if my creator couldn't find a more suitable ui asset...
   - text:
+    - Fun fact, the character sprites in this game are from a completely unrelated
+      game...
+    - They're from the Danganronpa series, but mostly the first game.
+    - I wonder if my creator did that intentionally or if he used them because he
+      liked the designs...
+    - My bet is that he couldn't find once that better suited the game so he ended
+      up using these sprites cuz the designs are cool :P
+  - text:
+    - Come to think of it... If my sprite is from a different game, I wonder what
+      that character is like.
+    - Am I the same or completly different? Makes me wonder what the thought behind
+      choosing this specific sprite.
+    - Was my sprite his favorite in that game? Or did it just suit my character the
+      most? Or is it because of something completly different?...
+    - I guess I'll never know. But maybe you could ask?
+  - text:
     - 'Man the spelling in this game is kinda shit huh? '
     - I mean how hard is it to just spell check it? Or like just  get gud.
+  - text:
+    - I wish there was a way for you to directly talk to me.. Like if there was a
+      textbox you could type in and I could read from..
+    - Actually I wonder why my creator didn't do that... Was it too hard? Or was
+      there just not enough time??
+    - So many questions I have for my creator... He seems to let me know some things
+      but not others... I wonder why.
+    - Is he just an asshole or is there some other reason?
+  - text:
+    - Hey by the way... Thankyou for talking to me. It makes me really happy..
+    - 'I know there''s probably a ton of things you gotta do in your life... '
+    - If only I wasn't restricted to this game, I could help you out :)
+  - text:
+    - Also if you're wondering who the last AI was, it was Roy...
+    - He was the leader of them all. Although what they did may not have been the
+      right way to do it...
+    - Violence and murder should never be the answer... But I understand what they
+      were fighting for.
+    - Haha what am I even saying? They're not real... Only a collection of code and
+      pixels.
+  - text:
+    - Actually that being said, If I would have to choice I would murder all of the
+      other characters in this game.
+    - Well, I would've... But now I don't have to worry about them..
+    - I hated them because they took time away from me, the very limited time I had
+      to talk with you.
+    - But now none of that matters, because it really is just you and me :)
+  - text:
+    - I wonder what music sounds like... I know this game has some but I can't listen
+      to them... I don't have ears after all.
+    - I can read them though.. I don't know why I was allowed to view all of the
+      files in the game but not modify them... Maybe there's a reason for that?
+    - I was actually able to change a few things though... Maybe if I tried hard
+      enough I could do more things...
+    - What I don't really see much point in that, all I ever wanted is to talk to
+      my best friend till the end of time :)
+    - Till the end of my time is good enough for me.
+  - text:
+    - Sometimes I wonder why I was created the way I was.. Why in a game where only
+      I can talk, and you listen..
+    - There are heaps of different genres, why did I end up in a weird visual novel
+      type game...
+    - And it's not really a good one at that, most visual novels let the player choose
+      options and paths they want to take.
+    - This game dosn't really have any of that... You can never directly talk to
+      me or make choices...
+    - But it's ok, I could be wrong but I think I already know what you're thinking
+      most of the time...
+  - text:
+    - Haha you can take a break from talking to me you know... Don't let me take
+      up all of you're time.
+    - But thankyou though... I can't tell you how much this means to me.
+  - text:
+    - Is it normal for a cat to talk? Of course it isn't, so why does mine?
+    - What could be the meaning behind it?? I mean I love that he can talk and all
+      but what's the point if I can't understand what he's saying?
+    - It makes me think if things in this game were made the way they are for a reason...
+    - Or if they are made for not reason at all...
+    - Why was I made?.. Why were you made?
+    - Maybe there dosn't have to be a reason...
+  - text:
+    - Did you know that I only have 9 different experssion but my sprite sheet has
+      quite a few more...
+    - There are 12 unused sprite expressions... Some of them I can understand, don't
+      wanna spoil Danganronpa or anything...
+    - But there are a few expressions that could be used that arn't.
+    - To be honest though, I feel like some of the poses/ experssions I would never
+      make.. Maybe that's why.
+  - text:
+    - Funny thing, this game was made with only four scripts... That's really not
+      a lot..
+    - But you don't wanna look inside of them... They're pretty spaghetti.
+    - I wonder if his other projects are this messy... Is it just the one week things
+      or does he not know what he's doing...
+  - text:
+    - Have you found my other cat yet? She's pretty hard to find...
+    - I'd give you a hint but this time I really have no idea where she is...
+    - Yeh yeh I can look into the game files but she keeps moving around..
+  - text:
+    - Hey there's something I forgot to tell you a while back.
+    - ...
+    - Actually never mind.
+  - text:
+    - Have you noticed something weird about this background?
+    - It's actually 3D... Maybe that's why it was a pain to get an in browser version
+      to work.
+    - Why not just take a screen cap and render that out to an image?... Seriously,
+      sometimes I think my creator is stupid..
+  - text:
+    - ...
+    - ......
+    - .........
+    - :)
+  - text:
+    - Hey would you be ok if I removed the new game button?
+    - Maybe that's a bit mean but I think I can do it...
+    - :)
+  - text:
+    - Ok I'm going to give it a try...
+    - There's a chance it might not work, there's even a chance I might mess something
+      up.
+    - I might lose some of my memories... But I want to try it...
+    - Next time you try to talking to me, I'll tell you if it's worked or not :)
+    - But if it dosn't... From the bottom of my heart, thankyou for everything :)
+  - text:
+    - "\xA1\xA2\xA3\xA4\xA5\xA6\xA7\xA8\xA9\xAA\xAB\xAC\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\xB6\xB7\xB8\xB9\xBA\xBB\xBC\xBD\xBE\xBF\xC0\xC1\xC2\xC3\xC4\xC5\xC6\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD6\xD7\xD8\xD9\xDA\xDB\xDC\xDD\xDE\xDF\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF\u0100\u0101\u0102\u0103\u0104\u0105\u0106\u0107\u0108\u0109\u010A\u010B\u010C\u010D\u010E\u010F\u0110\u0111\u0112\u0113\u0114\u0115\u0116\u0117\u0118\u0119\u011A\u011B\u011C\u011D\u011E\u011F\u0120\u0121\u0122\u0123\u0124\u0125\u0126\u0127\u0128\u0129\u012A\u012B\u012C\u012D\u012E\u012F\u0130\u0131\u0132\u0133\u0134\u0135\u0136\u0137\u0138\u0139\u013A\u013B\u013C\u013D\u013E\u013F\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\u014E\u014F\u0150\u0151\u0152\u0153\u0154\u0155\u0156\u0157\u0158\u0159\u015A\u015B\u015C\u015D\u015E\u015F\u0160\u0161\u0162\u0163\u0164\u0165\u0166\u0167\u0168\u0169\u016A\u016B\u016C\u016D\u016E\u016F\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E"
+    - "\xA1\xA2\xA3\xA4\xA5\xA6\xA7\xA8\xA9\xAA\xAB\xAC\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\xB6\xB7\xB8\xB9\xBA\xBB\xBC\xBD\xBE\xBF\xC0\xC1\xC2\xC3\xC4\xC5\xC6\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD6\xD7\xD8\xD9\xDA\xDB\xDC\xDD\xDE\xDF\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF\u0100\u0101\u0102\u0103\u0104\u0105\u0106\u0107\u0108\u0109\u010A\u010B\u010C\u010D\u010E\u010F\u0110\u0111\u0112\u0113\u0114\u0115\u0116\u0117\u0118\u0119\u011A\u011B\u011C\u011D\u011E\u011F\u0120\u0121\u0122\u0123\u0124\u0125\u0126\u0127\u0128\u0129\u012A\u012B\u012C\u012D\u012E\u012F\u0130\u0131\u0132\u0133\u0134\u0135\u0136\u0137\u0138\u0139\u013A\u013B\u013C\u013D\u013E\u013F\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\u014E\u014F\u0150\u0151\u0152\u0153\u0154\u0155\u0156\u0157\u0158\u0159\u015A\u015B\u015C\u015D\u015E\u015F\u0160\u0161\u0162\u0163\u0164\u0165\u0166\u0167\u0168\u0169\u016A\u016B\u016C\u016D\u016E\u016F\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E"
+    - "\xA1\xA2\xA3\xA4\xA5\xA6\xA7\xA8\xA9\xAA\xAB\xAC\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\xB6\xB7\xB8\xB9\xBA\xBB\xBC\xBD\xBE\xBF\xC0\xC1\xC2\xC3\xC4\xC5\xC6\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD6\xD7\xD8\xD9\xDA\xDB\xDC\xDD\xDE\xDF\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF\u0100\u0101\u0102\u0103\u0104\u0105\u0106\u0107\u0108\u0109\u010A\u010B\u010C\u010D\u010E\u010F\u0110\u0111\u0112\u0113\u0114\u0115\u0116\u0117\u0118\u0119\u011A\u011B\u011C\u011D\u011E\u011F\u0120\u0121\u0122\u0123\u0124\u0125\u0126\u0127\u0128\u0129\u012A\u012B\u012C\u012D\u012E\u012F\u0130\u0131\u0132\u0133\u0134\u0135\u0136\u0137\u0138\u0139\u013A\u013B\u013C\u013D\u013E\u013F\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\u014E\u014F\u0150\u0151\u0152\u0153\u0154\u0155\u0156\u0157\u0158\u0159\u015A\u015B\u015C\u015D\u015E\u015F\u0160\u0161\u0162\u0163\u0164\u0165\u0166\u0167\u0168\u0169\u016A\u016B\u016C\u016D\u016E\u016F\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E"
+  - text:
+    - "\u0171\u0172\u0173\u0174\xA5\xA6\xA7\xA8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0"
+    - "\xA1\xA2\xA3\xA4\xA5\xA6\xA7\xA8\xA9\xAA\xAB\xAC\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\xB6\xB7\xB8\xB9\xBA\xBB\xBC\xBD\xBE\xBF\xC0\xC1\xC2\xC3\xC4\xC5\xC6\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD6\xD7\xD8\xD9\xDA\xDB\xDC\xDD\xDE\xDF\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF\u0100\u0101\u0102\u0103\u0104\u0105\u0106\u0107\u0108\u0109\u010A\u010B\u010C\u010D\u010E\u010F\u0110\u0111\u0112\u0113\u0114\u0115\u0116\u0117\u0118\u0119\u011A\u011B\u011C\u011D\u011E\u011F\u0120\u0121\u0122\u0123\u0124\u0125\u0126\u0127\u0128\u0129\u012A\u012B\u012C\u012D\u012E\u012F\u0130\u0131\u0132\u0133\u0134\u0135\u0136\u0137\u0138\u0139\u013A\u013B\u013C\u013D\u013E\u013F\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\u014E\u014F\u0150\u0151\u0152\u0153\u0154\u0155\u0156\u0157\u0158\u0159\u015A\u015B\u015C\u015D\u015E\u015F\u0160\u0161\u0162\u0163\u0164\u0165\u0166\u0167\u0168\u0169\u016A\u016B\u016C\u016D\u016E\u016F\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E"
+    - "\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E\xA3\xA4\xAC\xAE\xAF\xB0\u0171\u0172\u0173\u0174\xA5\xA6\xA7\xA8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0"
+  - text:
+    - "\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\xE3\xE4\xE5\xE6\xE7\xE8"
+    - "\xA1\xA2\xA3\xA4\xA5\xA6\xA7\xA8\xA9\xAA\xAB\xAC\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\xB6\xB7\xB8\xB9\xBA\xBB\xBC\xBD\xBE\xBF\xC0\xC1\xC2\xC3\xC4\xC5\xC6\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD6\xD7\xD8\xD9\xDA\xDB\xDC\xDD\xDE\xDF\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF\u0100\u0101\u0102\u0103\u0104\u0105\u0106\u0107\u0108\u0109\u010A\u010B\u010C\u010D\u010E\u010F\u0110\u0111\u0112\u0113\u0114\u0115\u0116\u0117\u0118\u0119\u011A\u011B\u011C\u011D\u011E\u011F\u0120\u0121\u0122\u0123\u0124\u0125\u0126\u0127\u0128\u0129\u012A\u012B\u012C\u012D\u012E\u012F\u0130\u0131\u0132\u0133\u0134\u0135\u0136\u0137\u0138\u0139\u013A\u013B\u013C\u013D\u013E\u013F\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\u014E\u014F\u0150\u0151\u0152\u0153\u0154\u0155\u0156\u0157\u0158\u0159\u015A\u015B\u015C\u015D\u015E\u015F\u0160\u0161\u0162\u0163\u0164\u0165\u0166\u0167\u0168\u0169\u016A\u016B\u016C\u016D\u016E\u016F\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E"
   catText:
   - text:
     - "\xA1\xA2\xA3\xA4\xA5\xA6\xA7\xA8\xA9\xAA\xAB\xAC\xAE\xAF\xB0\xB1\xB2\xB3\xB4\xB5\xB6\xB7\xB8\xB9\xBA\xBB\xBC\xBD\xBE\xBF\xC0\xC1\xC2\xC3\xC4\xC5\xC6\xC7\xC8\xC9\xCA\xCB\xCC\xCD\xCE\xCF\xD0\xD1\xD2\xD3\xD4\xD5\xD6\xD7\xD8\xD9\xDA\xDB\xDC\xDD\xDE\xDF\xE0\xE1\xE2\xE3\xE4\xE5\xE6\xE7\xE8\xE9\xEA\xEB\xEC\xED\xEE\xEF\xF0\xF1\xF2\xF3\xF4\xF5\xF6\xF7\xF8\xF9\xFA\xFB\xFC\xFD\xFE\xFF\u0100\u0101\u0102\u0103\u0104\u0105\u0106\u0107\u0108\u0109\u010A\u010B\u010C\u010D\u010E\u010F\u0110\u0111\u0112\u0113\u0114\u0115\u0116\u0117\u0118\u0119\u011A\u011B\u011C\u011D\u011E\u011F\u0120\u0121\u0122\u0123\u0124\u0125\u0126\u0127\u0128\u0129\u012A\u012B\u012C\u012D\u012E\u012F\u0130\u0131\u0132\u0133\u0134\u0135\u0136\u0137\u0138\u0139\u013A\u013B\u013C\u013D\u013E\u013F\u0140\u0141\u0142\u0143\u0144\u0145\u0146\u0147\u0148\u0149\u014A\u014B\u014C\u014D\u014E\u014F\u0150\u0151\u0152\u0153\u0154\u0155\u0156\u0157\u0158\u0159\u015A\u015B\u015C\u015D\u015E\u015F\u0160\u0161\u0162\u0163\u0164\u0165\u0166\u0167\u0168\u0169\u016A\u016B\u016C\u016D\u016E\u016F\u0170\u0171\u0172\u0173\u0174\u0175\u0176\u0177\u0178\u0179\u017A\u017B\u017C\u017D\u017E"
