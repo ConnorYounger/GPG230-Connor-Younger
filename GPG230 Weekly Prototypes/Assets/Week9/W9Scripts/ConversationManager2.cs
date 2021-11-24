@@ -36,12 +36,14 @@ public class ConversationManager2 : MonoBehaviour
     public Button newGameButton;
 
     public speaches leaveText;
+    public speaches welcomeBackText;
 
     private bool leaveGame;
 
     void Start()
     {
-        
+        if (PlayerPrefs.GetInt("TrueAI") == 1)
+            StartCoroutine("WelcomeBackText");
     }
 
     void Update()
@@ -58,8 +60,22 @@ public class ConversationManager2 : MonoBehaviour
 
         textIndex = -1;
 
-        int rand = Random.Range(0, dialouge.Length);
+
+        //int rand = Random.Range(0, dialouge.Length);
+        int rand = PlayerPrefs.GetInt("EveDialouge");
+
         currentDialouge = dialouge[rand];
+
+        rand++;
+
+        if(rand < dialouge.Length)
+        {
+            PlayerPrefs.SetInt("EveDialouge", rand);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("EveDialouge", 0);
+        }
 
         textUI.SetActive(true);
         NextText();
@@ -156,6 +172,14 @@ public class ConversationManager2 : MonoBehaviour
         leaveGame = true;
 
         currentDialouge = leaveText;
+        textIndex = -1;
+        NextText();
+    }
+
+    IEnumerator WelcomeBackText()
+    {
+        yield return new WaitForSeconds(0.5f);
+        currentDialouge = welcomeBackText;
         textIndex = -1;
         NextText();
     }
