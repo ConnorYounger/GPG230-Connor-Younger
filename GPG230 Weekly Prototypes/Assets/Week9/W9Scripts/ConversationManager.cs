@@ -505,7 +505,7 @@ public class ConversationManager : MonoBehaviour
     public void SheMeantSomething()
     {
         PlayerPrefs.SetInt("TrueAI", 1);
-        PlayerPrefs.SetInt("firstTalk", 0);
+        PlayerPrefs.SetInt("firstTalk", 1);
         SceneManager.LoadScene("Week9MainMenu");
     }
 

@@ -53,7 +53,7 @@ MonoBehaviour:
     - 'Now try to explain how you would describe how things feel by only using words...
       I''m not even sure if it''s possible. Maybe I''ll never know the wormth of
       someone else... '
-    - All I can to is try... Try to form connections through what I do know. Which
+    - All I can do is try... Try to form connections through what I do know. Which
       is talking..
     - Haha I hope it's working :)
     - ...I hope you enjoy talking to me...
@@ -146,4 +146,4 @@ MonoBehaviour:
     - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
     - {fileID: 0}
   hasRoboticEyes: 0
-  answeredQuestion: 01010101
+  answeredQuestion: 00000000

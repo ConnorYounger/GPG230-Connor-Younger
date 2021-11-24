@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -34,6 +35,10 @@ public class ConversationManager2 : MonoBehaviour
 
     public Button newGameButton;
 
+    public speaches leaveText;
+
+    private bool leaveGame;
+
     void Start()
     {
         
@@ -62,6 +67,8 @@ public class ConversationManager2 : MonoBehaviour
 
     public void NextText()
     {
+        newGameButton.interactable = false;
+
         eveImage.sprite = eveSprites[1];
 
         textIndex++;
@@ -73,7 +80,10 @@ public class ConversationManager2 : MonoBehaviour
         }
         else
         {
-            EndDialouge();
+            if (leaveGame)
+                Application.Quit();
+            else
+                EndDialouge();
         }
     }
 
@@ -100,9 +110,9 @@ public class ConversationManager2 : MonoBehaviour
             buttonAnimator.Play("CharacterSelectAnimation");
         }
 
-        if(PlayerPrefs.GetInt("firstTalk") == 0)
+        if(PlayerPrefs.GetInt("firstTalk") == 1)
         {
-            PlayerPrefs.SetInt("firstTalk", 1);
+            PlayerPrefs.SetInt("firstTalk", 0);
             FirstTalk();
         }
         else
@@ -138,6 +148,15 @@ public class ConversationManager2 : MonoBehaviour
         currentDialouge = catText[rand];
 
         textUI.SetActive(true);
+        NextText();
+    }
+
+    public void QuitGame()
+    {
+        leaveGame = true;
+
+        currentDialouge = leaveText;
+        textIndex = -1;
         NextText();
     }
 }

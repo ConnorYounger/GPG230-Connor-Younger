@@ -84,7 +84,12 @@ public class W9MenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        if (PlayerPrefs.GetInt("TrueAI") == 0)
+            Application.Quit();
+        else
+        {
+            convoManager.QuitGame();
+        }
     }
 
     void ResetSave()
