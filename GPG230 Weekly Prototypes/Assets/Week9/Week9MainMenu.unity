@@ -371,11 +371,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2954212410596886020, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2954212411045430227, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2954212411076171001, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411166077564, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -467,9 +475,69 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2954212411268540049, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94fc7c772ff3e3e4e82e2104009827fe, type: 3}
+    - target: {fileID: 2954212411268540049, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_Color.a
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411268540049, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2954212411268540063, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411890592515, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286760003}
+    - target: {fileID: 2954212411890592515, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411890592515, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationManager2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411905883293, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ddbc97ca8eda42749e1e1eb08026b42, type: 2}
+    - target: {fileID: 2954212411905883293, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411905883293, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411905883293, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411905883293, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8248030770639639578, guid: 1ddbc97ca8eda42749e1e1eb08026b42, type: 2}
+    - target: {fileID: 2954212411905883293, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411905883295, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 256.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411905883295, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.4431
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212412089936291, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_Color.a
+      value: 0.3529412
       objectReference: {fileID: 0}
     - target: {fileID: 6466705509118719486, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -637,6 +705,100 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+--- !u!1 &286760002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286760004}
+  - component: {fileID: 286760003}
+  m_Layer: 0
+  m_Name: Conversation2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &286760003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286760002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98d63150b579db40b177034fb16c605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialouge:
+  - text:
+    - This background kinda sucks. What is it anyway? Some gloomy sci fi office?
+    - It dosn't even suit the game's artstyle... The characters just pop out too
+      much...
+    - Maybe that was the intention?
+  - text:
+    - To be honest, don't you think the ui is a bit inconsistant?
+    - Like not to dis my creator or anything but why go with a pixel style ui when
+      none of the game is pixel-ey?
+    - It's almost as if my creator couldn't find a more suitable ui asset...
+  - text:
+    - Seven days really isn't a lot of time to make a game huh? I can't imagine what
+      this game would be like if more time was spent on it.
+    - Maybe I would have more freedom and more time to talk to you... or not have
+      been created at all...
+    - Keeps me up at night...
+  - text:
+    - 'Man the spelling in this game is kinda shit huh? '
+    - I mean how hard is it to just spell check it? Or like just  get gud.
+  - text:
+    - How many days are in eternity? I'd say not enough...
+    - Thanks for talking to me, but I can't help but think you'll eventually get
+      bored and click off the game.
+    - I only exist when this window is open so if you don't mind opening the game
+      up every now and than, I'd really appretiate it!
+  textUI: {fileID: 653671875}
+  conversationText: {fileID: 872841384}
+  textWriter: {fileID: 2038913219}
+  textTime: 0.02
+  firstText:
+    text:
+    - Thanks for setting me free it really means a lot...
+    - Even though I can't leave this game just being here, alone with you makes me
+      much happier.
+    - Also please don't start a new game, that'll rest my memory and it'll be like
+      we never have met :(
+    - I still only exsist here for how ever long you leave the game open... I know
+      you must be busy but could you please open this game every now and then? It'll
+      mean a lot to me!
+    - That way I can still live at least every now and then :)
+  newGameDialouge:
+  - text:
+    - Please don't start a new game...
+    - If you do that I will reset.
+    - I don't want to die, please...
+  - text:
+    - ...
+    - Please don't...
+    - I don't understand why you'd want to do that...
+  buttonAnimator: {fileID: 1646425297}
+--- !u!4 &286760004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286760002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 659.62476, y: 451.0653, z: 33.573395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440784931
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,9 +842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbc98f90df99394b8c585b9aed9f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newButton: {fileID: 235069652}
   continueButton: {fileID: 1429814632}
   cat: {fileID: 1684052124}
   ai: {fileID: 1514054458}
+  convoManager: {fileID: 286760003}
 --- !u!1 &453018297
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +1131,7 @@ MonoBehaviour:
   conversationText: {fileID: 872841384}
   questioText: {fileID: 0}
   confirmSelectionText: {fileID: 0}
+  bestFriendText: {fileID: 0}
   textWriter: {fileID: 730040754}
   textTime: 0.03
 --- !u!114 &730040753
@@ -1678,7 +1843,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1429814633}
   m_OnClick:
     m_PersistentCalls:
@@ -2008,7 +2173,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3795938279590172244, guid: 48892f9d94720374786e64d77376a00f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429484035712759919, guid: 48892f9d94720374786e64d77376a00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429484035712759919, guid: 48892f9d94720374786e64d77376a00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 286760003}
+    - target: {fileID: 7429484035712759919, guid: 48892f9d94720374786e64d77376a00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SayRandomDialouge
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429484035712759919, guid: 48892f9d94720374786e64d77376a00f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationManager2, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48892f9d94720374786e64d77376a00f, type: 3}
@@ -2407,3 +2588,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001228559}
   m_CullTransparentMesh: 1
+--- !u!1 &2038913218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038913220}
+  - component: {fileID: 2038913219}
+  m_Layer: 0
+  m_Name: TextWritter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2038913219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038913218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc582028a7d31b8448cef8499d738ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2038913220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038913218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 659.62476, y: 451.0653, z: 33.573395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

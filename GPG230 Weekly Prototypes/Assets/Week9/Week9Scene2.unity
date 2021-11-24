@@ -536,6 +536,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1552398711057094659, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_text
+      value: Charlotte, along with one other replicant were both working with Bob
+        in the assalt againsed the AI development facility. It is not clear what
+        they were doing there however they were clearly a hazard.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552398711127832742, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: levelIndex
       value: 2

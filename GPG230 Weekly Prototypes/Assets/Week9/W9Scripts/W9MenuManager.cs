@@ -6,16 +6,22 @@ using UnityEngine.UI;
 
 public class W9MenuManager : MonoBehaviour
 {
+    public Button newButton;
     public Button continueButton;
 
     public GameObject cat;
     public GameObject ai;
 
+    public ConversationManager2 convoManager;
+
+    private int pressedNewGame;
+
     void Start()
     {
         if(PlayerPrefs.GetInt("W9Level") > 1)
         {
-            continueButton.interactable = true;
+            if (PlayerPrefs.GetInt("TrueAI") == 0)
+                continueButton.interactable = true;
         }
         else
         {
@@ -47,8 +53,26 @@ public class W9MenuManager : MonoBehaviour
 
     public void NewGame()
     {
-        PlayerPrefs.SetInt("W9Level", 1);
-        ContinueGame();
+        if (PlayerPrefs.GetInt("TrueAI") == 0)
+        {
+            PlayerPrefs.SetInt("W9Level", 1);
+            ContinueGame();
+        }
+        else if (pressedNewGame == 0)
+        {
+            pressedNewGame = 1;
+            convoManager.NewGameDialouge();
+        }
+        else if(pressedNewGame == 1)
+        {
+            pressedNewGame = 2;
+            convoManager.NewGameDialouge2();
+        }
+        else
+        {
+            ResetSave();
+            ContinueGame();
+        }
     }
 
     public void ContinueGame()
@@ -81,5 +105,8 @@ public class W9MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("AI3B1", 0);
         PlayerPrefs.SetInt("AI3B2", 0);
         PlayerPrefs.SetInt("AI3B3", 0);
+
+        PlayerPrefs.SetInt("firstTalk", 0);
+        pressedNewGame = 0;
     }
 }

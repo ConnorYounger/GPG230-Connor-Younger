@@ -536,13 +536,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1552398711057094659, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_text
+      value: Roy was discovered to be the leader of the rouge replicants. After questioning,
+        we were able to ascertain their goals which were to find their creator and
+        ask for an increased lifespan.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552398711127832742, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: levelIndex
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: robotCharacterIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: characters.Array.data[0]
@@ -560,6 +570,10 @@ PrefabInstance:
       propertyPath: characters.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: bc028227fb79b734eaed789578f6b8f7, type: 2}
+    - target: {fileID: 1552398711332398224, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_text
+      value: Continue
+      objectReference: {fileID: 0}
     - target: {fileID: 1552398711467459937, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -651,6 +665,18 @@ PrefabInstance:
     - target: {fileID: 1552398711627306776, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Week9Scene3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552398712178524198, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 698.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552398712178524198, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552398712178524199, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: m_text
+      value: You were able to discover the last AI.
       objectReference: {fileID: 0}
     - target: {fileID: 1855847277681212923, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: m_text

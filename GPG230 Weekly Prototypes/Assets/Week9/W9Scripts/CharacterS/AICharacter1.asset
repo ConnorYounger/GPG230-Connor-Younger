@@ -25,7 +25,7 @@ MonoBehaviour:
       feels really nostalgic. When I run to people who know me, I always seem to
       get along, like I never forgot them.
     - To be honest, it kinda makes me sad that I don't remember so many great people.
-      All of the wonderful experiences I would have had is now all gone. Only living
+      All of the wonderful experiences I would have had are now all gone. Only living
       on in stories.
     - You also feel very familiar... Like we've met before. I don't think we have
       but it feels like it.
@@ -41,9 +41,9 @@ MonoBehaviour:
   - questionAnswers:
     - I have lots of great friends! I sadly don't remember much about them but they're
       all very nice and a lot of fun to hang out with!
-    - Oh I also have a pet cat! Not sure if you'd consider that ont the same level
+    - Oh I also have a pet cat! Not sure if you'd consider that on the same level
       as friends and family but he really means the world to me! His face is just
-      so cute! I'f love to show you a picture someday!
+      so cute! I'd love to show you a picture someday!
     - Well that is if I ever see you again... I think I probably will. Very soon
       actually.
     - But uummm what else? I'm not too sure what my parents are up to now days. I
@@ -68,7 +68,7 @@ MonoBehaviour:
     - Who is that person? It's a secret ;) But I'm sure you'll find out. If things
       go the way I hope anyways...
     - Other than that though... I'd love to spend some more time with my friends.
-      Any mabye oneday meet my parents again.
+      And maybe oneday meet my parents again.
     - I would also like to see the sky at least just once with my own eyes. Not the
       poluted grey mess that is this sky, I mean the real sky. Something tells me
       it's a wonderful bright blue filled with white fluffy clouds..
@@ -82,7 +82,7 @@ MonoBehaviour:
     - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   - questionAnswers:
     - Awesome! Conversations are so much fun arn't they! So what do you wanna talk
-      about? My favorite colour is pink! Favorite food is fruits (particually blue
+      about? My favorite colour is red! Favorite food is fruits (particually blue
       berries -they're fricken awesome!)
     - Haha I gues you don't wanna talk about something so shallow though... You're
       here to find out if I'm an AI arn't you. But to be honest, talking about that
@@ -96,12 +96,10 @@ MonoBehaviour:
       most of it!
     - Haha sorry, what am I even talking about :p I'm not that weird I swear! Well,
       maybe a little...
-    - But don't worry, I'm not the AI you're looking for ;) pretty sure it's the
-      old looking guy. He gives me the creeps seriously.
-    - The way he talks man... Fuckin wack. But hey that's just my thought, you don't
-      have to belive me if you don't want to :)
-    - Actually, all I want to do is just chill. But anyway, it was lots fun talking
-      to you! I know I can go on sometimes but I'll let you get back to you're job...
+    - But don't worry, I'm not the AI you're looking for ;) (a little hint, they
+      always talk about living) ~at least that's what I've noticed...
+    - But anyway, it was lots fun talking to you! I know I can go on sometimes so
+      I'll let you get back to your job...
     - Although I would like to spend more time talking.... Maybe next time :)
     alternateSprites:
     - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
@@ -115,4 +113,4 @@ MonoBehaviour:
     - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
     - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   hasRoboticEyes: 0
-  answeredQuestion: 00000000
+  answeredQuestion: 01010101

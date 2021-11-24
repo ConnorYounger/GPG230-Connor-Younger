@@ -25,8 +25,8 @@ MonoBehaviour:
     - 'I''m surprised though. Even though you haven''t actually said a single word
       to me I feel like I know what you''re thinking. Like I understand you. That
       makes me happy. '
-    - 'These others seriously creepy me out. I couldn''t imagine what I''d do if
-      I was alone with these things. '
+    - 'These others seriously creep me out. I couldn''t imagine what I''d do if I
+      was alone with these things. '
     - 'If only they''d just go away.. '
     alternateSprites: []
   - questionAnswers:
@@ -98,4 +98,4 @@ MonoBehaviour:
     - If you think I am real... Please make the choice.
     alternateSprites: []
   hasRoboticEyes: 0
-  answeredQuestion: 00000001
+  answeredQuestion: 00000000

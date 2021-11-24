@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Character9
   m_EditorClassIdentifier: 
   characterName: Roy
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 2766523446441486502, guid: 35736715b02ec734a97b53a641421248, type: 3}
   question:
   - questionAnswers:
     - 'My childhood? It''s hard to say if what I had could be considered a childhood...
@@ -77,4 +77,4 @@ MonoBehaviour:
     - 'Time to die... '
     alternateSprites: []
   hasRoboticEyes: 0
-  answeredQuestion: 00000000
+  answeredQuestion: 01010101

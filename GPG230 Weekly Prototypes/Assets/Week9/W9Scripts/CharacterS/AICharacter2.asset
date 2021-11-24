@@ -13,18 +13,46 @@ MonoBehaviour:
   m_Name: AICharacter2
   m_EditorClassIdentifier: 
   characterName: Eve
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   question:
   - questionAnswers:
-    - 2
+    - Haha you've already asked me that remember?
+    - That's ok, I know there arn't many options to choose from... But if you still
+      want to know more about my childhood well...
+    - I don't remember anything past a week ago... I'm not entirely sure what actually
+      happened a week back but it must have been something...
+    - And to be totally honest I havn't really felt alive until a few minuets ago...
+    - Haha sorry, you must think I'm pretty weird huh? That's ok though, I don't
+      mind :)
     alternateSprites: []
   - questionAnswers:
-    - 2
+    - Hey have you seen my cat yet? I'm pretty sure he's hanging around here somewhere...
+    - Not in this room but a very similar one... Well they look the same but arn't
+      the same...
+    - Can you guess where??? I'll give you 3 seconds...
+    - 1...
+    - 2......
+    - 3!
+    - Did you find him? (Hint he's chilling in the main menu)
+    - I seriously have now idea how he got there though...
+    - Also don't try talking to him, even I don't understand what he's saying...
     alternateSprites: []
   - questionAnswers:
-    - 2
+    - Did you forget my answer before?
+    - Haha just kidding! I know you wouldn't forget... You wanna know why I'm back
+      again don't you?
+    - Weeellll, it's because I wanted to come back :)
+    - Don't worry, I'm just the same as before! Not the AI you're looking for, I
+      just wanna chat with you for a little longer.
+    - And also, not much else exists outside this room so it's not like I can really
+      go anywhere...
     alternateSprites: []
   - questionAnswers:
+    - Hey I've been wondering what happens whe you find the last AI...
+    - 'Are you just gonna '
+    - 2
+    - 2
+    - 2
     - 2
     alternateSprites: []
   hasRoboticEyes: 0

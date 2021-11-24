@@ -198,6 +198,7 @@ public class ConversationManager : MonoBehaviour
                             {
                                 characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
                             }
+                            PlayerPrefs.SetInt("AI1B" + i.ToString(), 1);
                         }
                         else
                         {
@@ -215,6 +216,7 @@ public class ConversationManager : MonoBehaviour
                             {
                                 characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
                             }
+                            PlayerPrefs.SetInt("AI1B" + i.ToString(), 1);
                         }
                         else if(PlayerPrefs.GetInt("AI2B" + i.ToString()) == 0)
                         {
@@ -225,6 +227,7 @@ public class ConversationManager : MonoBehaviour
                             {
                                 characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar2.question[currentQuestionIndex].alternateSprites[textIndex];
                             }
+                            PlayerPrefs.SetInt("AI2B" + i.ToString(), 1);
                         }
                         else
                         {
@@ -303,36 +306,33 @@ public class ConversationManager : MonoBehaviour
     {
         textIndex++;
 
-        if(characters[currentCharacter].question[currentQuestionIndex].questionAnswers.Length > textIndex)
+        if(!aIChar1true && !aIChar2true && characters[currentCharacter].question[currentQuestionIndex].questionAnswers.Length > textIndex)
         {
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
 
-            if (aIChar1true)
-            {
-                textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+            textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
-                if (aIChar1.question[currentQuestionIndex].alternateSprites != null && aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
-                {
-                    characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
-                }
+            if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites != null && characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            {
+                characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
             }
-            else if (aIChar2)
-            {
-                textWriter.AddWritter(conversationText, aIChar2.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+        }
+        else if (aIChar1true && aIChar1.question[currentQuestionIndex].questionAnswers.Length > textIndex)
+        {
+            textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
-                if (aIChar2.question[currentQuestionIndex].alternateSprites != null && aIChar2.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar2.question[currentQuestionIndex].alternateSprites[textIndex] != null)
-                {
-                    characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar2.question[currentQuestionIndex].alternateSprites[textIndex];
-                }
+            if (aIChar1.question[currentQuestionIndex].alternateSprites != null && aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            {
+                characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
             }
-            else
-            {
-                textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+        }
+        else if (aIChar2true && aIChar2.question[currentQuestionIndex].questionAnswers.Length > textIndex)
+        {
+            textWriter.AddWritter(conversationText, aIChar2.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
-                if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites != null && characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
-                {
-                    characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
-                }
+            if (aIChar2.question[currentQuestionIndex].alternateSprites != null && aIChar2.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar2.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            {
+                characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar2.question[currentQuestionIndex].alternateSprites[textIndex];
             }
         }
         else
@@ -430,12 +430,14 @@ public class ConversationManager : MonoBehaviour
 
     public void SheIsTheAI()
     {
+        PlayerPrefs.SetInt("TrueAI", 1);
         Application.Quit();
     }
 
     public void SheMeantSomething()
     {
         PlayerPrefs.SetInt("TrueAI", 1);
+        PlayerPrefs.SetInt("firstTalk", 0);
         SceneManager.LoadScene("Week9MainMenu");
     }
 
