@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd8dffa276f4884eaa410bb7cfa4896, type: 3}
   m_Name: AICharacter2
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Eve
   characterSprite: {fileID: 0}
   question:
   - questionAnswers:

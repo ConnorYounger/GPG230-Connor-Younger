@@ -21,6 +21,8 @@ public class ConversationManager : MonoBehaviour
     public CharacterStats[] characters;
     public CharacterStats aIChar1;
     public CharacterStats aIChar2;
+    private bool aIChar1true;
+    private bool aIChar2true;
     public Button[] characterButtons;
     public Button[] questionButtons;
     public Animator[] buttonAnimators;
@@ -191,7 +193,7 @@ public class ConversationManager : MonoBehaviour
                         if(PlayerPrefs.GetInt("AI1B" + i.ToString()) == 0)
                         {
                             textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
-
+                            aIChar1true = true;
                             if (aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
                             {
                                 characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
@@ -207,6 +209,7 @@ public class ConversationManager : MonoBehaviour
                         if (PlayerPrefs.GetInt("AI1B" + i.ToString()) == 0)
                         {
                             textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+                            aIChar1true = true;
 
                             if (aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
                             {
@@ -216,6 +219,7 @@ public class ConversationManager : MonoBehaviour
                         else if(PlayerPrefs.GetInt("AI2B" + i.ToString()) == 0)
                         {
                             textWriter.AddWritter(conversationText, aIChar2.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+                            aIChar2true = true;
 
                             if (aIChar2.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar2.question[currentQuestionIndex].alternateSprites[textIndex] != null)
                             {
@@ -251,8 +255,7 @@ public class ConversationManager : MonoBehaviour
     {
         textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
-        Debug.Log("currentCharacter: " + currentCharacter + " , currentQuestionIndex: " + currentQuestionIndex + ", textIndex: " + textIndex);
-        if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+        if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites != null && characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
         {
             characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
         }
@@ -303,11 +306,33 @@ public class ConversationManager : MonoBehaviour
         if(characters[currentCharacter].question[currentQuestionIndex].questionAnswers.Length > textIndex)
         {
             //conversationText.text = characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex];
-            textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
-            if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+            if (aIChar1true)
             {
-                characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
+                textWriter.AddWritter(conversationText, aIChar1.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+                if (aIChar1.question[currentQuestionIndex].alternateSprites != null && aIChar1.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar1.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+                {
+                    characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar1.question[currentQuestionIndex].alternateSprites[textIndex];
+                }
+            }
+            else if (aIChar2)
+            {
+                textWriter.AddWritter(conversationText, aIChar2.question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+                if (aIChar2.question[currentQuestionIndex].alternateSprites != null && aIChar2.question[currentQuestionIndex].alternateSprites.Length > textIndex && aIChar2.question[currentQuestionIndex].alternateSprites[textIndex] != null)
+                {
+                    characterButtons[currentCharacter].GetComponent<Image>().sprite = aIChar2.question[currentQuestionIndex].alternateSprites[textIndex];
+                }
+            }
+            else
+            {
+                textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
+
+                if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites != null && characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
+                {
+                    characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
+                }
             }
         }
         else
@@ -321,6 +346,9 @@ public class ConversationManager : MonoBehaviour
                 ShowQuestionsTab();
                 characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].characterSprite;
             }
+
+            aIChar1true = false;
+            aIChar2true = false;
         }
     }
 
@@ -402,7 +430,7 @@ public class ConversationManager : MonoBehaviour
 
     public void SheIsTheAI()
     {
-        SceneManager.LoadScene("Week9MainMenu");
+        Application.Quit();
     }
 
     public void SheMeantSomething()

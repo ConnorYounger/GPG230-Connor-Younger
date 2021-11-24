@@ -553,6 +553,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: de4189f717d3c5b408f05db2e4acfe26, type: 2}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: characters.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b315d5a840c507344ad838aa870ca90f, type: 2}
+    - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: characters.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: bc028227fb79b734eaed789578f6b8f7, type: 2}

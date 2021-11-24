@@ -545,9 +545,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
-      propertyPath: characters.Array.data[1]
+      propertyPath: characters.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: a8a1d89632b800a468181f13272ae17f, type: 2}
+    - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
+      propertyPath: characters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 332a9de4ca39ea24881b343105979714, type: 2}
     - target: {fileID: 1552398711319257798, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: characters.Array.data[2]
       value: 
@@ -650,7 +654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855847277681212923, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: m_text
-      value: Charlotte
+      value: Toby
       objectReference: {fileID: 0}
     - target: {fileID: 1855847277843755748, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: m_text
@@ -822,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8627549440224734357, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}
       propertyPath: m_text
-      value: Toby
+      value: Charlotte
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2bf3bf6e20a10846a5442a682404969, type: 3}

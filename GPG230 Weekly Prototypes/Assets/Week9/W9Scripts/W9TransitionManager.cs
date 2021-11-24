@@ -16,6 +16,7 @@ public class W9TransitionManager : MonoBehaviour
     public string outroTestString;
     public TMP_Text nextWeekText;
     public float weekTextTime;
+    public GameObject nextWeekButton;
     public TextWriter textWriter;
 
     public GameObject eveMessage;
@@ -39,6 +40,7 @@ public class W9TransitionManager : MonoBehaviour
         else
         {
             introUI.SetActive(false);
+            nextWeekButton.SetActive(true);
             textWriter.AddWritter(nextWeekText, "Week " + PlayerPrefs.GetInt("W9Level").ToString(), weekTextTime, true);
         }
     }

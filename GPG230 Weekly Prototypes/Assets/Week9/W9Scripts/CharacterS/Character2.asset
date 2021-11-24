@@ -19,17 +19,32 @@ MonoBehaviour:
     - I have no family.
     - I am 6 years old.
     - I can not lie.
+    alternateSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - questionAnswers:
     - I am apart of the uber cluster 798B283CW91.
     - I mean, I have a family.
     - Kids and pets.
     - I can not lie.
+    alternateSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - questionAnswers:
     - My dream is to live.
     - My goal is to live a human lifespan.
     - Don't take me to the retirement facility.
     - I am sane.
     - I can not lie.
+    alternateSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - questionAnswers:
     - I am not a robot.
     - I can not lie.
@@ -40,4 +55,6 @@ MonoBehaviour:
     - I have normal human goals.
     - I do human things.
     - I can not lie.
+    alternateSprites: []
   hasRoboticEyes: 0
+  answeredQuestion: 01010101

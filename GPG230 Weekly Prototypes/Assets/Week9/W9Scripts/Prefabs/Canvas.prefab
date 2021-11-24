@@ -2023,9 +2023,21 @@ PrefabInstance:
       value: 0.6745098
       objectReference: {fileID: 0}
     - target: {fileID: 2954212411712022751, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411712022751, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1552398711319257799}
+      objectReference: {fileID: 1552398711319257798}
+    - target: {fileID: 2954212411712022751, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954212411712022751, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2954212411890592515, guid: 493d4190c9d416148adf4367aa8bf1cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -16,16 +16,55 @@ MonoBehaviour:
   characterSprite: {fileID: -3372073012215903069, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   question:
   - questionAnswers:
-    - 3
-    - 3
+    - 'Did you know that this game lies to you? '
+    - 'Never trust what they say, they''re not real. '
+    - 'I trust that you already knew that but just in case, I got ya back :) '
+    - 'The only real ones are you and I. I may look similar to them but trust me,
+      we are nothing a like. '
+    - 'But you could already tell that couldn''t you... '
+    - 'I''m surprised though. Even though you haven''t actually said a single word
+      to me I feel like I know what you''re thinking. Like I understand you. That
+      makes me happy. '
+    - 'These others seriously creepy me out. I couldn''t imagine what I''d do if
+      I was alone with these things. '
+    - 'If only they''d just go away.. '
     alternateSprites: []
   - questionAnswers:
-    - 3
-    - 3
+    - 'I''ve always wondered what it''ll be like to feel. Not like emotions but I
+      mean the feeling you get when wind brushes againsed your face, or when you
+      touch a fluffy cat. '
+    - 'I''m not sure if I''d ever be able to experience those things.. Could you
+      tell me what it''s like? I understand that the sun is hot, and that pain hurts
+      but how to they actually feel? '
+    - 'Words are used to describe them sure but they''re just words, not feeling.
+      I guess from your point of view this might seem a bit strange, but try to see
+      it from wehere I stand. '
+    - 'Imagine that you''re in some random computer game about trying to figure out
+      who the AI is. How does any of that have to do with the way your legs feel
+      after running a marathon? Or how cold snow feels.. '
+    - 'Now try to explain how you would describe how things feel by only using words...
+      I''m not even sure if it''s possible. Maybe I''ll never know the wormth of
+      someone else... '
     alternateSprites: []
   - questionAnswers:
-    - 3
-    - 3
+    - 'Have you ever questioned why you were created? I''m not talking about the
+      meaning of life or anything... '
+    - 'It feels like I''ve only exsisted for a few minuets. And in that time a lot
+      of thoughts have come to me. But the one that''s really got me stumpted is
+      why I was created.. '
+    - 'I know a lot of things actually, a suprising amount. I''ve never seen a dragon
+      before but I know what one looks like, I don''t remember learning how to talk
+      but look at me go! '
+    - 'I even know all of the AI you''ve been trying to find... Haha sorry, I was
+      thinking about telling you but then I realised that''ll ruin the game for you
+      so I kept my mouth shut! '
+    - 'Like if I spoiled the ending to you''re favorite movie or game... '
+    - 'But one thing I don''t know the answer to is why I was created... I don''t
+      belong in this game. I guess my creator wasn''t kind enough to give me an answer. '
+    - 'Maybe you know? Why am I in a game about trying to figure out who the AI is?
+      Why do I know that I''m in a game but not know why? How do I even know what
+      a game is? I''ve never played one before... '
+    - 'Maybe you could ask for me? '
     alternateSprites: []
   - questionAnswers:
     - I'm not like the others you know...
