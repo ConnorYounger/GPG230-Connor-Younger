@@ -37,6 +37,14 @@ public class W9MenuManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetSave();
+        }
+    }
+
     public void NewGame()
     {
         PlayerPrefs.SetInt("W9Level", 1);
@@ -51,5 +59,27 @@ public class W9MenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    void ResetSave()
+    {
+        PlayerPrefs.SetInt("W9Level", 1);
+        PlayerPrefs.SetInt("TrueAI", 0);
+        PlayerPrefs.SetInt("AI1B1", 0);
+
+        PlayerPrefs.SetInt("AI1B0", 0);
+        PlayerPrefs.SetInt("AI1B1", 0);
+        PlayerPrefs.SetInt("AI1B2", 0);
+        PlayerPrefs.SetInt("AI1B3", 0);
+
+        PlayerPrefs.SetInt("AI2B0", 0);
+        PlayerPrefs.SetInt("AI2B1", 0);
+        PlayerPrefs.SetInt("AI2B2", 0);
+        PlayerPrefs.SetInt("AI2B3", 0);
+
+        PlayerPrefs.SetInt("AI3B0", 0);
+        PlayerPrefs.SetInt("AI3B1", 0);
+        PlayerPrefs.SetInt("AI3B2", 0);
+        PlayerPrefs.SetInt("AI3B3", 0);
     }
 }

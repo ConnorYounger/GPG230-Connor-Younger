@@ -251,6 +251,7 @@ public class ConversationManager : MonoBehaviour
     {
         textWriter.AddWritter(conversationText, characters[currentCharacter].question[currentQuestionIndex].questionAnswers[textIndex], textTime, true);
 
+        Debug.Log("currentCharacter: " + currentCharacter + " , currentQuestionIndex: " + currentQuestionIndex + ", textIndex: " + textIndex);
         if (characters[currentCharacter].question[currentQuestionIndex].alternateSprites.Length > textIndex && characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex] != null)
         {
             characterButtons[currentCharacter].GetComponent<Image>().sprite = characters[currentCharacter].question[currentQuestionIndex].alternateSprites[textIndex];
