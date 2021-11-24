@@ -24,7 +24,12 @@ MonoBehaviour:
     - And to be totally honest I havn't really felt alive until a few minuets ago...
     - Haha sorry, you must think I'm pretty weird huh? That's ok though, I don't
       mind :)
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   - questionAnswers:
     - Hey have you seen my cat yet? I'm pretty sure he's hanging around here somewhere...
     - Not in this room but a very similar one... Well they look the same but arn't
@@ -36,7 +41,16 @@ MonoBehaviour:
     - Did you find him? (Hint he's chilling in the main menu)
     - I seriously have now idea how he got there though...
     - Also don't try talking to him, even I don't understand what he's saying...
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: 1975738006455871135, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 1975738006455871135, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
   - questionAnswers:
     - Did you forget my answer before?
     - Haha just kidding! I know you wouldn't forget... You wanna know why I'm back
@@ -46,7 +60,12 @@ MonoBehaviour:
       just wanna chat with you for a little longer.
     - And also, not much else exists outside this room so it's not like I can really
       go anywhere...
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: 0}
+    - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
+    - {fileID: -5472471190650457700, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
   - questionAnswers:
     - I wonder just how advanced an AI can get... In this world they can be as smart
       as humans..
@@ -72,6 +91,17 @@ MonoBehaviour:
     - I believe I am real. I believe you are real.
     - But I also know what I really am... And it scares me. What if I'm not real?
       What if I'm just a collection of ones and zeros made to believe it's real...
-    alternateSprites: []
+    alternateSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   hasRoboticEyes: 0
   answeredQuestion: 00000000

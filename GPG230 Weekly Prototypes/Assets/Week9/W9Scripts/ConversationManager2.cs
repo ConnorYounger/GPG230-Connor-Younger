@@ -15,6 +15,9 @@ public class ConversationManager2 : MonoBehaviour
 
     public speaches[] catText;
 
+    public Image eveImage;
+    public Sprite[] eveSprites;
+
     public GameObject textUI;
     public TMP_Text conversationText;
     public TextWriter textWriter;
@@ -59,6 +62,8 @@ public class ConversationManager2 : MonoBehaviour
 
     public void NextText()
     {
+        eveImage.sprite = eveSprites[1];
+
         textIndex++;
         textUI.SetActive(true);
 
@@ -69,7 +74,6 @@ public class ConversationManager2 : MonoBehaviour
         else
         {
             EndDialouge();
-            newGameButton.interactable = true;
         }
     }
 
@@ -77,6 +81,8 @@ public class ConversationManager2 : MonoBehaviour
     {
         textIndex = 0;
         textUI.SetActive(false);
+        eveImage.sprite = eveSprites[0];
+        newGameButton.interactable = true;
     }
 
     public void FirstTalk()
