@@ -42,7 +42,7 @@ public class ConversationManager2 : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("TrueAI") == 1)
+        if (PlayerPrefs.GetInt("TrueAI") == 1 && PlayerPrefs.GetInt("firstTalk") == 0)
             StartCoroutine("WelcomeBackText");
     }
 
@@ -68,7 +68,13 @@ public class ConversationManager2 : MonoBehaviour
 
         rand++;
 
-        if(rand > 27)
+        if(rand == 26)
+        {
+            rand--;
+            currentDialouge = dialouge[rand];
+        }
+
+        if (rand > 27)
         {
             int r = Random.Range(0, catText.Length);
             currentDialouge = catText[r];

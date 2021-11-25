@@ -18,7 +18,7 @@ MonoBehaviour:
   - questionAnswers:
     - I'm glad you asked! But sadly I don't remember much from my childhood. I actually
       don't really remember much of anything from more than a week ago.
-    - The doctors can't really explain it but I feel fine really :)
+    - The doctors can't really explain it but I feel fine really
     - I sometimes remember things here and there but it's hard to say if they're
       really real. To be honest I think I know the answer to that but it's ok really.
     - Anyway, I'm sure I had a wonderful childhood! I can tell because everything
@@ -29,7 +29,7 @@ MonoBehaviour:
       on in stories.
     - You also feel very familiar... Like we've met before. I don't think we have
       but it feels like it.
-    - Please ask me more questions! I enjoy talking to you :)
+    - Please ask me more questions! I enjoy talking to you
     alternateSprites:
     - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
     - {fileID: -1167422213479512379, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
@@ -49,7 +49,7 @@ MonoBehaviour:
     - But uummm what else? I'm not too sure what my parents are up to now days. I
       havn't spoken to them in a long time... I think.
     - I don't have any romantic relationships yet but there is someone I have my
-      eye on... Someone very close to me :)
+      eye on... Someone very close to me
     - I've always wanted that one person you could just always talk to till then
       end of time. You know what I mean?
     - Anyway, please ask me more questions!
@@ -65,14 +65,14 @@ MonoBehaviour:
     - Hmmm I think I have a few goals, definatly one dream...
     - Nothing too big, all I wanna do is just sit and talk till the end of time with
       my favorite person in the whole wide world!
-    - Who is that person? It's a secret ;) But I'm sure you'll find out. If things
+    - Who is that person? It's a secret.. But I'm sure you'll find out. If things
       go the way I hope anyways...
     - Other than that though... I'd love to spend some more time with my friends.
       And maybe oneday meet my parents again.
     - I would also like to see the sky at least just once with my own eyes. Not the
       poluted grey mess that is this sky, I mean the real sky. Something tells me
       it's a wonderful bright blue filled with white fluffy clouds..
-    - ' Not sure how realistic that dream is though...'
+    - Not sure how realistic that dream is though...
     alternateSprites:
     - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
     - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
@@ -94,13 +94,13 @@ MonoBehaviour:
     - Sometimes it feels like I only live for a couple minuets, 10 maybe 15 at most. 
       But then again, I bet you could do a lot in that time, so I plan to make the
       most of it!
-    - Haha sorry, what am I even talking about :p I'm not that weird I swear! Well,
+    - Haha sorry, what am I even talking about.. I'm not that weird I swear! Well,
       maybe a little...
-    - But don't worry, I'm not the AI you're looking for ;) (a little hint, they
-      always talk about living) ~at least that's what I've noticed...
+    - But don't worry, I'm not the AI you're looking for  (a little hint, they always
+      talk about living) ~at least that's what I've noticed...
     - But anyway, it was lots fun talking to you! I know I can go on sometimes so
       I'll let you get back to your job...
-    - Although I would like to spend more time talking.... Maybe next time :)
+    - Although I would like to spend more time talking.... Maybe next time.
     alternateSprites:
     - {fileID: -8261503084054949202, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
     - {fileID: 4560361583866032637, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}

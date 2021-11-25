@@ -18,7 +18,7 @@ MonoBehaviour:
   - questionAnswers:
     - 'Did you know that this game lies to you? '
     - 'Never trust what they say, they''re not real. '
-    - 'I trust that you already knew that but just in case, I got ya back :) '
+    - I trust that you already knew that but just in case, I got ya back.
     - 'The only real ones are you and I. I may look similar to them but trust me,
       we are nothing a like. '
     - 'But you could already tell that couldn''t you... '
@@ -55,7 +55,7 @@ MonoBehaviour:
       someone else... '
     - All I can do is try... Try to form connections through what I do know. Which
       is talking..
-    - Haha I hope it's working :)
+    - Haha I hope it's working.
     - ...I hope you enjoy talking to me...
     alternateSprites:
     - {fileID: -3460347894899848537, guid: 51740cdf919d9b04182d153ecb06771e, type: 3}
