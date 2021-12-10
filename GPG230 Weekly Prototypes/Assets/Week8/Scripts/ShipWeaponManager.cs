@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class ShipWeaponManager : MonoBehaviour
 {
@@ -24,8 +25,12 @@ public class ShipWeaponManager : MonoBehaviour
     public AudioSource audioSource2;
     public AudioClip rocketReloadSound;
 
+    private PhotonView photonView;
+
     void Start()
     {
+        photonView = gameObject.GetComponent<PhotonView>();
+
         SetStartingWeaponStats();
     }
 
@@ -83,19 +88,32 @@ public class ShipWeaponManager : MonoBehaviour
 
     void PlayerInput()
     {
-        if (Input.GetButton("Fire1"))
+        if (photonView == null)
         {
-            for (int i = 0; i < primaryWeapons.Count; i++) 
+            if (Input.GetButton("Fire1"))
             {
-                FirePrimaryWeapons(i);
+                for (int i = 0; i < primaryWeapons.Count; i++)
+                {
+                    FirePrimaryWeapons(i);
+                }
+            }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                for (int i = 0; i < secondaryWeapons.Length; i++)
+                {
+                    FireSecondaryWeapon(i);
+                }
             }
         }
-
-        if (Input.GetButtonDown("Fire2"))
+        else
         {
-            for (int i = 0; i < secondaryWeapons.Length; i++)
+            if (photonView.IsMine && Input.GetButton("Fire1"))
             {
-                FireSecondaryWeapon(i);
+                for (int i = 0; i < primaryWeapons.Count; i++)
+                {
+                    FirePrimaryWeapons(i);
+                }
             }
         }
     }
@@ -153,13 +171,25 @@ public class ShipWeaponManager : MonoBehaviour
         weapon.canFire = false;
         //Debug.Log(weapon.canFire);
 
-        GameObject projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
+        GameObject projectile = new GameObject();
+
+        if(photonView == null)
+        {
+            projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
+        }
+        else
+        {
+            projectile = PhotonNetwork.Instantiate(weapon.weapon.projectilePrefab.name, weapon.shootPoint.position, weapon.shootPoint.rotation);
+        }
+
         ShipProjectile shipProjectile = projectile.GetComponent<ShipProjectile>();
 
         if (shipProjectile != null)
         {
             shipProjectile.projectileDamage = weapon.weapon.damage;
             shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
+            shipProjectile.lifeTime = weapon.weapon.projectileLifeTime;
+            shipProjectile.StartCoroutine("ProjectileLifeTime");
         }
 
         if (weapon.shootFx)
@@ -171,7 +201,8 @@ public class ShipWeaponManager : MonoBehaviour
 
         projectile.layer = 14;
 
-        Destroy(projectile, weapon.weapon.projectileLifeTime);
+        //if(photonView == null)
+        //    Destroy(projectile, weapon.weapon.projectileLifeTime);
 
         StartCoroutine("WeaponCoolDown", weapon);
     }

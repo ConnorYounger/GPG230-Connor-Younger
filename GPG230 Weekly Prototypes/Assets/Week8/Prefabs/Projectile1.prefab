@@ -112,6 +112,9 @@ MonoBehaviour:
   projectileDamage: 1
   projectileSpeed: 0
   destroyEffect: {fileID: 3014544230241069462, guid: 974822e0b68543f49bd940cb7f14a9ec, type: 3}
+  isHoming: 0
+  target: {fileID: 0}
+  lifeTime: 1
 --- !u!54 &-4201452619479910900
 Rigidbody:
   m_ObjectHideFlags: 0

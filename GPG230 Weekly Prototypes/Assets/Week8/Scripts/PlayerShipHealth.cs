@@ -32,7 +32,7 @@ public class PlayerShipHealth : MonoBehaviour
     {
         currentHealth = startingHealth;
 
-        enemyShipManager = GameObject.Find("EnemySpawnManager").GetComponent<EnemyShipSpawnManager>();
+        if (enemyShipManager = GameObject.Find("EnemySpawnManager").GetComponent<EnemyShipSpawnManager>()) { }
 
         if (healthSlider)
         {
@@ -110,8 +110,11 @@ public class PlayerShipHealth : MonoBehaviour
         shipMovement.enabled = false;
         shipChildMesh.SetActive(false);
         boxCollider.enabled = false;
-        enemyShipManager.PlayerDeath();
-        enemyShipManager.scenarioManager.ShowLoseUI();
+        if (enemyShipManager)
+        {
+            enemyShipManager.PlayerDeath();
+            enemyShipManager.scenarioManager.ShowLoseUI();
+        }
         this.enabled = false;
     }
 }

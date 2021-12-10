@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class W8ShipMovement : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class W8ShipMovement : MonoBehaviour
 
     public Transform[] particlTrail;
     public AudioSource thrusterAudioSource;
+
+    public PhotonView photonView;
  
     void Start()
     {
@@ -40,6 +43,11 @@ public class W8ShipMovement : MonoBehaviour
             {
                 particlTrail[i].gameObject.SetActive(false);
             }
+        }
+
+        if(photonView && photonView.IsMine)
+        {
+            aimReticle = GameObject.Find("TargetReticle").transform;
         }
     }
 
@@ -106,7 +114,8 @@ public class W8ShipMovement : MonoBehaviour
 
     void ReticleAiming()
     {
-        aimReticle.position = Input.mousePosition;
+        if(aimReticle)
+            aimReticle.position = Input.mousePosition;
     }
 
     void ShipTurning()

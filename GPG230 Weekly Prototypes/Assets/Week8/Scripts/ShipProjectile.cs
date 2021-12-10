@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ShipProjectile : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class ShipProjectile : MonoBehaviour
     public bool isHoming;
     public GameObject target;
 
+    public float lifeTime = 1;
+    private PhotonView photonView;
+
     void Start()
     {
-        
+        photonView = gameObject.GetComponent<PhotonView>();
     }
 
     void Update()
@@ -70,14 +74,31 @@ public class ShipProjectile : MonoBehaviour
         DestroyProjectile();
     }
 
+    public IEnumerator ProjectileLifeTime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+
+        DestroyProjectile();
+    }
+
     public void DestroyProjectile()
     {
         if (destroyEffect) 
         {
-            GameObject fx = Instantiate(destroyEffect, transform.position, transform.rotation);
-            Destroy(fx, 3);
+            if (photonView == null)
+            {
+                GameObject fx = Instantiate(destroyEffect, transform.position, transform.rotation);
+                Destroy(fx, 3);
+            }
+            else
+            {
+                PhotonNetwork.Instantiate(destroyEffect.name, transform.position, transform.rotation);
+            }
         }
 
-        Destroy(gameObject);
+        if (photonView == null)
+            Destroy(gameObject);
+        else
+            PhotonNetwork.Destroy(gameObject);
     }
 }
