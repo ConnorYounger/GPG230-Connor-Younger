@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 5908889614384022427}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 3830896704104884864}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
+  weapon: {fileID: 11400000, guid: d5b69d15b9d0550458c7c2499a67ce5b, type: 2}
   shootPoint: {fileID: 1193891522575601685}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -953,8 +953,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193891523250624173}
-  m_LocalRotation: {x: 0.11211945, y: -0.000000004274471, z: 4.8229215e-10, w: 0.9936948}
-  m_LocalPosition: {x: 0, y: 8, z: -18}
+  m_LocalRotation: {x: -0.14850624, y: -0.49429974, z: 0.08192524, w: -0.8525855}
+  m_LocalPosition: {x: -218.34503, y: 188.01578, z: 330.71396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1193891522606832537}
@@ -984,7 +984,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000000
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
+  weapon: {fileID: 11400000, guid: d5b69d15b9d0550458c7c2499a67ce5b, type: 2}
   shootPoint: {fileID: 1193891523936056716}
   canFire: 1
   shootFx: {fileID: 6633937077532612134}
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 4050607144206043814}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5ada4bdd36a203c4e998d0e742aa8db7, type: 2}
+  weapon: {fileID: 11400000, guid: 792d0159d74b6f04c90b6f3d0c1272a1, type: 2}
   shootPoint: {fileID: 4455183553116991301}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -1731,7 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 2659b4c977438d449bda8308d4302f03, type: 2}
+  weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 8100430192620667521}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -1783,7 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5c7cc27469b553c4a837181441e261ae, type: 2}
+  weapon: {fileID: 11400000, guid: d5b69d15b9d0550458c7c2499a67ce5b, type: 2}
   shootPoint: {fileID: 3554042731970526989}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 5ada4bdd36a203c4e998d0e742aa8db7, type: 2}
+  weapon: {fileID: 11400000, guid: 792d0159d74b6f04c90b6f3d0c1272a1, type: 2}
   shootPoint: {fileID: 7201142989816023177}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -1887,7 +1887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: e159898e5d8ef0b47ac42ee1073dbd96, type: 2}
+  weapon: {fileID: 11400000, guid: cf127a68f47e8fc4bb4e5368764385d8, type: 2}
   shootPoint: {fileID: 3201451256401221649}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: e159898e5d8ef0b47ac42ee1073dbd96, type: 2}
+  weapon: {fileID: 11400000, guid: cf127a68f47e8fc4bb4e5368764385d8, type: 2}
   shootPoint: {fileID: 7843844048773623260}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}

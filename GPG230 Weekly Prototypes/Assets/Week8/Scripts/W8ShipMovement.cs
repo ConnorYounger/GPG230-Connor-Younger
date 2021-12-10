@@ -31,11 +31,28 @@ public class W8ShipMovement : MonoBehaviour
         center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         Cursor.lockState = CursorLockMode.Confined;
 
+        if(photonView != null)
+        {
+            if (photonView.IsMine)
+            {
+                aimReticle = GameObject.Find("TargetReticle").transform;
+
+                SetShipTrail();
+            }
+        }
+        else
+        {
+            SetShipTrail();
+        }
+    }
+
+    void SetShipTrail()
+    {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
 
-        for(int i = 0; i < particlTrail.Length; i++)
+        for (int i = 0; i < particlTrail.Length; i++)
         {
-            if(i == data.currentShip)
+            if (i == data.currentShip)
             {
                 particlTrail[i].gameObject.SetActive(true);
             }
@@ -43,11 +60,6 @@ public class W8ShipMovement : MonoBehaviour
             {
                 particlTrail[i].gameObject.SetActive(false);
             }
-        }
-
-        if(photonView && photonView.IsMine)
-        {
-            aimReticle = GameObject.Find("TargetReticle").transform;
         }
     }
 
