@@ -13,6 +13,7 @@ public class W8MainMenuManager : MonoBehaviour
     public GameObject shipSystemsMenu;
     public GameObject shipUpgrades;
     public GameObject shipYard;
+    public GameObject multiplayerUI;
 
     [Header("Ship Upgrade Refs")]
     public TMP_Text shipNameText;
@@ -120,6 +121,7 @@ public class W8MainMenuManager : MonoBehaviour
         shipYard.SetActive(false);
         shipBuyMenu.SetActive(false);
         shipUpgrades.SetActive(true);
+        multiplayerUI.SetActive(false);
 
         ShowShipYard();
 
@@ -135,6 +137,7 @@ public class W8MainMenuManager : MonoBehaviour
 
         shipSystemsMenu.SetActive(false);
         helpMenu.SetActive(false);
+        multiplayerUI.SetActive(false);
 
         contractInfo.SetActive(false);
 
@@ -149,8 +152,27 @@ public class W8MainMenuManager : MonoBehaviour
         contractsMenu.SetActive(false);
         shipYard.SetActive(false);
         shipUpgrades.SetActive(false);
+        multiplayerUI.SetActive(false);
 
         helpMenu.SetActive(true);
+
+        PlayButtonPressedSound();
+    }
+
+    public void ShowMultiplayerMenu()
+    {
+        UpdateWeaponCurrency();
+        //ShowShipUpgrades();
+
+        multiplayerUI.SetActive(true);
+        shipSystemsMenu.SetActive(false);
+        currencyUI.SetActive(true);
+
+        contractsMenu.SetActive(false);
+        helpMenu.SetActive(false);
+
+        shipYard.SetActive(false);
+        shipBuyMenu.SetActive(false);
 
         PlayButtonPressedSound();
     }

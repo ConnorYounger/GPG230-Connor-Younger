@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Week8/Week8Scene4.unity
     guid: a838be5f38641cd429c24408944b973b
+  - enabled: 1
+    path: Assets/BountyBebop Multiplayer/MultiplayerLevel1.unity
+    guid: adb2349520e4b2f49bdd578869407353
   m_configObjects: {}
