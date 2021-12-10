@@ -31,6 +31,15 @@ public static class SaveSystem
         }
     }
 
+    public static void FirstTimeSave()
+    {
+        if (PlayerPrefs.GetInt("firstStart") == 0)
+        {
+            SaveStats(W8SaveData.w8SaveData);
+            PlayerPrefs.SetInt("firstStart", 1);
+        }
+    }
+
     public static void SaveLevel(W5ScoreManager scoreManager, int level)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -58,7 +67,7 @@ public static class SaveSystem
     public static void SaveStats(W8SaveData saveData)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + W8SaveData.savePath;
+        string path = Application.persistentDataPath + W8SaveData.savePath + ".txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerData data = new PlayerData(saveData);
@@ -123,7 +132,7 @@ public static class SaveSystem
 
     public static PlayerData LoadLevel(string s)
     {
-        string path = Application.persistentDataPath + s;
+        string path = Application.persistentDataPath + s + ".txt";
 
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(path, FileMode.Open);

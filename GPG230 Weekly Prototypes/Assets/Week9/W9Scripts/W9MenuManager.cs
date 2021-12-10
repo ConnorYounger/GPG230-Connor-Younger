@@ -11,6 +11,7 @@ public class W9MenuManager : MonoBehaviour
 
     public GameObject cat;
     public GameObject ai;
+    public GameObject tutorialTip;
 
     public ConversationManager2 convoManager;
 
@@ -40,6 +41,16 @@ public class W9MenuManager : MonoBehaviour
         else
         {
             ai.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("firstLaunch") == 0)
+        {
+            PlayerPrefs.SetInt("firstLaunch", 1);
+            tutorialTip.SetActive(true);
+        }
+        else
+        {
+            tutorialTip.SetActive(false);
         }
     }
 
@@ -115,6 +126,12 @@ public class W9MenuManager : MonoBehaviour
 
         PlayerPrefs.SetInt("firstTalk", 0);
         PlayerPrefs.SetInt("EveDialouge", 0);
+        PlayerPrefs.SetInt("firstLaunch", 0);
         pressedNewGame = 0;
+    }
+
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Week9TutorialScene");
     }
 }

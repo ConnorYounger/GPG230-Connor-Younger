@@ -30,6 +30,8 @@ public class W8ScenarioManager : MonoBehaviour
         returnTimer = returnTime;
 
         SpawnEnemies();
+
+        W8SaveData.scenarioManager = this;
     }
 
     void Update()
@@ -80,7 +82,7 @@ public class W8ScenarioManager : MonoBehaviour
         }
 
         rewardText.text = currentScenario.bountyValue.ToString();
-        W8SaveData.AddCurrency(currentScenario.bountyValue);
+        W8SaveData.AddScenarioCurrency(currentScenario.bountyValue);
         WinUI.SetActive(true);
         StopCoroutine("ReturnCounter");
         StartCoroutine("ReturnCounter");
@@ -95,7 +97,7 @@ public class W8ScenarioManager : MonoBehaviour
         }
 
         repairText.text = (-currentScenario.bountyValue).ToString();
-        W8SaveData.AddCurrency(-currentScenario.bountyValue);
+        W8SaveData.AddScenarioCurrency(-currentScenario.bountyValue);
         loseUI.SetActive(true);
         returnTime = 3;
         StopCoroutine("ReturnCounter");
@@ -119,6 +121,9 @@ public class W8ScenarioManager : MonoBehaviour
                 audioSource.Play();
             }
 
+            if(returnTimer == 1)
+                SaveSystem.SaveStats(W8SaveData.w8SaveData);
+
             StartCoroutine("ReturnCounter");
         }
         else
@@ -126,5 +131,12 @@ public class W8ScenarioManager : MonoBehaviour
             currentScenario = null;
             SceneManager.LoadScene("Week8MainMenu");
         }
+    }
+
+    public static IEnumerator SaveCurrency()
+    {
+        yield return new WaitForSeconds(1);
+
+        SaveSystem.SaveStats(W8SaveData.w8SaveData);
     }
 }

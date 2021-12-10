@@ -43,6 +43,8 @@ public class W9TransitionManager : MonoBehaviour
             nextWeekButton.SetActive(true);
             textWriter.AddWritter(nextWeekText, "Week " + PlayerPrefs.GetInt("W9Level").ToString(), weekTextTime, true);
         }
+
+        PlayerPrefs.SetInt("firstLaunch", 1);
     }
 
     public void ContinueButton()
