@@ -114,10 +114,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileDamage: 1
   projectileSpeed: 0
-  destroyEffect: {fileID: 3014544230241069462, guid: d7f146767a29b674ab88738e295aa73e, type: 3}
+  destroyEffect: {fileID: 3014544230241069462, guid: 974822e0b68543f49bd940cb7f14a9ec, type: 3}
+  destroyEffectMulti: {fileID: 3014544230241069462, guid: d7f146767a29b674ab88738e295aa73e, type: 3}
+  spawnMultiDestroyEffect: 0
   isHoming: 0
   target: {fileID: 0}
-  lifeTime: 1
+  lifeTime: 10
 --- !u!54 &8091731457306183637
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -50,19 +50,19 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
         }
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        if (photonView.IsMine)
-        {
-            photonView.RPC("SetCurrentShip", RpcTarget.All);
-        }
-        else
-        {
-            SetShipTrail();
-        }
+    //public override void OnPlayerEnteredRoom(Player newPlayer)
+    //{
+    //    if (photonView.IsMine)
+    //    {
+    //        photonView.RPC("SetCurrentShip", RpcTarget.All);
+    //    }
+    //    else
+    //    {
+    //        SetShipTrail();
+    //    }
 
-        //base.OnPlayerEnteredRoom(newPlayer);
-    }
+    //    //base.OnPlayerEnteredRoom(newPlayer);
+    //}
 
     [PunRPC]
     public void SetCurrentShip()

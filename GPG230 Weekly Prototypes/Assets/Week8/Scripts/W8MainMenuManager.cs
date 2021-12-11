@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
 public class W8MainMenuManager : MonoBehaviour
 {
     public GameObject currencyUI;
     public TMP_Text currencyText;
+    public MultiplayerConnectManager multiplayerConnectManager;
 
     [Header("Ship Systems")]
     public GameObject shipSystemsMenu;
@@ -303,6 +305,12 @@ public class W8MainMenuManager : MonoBehaviour
     {
         if (currentScenario)
         {
+            if (PhotonNetwork.IsConnected)
+            {
+                PhotonNetwork.Disconnect();
+                multiplayerConnectManager.hasConnected = false;
+            }
+
             W8ScenarioManager.StartNewScenario(currentScenario);
         }
     }

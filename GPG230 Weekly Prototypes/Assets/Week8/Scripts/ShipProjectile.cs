@@ -8,6 +8,8 @@ public class ShipProjectile : MonoBehaviour
     public int projectileDamage;
     public float projectileSpeed;
     public GameObject destroyEffect;
+    public GameObject destroyEffectMulti;
+    public bool spawnMultiDestroyEffect;
 
     public bool isHoming;
     public GameObject target;
@@ -76,7 +78,7 @@ public class ShipProjectile : MonoBehaviour
         else
         {
             if (photonView.IsMine)
-                DestroyProjectile();
+                photonView.RPC("DestroyProjectile", RpcTarget.All);
         }
     }
 
@@ -87,6 +89,7 @@ public class ShipProjectile : MonoBehaviour
         DestroyProjectile();
     }
 
+    [PunRPC]
     public void DestroyProjectile()
     {
         if (destroyEffect) 
@@ -98,8 +101,15 @@ public class ShipProjectile : MonoBehaviour
             }
             else
             {
-                if(photonView.IsMine)
-                    PhotonNetwork.Instantiate(destroyEffect.name, transform.position, transform.rotation);
+                if (photonView.IsMine && spawnMultiDestroyEffect) 
+                {
+                    PhotonNetwork.Instantiate(destroyEffectMulti.name, transform.position, transform.rotation);
+                }
+                else
+                {
+                    GameObject fx = Instantiate(destroyEffect, transform.position, transform.rotation);
+                    Destroy(fx, 3);
+                }
             }
         }
 

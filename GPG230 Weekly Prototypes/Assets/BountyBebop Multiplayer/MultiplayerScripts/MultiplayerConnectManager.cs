@@ -12,7 +12,18 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
     public TMP_InputField createInput;
     public TMP_InputField joinInput;
 
-    private bool hasConnected;
+    public bool hasConnected;
+
+    private void Start()
+    {
+        hasConnected = false;
+
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.LeaveLobby();
+            PhotonNetwork.Disconnect();
+        }
+    }
 
     public void AtemptToConnectToServer()
     {

@@ -182,6 +182,8 @@ public class ShipWeaponManager : MonoBehaviour
             projectile = PhotonNetwork.Instantiate(weapon.weapon.projectilePrefab.name, weapon.shootPoint.position, weapon.shootPoint.rotation);
         }
 
+        projectile.layer = 14;
+
         ShipProjectile shipProjectile = projectile.GetComponent<ShipProjectile>();
 
         if (shipProjectile != null)
@@ -198,8 +200,6 @@ public class ShipWeaponManager : MonoBehaviour
             weapon.StopCoroutine("FireParticleFx");
             weapon.StartCoroutine("FireParticleFx");
         }
-
-        projectile.layer = 14;
 
         //if(photonView == null)
         //    Destroy(projectile, weapon.weapon.projectileLifeTime);

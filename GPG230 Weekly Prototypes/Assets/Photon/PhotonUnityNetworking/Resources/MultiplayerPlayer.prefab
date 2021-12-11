@@ -350,6 +350,7 @@ MonoBehaviour:
   - {fileID: 8858143649201934732}
   thrusterAudioSource: {fileID: 1855619170222219543}
   photonView: {fileID: 1193891522606832543}
+  currentShip: 0
 --- !u!114 &1193891522606832539
 MonoBehaviour:
   m_ObjectHideFlags: 0

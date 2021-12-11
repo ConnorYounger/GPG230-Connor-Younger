@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
-public class PhotonPlayerManager : MonoBehaviour, IPunObservable
+public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     #region IPunObservable implementation
 
@@ -94,6 +95,44 @@ public class PhotonPlayerManager : MonoBehaviour, IPunObservable
         else
         {
             shipRotation.rotation = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, transformRotationW);
+        }
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("SetsCurrentShip", RpcTarget.All);
+        }
+        else
+        {
+            SetShipTrails();
+        }
+
+        //base.OnPlayerEnteredRoom(newPlayer);
+    }
+
+    [PunRPC]
+    public void SetsCurrentShip()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+        shipMovement.currentShip = data.currentShip;
+
+        SetShipTrails();
+    }
+
+    public void SetShipTrails()
+    {
+        for (int i = 0; i < shipMovement.particlTrail.Length; i++)
+        {
+            if (i == shipMovement.currentShip)
+            {
+                shipMovement.particlTrail[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                shipMovement.particlTrail[i].gameObject.SetActive(false);
+            }
         }
     }
 }
