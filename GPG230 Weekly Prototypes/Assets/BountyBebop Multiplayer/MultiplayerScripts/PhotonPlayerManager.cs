@@ -15,6 +15,7 @@ public class PhotonPlayerManager : MonoBehaviour, IPunObservable
             stream.SendNext(transformRotationX);
             stream.SendNext(transformRotationY);
             stream.SendNext(transformRotationZ);
+            stream.SendNext(transformRotationW);
             //stream.SendNext(Health);
         }
         else
@@ -23,6 +24,7 @@ public class PhotonPlayerManager : MonoBehaviour, IPunObservable
             this.transformRotationX = (float)stream.ReceiveNext();
             this.transformRotationY = (float)stream.ReceiveNext();
             this.transformRotationZ = (float)stream.ReceiveNext();
+            this.transformRotationW = (float)stream.ReceiveNext();
             //this.Health = (float)stream.ReceiveNext();
         }
     }
@@ -36,20 +38,31 @@ public class PhotonPlayerManager : MonoBehaviour, IPunObservable
     public W8ShipMovement shipMovement;
     public ShipWeaponManager weaponManager;
     public Transform shipRotation;
+    public PauseManager pauseManager;
 
     public float transformRotationX;
     public float transformRotationY;
     public float transformRotationZ;
+    public float transformRotationW;
 
     void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
 
-        foreach(GameObject ob in selfObjects)
+        if (GameObject.Find("PauseManager"))
+            pauseManager = GameObject.Find("PauseManager").GetComponent<PauseManager>();
+
+        foreach (GameObject ob in selfObjects)
         {
             if (photonView.IsMine)
             {
                 ob.SetActive(true);
+
+                if (pauseManager)
+                {
+                    pauseManager.shipMovement = shipMovement;
+                    pauseManager.weaponManager = weaponManager;
+                }
             }
             else
             {
@@ -76,10 +89,11 @@ public class PhotonPlayerManager : MonoBehaviour, IPunObservable
             transformRotationX = shipRotation.rotation.x;
             transformRotationY = shipRotation.rotation.y;
             transformRotationZ = shipRotation.rotation.z;
+            transformRotationW = shipRotation.rotation.w;
         }
         else
         {
-            shipRotation.rotation = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, 1);
+            shipRotation.rotation = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, transformRotationW);
         }
     }
 }

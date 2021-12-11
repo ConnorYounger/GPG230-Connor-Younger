@@ -87,40 +87,52 @@ public class W8ShipMovement : MonoBehaviour
 
     void ShipTrail()
     {
-        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
-
         if (particlTrail.Length > 0)
         {
             if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
             {
-                foreach (Transform t in particlTrail[data.currentShip])
-                {
-                    if (t.GetComponent<ParticleSystem>())
-                    {
-                        t.GetComponent<ParticleSystem>().Play();
-                    }
-                }
-
-                if (thrusterAudioSource && !thrusterAudioSource.isPlaying)
-                {
-                    thrusterAudioSource.Play();
-                }
+                ThrustOn();
             }
             else
             {
-                foreach (Transform t in particlTrail[data.currentShip])
-                {
-                    if (t.GetComponent<ParticleSystem>())
-                    {
-                        t.GetComponent<ParticleSystem>().Stop();
-                    }
-                }
-
-                if (thrusterAudioSource && thrusterAudioSource.isPlaying)
-                {
-                    thrusterAudioSource.Stop();
-                }
+                ThrustOff();
             }
+        }
+    }
+
+    void ThrustOn()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        foreach (Transform t in particlTrail[data.currentShip])
+        {
+            if (t.GetComponent<ParticleSystem>())
+            {
+                t.GetComponent<ParticleSystem>().Play();
+            }
+        }
+
+        if (thrusterAudioSource && !thrusterAudioSource.isPlaying)
+        {
+            thrusterAudioSource.Play();
+        }
+    }
+
+    void ThrustOff()
+    {
+        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+
+        foreach (Transform t in particlTrail[data.currentShip])
+        {
+            if (t.GetComponent<ParticleSystem>())
+            {
+                t.GetComponent<ParticleSystem>().Stop();
+            }
+        }
+
+        if (thrusterAudioSource && thrusterAudioSource.isPlaying)
+        {
+            thrusterAudioSource.Stop();
         }
     }
 

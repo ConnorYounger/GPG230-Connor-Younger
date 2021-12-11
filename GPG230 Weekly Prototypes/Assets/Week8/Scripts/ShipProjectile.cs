@@ -71,7 +71,13 @@ public class ShipProjectile : MonoBehaviour
             other.GetComponent<PlayerShipHealth>().TakeDamage(Mathf.RoundToInt(projectileDamage / 2));
         }
 
-        DestroyProjectile();
+        if(photonView == null)
+            DestroyProjectile();
+        else
+        {
+            if (photonView.IsMine)
+                DestroyProjectile();
+        }
     }
 
     public IEnumerator ProjectileLifeTime()
