@@ -115,7 +115,7 @@ public class W8SaveData : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ResetSaveData();
+            //ResetSaveData();
         }
     }
 

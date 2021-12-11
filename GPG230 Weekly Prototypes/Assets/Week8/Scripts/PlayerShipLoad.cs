@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class PlayerShipLoad : MonoBehaviour
+public class PlayerShipLoad : MonoBehaviourPunCallbacks
 {
     public PlayerShipHealth playerHealth;
     public ShipWeaponManager weaponsManager;
@@ -20,14 +22,36 @@ public class PlayerShipLoad : MonoBehaviour
     public ShipWeapon ship2SecondaryWeapon;
     public ShipWeapon ship3SecondaryWeapon;
 
+    private PhotonView photonView;
+
     void Start()
     {
-        LoadShip();
+        photonView = gameObject.GetComponent<PhotonView>();
+
+        if (photonView == null)
+        {
+            LoadShip();
+        }
+        else
+        {
+            if (photonView.IsMine)
+            {
+                Debug.Log("Load Ship: Photon View Is Mine");
+                photonView.RPC("LoadShip", RpcTarget.All);
+            }
+            else
+            {
+                // Recieve ship load
+            }
+        }
     }
 
+    [PunRPC]
     void LoadShip()
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+        Debug.Log("Load Ship: Current Ship = " + data.currentShip);
+
         weaponsManager.primaryWeapons = new List<ShipWeapon>();
 
         if (data.currentShip == 0)

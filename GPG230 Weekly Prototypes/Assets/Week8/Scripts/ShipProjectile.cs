@@ -98,10 +98,12 @@ public class ShipProjectile : MonoBehaviour
             }
             else
             {
-                PhotonNetwork.Instantiate(destroyEffect.name, transform.position, transform.rotation);
+                if(photonView.IsMine)
+                    PhotonNetwork.Instantiate(destroyEffect.name, transform.position, transform.rotation);
             }
         }
 
+        StopCoroutine("ProjectileLifeTime");
         if (photonView == null)
             Destroy(gameObject);
         else

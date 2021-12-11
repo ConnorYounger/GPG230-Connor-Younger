@@ -37,7 +37,7 @@ public class W8ShipMovement : MonoBehaviour
             {
                 aimReticle = GameObject.Find("TargetReticle").transform;
 
-                SetShipTrail();
+                photonView.RPC("SetShipTrail", RpcTarget.All);
             }
         }
         else
@@ -46,6 +46,7 @@ public class W8ShipMovement : MonoBehaviour
         }
     }
 
+    [PunRPC]
     void SetShipTrail()
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);

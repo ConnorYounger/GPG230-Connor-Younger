@@ -32,7 +32,8 @@ public class PlayerShipHealth : MonoBehaviour
     {
         currentHealth = startingHealth;
 
-        if (enemyShipManager = GameObject.Find("EnemySpawnManager").GetComponent<EnemyShipSpawnManager>()) { }
+        if(GameObject.Find("EnemySpawnManager"))
+            if (enemyShipManager = GameObject.Find("EnemySpawnManager").GetComponent<EnemyShipSpawnManager>()) { }
 
         if (healthSlider)
         {
