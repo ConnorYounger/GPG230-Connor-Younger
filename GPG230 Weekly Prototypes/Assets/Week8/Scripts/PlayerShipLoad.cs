@@ -23,6 +23,7 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
     public ShipWeapon ship3SecondaryWeapon;
 
     private PhotonView photonView;
+    public int currentShip;
 
     void Start()
     {
@@ -30,31 +31,53 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
 
         if (photonView == null)
         {
-            LoadShip();
+            SetCurrentShip();
         }
         else
         {
             if (photonView.IsMine)
             {
                 Debug.Log("Load Ship: Photon View Is Mine");
-                photonView.RPC("LoadShip", RpcTarget.All);
+                photonView.RPC("SetCurrentShip", RpcTarget.All);
             }
             else
             {
-                // Recieve ship load
+                LoadShip();
             }
         }
     }
 
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        if (photonView.IsMine)
+        {
+            Debug.Log("Load Ship: Photon View Is Mine");
+            photonView.RPC("SetCurrentShip", RpcTarget.All);
+        }
+        else
+        {
+            LoadShip();
+        }
+
+        //base.OnPlayerEnteredRoom(newPlayer);
+    }
+
     [PunRPC]
-    void LoadShip()
+    void SetCurrentShip()
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
-        Debug.Log("Load Ship: Current Ship = " + data.currentShip);
+        currentShip = data.currentShip;
+
+        LoadShip();
+    }
+
+    void LoadShip()
+    {
+        Debug.Log("Load Ship: Current Ship = " + currentShip);
 
         weaponsManager.primaryWeapons = new List<ShipWeapon>();
 
-        if (data.currentShip == 0)
+        if (currentShip == 0)
         {
             defultShipRenderer.enabled = true;
 
@@ -75,7 +98,7 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
 
         for (int i = 1; i < 4; i++)
         {
-            if (data.currentShip == i)
+            if (currentShip == i)
             {
                 ships[i].SetActive(true);
                 playerHealth.SetStartingHealth(health);
@@ -87,7 +110,7 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
             }
         }
 
-        switch (data.currentShip)
+        switch (currentShip)
         {
             case 1:
                 for (int i = 0; i < ship1PWeapons.Length; i++)

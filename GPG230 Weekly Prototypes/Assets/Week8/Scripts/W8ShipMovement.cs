@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
-public class W8ShipMovement : MonoBehaviour
+public class W8ShipMovement : MonoBehaviourPunCallbacks
 {
 
     float noTurn = 0.0f; // Extent of the no-turn zone as a fraction of Screen.height;
@@ -25,11 +26,14 @@ public class W8ShipMovement : MonoBehaviour
     public AudioSource thrusterAudioSource;
 
     public PhotonView photonView;
+    public int currentShip;
  
     void Start()
     {
         center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         Cursor.lockState = CursorLockMode.Confined;
+
+        photonView = gameObject.GetComponent<PhotonView>();
 
         if(photonView != null)
         {
@@ -42,18 +46,40 @@ public class W8ShipMovement : MonoBehaviour
         }
         else
         {
-            SetShipTrail();
+            SetCurrentShip();
         }
     }
 
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("SetCurrentShip", RpcTarget.All);
+        }
+        else
+        {
+            SetShipTrail();
+        }
+
+        //base.OnPlayerEnteredRoom(newPlayer);
+    }
+
     [PunRPC]
-    void SetShipTrail()
+    public void SetCurrentShip()
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+        currentShip = data.currentShip;
+
+        SetShipTrail();
+    }
+
+    void SetShipTrail()
+    {
+        //PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
 
         for (int i = 0; i < particlTrail.Length; i++)
         {
-            if (i == data.currentShip)
+            if (i == currentShip)
             {
                 particlTrail[i].gameObject.SetActive(true);
             }

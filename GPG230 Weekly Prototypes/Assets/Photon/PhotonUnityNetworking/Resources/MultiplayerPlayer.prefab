@@ -458,6 +458,7 @@ MonoBehaviour:
   ship1SecondaryWeapon: {fileID: 1193891523369513911}
   ship2SecondaryWeapon: {fileID: 1193891523369513911}
   ship3SecondaryWeapon: {fileID: 1193891523369513911}
+  currentShip: 0
 --- !u!54 &1193891522606832541
 Rigidbody:
   m_ObjectHideFlags: 0
