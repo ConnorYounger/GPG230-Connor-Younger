@@ -119,6 +119,7 @@ MonoBehaviour:
   isHoming: 0
   target: {fileID: 0}
   lifeTime: 10
+  shipPhotonView: {fileID: 0}
 --- !u!54 &-4201452619479910900
 Rigidbody:
   m_ObjectHideFlags: 0
