@@ -657,6 +657,7 @@ MonoBehaviour:
   shipMovement: {fileID: 1193891522606832538}
   weaponManager: {fileID: 1193891522606832539}
   shipRotation: {fileID: 1193891523232171395}
+  syncUpdateSpeed: 6
   pauseManager: {fileID: 0}
   transformRotationX: 0
   transformRotationY: 0

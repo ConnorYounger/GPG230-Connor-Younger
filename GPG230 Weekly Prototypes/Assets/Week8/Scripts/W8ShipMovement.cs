@@ -41,12 +41,16 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
             {
                 aimReticle = GameObject.Find("TargetReticle").transform;
 
-                photonView.RPC("SetShipTrail", RpcTarget.All);
+                photonView.RPC("MovementSetCurrentShip", RpcTarget.All);
+            }
+            else
+            {
+                SetShipTrail();
             }
         }
         else
         {
-            SetCurrentShip();
+            MovementSetCurrentShip();
         }
     }
 
@@ -65,7 +69,7 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
     //}
 
     [PunRPC]
-    public void SetCurrentShip()
+    public void MovementSetCurrentShip()
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
         currentShip = data.currentShip;

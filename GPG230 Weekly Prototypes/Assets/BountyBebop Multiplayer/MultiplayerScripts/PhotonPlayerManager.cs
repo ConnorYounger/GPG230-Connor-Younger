@@ -39,6 +39,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     public W8ShipMovement shipMovement;
     public ShipWeaponManager weaponManager;
     public Transform shipRotation;
+    public float syncUpdateSpeed = 6;
     public PauseManager pauseManager;
 
     public float transformRotationX;
@@ -94,7 +95,9 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         }
         else
         {
-            shipRotation.rotation = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, transformRotationW);
+            //shipRotation.rotation = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, transformRotationW);
+            Quaternion newRot = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, transformRotationW);
+            shipRotation.rotation = Quaternion.Slerp(shipRotation.rotation, newRot, syncUpdateSpeed * Time.deltaTime);
         }
     }
 
@@ -102,7 +105,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (photonView.IsMine)
         {
-            photonView.RPC("SetsCurrentShip", RpcTarget.All);
+            photonView.RPC("PhotonSetsCurrentShip", RpcTarget.All);
         }
         else
         {
@@ -113,7 +116,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     [PunRPC]
-    public void SetsCurrentShip()
+    public void PhotonSetsCurrentShip()
     {
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
         shipMovement.currentShip = data.currentShip;
