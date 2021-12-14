@@ -120,6 +120,8 @@ MonoBehaviour:
   isHoming: 0
   target: {fileID: 0}
   lifeTime: 10
+  photonView: {fileID: 0}
+  hitBox: {fileID: 6679321730668655435}
 --- !u!54 &1345081922050255209
 Rigidbody:
   m_ObjectHideFlags: 0

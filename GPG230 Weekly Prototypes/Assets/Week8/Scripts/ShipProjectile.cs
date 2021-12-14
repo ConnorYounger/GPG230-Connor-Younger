@@ -15,12 +15,25 @@ public class ShipProjectile : MonoBehaviour
     public GameObject target;
 
     public float lifeTime = 1;
-    private PhotonView photonView;
-    public PhotonView shipPhotonView;
+    public PhotonView photonView;
+    private bool hitSomething;
+    public SphereCollider hitBox;
+    public ShipWeaponManager shipWeaponManager;
 
     void Start()
     {
-        photonView = gameObject.GetComponent<PhotonView>();
+        //photonView = gameObject.GetComponent<PhotonView>();
+
+        if(photonView)
+        {
+            //hitBox = gameObject.GetComponent<SphereCollider>();
+            hitBox.enabled = false;
+
+            if (photonView.IsMine)
+            {
+                hitBox.enabled = true;
+            }
+        }
     }
 
     void Update()
@@ -80,18 +93,25 @@ public class ShipProjectile : MonoBehaviour
         }
         else
         {
-            if (other.GetComponent<PhotonView>() != null && other.GetComponent<PhotonView>() == shipPhotonView)
-                return;
-            else
+            if (photonView.IsMine)
             {
-                if (other.GetComponent<PlayerShipHealth>())
-                {
-                    other.GetComponent<PlayerShipHealth>().TakeDamage(Mathf.RoundToInt(projectileDamage / 2));
-                    Debug.Log("Hit Enemy Player");
-                }
+                hitSomething = true;
 
-                if (photonView.IsMine)
-                    photonView.RPC("DestroyProjectile", RpcTarget.All);
+                if (other.GetComponent<PhotonView>() != null && other.GetComponent<PhotonView>() == photonView)
+                    return;
+                else
+                {
+                    if (other.GetComponent<PlayerShipHealth>())
+                    {
+                        //other.GetComponent<PlayerShipHealth>().TakeDamage(Mathf.RoundToInt(projectileDamage / 2));
+                        other.GetComponent<PlayerShipHealth>().photonView.RPC("TakeDamage", RpcTarget.AllBuffered, Mathf.RoundToInt(projectileDamage / 2));
+                        Debug.Log("Hit Enemy Player");
+                    }
+
+                    //photonView.RPC("DestroyProjectile", RpcTarget.All);
+                    //PhotonNetwork.Destroy(gameObject);
+                    shipWeaponManager.DestroySpecificProjectile(this);
+                }
             }
         }
     }
@@ -100,10 +120,15 @@ public class ShipProjectile : MonoBehaviour
     {
         yield return new WaitForSeconds(lifeTime);
 
-        DestroyProjectile();
+        if(photonView == null)
+            DestroyProjectile();
+        else
+        {
+            if (photonView.IsMine)
+                shipWeaponManager.DestroySpecificProjectile(this);
+        }
     }
 
-    [PunRPC]
     public void DestroyProjectile()
     {
         if (destroyEffect) 
@@ -128,9 +153,29 @@ public class ShipProjectile : MonoBehaviour
         }
 
         StopCoroutine("ProjectileLifeTime");
-        if (photonView == null)
-            Destroy(gameObject);
-        else
-            PhotonNetwork.Destroy(gameObject);
+        Destroy(gameObject);
+        //if (photonView == null)
+        //    Destroy(gameObject);
+        //else
+        //    PhotonNetwork.Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        if (photonView && destroyEffect && hitSomething)
+        {
+            //if (photonView.IsMine && spawnMultiDestroyEffect)
+            //{
+            //    PhotonNetwork.Instantiate(destroyEffectMulti.name, transform.position, transform.rotation);
+            //}
+            //else
+            //{
+            //    GameObject fx = Instantiate(destroyEffect, transform.position, transform.rotation);
+            //    Destroy(fx, 3);
+            //}
+
+            GameObject fx = Instantiate(destroyEffect, transform.position, transform.rotation);
+            Destroy(fx, 3);
+        }
     }
 }

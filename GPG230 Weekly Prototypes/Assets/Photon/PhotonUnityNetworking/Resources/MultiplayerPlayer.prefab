@@ -386,6 +386,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5e26fdc477d25b468da842e872e17a4, type: 3}
   audioSource2: {fileID: 5648978553976044352}
   rocketReloadSound: {fileID: 8300000, guid: f262b23db446bcb49bb3c81fa5b6ab9c, type: 3}
+  photonView: {fileID: 0}
+  spawnedProjectiles: []
 --- !u!114 &1193891522606832542
 MonoBehaviour:
   m_ObjectHideFlags: 0

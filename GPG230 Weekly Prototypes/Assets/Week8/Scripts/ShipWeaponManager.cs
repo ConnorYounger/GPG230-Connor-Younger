@@ -25,13 +25,22 @@ public class ShipWeaponManager : MonoBehaviour
     public AudioSource audioSource2;
     public AudioClip rocketReloadSound;
 
-    private PhotonView photonView;
+    public PhotonView photonView;
+
+    private ShipWeapon currentShipWeapon;
+    private ShipProjectile currentProjectile;
+    public List<ShipProjectile> spawnedProjectiles;
 
     void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
 
         SetStartingWeaponStats();
+
+        if (photonView)
+        {
+            spawnedProjectiles = new List<ShipProjectile>();
+        }
     }
 
     void SetStartingWeaponStats()
@@ -65,8 +74,19 @@ public class ShipWeaponManager : MonoBehaviour
 
     void Update()
     {
-        PlayerInput();
-        CoolDownTimer();
+        if (photonView == null)
+        {
+            PlayerInput();
+            CoolDownTimer();
+        }
+        else
+        {
+            if (photonView.IsMine)
+            {
+                PlayerInput();
+                CoolDownTimer();
+            }
+        }
     }
 
     void CoolDownTimer()
@@ -112,19 +132,32 @@ public class ShipWeaponManager : MonoBehaviour
             {
                 for (int i = 0; i < primaryWeapons.Count; i++)
                 {
-                    FirePrimaryWeapons(i);
+                    //FirePrimaryWeapons(i);
+                    photonView.RPC("FirePrimaryWeapons", RpcTarget.AllBuffered, i);
                 }
             }
         }
     }
 
+    [PunRPC]
     public void FirePrimaryWeapons(int i)
     {
         if (primaryWeapons[i].canFire)
         {
-            FireProjectile(primaryWeapons[i]);
+            if (photonView == null)
+            {
+                //FireProjectile(primaryWeapons[i]);
+                currentShipWeapon = primaryWeapons[i];
+                FireProjectile();
+            }
+            else
+            {
+                currentShipWeapon = primaryWeapons[i];
+                //photonView.RPC("FireProjectile", RpcTarget.AllBuffered);
+                FireProjectile();
+            }
 
-            if(audioSource && primaryFireSounds.Length > 0)
+            if (audioSource && primaryFireSounds.Length > 0)
             {
                 int rand = Random.Range(0, primaryFireSounds.Length);
                 audioSource.clip = primaryFireSounds[rand];
@@ -141,7 +174,9 @@ public class ShipWeaponManager : MonoBehaviour
             {
                 //secondaryAmmoCount--;
 
-                FireProjectile(secondaryWeapons[i]);
+                //FireProjectile(secondaryWeapons[i]);
+                currentShipWeapon = secondaryWeapons[i];
+                FireProjectile();
 
                 if (audioSource && secondaryFireSounds.Length > 0)
                 {
@@ -166,9 +201,10 @@ public class ShipWeaponManager : MonoBehaviour
         }
     }
 
-    public void FireProjectile(ShipWeapon weapon)
+    [PunRPC]
+    public void FireProjectile()
     {
-        weapon.canFire = false;
+        ShipWeapon weapon = currentShipWeapon;
         //Debug.Log(weapon.canFire);
 
         GameObject projectile = new GameObject();
@@ -179,16 +215,37 @@ public class ShipWeaponManager : MonoBehaviour
         }
         else
         {
-            projectile = PhotonNetwork.Instantiate(weapon.weapon.projectilePrefab.name, weapon.shootPoint.position, weapon.shootPoint.rotation);
+            //projectile = PhotonNetwork.Instantiate(weapon.weapon.projectilePrefab.name, weapon.shootPoint.position, weapon.shootPoint.rotation);
+            projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
         }
 
+        weapon.canFire = false;
+
         ShipProjectile shipProjectile = projectile.GetComponent<ShipProjectile>();
+        spawnedProjectiles.Add(shipProjectile);
+        shipProjectile.shipWeaponManager = this;
 
         if (photonView == null)
+        {
             projectile.layer = 14;
+
+            if (weapon.shootFx)
+            {
+                weapon.shootFx.SetActive(true);
+                weapon.StopCoroutine("FireParticleFx");
+                weapon.StartCoroutine("FireParticleFx");
+            }
+        }
         else
         {
-            shipProjectile.shipPhotonView = photonView;
+            shipProjectile.photonView = photonView;
+
+            if (photonView.IsMine)
+            {
+                weapon.shootFx.SetActive(true);
+                weapon.StopCoroutine("FireParticleFx");
+                weapon.StartCoroutine("FireParticleFx");
+            }
         }
 
         if (shipProjectile != null)
@@ -197,13 +254,6 @@ public class ShipWeaponManager : MonoBehaviour
             shipProjectile.projectileSpeed = weapon.weapon.projectileSpeed;
             shipProjectile.lifeTime = weapon.weapon.projectileLifeTime;
             shipProjectile.StartCoroutine("ProjectileLifeTime");
-        }
-
-        if (weapon.shootFx)
-        {
-            weapon.shootFx.SetActive(true);
-            weapon.StopCoroutine("FireParticleFx");
-            weapon.StartCoroutine("FireParticleFx");
         }
 
         //if(photonView == null)
@@ -224,4 +274,69 @@ public class ShipWeaponManager : MonoBehaviour
 
         weapon.canFire = true;
     }
+
+    public void DestroySpecificProjectile(ShipProjectile projectile)
+    {
+        if (photonView.IsMine)
+        {
+            currentProjectile = projectile;
+
+            photonView.RPC("DestroyProjectile", RpcTarget.AllBuffered);
+        }
+    }
+
+    [PunRPC]
+    public void DestroyProjectile()
+    {
+        if(currentProjectile != null && spawnedProjectiles.Count > 0)
+        {
+            ShipProjectile projectileToDestroy = null;
+
+            foreach(ShipProjectile spawnedProjectile in spawnedProjectiles)
+            {
+                if(spawnedProjectile == currentProjectile)
+                {
+                    projectileToDestroy = spawnedProjectile;
+                }
+            }
+
+            if (projectileToDestroy != null)
+            {
+                spawnedProjectiles.Remove(projectileToDestroy);
+                projectileToDestroy.DestroyProjectile();
+            }
+        }
+    }
+
+    //[PunRPC]
+    //public void DestroyProjectile(ShipProjectile projectile)
+    //{
+    //    if (projectile.destroyEffect)
+    //    {
+    //        if (photonView == null)
+    //        {
+    //            GameObject fx = Instantiate(projectile.destroyEffect, projectile.transform.position, projectile.transform.rotation);
+    //            Destroy(fx, 3);
+    //        }
+    //        else
+    //        {
+    //            if (photonView.IsMine && projectile.spawnMultiDestroyEffect)
+    //            {
+    //                PhotonNetwork.Instantiate(projectile.destroyEffectMulti.name, projectile.transform.position, projectile.transform.rotation);
+    //            }
+    //            else
+    //            {
+    //                GameObject fx = Instantiate(projectile.destroyEffect, projectile.transform.position, projectile.transform.rotation);
+    //                Destroy(fx, 3);
+    //            }
+    //        }
+    //    }
+
+    //    projectile.StopCoroutine("ProjectileLifeTime");
+
+    //    if (photonView == null)
+    //        Destroy(projectile.gameObject);
+    //    else
+    //        PhotonNetwork.Destroy(projectile.gameObject);
+    //}
 }

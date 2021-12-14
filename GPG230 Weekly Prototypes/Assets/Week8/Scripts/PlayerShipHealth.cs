@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class PlayerShipHealth : MonoBehaviour
 {
@@ -26,10 +27,14 @@ public class PlayerShipHealth : MonoBehaviour
     public AudioClip[] sounds1;
     public AudioClip[] sounds2;
 
+    public PhotonView photonView;
+
     private bool isAlive = true;
 
     void Start()
     {
+        photonView = gameObject.GetComponent<PhotonView>();
+
         currentHealth = startingHealth;
 
         if(GameObject.Find("EnemySpawnManager"))
@@ -59,6 +64,7 @@ public class PlayerShipHealth : MonoBehaviour
         
     }
 
+    [PunRPC]
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

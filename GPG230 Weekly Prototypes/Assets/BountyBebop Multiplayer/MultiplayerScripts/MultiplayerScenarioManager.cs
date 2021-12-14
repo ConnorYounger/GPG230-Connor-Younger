@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class MultiplayerScenarioManager : MonoBehaviour
 {
+    public static PhotonView playerPhotonView;
+
     public GameObject playerPrefab;
 
     public Transform spawnPointsParent;

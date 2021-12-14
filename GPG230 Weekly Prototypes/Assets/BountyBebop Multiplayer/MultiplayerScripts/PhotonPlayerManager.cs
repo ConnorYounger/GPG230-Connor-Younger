@@ -63,7 +63,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
                 if (pauseManager)
                 {
                     pauseManager.shipMovement = shipMovement;
-                    pauseManager.weaponManager = weaponManager;
+                    //pauseManager.weaponManager = weaponManager;
                 }
             }
             else
