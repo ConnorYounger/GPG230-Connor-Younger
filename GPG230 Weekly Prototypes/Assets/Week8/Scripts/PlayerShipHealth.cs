@@ -39,6 +39,7 @@ public class PlayerShipHealth : MonoBehaviour
     public PhotonView photonView;
 
     private bool isAlive = true;
+    private MultiplayerScenarioManager multiplayerManager;
 
     void Start()
     {
@@ -60,6 +61,7 @@ public class PlayerShipHealth : MonoBehaviour
             healthSlider = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
             multiDeathUI = GameObject.Find("MultiplayerDeathUI");
             multiDeathUI.SetActive(false);
+            multiplayerManager = GameObject.Find("MultiplayerManager").GetComponent<MultiplayerScenarioManager>();
 
             if(GameObject.Find("MultiplayerRespawningText"))
                 respawnCountDownText = GameObject.Find("MultiplayerRespawningText").GetComponent<TMP_Text>();
@@ -195,6 +197,10 @@ public class PlayerShipHealth : MonoBehaviour
         {
             healthSlider.value = currentHealth;
         }
+
+        int rand = Random.Range(0, multiplayerManager.spawnPoints.Length);
+        transform.position = multiplayerManager.spawnPoints[rand].position;
+        transform.rotation = multiplayerManager.spawnPoints[rand].rotation;
 
         StopCoroutine("RespawnCountDown");
     }

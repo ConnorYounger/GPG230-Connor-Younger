@@ -10,7 +10,7 @@ public class MultiplayerScenarioManager : MonoBehaviour
     public GameObject playerPrefab;
 
     public Transform spawnPointsParent;
-    private Transform[] spawnPoints;
+    public Transform[] spawnPoints;
 
     void Start()
     {
