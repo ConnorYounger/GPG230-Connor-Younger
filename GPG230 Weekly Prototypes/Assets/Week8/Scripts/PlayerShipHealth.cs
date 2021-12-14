@@ -45,6 +45,11 @@ public class PlayerShipHealth : MonoBehaviour
             healthSlider.maxValue = startingHealth;
             healthSlider.value = currentHealth;
         }
+
+        if(photonView && photonView.IsMine)
+        {
+            healthSlider = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
+        }
     }
 
     public void SetStartingHealth(int health)

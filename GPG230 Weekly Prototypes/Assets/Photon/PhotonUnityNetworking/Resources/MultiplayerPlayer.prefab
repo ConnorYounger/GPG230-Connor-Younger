@@ -422,6 +422,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9a5fe35af5ad6c4b9375f80a27d9a71, type: 3}
   - {fileID: 8300000, guid: 9f740459a5983e940aa36028bb8d0ca2, type: 3}
   - {fileID: 8300000, guid: 9f68dd9f023d6704cb60d9d2ae8aeedd, type: 3}
+  photonView: {fileID: 0}
 --- !u!114 &5927441541328287135
 MonoBehaviour:
   m_ObjectHideFlags: 0

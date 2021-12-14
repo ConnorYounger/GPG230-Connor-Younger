@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 799735334}
   - component: {fileID: 799735335}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: PlayerHealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,8 +1050,11 @@ MonoBehaviour:
   escPause: 1
   pauseUI: {fileID: 8370715659530837094}
   lockCurserOnReturn: 0
+  setTimeScale: 1
   restrictCursor: 1
   puzzleGun: {fileID: 0}
+  shipMovement: {fileID: 0}
+  weaponManager: {fileID: 0}
 --- !u!114 &8935195395904307466
 MonoBehaviour:
   m_ObjectHideFlags: 0
