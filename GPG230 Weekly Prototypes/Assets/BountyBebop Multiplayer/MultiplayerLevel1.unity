@@ -5631,6 +5631,10 @@ PrefabInstance:
       propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3289098096112982771, guid: b33fe1b89a53caf4a8d1ae981a17c0f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3668941968834360865, guid: b33fe1b89a53caf4a8d1ae981a17c0f5, type: 3}
       propertyPath: setTimeScale
       value: 0

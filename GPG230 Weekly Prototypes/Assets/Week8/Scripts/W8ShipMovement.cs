@@ -99,7 +99,8 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
         ShipMovement();
         ReticleAiming();
         ShipTurning();
-        ShipTrail();
+        if(photonView == null)
+            ShipTrail();
     }
 
     void ShipMovement()

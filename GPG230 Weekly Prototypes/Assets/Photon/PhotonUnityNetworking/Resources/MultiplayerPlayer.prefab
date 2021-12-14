@@ -410,6 +410,9 @@ MonoBehaviour:
   shipChildMesh: {fileID: 1193891522654590547}
   boxCollider: {fileID: 1193891522606832540}
   destroySound: {fileID: 6220878351233691629, guid: cf03c4ec95b60d949a329b3fed0890c4, type: 3}
+  respawnTime: 3
+  multiDeathUI: {fileID: 0}
+  respawnCountDownText: {fileID: 0}
   as1: {fileID: 3180559085257971512}
   as2: {fileID: 7705679152865763015}
   sounds1:

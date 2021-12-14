@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using TMPro;
 
 public class PlayerShipHealth : MonoBehaviour
 {
@@ -20,6 +21,14 @@ public class PlayerShipHealth : MonoBehaviour
     public GameObject shipChildMesh;
     public BoxCollider boxCollider;
     public GameObject destroySound;
+
+    [Header("Multiplayer")]
+    public int respawnTime = 3;
+    private int respawntimer;
+
+    [Header("MultiplayerDeathRefs")]
+    public GameObject multiDeathUI;
+    public TMP_Text respawnCountDownText;
 
     [Header("Collision Sounds")]
     public AudioSource as1;
@@ -49,6 +58,11 @@ public class PlayerShipHealth : MonoBehaviour
         if(photonView && photonView.IsMine)
         {
             healthSlider = GameObject.Find("PlayerHealthSlider").GetComponent<Slider>();
+            multiDeathUI = GameObject.Find("MultiplayerDeathUI");
+            multiDeathUI.SetActive(false);
+
+            if(GameObject.Find("MultiplayerRespawningText"))
+                respawnCountDownText = GameObject.Find("MultiplayerRespawningText").GetComponent<TMP_Text>();
         }
     }
 
@@ -122,11 +136,66 @@ public class PlayerShipHealth : MonoBehaviour
         shipMovement.enabled = false;
         shipChildMesh.SetActive(false);
         boxCollider.enabled = false;
-        if (enemyShipManager)
+
+        if (photonView == null)
         {
-            enemyShipManager.PlayerDeath();
-            enemyShipManager.scenarioManager.ShowLoseUI();
+            if (enemyShipManager)
+            {
+                enemyShipManager.PlayerDeath();
+                enemyShipManager.scenarioManager.ShowLoseUI();
+                this.enabled = false;
+            }
         }
-        this.enabled = false;
+        else
+        {
+            respawntimer = respawnTime;
+            StartCoroutine("RespawnCountDown");
+        }
+    }
+
+    IEnumerator RespawnCountDown()
+    {
+        if(respawntimer <= 0)
+        {
+            Respawn();
+            //photonView.RPC("Respawn", RpcTarget.All);
+        }
+        else
+        {
+            multiDeathUI.SetActive(true);
+
+            if (respawnCountDownText == null)
+                respawnCountDownText = GameObject.Find("MultiplayerRespawningText").GetComponent<TMP_Text>();
+
+            respawnCountDownText.text = "Respawning in " + respawntimer + "s";
+        }
+
+        yield return new WaitForSeconds(1);
+
+        respawntimer--;
+
+        if(respawntimer >= 0)
+            StartCoroutine("RespawnCountDown");
+    }
+
+    [PunRPC]
+    public void Respawn()
+    {
+        currentHealth = startingHealth;
+
+        shipMovement.enabled = true;
+        shipChildMesh.SetActive(true);
+        boxCollider.enabled = true;
+
+        isAlive = true;
+        multiDeathUI.SetActive(false);
+        // Respawn Point
+
+        if (healthSlider)
+        {
+            healthSlider.value = currentHealth;
+        }
+
+        StopCoroutine("RespawnCountDown");
     }
 }
