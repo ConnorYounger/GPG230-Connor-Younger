@@ -101,6 +101,8 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
         ShipTurning();
         if(photonView == null)
             ShipTrail();
+        else if (photonView.IsMine)
+            ShipTrail();
     }
 
     void ShipMovement()
