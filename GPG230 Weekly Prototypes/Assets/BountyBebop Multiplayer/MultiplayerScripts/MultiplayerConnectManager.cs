@@ -9,6 +9,9 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
 {
     public W8MainMenuManager menuManager;
 
+    public GameObject connectingUI;
+    public GameObject connectingUI2;
+
     public TMP_InputField createInput;
     public TMP_InputField joinInput;
 
@@ -31,6 +34,7 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.ConnectUsingSettings();
+            connectingUI.SetActive(true);
         }
         else
             menuManager.ShowMultiplayerMenu();
@@ -39,6 +43,7 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         //multiplayerUI.SetActive(true);
+        connectingUI.SetActive(false);
         menuManager.ShowMultiplayerMenu();
 
         PhotonNetwork.JoinLobby();
@@ -53,11 +58,13 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
     // Join Room Buttons
     public void CreateRoom()
     {
+        connectingUI2.SetActive(true);
         PhotonNetwork.CreateRoom(createInput.text);
     }
 
     public void JoinRoom()
     {
+        connectingUI2.SetActive(true);
         Debug.Log("Count of rooms: " + PhotonNetwork.CountOfRooms);
         PhotonNetwork.JoinRoom(joinInput.text);
         Debug.Log("Is in room: " + PhotonNetwork.InRoom);
@@ -68,5 +75,6 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("On Joined Room");
         PhotonNetwork.LoadLevel("MultiplayerLevel1");
+        connectingUI2.SetActive(false);
     }
 }

@@ -33,7 +33,7 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
         }
 
         int spawnIndex = PhotonNetwork.CurrentRoom.PlayerCount;
-        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[spawnIndex].position, Quaternion.identity);
+        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
     }
 
     void Update()
@@ -93,7 +93,7 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
 
         foreach (LeaderBoardStat stat in leaderBoardStats)
         {
-            if (stat.player.player == PhotonView.Find(viewID))
+            if (stat.player.player.ViewID == viewID)
             {
                 leaderBoardToRemove = stat.gameObject;
                 leaderBoardStatToRemove = stat;
@@ -128,11 +128,14 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
 
     public void UpdateLeaderBoard()
     {
-        for(int i = 0; i < players.Count; i++)
+        if (players.Count > 0)
         {
-            leaderBoardStats[i].playerName.text = "Player" + players[i].player.ViewID;
-            leaderBoardStats[i].killsText.text = players[i].kills.ToString();
-            leaderBoardStats[i].deathsText.text = players[i].deaths.ToString();
+            for (int i = 0; i < players.Count; i++)
+            {
+                leaderBoardStats[i].playerName.text = "Player" + players[i].player.ViewID;
+                leaderBoardStats[i].killsText.text = players[i].kills.ToString();
+                leaderBoardStats[i].deathsText.text = players[i].deaths.ToString();
+            }
         }
 
         // Order by kills

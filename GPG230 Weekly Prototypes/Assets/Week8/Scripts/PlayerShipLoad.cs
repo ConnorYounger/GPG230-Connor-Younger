@@ -25,10 +25,13 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
     private PhotonView photonView;
     public int currentShip;
 
-    void Start()
+    private void Awake()
     {
         photonView = gameObject.GetComponent<PhotonView>();
+    }
 
+    void Start()
+    {
         if (photonView == null)
         {
             SetCurrentShip();
@@ -65,6 +68,8 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
     [PunRPC]
     void SetCurrentShip()
     {
+        Debug.Log("Set Current Ship, has PhotonView");
+
         PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
         currentShip = data.currentShip;
 
