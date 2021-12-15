@@ -27,8 +27,11 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
 
     public void AtemptToConnectToServer()
     {
-        if(!hasConnected)
+        if (!hasConnected)
+        {
+            PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.ConnectUsingSettings();
+        }
         else
             menuManager.ShowMultiplayerMenu();
     }
@@ -55,11 +58,15 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
 
     public void JoinRoom()
     {
+        Debug.Log("Count of rooms: " + PhotonNetwork.CountOfRooms);
         PhotonNetwork.JoinRoom(joinInput.text);
+        Debug.Log("Is in room: " + PhotonNetwork.InRoom);
+        Debug.Log("Current Room: " + PhotonNetwork.CurrentRoom);
     }
 
     public override void OnJoinedRoom()
     {
+        Debug.Log("On Joined Room");
         PhotonNetwork.LoadLevel("MultiplayerLevel1");
     }
 }

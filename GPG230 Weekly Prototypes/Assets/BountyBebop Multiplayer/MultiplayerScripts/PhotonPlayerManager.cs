@@ -17,6 +17,10 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(transformRotationY);
             stream.SendNext(transformRotationZ);
             stream.SendNext(transformRotationW);
+
+            stream.SendNext(weaponManager.weaponDirX);
+            stream.SendNext(weaponManager.weaponDirY);
+            stream.SendNext(weaponManager.weaponDirZ);
             //stream.SendNext(Health);
         }
         else
@@ -26,6 +30,10 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             this.transformRotationY = (float)stream.ReceiveNext();
             this.transformRotationZ = (float)stream.ReceiveNext();
             this.transformRotationW = (float)stream.ReceiveNext();
+
+            this.weaponManager.weaponDirX = (float)stream.ReceiveNext();
+            this.weaponManager.weaponDirY = (float)stream.ReceiveNext();
+            this.weaponManager.weaponDirZ = (float)stream.ReceiveNext();
             //this.Health = (float)stream.ReceiveNext();
         }
     }
@@ -41,6 +49,8 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     public Transform shipRotation;
     public float syncUpdateSpeed = 6;
     public PauseManager pauseManager;
+    private MultiplayerScenarioManager multiplayerManager;
+    public GameObject leaderBoard;
 
     public float transformRotationX;
     public float transformRotationY;
@@ -50,6 +60,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
+        multiplayerManager = GameObject.Find("MultiplayerManager").GetComponent<MultiplayerScenarioManager>();
 
         if (GameObject.Find("PauseManager"))
             pauseManager = GameObject.Find("PauseManager").GetComponent<PauseManager>();
@@ -63,7 +74,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
                 if (pauseManager)
                 {
                     pauseManager.shipMovement = shipMovement;
-                    //pauseManager.weaponManager = weaponManager;
+                    pauseManager.weaponManager = weaponManager;
                 }
             }
             else
@@ -76,12 +87,19 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             shipMovement.enabled = true;
             weaponManager.enabled = true;
+
+            multiplayerManager.photonView.RPC("NewPlayerJoined", RpcTarget.AllBuffered, photonView.ViewID);
         }
         else
         {
             shipMovement.enabled = false;
-            weaponManager.enabled = false;
+            //weaponManager.enabled = false;
         }
+
+        leaderBoard = GameObject.Find("MultiplayerScoreBoard");
+
+        if (leaderBoard)
+            leaderBoard.SetActive(false);
     }
 
     private void Update()
@@ -92,6 +110,8 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             transformRotationY = shipRotation.rotation.y;
             transformRotationZ = shipRotation.rotation.z;
             transformRotationW = shipRotation.rotation.w;
+
+            LeaderBoardInput();
         }
         else
         {
@@ -99,6 +119,27 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             Quaternion newRot = new Quaternion(transformRotationX, transformRotationY, transformRotationZ, transformRotationW);
             shipRotation.rotation = Quaternion.Slerp(shipRotation.rotation, newRot, syncUpdateSpeed * Time.deltaTime);
         }
+    }
+
+    void LeaderBoardInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && !pauseManager.gameIsPaused)
+        {
+            leaderBoard.SetActive(true);
+            StopCoroutine("HideLeaderBoard");
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            StartCoroutine("HideLeaderBoard");
+        }
+    }
+
+    IEnumerator HideLeaderBoard()
+    {
+        yield return new WaitForSeconds(0.05f);
+
+        leaderBoard.SetActive(false);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -137,5 +178,10 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
                 shipMovement.particlTrail[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        multiplayerManager.photonView.RPC("PlayerLeft", RpcTarget.AllBuffered, photonView.ViewID);
     }
 }

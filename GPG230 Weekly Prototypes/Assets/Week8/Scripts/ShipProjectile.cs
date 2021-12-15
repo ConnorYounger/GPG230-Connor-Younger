@@ -105,7 +105,7 @@ public class ShipProjectile : MonoBehaviour
                     {
                         //other.GetComponent<PlayerShipHealth>().TakeDamage(Mathf.RoundToInt(projectileDamage / 2));
                         other.GetComponent<PlayerShipHealth>().photonView.RPC("TakeDamage", RpcTarget.AllBuffered, Mathf.RoundToInt(projectileDamage / 2));
-                        Debug.Log("Hit Enemy Player");
+                        other.GetComponent<PlayerShipHealth>().lastHitPlayer = shipWeaponManager.photonPlayerManager;
                     }
 
                     //photonView.RPC("DestroyProjectile", RpcTarget.All);

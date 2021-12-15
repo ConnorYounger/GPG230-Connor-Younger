@@ -9,6 +9,8 @@ public class ShipWeapon : MonoBehaviour
 
     public Transform shootPoint;
 
+    public ShipWeaponManager weaponManager;
+
     public bool canFire = true;
 
     public GameObject shootFx;
@@ -23,6 +25,10 @@ public class ShipWeapon : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip[] shootSounds;
+
+    public Vector3 lookPoint;
+
+    public int weaponIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +48,28 @@ public class ShipWeapon : MonoBehaviour
     void Update()
     {
         if (!isEnemy)
-            WeaponAiming();
+        {
+            if (weaponManager == null || weaponManager.photonView == null)
+            {
+                WeaponAiming();
+            }
+            else
+            {
+                if (weaponManager.photonView.IsMine)
+                {
+                    WeaponAiming();
+
+                    weaponManager.weaponDirX = lookPoint.x;
+                    weaponManager.weaponDirY = lookPoint.y;
+                    weaponManager.weaponDirZ = lookPoint.z;
+                }
+                else
+                {
+                    lookPoint = new Vector3(weaponManager.weaponDirX, weaponManager.weaponDirY, weaponManager.weaponDirZ);
+                    transform.LookAt(lookPoint);
+                }
+            }
+        }
         else
         {
             EnemyAiming();
@@ -54,7 +81,7 @@ public class ShipWeapon : MonoBehaviour
 
     void WeaponAiming()
     {
-        Vector3 lookPoint = new Vector3();
+        //Vector3 lookPoint = new Vector3();
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

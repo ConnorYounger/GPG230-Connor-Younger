@@ -136,9 +136,9 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
 
     void ThrustOn()
     {
-        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+        //PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
 
-        foreach (Transform t in particlTrail[data.currentShip])
+        foreach (Transform t in particlTrail[currentShip])
         {
             if (t.GetComponent<ParticleSystem>())
             {
@@ -154,9 +154,9 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
 
     void ThrustOff()
     {
-        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+        //PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
 
-        foreach (Transform t in particlTrail[data.currentShip])
+        foreach (Transform t in particlTrail[currentShip])
         {
             if (t.GetComponent<ParticleSystem>())
             {

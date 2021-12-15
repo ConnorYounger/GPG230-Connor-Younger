@@ -28,28 +28,28 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: asia
+  DevRegion: au
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
   - ClickRpc
+  - DestroyProjectile
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - LoadShip
-  - SetShipTrail
-  - SetCurrentShip
-  - DestroyProjectile
-  - SetsCurrentShip
-  - PhotonSetsCurrentShip
-  - MovementSetCurrentShip
-  - FireProjectile
   - FirePrimaryWeapons
-  - TakeDamage
+  - FireProjectile
+  - MovementSetCurrentShip
+  - NewPlayerJoined
+  - PhotonSetsCurrentShip
+  - PlayerGotKilled
+  - PlayerLeft
   - Respawn
+  - RespawnSpaceship
+  - SetCurrentShip
+  - TakeDamage
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

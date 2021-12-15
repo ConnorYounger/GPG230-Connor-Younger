@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 5908889614384022427}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -52,6 +53,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &984956858994670984
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 3830896704104884864}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -104,6 +108,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &1193891522056088516
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: d5b69d15b9d0550458c7c2499a67ce5b, type: 2}
   shootPoint: {fileID: 1193891522575601685}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -282,6 +289,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &1193891522606832536
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +375,9 @@ MonoBehaviour:
   primaryWeapons:
   - {fileID: 1193891522575601686}
   - {fileID: 1193891523936056717}
+  weaponDirX: 0
+  weaponDirY: 0
+  weaponDirZ: 0
   secondaryWeapons:
   - {fileID: 1193891523369513911}
   secondaryAmmoCount: 10
@@ -387,6 +399,7 @@ MonoBehaviour:
   audioSource2: {fileID: 5648978553976044352}
   rocketReloadSound: {fileID: 8300000, guid: f262b23db446bcb49bb3c81fa5b6ab9c, type: 3}
   photonView: {fileID: 0}
+  photonPlayerManager: {fileID: 0}
   spawnedProjectiles: []
 --- !u!114 &1193891522606832542
 MonoBehaviour:
@@ -426,6 +439,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9f740459a5983e940aa36028bb8d0ca2, type: 3}
   - {fileID: 8300000, guid: 9f68dd9f023d6704cb60d9d2ae8aeedd, type: 3}
   photonView: {fileID: 0}
+  lastHitPlayer: {fileID: 0}
 --- !u!114 &5927441541328287135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,16 +669,12 @@ MonoBehaviour:
   - {fileID: 1193891523512037764}
   - {fileID: 1193891522056088516}
   - {fileID: 1193891523250624173}
-  - {fileID: 1193891522575601684}
-  - {fileID: 1193891523936056715}
-  - {fileID: 7463473021127708854}
-  - {fileID: 9204151380492051767}
-  - {fileID: 7910276315683834427}
   shipMovement: {fileID: 1193891522606832538}
   weaponManager: {fileID: 1193891522606832539}
   shipRotation: {fileID: 1193891523232171395}
   syncUpdateSpeed: 6
   pauseManager: {fileID: 0}
+  leaderBoard: {fileID: 0}
   transformRotationX: 0
   transformRotationY: 0
   transformRotationZ: 0
@@ -1183,6 +1193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 353ad8e26dd61fd4098fb7638d90d9d4, type: 2}
   shootPoint: {fileID: 1193891523369513910}
+  weaponManager: {fileID: 0}
   canFire: 1
   shootFx: {fileID: 0}
   isEnemy: 0
@@ -1190,6 +1201,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &1193891523512037764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,6 +1315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: d5b69d15b9d0550458c7c2499a67ce5b, type: 2}
   shootPoint: {fileID: 1193891523936056716}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 6633937077532612134}
   isEnemy: 0
@@ -1309,6 +1323,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &1193891524058764643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 4050607144206043814}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -1455,6 +1472,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &2984019882750423981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 11476884dbd96964c944efd80ae080e6, type: 2}
   shootPoint: {fileID: 8100430192620667521}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -1704,6 +1724,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &7080544199026567656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: cf127a68f47e8fc4bb4e5368764385d8, type: 2}
   shootPoint: {fileID: 3201451256401221649}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -1756,6 +1779,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &7910276315683834427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +1859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: cf127a68f47e8fc4bb4e5368764385d8, type: 2}
   shootPoint: {fileID: 7843844048773623260}
+  weaponManager: {fileID: 1193891522606832539}
   canFire: 1
   shootFx: {fileID: 2177003652898436743}
   isEnemy: 0
@@ -1841,6 +1867,8 @@ MonoBehaviour:
   shipAI: {fileID: 0}
   audioSource: {fileID: 0}
   shootSounds: []
+  lookPoint: {x: 0, y: 0, z: 0}
+  weaponIndex: 0
 --- !u!1 &9204151380492051767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,14 +2329,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 27b08d35a852fcb48b0a865762171649, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
---- !u!1 &4048802379237800493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
-  m_PrefabInstance: {fileID: 3814924496858810236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3709819179491778711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
+  m_PrefabInstance: {fileID: 3814924496858810236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4048802379237800493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a61add05c005f2d419c58e1939e61c7b, type: 3}
   m_PrefabInstance: {fileID: 3814924496858810236}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5086647621878002021
@@ -2470,14 +2498,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
---- !u!4 &6633937077532117510 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
-  m_PrefabInstance: {fileID: 6633937077532512384}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6633937077532612134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
+  m_PrefabInstance: {fileID: 6633937077532512384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6633937077532117510 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: c888f0c922d622147bbdbe2ca794142b, type: 3}
   m_PrefabInstance: {fileID: 6633937077532512384}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7746802130126333651
@@ -2569,10 +2597,18 @@ PrefabInstance:
       propertyPath: shootFx
       value: 
       objectReference: {fileID: 2177003652898436743}
+    - target: {fileID: 2042071025524394680, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1193891522606832539}
     - target: {fileID: 4385510127951183907, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
       propertyPath: shootFx
       value: 
       objectReference: {fileID: 2177003652898436743}
+    - target: {fileID: 4385510127951183907, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1193891522606832539}
     - target: {fileID: 4399678340111798292, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2621,22 +2657,15 @@ PrefabInstance:
       propertyPath: shootFx
       value: 
       objectReference: {fileID: 2177003652898436743}
+    - target: {fileID: 5948491381723797471, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1193891522606832539}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
 --- !u!114 &5369261182775207804 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4385510127951183907, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
-  m_PrefabInstance: {fileID: 8529541308647515999}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2653268642668097664 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5948491381723797471, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
   m_PrefabInstance: {fileID: 8529541308647515999}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2656,11 +2685,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7463473021127708854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1282560022528915433, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
+--- !u!114 &2653268642668097664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5948491381723797471, guid: 8e034f5cb6af82a499aba6589a2ca51c, type: 3}
   m_PrefabInstance: {fileID: 8529541308647515999}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddef6053a2f857d459779ddf83b29f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9175895559225963153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2738,13 +2773,13 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 63adf52f8bd7c7c4b9eab3a782057f21, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
---- !u!4 &8709377943232714106 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
-  m_PrefabInstance: {fileID: 9175895559225963153}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8328912407454961600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
+  m_PrefabInstance: {fileID: 9175895559225963153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8709377943232714106 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ad9684f377bfd8439399717ee98beb7, type: 3}
   m_PrefabInstance: {fileID: 9175895559225963153}
   m_PrefabAsset: {fileID: 0}

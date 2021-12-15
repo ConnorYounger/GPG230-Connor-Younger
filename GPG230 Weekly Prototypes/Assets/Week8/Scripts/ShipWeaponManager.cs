@@ -4,9 +4,41 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class ShipWeaponManager : MonoBehaviour
+public class ShipWeaponManager : MonoBehaviourPunCallbacks /*, IPunObservable */
 {
+    //#region IPunObservable implementation
+
+    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    //{
+    //    if (photonView)
+    //    {
+    //        if (stream.IsWriting)
+    //        {
+    //            // We own this player: send the others our data
+    //            //stream.SendNext(transformRotationX);
+
+    //            stream.SendNext(weaponDirX);
+    //            stream.SendNext(weaponDirY);
+    //            stream.SendNext(weaponDirZ);
+    //        }
+    //        else
+    //        {
+    //            // Network player, receive data
+    //            //this.transformRotationX = (float)stream.ReceiveNext();
+
+    //            this.weaponDirX = (float)stream.ReceiveNext();
+    //            this.weaponDirY = (float)stream.ReceiveNext();
+    //            this.weaponDirZ = (float)stream.ReceiveNext();
+    //        }
+    //    }
+    //}
+
+    //#endregion
+
     public List<ShipWeapon> primaryWeapons;
+    public float weaponDirX;
+    public float weaponDirY;
+    public float weaponDirZ;
     public ShipWeapon[] secondaryWeapons;
 
     public int secondaryAmmoCount = 10;
@@ -26,6 +58,7 @@ public class ShipWeaponManager : MonoBehaviour
     public AudioClip rocketReloadSound;
 
     public PhotonView photonView;
+    public PhotonPlayerManager photonPlayerManager;
 
     private ShipWeapon currentShipWeapon;
     private ShipProjectile currentProjectile;
@@ -34,6 +67,16 @@ public class ShipWeaponManager : MonoBehaviour
     void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
+        photonPlayerManager = gameObject.GetComponent<PhotonPlayerManager>();
+
+
+        if (photonView)
+        {
+            //weaponDirX = new List<float>();
+            //weaponDirY = new List<float>();
+            //weaponDirZ = new List<float>();
+            //weaponDirW = new List<float>();
+        }
 
         SetStartingWeaponStats();
 
@@ -133,7 +176,7 @@ public class ShipWeaponManager : MonoBehaviour
                 for (int i = 0; i < primaryWeapons.Count; i++)
                 {
                     //FirePrimaryWeapons(i);
-                    photonView.RPC("FirePrimaryWeapons", RpcTarget.AllBuffered, i);
+                    photonView.RPC("FirePrimaryWeapons", RpcTarget.All, i);
                 }
             }
         }
@@ -153,6 +196,15 @@ public class ShipWeaponManager : MonoBehaviour
             else
             {
                 currentShipWeapon = primaryWeapons[i];
+                //if (photonView.IsMine)
+                //{
+                //    weaponDir = currentShipWeapon.lookPoint;
+                //}
+                //else
+                //{
+                //    currentShipWeapon.lookPoint = weaponDir;
+                //    currentShipWeapon.transform.LookAt(currentShipWeapon.lookPoint);
+                //}
                 //photonView.RPC("FireProjectile", RpcTarget.AllBuffered);
                 FireProjectile();
             }
@@ -217,6 +269,22 @@ public class ShipWeaponManager : MonoBehaviour
         {
             //projectile = PhotonNetwork.Instantiate(weapon.weapon.projectilePrefab.name, weapon.shootPoint.position, weapon.shootPoint.rotation);
             projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
+
+            //if (photonView.IsMine)
+            //{
+            //    //weaponDirX = currentShipWeapon.gameObject.transform.rotation.x;
+            //    //weaponDirX = currentShipWeapon.gameObject.transform.rotation.y;
+            //    //weaponDirX = currentShipWeapon.gameObject.transform.rotation.z;
+            //    //weaponDirX = currentShipWeapon.gameObject.transform.rotation.w;
+            //    weaponDir = currentShipWeapon.lookPoint;
+            //}
+            //else
+            //{
+            //    //Quaternion newRot = new Quaternion(weaponDirX, weaponDirY, weaponDirZ, weaponDirW);
+            //    //currentShipWeapon.gameObject.transform.rotation = newRot;
+            //    currentShipWeapon.lookPoint = weaponDir;
+            //    currentShipWeapon.transform.LookAt(currentShipWeapon.lookPoint);
+            //}
         }
 
         weapon.canFire = false;

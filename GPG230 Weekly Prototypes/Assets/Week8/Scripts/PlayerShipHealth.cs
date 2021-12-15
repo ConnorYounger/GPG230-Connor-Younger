@@ -40,6 +40,7 @@ public class PlayerShipHealth : MonoBehaviour
 
     private bool isAlive = true;
     private MultiplayerScenarioManager multiplayerManager;
+    public PhotonPlayerManager lastHitPlayer;
 
     void Start()
     {
@@ -150,8 +151,16 @@ public class PlayerShipHealth : MonoBehaviour
         }
         else
         {
-            respawntimer = respawnTime;
-            StartCoroutine("RespawnCountDown");
+            if (photonView.IsMine)
+            {
+                respawntimer = respawnTime;
+                StartCoroutine("RespawnCountDown");
+
+                if (lastHitPlayer)
+                {
+                    multiplayerManager.photonView.RPC("PlayerGotKilled", RpcTarget.AllBuffered, photonView.ViewID, lastHitPlayer.photonView.ViewID);
+                }
+            }
         }
     }
 

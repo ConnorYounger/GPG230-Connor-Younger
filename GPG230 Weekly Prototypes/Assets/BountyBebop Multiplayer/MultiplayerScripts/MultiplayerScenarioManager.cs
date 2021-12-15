@@ -2,18 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
-public class MultiplayerScenarioManager : MonoBehaviour
+public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
 {
     public static PhotonView playerPhotonView;
+    public PhotonView photonView;
 
     public GameObject playerPrefab;
 
     public Transform spawnPointsParent;
     public Transform[] spawnPoints;
 
+    public GameObject leaderBoardPrefab;
+    public Transform leaderBoardGroup;
+    public List<MultiplayerScenarioPlayerStats> players;
+    public List<LeaderBoardStat> leaderBoardStats; 
+
     void Start()
     {
+        photonView = gameObject.GetComponent<PhotonView>();
+
+        players = new List<MultiplayerScenarioPlayerStats>();
+
         spawnPoints = new Transform[spawnPointsParent.childCount];
 
         for(int i = 0; i < spawnPoints.Length; i++)
@@ -30,5 +41,81 @@ public class MultiplayerScenarioManager : MonoBehaviour
         
     }
 
+    [PunRPC]
+    public void PlayerGotKilled(int playerWhoDied, int playerWhoKilled)
+    {
+        for(int i = 0; i < players.Count; i++)
+        {
+            if(players[i].player == PhotonView.Find(playerWhoDied))
+            {
+                players[i].deaths++;
+            }
 
+            if (players[i].player == PhotonView.Find(playerWhoKilled))
+            {
+                players[i].kills++;
+            }
+        }
+
+        UpdateLeaderBoard();
+    }
+
+    [PunRPC]
+    public void NewPlayerJoined(int viewID)
+    {
+        MultiplayerScenarioPlayerStats newStats = new MultiplayerScenarioPlayerStats();
+        newStats.player = PhotonView.Find(viewID);
+        players.Add(newStats);
+
+        GameObject newLeaderObject = Instantiate(leaderBoardPrefab, leaderBoardGroup.position, Quaternion.identity);
+        newLeaderObject.transform.parent = leaderBoardGroup;
+
+        LeaderBoardStat newLeaderBoard = newLeaderObject.GetComponent<LeaderBoardStat>();
+        newLeaderBoard.player = newStats;
+        leaderBoardStats.Add(newLeaderBoard);
+
+        UpdateLeaderBoard();
+    }
+
+    [PunRPC]
+    public void PlayerLeft(int viewID)
+    {
+        GameObject leaderBoardToRemove = null;
+
+        foreach (LeaderBoardStat stat in leaderBoardStats)
+        {
+            if (stat.player.player == PhotonView.Find(viewID))
+            {
+                leaderBoardStats.Remove(stat);
+                leaderBoardToRemove = stat.gameObject;
+            }
+        }
+
+        foreach (MultiplayerScenarioPlayerStats stat in players)
+        {
+            if(stat.player == PhotonView.Find(viewID))
+            {
+                players.Remove(stat);
+            }
+        }
+
+        if(leaderBoardToRemove != null)
+        {
+            Destroy(leaderBoardToRemove);
+        }
+
+        UpdateLeaderBoard();
+    }
+
+    public void UpdateLeaderBoard()
+    {
+        for(int i = 0; i < players.Count; i++)
+        {
+            leaderBoardStats[i].playerName.text = "Player" + players[i].player.ViewID;
+            leaderBoardStats[i].killsText.text = players[i].kills.ToString();
+            leaderBoardStats[i].deathsText.text = players[i].deaths.ToString();
+        }
+
+        // Order by kills
+    }
 }

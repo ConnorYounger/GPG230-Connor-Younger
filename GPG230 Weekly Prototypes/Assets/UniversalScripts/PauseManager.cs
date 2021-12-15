@@ -10,7 +10,7 @@ public class PauseManager : MonoBehaviour
     private UnityStandardAssets.Characters.FirstPerson.FirstPersonController fPSController;
 
     public bool lockCurserOnReturn;
-    private bool gameIsPaused;
+    public bool gameIsPaused;
     public bool setTimeScale = true;
 
     public bool restrictCursor;

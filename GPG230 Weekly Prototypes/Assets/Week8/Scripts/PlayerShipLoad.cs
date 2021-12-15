@@ -116,6 +116,7 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
                 for (int i = 0; i < ship1PWeapons.Length; i++)
                 {
                     weaponsManager.primaryWeapons.Add(ship1PWeapons[i]);
+                    ship1PWeapons[i].weaponIndex = i;
                 }
                 weaponsManager.secondaryWeapons[0] = ship1SecondaryWeapon;
                 break;
@@ -123,6 +124,7 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
                 for (int i = 0; i < ship2PWeapons.Length; i++)
                 {
                     weaponsManager.primaryWeapons.Add(ship2PWeapons[i]);
+                    ship2PWeapons[i].weaponIndex = i;
                 }
                 weaponsManager.secondaryWeapons[0] = ship2SecondaryWeapon;
                 break;
@@ -130,9 +132,22 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
                 for (int i = 0; i < ship3PWeapons.Length; i++)
                 {
                     weaponsManager.primaryWeapons.Add(ship3PWeapons[i]);
+                    ship3PWeapons[i].weaponIndex = i;
                 }
                 weaponsManager.secondaryWeapons[0] = ship3SecondaryWeapon;
                 break;
         }
+
+
+        //if (weaponsManager.photonView)
+        //{
+        //    for (int i = 0; i < weaponsManager.primaryWeapons.Count; i++)
+        //    {
+        //        weaponsManager.weaponDirX.Add(new float());
+        //        weaponsManager.weaponDirY.Add(new float());
+        //        weaponsManager.weaponDirZ.Add(new float());
+        //        weaponsManager.weaponDirW.Add(new float());
+        //    }
+        //}
     }
 }
