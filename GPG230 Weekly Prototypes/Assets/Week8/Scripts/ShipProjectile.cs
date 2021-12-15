@@ -19,6 +19,7 @@ public class ShipProjectile : MonoBehaviour
     private bool hitSomething;
     public SphereCollider hitBox;
     public ShipWeaponManager shipWeaponManager;
+    public int projectileIndex;
 
     void Start()
     {

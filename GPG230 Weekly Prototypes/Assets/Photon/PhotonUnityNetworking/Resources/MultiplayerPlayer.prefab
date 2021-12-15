@@ -401,6 +401,7 @@ MonoBehaviour:
   photonView: {fileID: 0}
   photonPlayerManager: {fileID: 0}
   spawnedProjectiles: []
+  projectileIndex: 0
 --- !u!114 &1193891522606832542
 MonoBehaviour:
   m_ObjectHideFlags: 0

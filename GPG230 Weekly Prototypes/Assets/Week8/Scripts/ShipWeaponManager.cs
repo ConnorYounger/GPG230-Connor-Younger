@@ -63,6 +63,7 @@ public class ShipWeaponManager : MonoBehaviourPunCallbacks /*, IPunObservable */
     private ShipWeapon currentShipWeapon;
     private ShipProjectile currentProjectile;
     public List<ShipProjectile> spawnedProjectiles;
+    public int projectileIndex;
 
     void Start()
     {
@@ -267,6 +268,7 @@ public class ShipWeaponManager : MonoBehaviourPunCallbacks /*, IPunObservable */
         }
         else
         {
+            projectileIndex++;
             //projectile = PhotonNetwork.Instantiate(weapon.weapon.projectilePrefab.name, weapon.shootPoint.position, weapon.shootPoint.rotation);
             projectile = Instantiate(weapon.weapon.projectilePrefab, weapon.shootPoint.position, weapon.shootPoint.rotation);
 
@@ -307,6 +309,7 @@ public class ShipWeaponManager : MonoBehaviourPunCallbacks /*, IPunObservable */
         else
         {
             shipProjectile.photonView = photonView;
+            shipProjectile.projectileIndex = projectileIndex;
 
             if (photonView.IsMine)
             {
@@ -349,20 +352,20 @@ public class ShipWeaponManager : MonoBehaviourPunCallbacks /*, IPunObservable */
         {
             currentProjectile = projectile;
 
-            photonView.RPC("DestroyProjectile", RpcTarget.AllBuffered);
+            photonView.RPC("DestroyProjectile", RpcTarget.AllBuffered, projectile.projectileIndex);
         }
     }
 
     [PunRPC]
-    public void DestroyProjectile()
+    public void DestroyProjectile(int index)
     {
-        if(currentProjectile != null && spawnedProjectiles.Count > 0)
+        if(/*currentProjectile != null && */spawnedProjectiles.Count > 0)
         {
             ShipProjectile projectileToDestroy = null;
 
             foreach(ShipProjectile spawnedProjectile in spawnedProjectiles)
             {
-                if(spawnedProjectile == currentProjectile)
+                if(spawnedProjectile.projectileIndex == index)
                 {
                     projectileToDestroy = spawnedProjectile;
                 }

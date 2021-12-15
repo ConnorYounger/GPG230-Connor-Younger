@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 3483516280267922855}
   - component: {fileID: 1345081922050255209}
   - component: {fileID: 7641241984874733076}
-  - component: {fileID: -2991642516081575521}
-  - component: {fileID: 305874991200160091}
   m_Layer: 0
   m_Name: MultiProjectile3
   m_TagString: Untagged
@@ -122,6 +120,8 @@ MonoBehaviour:
   lifeTime: 10
   photonView: {fileID: 0}
   hitBox: {fileID: 6679321730668655435}
+  shipWeaponManager: {fileID: 0}
+  projectileIndex: 0
 --- !u!54 &1345081922050255209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -245,42 +245,3 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &-2991642516081575521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705284285904835410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 305874991200160091}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &305874991200160091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705284285904835410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
