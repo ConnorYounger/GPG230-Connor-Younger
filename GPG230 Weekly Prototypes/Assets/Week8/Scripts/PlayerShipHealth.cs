@@ -38,8 +38,8 @@ public class PlayerShipHealth : MonoBehaviour
 
     public PhotonView photonView;
 
-    private bool isAlive = true;
-    private MultiplayerScenarioManager multiplayerManager;
+    public bool isAlive = true;
+    public MultiplayerScenarioManager multiplayerManager;
     public PhotonPlayerManager lastHitPlayer;
 
     void Start()
@@ -168,8 +168,8 @@ public class PlayerShipHealth : MonoBehaviour
     {
         if(respawntimer <= 0)
         {
-            Respawn();
-            //photonView.RPC("Respawn", RpcTarget.All);
+            //Respawn();
+            photonView.RPC("Respawn", RpcTarget.All);
         }
         else
         {
@@ -194,23 +194,26 @@ public class PlayerShipHealth : MonoBehaviour
     {
         currentHealth = startingHealth;
 
-        shipMovement.enabled = true;
         shipChildMesh.SetActive(true);
         boxCollider.enabled = true;
 
-        isAlive = true;
-        multiDeathUI.SetActive(false);
-        // Respawn Point
-
-        if (healthSlider)
+        if (photonView.IsMine)
         {
-            healthSlider.value = currentHealth;
+            shipMovement.enabled = true;
+            multiDeathUI.SetActive(false);
+
+            if (healthSlider)
+            {
+                healthSlider.value = currentHealth;
+            }
+
+            StopCoroutine("RespawnCountDown");
+
+            int rand = Random.Range(0, multiplayerManager.spawnPoints.Length);
+            transform.position = multiplayerManager.spawnPoints[rand].position;
+            transform.rotation = multiplayerManager.spawnPoints[rand].rotation;
         }
 
-        int rand = Random.Range(0, multiplayerManager.spawnPoints.Length);
-        transform.position = multiplayerManager.spawnPoints[rand].position;
-        transform.rotation = multiplayerManager.spawnPoints[rand].rotation;
-
-        StopCoroutine("RespawnCountDown");
+        isAlive = true;
     }
 }

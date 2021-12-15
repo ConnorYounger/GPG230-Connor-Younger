@@ -51,6 +51,7 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     public PauseManager pauseManager;
     private MultiplayerScenarioManager multiplayerManager;
     public GameObject leaderBoard;
+    public PlayerShipHealth playerHealth;
 
     public float transformRotationX;
     public float transformRotationY;
@@ -184,4 +185,29 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         multiplayerManager.photonView.RPC("PlayerLeft", RpcTarget.AllBuffered, photonView.ViewID);
     }
+
+    //[PunRPC]
+    //public void Respawn()
+    //{
+    //    playerHealth.currentHealth = playerHealth.startingHealth;
+
+    //    playerHealth.shipMovement.enabled = true;
+    //    playerHealth.shipChildMesh.SetActive(true);
+    //    playerHealth.boxCollider.enabled = true;
+
+    //    playerHealth.isAlive = true;
+    //    playerHealth.multiDeathUI.SetActive(false);
+    //    // Respawn Point
+
+    //    if (playerHealth.healthSlider)
+    //    {
+    //        playerHealth.healthSlider.value = playerHealth.currentHealth;
+    //    }
+
+    //    int rand = Random.Range(0, playerHealth.multiplayerManager.spawnPoints.Length);
+    //    playerHealth.transform.position = multiplayerManager.spawnPoints[rand].position;
+    //    playerHealth.transform.rotation = multiplayerManager.spawnPoints[rand].rotation;
+
+    //    StopCoroutine("RespawnCountDown");
+    //}
 }

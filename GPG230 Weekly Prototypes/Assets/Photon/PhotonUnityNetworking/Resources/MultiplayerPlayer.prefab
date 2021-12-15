@@ -439,6 +439,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9f740459a5983e940aa36028bb8d0ca2, type: 3}
   - {fileID: 8300000, guid: 9f68dd9f023d6704cb60d9d2ae8aeedd, type: 3}
   photonView: {fileID: 0}
+  isAlive: 1
+  multiplayerManager: {fileID: 0}
   lastHitPlayer: {fileID: 0}
 --- !u!114 &5927441541328287135
 MonoBehaviour:
@@ -675,6 +677,7 @@ MonoBehaviour:
   syncUpdateSpeed: 6
   pauseManager: {fileID: 0}
   leaderBoard: {fileID: 0}
+  playerHealth: {fileID: 0}
   transformRotationX: 0
   transformRotationY: 0
   transformRotationZ: 0

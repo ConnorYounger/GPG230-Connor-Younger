@@ -95,12 +95,12 @@ public class ShipProjectile : MonoBehaviour
         {
             if (photonView.IsMine)
             {
-                hitSomething = true;
-
                 if (other.GetComponent<PhotonView>() != null && other.GetComponent<PhotonView>() == photonView)
                     return;
                 else
                 {
+                    hitSomething = true;
+
                     if (other.GetComponent<PlayerShipHealth>())
                     {
                         //other.GetComponent<PlayerShipHealth>().TakeDamage(Mathf.RoundToInt(projectileDamage / 2));

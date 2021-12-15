@@ -74,6 +74,11 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
         newLeaderBoard.player = newStats;
         leaderBoardStats.Add(newLeaderBoard);
 
+        if (PhotonView.Find(viewID).IsMine)
+        {
+            newLeaderBoard.playerName.color = Color.green;
+        }
+
         UpdateLeaderBoard();
     }
 
@@ -81,13 +86,15 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
     public void PlayerLeft(int viewID)
     {
         GameObject leaderBoardToRemove = null;
+        LeaderBoardStat leaderBoardStatToRemove = null;
+        MultiplayerScenarioPlayerStats playerToRemove = null;
 
         foreach (LeaderBoardStat stat in leaderBoardStats)
         {
             if (stat.player.player == PhotonView.Find(viewID))
             {
-                leaderBoardStats.Remove(stat);
                 leaderBoardToRemove = stat.gameObject;
+                leaderBoardStatToRemove = stat;
             }
         }
 
@@ -95,13 +102,23 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
         {
             if(stat.player == PhotonView.Find(viewID))
             {
-                players.Remove(stat);
+                playerToRemove = stat;
             }
+        }
+
+        if(playerToRemove != null)
+        {
+            players.Remove(playerToRemove);
         }
 
         if(leaderBoardToRemove != null)
         {
             Destroy(leaderBoardToRemove);
+        }
+        
+        if(leaderBoardStatToRemove != null)
+        {
+            leaderBoardStats.Remove(leaderBoardStatToRemove);
         }
 
         UpdateLeaderBoard();
