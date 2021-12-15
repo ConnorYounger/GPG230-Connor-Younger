@@ -441,7 +441,7 @@ MonoBehaviour:
   photonView: {fileID: 0}
   isAlive: 1
   multiplayerManager: {fileID: 0}
-  lastHitPlayer: {fileID: 0}
+  lastHitPlayer: 0
 --- !u!114 &5927441541328287135
 MonoBehaviour:
   m_ObjectHideFlags: 0

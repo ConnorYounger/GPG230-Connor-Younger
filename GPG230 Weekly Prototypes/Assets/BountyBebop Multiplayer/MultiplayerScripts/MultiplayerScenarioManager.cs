@@ -44,6 +44,8 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void PlayerGotKilled(int playerWhoDied, int playerWhoKilled)
     {
+        Debug.Log("Player" + PhotonView.Find(playerWhoDied) + " was killed by Player" + PhotonView.Find(playerWhoKilled));
+
         for(int i = 0; i < players.Count; i++)
         {
             if(players[i].player == PhotonView.Find(playerWhoDied))
