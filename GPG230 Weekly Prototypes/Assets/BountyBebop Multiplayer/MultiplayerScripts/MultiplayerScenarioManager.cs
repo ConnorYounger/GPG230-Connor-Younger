@@ -128,7 +128,7 @@ public class MultiplayerScenarioManager : MonoBehaviourPunCallbacks
 
     public void UpdateLeaderBoard()
     {
-        if (players.Count > 0)
+        if (players.Count > 0 && leaderBoardStats.Count > 0)
         {
             for (int i = 0; i < players.Count; i++)
             {

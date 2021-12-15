@@ -9,6 +9,7 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
     public PlayerShipHealth playerHealth;
     public ShipWeaponManager weaponsManager;
     public MeshRenderer defultShipRenderer;
+    public W8ShipMovement shipMovement;
     public GameObject[] ships;
 
     [Header("Ship Weapons")]
@@ -38,40 +39,82 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
         }
         else
         {
-            if (photonView.IsMine)
-            {
-                Debug.Log("Load Ship: Photon View Is Mine");
-                photonView.RPC("SetCurrentShip", RpcTarget.All);
-            }
-            else
-            {
-                LoadShip();
-            }
+            //if (photonView.IsMine)
+            //{
+            //    photonView.RPC("SetCurrentShip", RpcTarget.AllBuffered);
+            //}
+            //else
+            //{
+            //    LoadShip();
+            //}
+
+            //if (photonView.IsMine)
+            //    photonView.RPC("SetCurrentShip", RpcTarget.AllBuffered);
+            //else
+            //    photonView.RPC("NewPlayerJoined", RpcTarget.AllBuffered);
+
+            SetCurrentShip();
         }
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    //public override void OnPlayerEnteredRoom(Player newPlayer)
+    //{
+    //    if (photonView.IsMine)
+    //    {
+    //        //Debug.Log("Load Ship: Photon View Is Mine");
+    //        //photonView.RPC("SetCurrentShip", RpcTarget.All);
+    //    }
+    //    else
+    //    {
+    //        //photonView.RPC("SetCurrentShip", RpcTarget.AllBuffered);
+    //        photonView.RPC("NewPlayerJoined", RpcTarget.AllBuffered);
+
+    //        //LoadShip();
+    //    }
+
+    //    //base.OnPlayerEnteredRoom(newPlayer);
+    //}
+
+    [PunRPC]
+    void NewPlayerJoined()
     {
         if (photonView.IsMine)
         {
-            Debug.Log("Load Ship: Photon View Is Mine");
-            photonView.RPC("SetCurrentShip", RpcTarget.All);
+            PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+            currentShip = data.currentShip;
+
+            photonView.RPC("SetCurrentShip", RpcTarget.AllBuffered);
+        }
+    }
+
+    void SetCurrentShip()
+    {
+        if (photonView == null)
+        {
+            PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+            currentShip = data.currentShip;
+
+            LoadShip();
         }
         else
         {
-            LoadShip();
-        }
+            if (photonView.IsMine)
+            {
+                Debug.Log("Set Current Ship, has PhotonView");
 
-        //base.OnPlayerEnteredRoom(newPlayer);
+                PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+                photonView.RPC("SetMultiplayerShip", RpcTarget.AllBuffered, data.currentShip);
+            }
+        }
     }
 
     [PunRPC]
-    void SetCurrentShip()
+    public void SetMultiplayerShip(int cs)
     {
-        Debug.Log("Set Current Ship, has PhotonView");
+        currentShip = cs;
 
-        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
-        currentShip = data.currentShip;
+        //shipMovement.currentShip = currentShip;
+        //shipMovement.SetShipTrail();
 
         LoadShip();
     }
@@ -141,6 +184,18 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
                 }
                 weaponsManager.secondaryWeapons[0] = ship3SecondaryWeapon;
                 break;
+        }
+
+        for (int i = 0; i < shipMovement.particlTrail.Length; i++)
+        {
+            if (i == currentShip)
+            {
+                shipMovement.particlTrail[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                shipMovement.particlTrail[i].gameObject.SetActive(false);
+            }
         }
 
 

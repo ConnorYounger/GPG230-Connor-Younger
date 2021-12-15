@@ -358,6 +358,7 @@ MonoBehaviour:
   - {fileID: 4256404460032589137}
   - {fileID: 8858143649201934732}
   thrusterAudioSource: {fileID: 1855619170222219543}
+  playerShipLoad: {fileID: 5927441541328287135}
   photonView: {fileID: 1193891522606832543}
   currentShip: 0
 --- !u!114 &1193891522606832539
@@ -458,6 +459,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1193891522606832542}
   weaponsManager: {fileID: 1193891522606832539}
   defultShipRenderer: {fileID: 3632612926401352312}
+  shipMovement: {fileID: 1193891522606832538}
   ships:
   - {fileID: 2984019882750423981}
   - {fileID: 2380823123506869861}
@@ -2024,6 +2026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipExaustFx2
       objectReference: {fileID: 0}
+    - target: {fileID: 69012133407594229, guid: b6186c65930aa7e4ea8b6fb404ce9794, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 69012133407623893, guid: b6186c65930aa7e4ea8b6fb404ce9794, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2161,6 +2167,10 @@ PrefabInstance:
     - target: {fileID: 1708600990076075431, guid: 9f2aa5a13497d5442b60d2484dba69b5, type: 3}
       propertyPath: m_Name
       value: ShipExaustFx3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708600990076075431, guid: 9f2aa5a13497d5442b60d2484dba69b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2aa5a13497d5442b60d2484dba69b5, type: 3}
@@ -2353,6 +2363,10 @@ PrefabInstance:
     - target: {fileID: 7017941740803364017, guid: fa51d6ed800355d47bad1300de921ff6, type: 3}
       propertyPath: m_Name
       value: ShipExaustFx1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017941740803364017, guid: fa51d6ed800355d47bad1300de921ff6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7017941740803786897, guid: fa51d6ed800355d47bad1300de921ff6, type: 3}
       propertyPath: m_RootOrder
@@ -2578,6 +2592,10 @@ PrefabInstance:
     - target: {fileID: 1255477117487721343, guid: c6dd1c16f3cc3674a9ddcded46cfbc3b, type: 3}
       propertyPath: m_Name
       value: ShipExaustFx4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255477117487721343, guid: c6dd1c16f3cc3674a9ddcded46cfbc3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6dd1c16f3cc3674a9ddcded46cfbc3b, type: 3}

@@ -75,6 +75,6 @@ public class MultiplayerConnectManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("On Joined Room");
         PhotonNetwork.LoadLevel("MultiplayerLevel1");
-        connectingUI2.SetActive(false);
+        //connectingUI2.SetActive(false);
     }
 }

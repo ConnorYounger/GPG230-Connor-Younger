@@ -24,9 +24,11 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
 
     public Transform[] particlTrail;
     public AudioSource thrusterAudioSource;
+    public PlayerShipLoad playerShipLoad;
 
     public PhotonView photonView;
     public int currentShip;
+    private bool hasSetTrail;
  
     void Start()
     {
@@ -41,12 +43,14 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
             {
                 aimReticle = GameObject.Find("TargetReticle").transform;
 
-                photonView.RPC("MovementSetCurrentShip", RpcTarget.All);
+                //photonView.RPC("MovementSetCurrentShip", RpcTarget.All);
             }
-            else
-            {
-                SetShipTrail();
-            }
+            //else
+            //{
+            //    SetShipTrail();
+            //}
+
+            MovementSetCurrentShip();
         }
         else
         {
@@ -68,12 +72,26 @@ public class W8ShipMovement : MonoBehaviourPunCallbacks
     //    //base.OnPlayerEnteredRoom(newPlayer);
     //}
 
-    [PunRPC]
     public void MovementSetCurrentShip()
     {
-        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
-        currentShip = data.currentShip;
+        if (photonView == null)
+        {
+            PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+            currentShip = data.currentShip;
 
+            SetShipTrail();
+        }
+        else
+        {
+            StartCoroutine("SetMultiplayerShipTrail");
+        }
+    }
+
+    IEnumerator SetMultiplayerShipTrail()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        currentShip = playerShipLoad.currentShip;
         SetShipTrail();
     }
 

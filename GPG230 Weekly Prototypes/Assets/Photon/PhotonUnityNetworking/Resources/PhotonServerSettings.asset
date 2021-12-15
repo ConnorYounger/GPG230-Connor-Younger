@@ -51,6 +51,8 @@ MonoBehaviour:
   - SetCurrentShip
   - TakeDamage
   - HitByPlayer
+  - SetMultiplayerShip
+  - SetMultiplayerTrail
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

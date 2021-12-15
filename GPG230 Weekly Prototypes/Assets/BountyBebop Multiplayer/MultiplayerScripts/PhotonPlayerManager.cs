@@ -143,43 +143,43 @@ public class PhotonPlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         leaderBoard.SetActive(false);
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        if (photonView.IsMine)
-        {
-            photonView.RPC("PhotonSetsCurrentShip", RpcTarget.All);
-        }
-        else
-        {
-            SetShipTrails();
-        }
+    //public override void OnPlayerEnteredRoom(Player newPlayer)
+    //{
+    //    if (photonView.IsMine)
+    //    {
+    //        photonView.RPC("PhotonSetsCurrentShip", RpcTarget.All);
+    //    }
+    //    else
+    //    {
+    //        SetShipTrails();
+    //    }
 
-        //base.OnPlayerEnteredRoom(newPlayer);
-    }
+    //    //base.OnPlayerEnteredRoom(newPlayer);
+    //}
 
-    [PunRPC]
-    public void PhotonSetsCurrentShip()
-    {
-        PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
-        shipMovement.currentShip = data.currentShip;
+    //[PunRPC]
+    //public void PhotonSetsCurrentShip()
+    //{
+    //    PlayerData data = SaveSystem.LoadLevel(W8SaveData.savePath);
+    //    shipMovement.currentShip = data.currentShip;
 
-        SetShipTrails();
-    }
+    //    SetShipTrails();
+    //}
 
-    public void SetShipTrails()
-    {
-        for (int i = 0; i < shipMovement.particlTrail.Length; i++)
-        {
-            if (i == shipMovement.currentShip)
-            {
-                shipMovement.particlTrail[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                shipMovement.particlTrail[i].gameObject.SetActive(false);
-            }
-        }
-    }
+    //public void SetShipTrails()
+    //{
+    //    for (int i = 0; i < shipMovement.particlTrail.Length; i++)
+    //    {
+    //        if (i == shipMovement.currentShip)
+    //        {
+    //            shipMovement.particlTrail[i].gameObject.SetActive(true);
+    //        }
+    //        else
+    //        {
+    //            shipMovement.particlTrail[i].gameObject.SetActive(false);
+    //        }
+    //    }
+    //}
 
     private void OnDisable()
     {
