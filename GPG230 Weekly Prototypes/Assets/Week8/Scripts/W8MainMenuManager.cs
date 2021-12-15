@@ -16,6 +16,7 @@ public class W8MainMenuManager : MonoBehaviour
     public GameObject shipUpgrades;
     public GameObject shipYard;
     public GameObject multiplayerUI;
+    public GameObject[] smallButtons;
 
     [Header("Ship Upgrade Refs")]
     public TMP_Text shipNameText;
@@ -126,12 +127,15 @@ public class W8MainMenuManager : MonoBehaviour
         multiplayerUI.SetActive(false);
 
         ShowShipYard();
+        UpdateSmallButtonsUI(0);
 
         PlayButtonPressedSound();
     }
 
     public void ShowContractsMenu()
     {
+        UpdateSmallButtonsUI(0);
+
         UpdateWeaponCurrency();
 
         contractsMenu.SetActive(true);
@@ -176,6 +180,8 @@ public class W8MainMenuManager : MonoBehaviour
         shipYard.SetActive(false);
         shipBuyMenu.SetActive(false);
 
+        UpdateSmallButtonsUI(0);
+
         PlayButtonPressedSound();
     }
 
@@ -188,6 +194,8 @@ public class W8MainMenuManager : MonoBehaviour
 
     public void ShowContractInfoMenu(BountyScenario contract)
     {
+        UpdateSmallButtonsUI(1);
+
         currentScenario = contract;
 
         contractInfo.SetActive(true);
@@ -275,6 +283,20 @@ public class W8MainMenuManager : MonoBehaviour
                     primaryWeaponButton.upgradeStatsText.text = "Max";
                     break;
             }
+        }
+    }
+
+    void UpdateSmallButtonsUI(int i)
+    {
+        if(i == 0)
+        {
+            smallButtons[0].SetActive(true);
+            smallButtons[1].SetActive(false);
+        }
+        else
+        {
+            smallButtons[0].SetActive(false);
+            smallButtons[1].SetActive(true);
         }
     }
 

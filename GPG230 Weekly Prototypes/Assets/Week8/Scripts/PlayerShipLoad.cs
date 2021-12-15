@@ -17,6 +17,8 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
     public ShipWeapon[] ship1PWeapons;
     public ShipWeapon[] ship2PWeapons;
     public ShipWeapon[] ship3PWeapons;
+    public GameObject[] shipTrails1;
+    public GameObject shipTrail2;
 
     public ShipWeapon ship0SecondaryWeapon;
     public ShipWeapon ship1SecondaryWeapon;
@@ -154,7 +156,11 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
             else
             {
                 ships[i].SetActive(false);
-                health += 100;
+
+                if (photonView == null)
+                    health += 100;
+                else
+                    health += 50;
             }
         }
 
@@ -175,6 +181,13 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
                     ship2PWeapons[i].weaponIndex = i;
                 }
                 weaponsManager.secondaryWeapons[0] = ship2SecondaryWeapon;
+                if (photonView && !photonView.IsMine)
+                {
+                    foreach (GameObject trail in shipTrails1)
+                    {
+                        trail.SetActive(true);
+                    }
+                }
                 break;
             case 3:
                 for (int i = 0; i < ship3PWeapons.Length; i++)
@@ -183,21 +196,27 @@ public class PlayerShipLoad : MonoBehaviourPunCallbacks
                     ship3PWeapons[i].weaponIndex = i;
                 }
                 weaponsManager.secondaryWeapons[0] = ship3SecondaryWeapon;
+                if (photonView && !photonView.IsMine)
+                {
+                    shipTrail2.SetActive(true);
+                }
                 break;
         }
 
-        for (int i = 0; i < shipMovement.particlTrail.Length; i++)
+        if (shipMovement)
         {
-            if (i == currentShip)
+            for (int i = 0; i < shipMovement.particlTrail.Length; i++)
             {
-                shipMovement.particlTrail[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                shipMovement.particlTrail[i].gameObject.SetActive(false);
+                if (i == currentShip)
+                {
+                    shipMovement.particlTrail[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    shipMovement.particlTrail[i].gameObject.SetActive(false);
+                }
             }
         }
-
 
         //if (weaponsManager.photonView)
         //{
